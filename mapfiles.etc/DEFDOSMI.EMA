@@ -1,0 +1,430 @@
+;   EMACS key maps (EMACS.KEY)
+;   SEDT V4.0
+;   Created by Chris Lord (MOSAIC::LORD)
+;   Based on MicroEMACS 3.9N
+;   12/29/89
+;
+;   This file contains all keyboard mappings to function values used
+;   in the EMACS.DEF file.  Functions 1-50 are reserved for specific
+;   values by SEDT, I defined 51-100 as the golded state of each of
+;   these for further user expansion.
+;
+;   To create a binary map file, you must cut the SCAN and KEYS
+;   sections out of the existing key map file and insert them in
+;   the appropriate sections below.
+;
+;
+;   Insert SCAN section here.  These are scancodes that the firmware
+;   must be bypassed with.
+;
+SPECIAL
+KEYS
+;1 <F1>
+S59 0 1 F1
+;2 <F2>
+S60 0 2 F2
+;3 <F3>
+S61 0 3 F3
+;4 <F4>
+S62 0 4 F4
+;5 <F5>
+S63 0 5 F5
+;6 <F6>
+S64 0 6 F6
+;7 <F7>
+S65 0 7 F7
+;8 <F8>
+S66 0 8 F8
+;9 <F9>
+S67 0 9 F9
+;10 <F10>
+S68 0 10 F10
+;11 <F11>
+S84 0 11 Shift F1
+S87 1 11 F11
+;12 <F12>
+S85 0 12 Shift F2
+S88 1 12 F12
+;13 <F13>
+;14 <F14>
+;15 <F15>
+;16 <F16>
+;17 <F17>
+;18 <F18>
+;19 <F19>
+;20 <F20>
+;21 <Find>
+;22 <Insert Here>
+S82 0 22 Ins
+;23 <Remove>
+S83 0 23 Del
+;24 <Select>
+;25 <Prev Screen>
+S73 0 25 Pg Up
+;26 <Next Screen>
+S81 0 26 Pg Dn
+;27 <Up Arrow>
+S72 0 27 Up Arrow
+;28 <Left Arrow>
+S75 0 28 Left Arrow
+;29 <Down Arrow>
+S80 0 29 Down Arrow
+;30 <Right Arrow>
+S77 0 30 Right Arrow
+;31 <Keypad 0>
+;32 <Keypad 1>
+;33 <Keypad 2>
+;34 <Keypad 3>
+;35 <Keypad 4>
+;36 <Keypad 5>
+;37 <Keypad 6>
+;38 <Keypad 7>
+;39 <Keypad 8>
+;40 <Keypad 9>
+;41 <Keypad ,>
+;42 <Keypad ->
+;43 <Keypad .>
+;44 <Keypad PF1>
+;45 <Keypad PF2>
+;46 <Keypad PF3>
+;47 <Keypad PF4>
+;48 <Keypad Enter>
+;49 <Backspace>
+S14 8 49 Backspace
+;50 <Return>
+S28 13 50 Enter
+;51 <Home>
+S71 0 51 Home
+;52 <End>
+S79 0 52 End
+;
+;   Insert KEYS section here.  This section provides the mapping of
+;   all function, editing and keypad keys to SEDT reserved key values.
+;
+
+;
+;   EMACS Combinations.  The ^X-x sequences are created as combiations
+;   and assigned key values 60 on.
+;
+COMBINATIONS
+1 A24
+2 A2 60 ^B
+2 A3 61 ^C
+2 A4 62 ^D
+2 A5 63 ^E
+2 A6 64 ^F
+2 A9 65 ^I
+2 A12 66 ^L
+2 A13 67 ^M
+2 A14 68 ^N
+2 A15 69 ^O
+2 A16 70 ^P
+2 A18 71 ^R
+2 A19 72 ^S
+2 A20 73 ^T
+2 A21 74 ^U
+2 A22 75 ^V
+2 A23 76 ^W
+2 A24 77 ^X
+2 A26 78 ^Z
+2 A60 79 <
+2 A62 80 >
+2 A61 81 =
+2 A94 82 ^
+2 A48 83 0
+2 A49 84 1
+2 A50 85 2
+2 A63 86 ?
+2 A33 87 !
+2 A64 88 @
+2 A35 89 #
+2 A36 90 $
+2 A40 91 (
+2 A41 92 )
+2 A65 93 A
+2 A97 94 
+2 A66 95 B
+2 A98 96 
+2 A67 97 C
+2 A99 98 
+2 A68 99 D
+2 A100 100 
+2 A69 101 E
+2 A101 102 
+2 A70 103 F
+2 A102 104 
+2 A75 105 K
+2 A107 106 
+2 A77 107 M
+2 A109 108 
+2 A78 109 N
+2 A110 110 
+2 A79 111 O
+2 A111 112 
+2 A80 113 P
+2 A112 114 
+2 A82 115 R
+2 A114 116 
+2 A83 117 S
+2 A115 118 
+2 A87 119 W
+2 A119 120 
+2 A88 121 X
+2 A120 122 
+2 A90 123 Z
+2 A122 124 
+;
+;   The mapping section is responsible for mapping key sequences to
+;   function values.  The function values are used in the EMACS.DEF
+;   function definition file.
+;
+MAPS
+0 A27 G
+1 K1 1 <F1>
+2 K2 2 <F2>
+3 K3 3 <F3>
+4 K4 4 <F4>
+5 K5 5 <F5>
+6 K6 6 <F6>
+7 K7 7 <F7>
+8 K8 8 <F8>
+9 K9 9 <F9>
+10 K10 10 <F10>
+11 K11 11 <F11>
+12 K12 12 <F12>
+13 K13 13 <F13>
+14 K14 14 <F14>
+15 K15 15 <F15>
+16 K16 16 <F16>
+17 K17 17 <F17>
+18 K18 18 <F18>
+19 K19 19 <F19>
+20 K20 20 <F20>
+21 K21 21 <Find>
+22 K22 22 <Insert>
+23 K23 23 <Remove>
+24 K24 24 <Select>
+25 K25 25 <Prev>
+26 K26 26 <Next>
+27 K27 27 <Up>
+28 K28 28 <Left>
+29 K29 29 <Down>
+30 K30 30 <Right>
+31 K31 31 <Keypad 0>
+32 K32 32 <Keypad 1>
+33 K33 33 <Keypad 2>
+34 K34 34 <Keypad 3>
+35 K35 35 <Keypad 4>
+36 K36 36 <Keypad 5>
+37 K37 37 <Keypad 6>
+38 K38 38 <Keypad 7>
+39 K39 39 <Keypad 8>
+40 K40 40 <Keypad 9>
+41 K41 41 <Keypad ,>
+42 K42 42 <Keypad ->
+43 K43 43 <Keypad .>
+44 K44 G
+45 K45 45 <Keypad PF2>
+46 K46 46 <Keypad PF3>
+47 K47 47 <Keypad PF4>
+48 K48 48 <Keypad Enter>
+49 K49 49 <Delete>
+50 K50 50 <Return>
+51 G K1 51 Gold <F1>
+52 G K2 52 Gold <F2>
+53 G K3 53 Gold <F3>
+54 G K4 54 Gold <F4>
+55 G K5 55 Gold <F5>
+56 G K6 56 Gold <F6>
+57 G K7 57 Gold <F7>
+58 G K8 58 Gold <F8>
+59 G K9 59 Gold <F9>
+60 G K10 60 Gold <F10>
+61 G K11 61 Gold <F11>
+62 G K12 62 Gold <F12>
+63 G K13 63 Gold <F13>
+64 G K14 64 Gold <F14>
+65 G K15 65 Gold <F15>
+66 G K16 66 Gold <F16>
+67 G K17 67 Gold <F17>
+68 G K18 68 Gold <F18>
+69 G K19 69 Gold <F19>
+70 G K20 70 Gold <F20>
+71 G K21 71 Gold <Find>
+72 G K22 72 Gold <Insert>
+73 G K23 73 Gold <Remove>
+74 G K24 74 Gold <Select>
+75 G K25 75 Gold <Prev>
+76 G K26 76 Gold <Next>
+77 G K27 77 Gold <Up>
+78 G K28 78 Gold <Left>
+79 G K29 79 Gold <Down>
+80 G K30 80 Gold <Right>
+81 G K31 81 Gold <Keypad 0>
+82 G K32 82 Gold <Keypad 1>
+83 G K33 83 Gold <Keypad 2>
+84 G K34 84 Gold <Keypad 3>
+85 G K35 85 Gold <Keypad 4>
+86 G K36 86 Gold <Keypad 5>
+87 G K37 87 Gold <Keypad 6>
+88 G K38 88 Gold <Keypad 7>
+89 G K39 89 Gold <Keypad 8>
+90 G K40 90 Gold <Keypad 9>
+91 G K41 91 Gold <Keypad ,>
+92 G K42 92 Gold <Keypad ->
+93 G K43 93 Gold <Keypad .>
+94 G K44 94 Gold <Keypad PF1>
+95 G K45 95 Gold <Keypad PF2>
+96 G K46 96 Gold <Keypad PF3>
+97 G K47 97 Gold <Keypad PF4>
+98 G K48 98 Gold <Keypad Enter>
+99 G K49 99 Gold <Delete>
+100 G K50 100 Gold <Return>
+101 K60 101 ^X^B
+102 K61 102 ^X^C
+103 K62 103 ^X^D
+104 K63 104 ^X^E
+105 K64 105 ^X^F
+106 K65 106 ^X^I
+107 K66 107 ^X^L
+108 K67 108 ^X^M
+109 K68 109 ^X^N
+110 K69 110 ^X^O
+111 K70 111 ^X^P
+112 K71 112 ^X^R
+113 K72 113 ^X^S
+114 K73 114 ^X^T
+115 K74 115 ^X^U
+116 K75 116 ^X^V
+117 K76 117 ^X^W
+118 K77 118 ^X^X
+119 K78 119 ^X^Z
+120 K79 120 ^X-<
+121 K80 121 ^X->
+122 K81 122 ^X-=
+123 K82 123 ^X-^
+124 K83 124 ^X-0
+125 K84 125 ^X-1
+126 K85 126 ^X-2
+127 K86 127 ^X-?
+128 K87 128 ^X-!
+129 K88 129 ^X-@
+130 K89 130 ^X-#
+131 K90 131 ^X-$
+132 K91 132 ^X-(
+133 K92 133 ^X-)
+134 K93 134 ^X-A
+135 K94 134 ^X-A
+136 K95 135 ^X-B
+137 K96 135 ^X-B
+138 K97 136 ^X-C
+139 K98 136 ^X-C
+140 K99 137 ^X-D
+141 K100 137 ^X-D
+142 K101 138 ^X-E
+143 K102 138 ^X-E
+144 K103 139 ^X-F
+145 K104 139 ^X-F
+146 K105 140 ^X-K
+147 K106 140 ^X-K
+148 K107 141 ^X-M
+149 K108 141 ^X-M
+150 K109 142 ^X-N
+151 K110 142 ^X-N
+152 K111 143 ^X-O
+153 K112 143 ^X-O
+154 K113 144 ^X-P
+155 K114 144 ^X-P
+156 K115 145 ^X-R
+157 K116 145 ^X-R
+158 K117 146 ^X-S
+159 K118 146 ^X-S
+160 K119 147 ^X-W
+161 K120 147 ^X-W
+162 K121 148 ^X-X
+163 K122 148 ^X-X
+164 K123 149 ^X-Z
+165 K124 149 ^X-Z
+166 A1 150 ^A
+167 A2 151 ^B
+168 A3 152 ^C
+169 A4 153 ^D
+170 A5 154 ^E
+171 A6 155 ^F
+172 A7 156 ^G
+173 A8 157 ^H
+174 A9 158 ^I
+175 A10 159 ^J
+176 A11 160 ^K
+177 A12 161 ^L
+178 A13 162 ^M
+179 A14 163 ^N
+180 A15 164 ^O
+181 A16 165 ^P
+182 A17 166 ^Q
+183 A18 167 ^R
+184 A19 168 ^S
+185 A20 169 ^T
+186 A21 170 ^U
+187 A22 171 ^V
+188 A23 172 ^W
+189 A25 173 ^Y
+190 A26 174 ^Z
+191 G A3 175 ^[^C
+192 G A5 176 ^[^E
+193 G A6 177 ^[^F
+194 G A8 178 ^[^H
+195 G A11 179 ^[^K
+196 G A12 180 ^[^L
+197 G A13 181 ^[^M
+198 G A14 182 ^[^N
+199 G A18 183 ^[^R
+200 G A19 184 ^[^S
+201 G A20 185 ^[^T
+202 G A22 186 ^[^V
+203 G A23 187 ^[^W
+204 G A26 188 ^[^Z
+205 G A65 189 ^[-A
+206 G A97 189 ^[-A
+207 G A66 190 ^[-B
+208 G A98 190 ^[-B
+209 G A67 191 ^[-C
+210 G A99 191 ^[-C
+211 G A68 192 ^[-D
+212 G A100 192 ^[-D
+213 G A69 193 ^[-E
+214 G A101 193 ^[-E
+215 G A70 194 ^[-F
+216 G A102 194 ^[-F
+217 G A71 195 ^[-G
+218 G A103 195 ^[-G
+219 G A75 196 ^[-K
+220 G A107 196 ^[-K
+221 G A76 197 ^[-L
+222 G A108 197 ^[-L
+223 G A77 198 ^[-M
+224 G A109 198 ^[-M
+225 G A78 199 ^[-N
+226 G A110 199 ^[-N
+227 G A80 200 ^[-P
+228 G A112 200 ^[-P
+229 G A81 201 ^[-Q
+230 G A113 201 ^[-Q
+231 G A82 202 ^[-R
+232 G A114 202 ^[-R
+233 G A85 203 ^[-U
+234 G A117 203 ^[-U
+235 G A86 204 ^[-V
+236 G A118 204 ^[-V
+237 G A87 205 ^[-W
+238 G A119 205 ^[-W
+239 G A88 206 ^[-X
+240 G A120 206 ^[-X
+241 G A90 207 ^[-Z
+242 G A122 207 ^[-Z
+243 G A126 208 ^[-~
+244 G A33 209 ^[-!
+245 G A60 210 ^[-<
+246 G A62 211 ^[->
+247 G A46 212 ^[-.
+248 G A32 213 ^[-

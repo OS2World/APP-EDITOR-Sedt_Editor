@@ -1,0 +1,2764 @@
+
+ Start         Length     Name                   Class
+ 0001:00000000 000020557H _TEXT                  CODE
+ 0002:00000000 000004508H _DATA                  DATA
+ 0002:00004508 000000000H _TLSCBA                TLSCBA
+ 0002:00004508 000000036H _INIT_                 INITDATA
+ 0002:0000453E 000000000H _INITEND_              INITDATA
+ 0002:0000453E 000000006H _EXIT_                 EXITDATA
+ 0002:00004544 000000000H _EXITEND_              EXITDATA
+ 0002:00004544 000000000H CONST                  CONST
+ 0002:00004544 0000289C4H _BSS                   BSS
+ 0002:0002CF08 000000000H _BSSEND                BSS
+
+  Address         Publics by Name
+
+ 0001:0001EA5C       operator delete(void*)
+ 0001:0001EA6C       operator delete[](void*)
+ 0001:0001B7C4       __tpdsc__[Bad_typeid]
+ 0001:0001B7E0       __tpdsc__[Bad_cast]
+ 0001:0001B7FC       __tpdsc__[typeinfo]
+ 0001:0001B7AD       __tpdsc__[typeinfo*]
+ 0001:0001BB8B       invokeHnd()
+ 0001:0001BB70  Idle jump()
+ 0001:0001B88A  Idle set_terminate(void(*)())
+ 0001:0001B903  Idle set_unexpected(void(*)())
+ 0001:0001B884  Idle terminate()
+ 0001:0001B479  Idle typeinfo::operator =(const typeinfo&)
+ 0001:0001B443  Idle typeinfo::typeinfo(const typeinfo&)
+ 0001:0001B481  Idle typeinfo::~typeinfo()
+ 0001:0001B4A0  Idle typeinfo::operator ==(const typeinfo&) const
+ 0001:0001B4B9  Idle typeinfo::operator !=(const typeinfo&) const
+ 0002:00003440       typeinfo::
+ 0001:0001B4D6  Idle typeinfo::before(const typeinfo&) const
+ 0001:0001B522  Idle typeinfo::name() const
+ 0001:0001B8FD  Idle unexpected()
+ 0001:0001A78F       _CatchCleanup()
+ 0001:0001A641  Idle _ReThrowException(unsigned int,unsigned char*)
+ 0001:0001A614       _ThrowException(void*,void*,void*,void*,unsigned int,unsigned int,unsigned int,unsigned char*)
+ 0001:0001B6E8  Idle __DynamicCast(void*,void*,void*,void*,int)
+ 0001:0001B93C       __GetPolymorphicDTC(void*,unsigned int)
+ 0001:0001B533  Idle __GetTypeInfo(void*,void*,void*,void*)
+ 0001:0001B844       @__InitExceptBlock
+ 0001:0001B436  Idle __ThrowExceptionName()
+ 0001:0001B41C  Idle __ThrowFileName()
+ 0001:0001B429  Idle __ThrowLineNumber()
+ 0001:0001ED30       _abort
+ 0002:000024F8       _Abort_Print_Txt
+ 0001:000103C9  Idle _Abs_Char
+ 0001:00010894       _Abs_Line
+ 0001:00012E7F       _Adj_Del
+ 0001:00003BEA       _Adj_Lines
+ 0001:00012E54       _Adj_Pad
+ 0001:0000263D       _Adj_Points
+ 0001:0000BE0E       _Adj_Tabs
+ 0001:000077CA       _Advance
+ 0002:0000250C       _Already_Learning_Txt
+ 0002:00025B9C       _Any_Changes
+ 0002:000030F0       _Append_It
+ 0002:00002490  Idle _April_Txt
+ 0001:0001781C  Idle _Argerror
+ 0002:000015D4       _Arg_Error_Txt
+ 0002:00025B80       _Arg_Length
+ 0001:00007998       _Ascii
+ 0002:00001740       _Ascii_Value_Txt
+ 0001:0001FE5C  Idle _asctime
+ 0001:0001E2A0  Idle _atoi
+ 0001:0001E244       _atol
+ 0002:00002E70       _Attab
+ 0002:00004950       _Attr
+ 0002:00025B84       _At_End
+ 0002:000024A0  Idle _August_Txt
+ 0002:000254E4       _Auto_Count
+ 0002:00002FC0       _Auto_Margin
+ 0002:00002FF4       _Auto_Save
+ 0002:000254E8       _Auto_Saved
+ 0002:00002FF8       _Auto_Warn
+ 0001:000101F4       _A_Char
+ 0001:00007385       _A_New_Line
+ 0001:00011EA6  Idle _A_Par
+ 0001:000121CC  Idle _A_Sentence
+ 0001:00011719  Idle _A_Word
+ 0001:00002351       _Backto_This
+ 0001:000077E4       _Backup
+ 0002:00001748       _Bad_Argument_Txt
+ 0002:000016D8       _Bad_Context_Cursor_Txt
+ 0002:00002548       _Bad_Entity_Txt
+ 0002:00001650  Idle _Bad_Key_Num_Txt
+ 0002:0000164C  Idle _Bad_Key_Txt
+ 0002:0000174C       _Bad_Window_Pos_Txt
+ 0002:00003040       _Batch_Mode
+ 0001:00012A9F  Idle _Beg_Error
+ 0002:00027540       _Beg_Line
+ 0002:00027538       _Beg_Pos
+ 0002:000278C0       _Beg_Region
+ 0002:000030D4       _Bell_Level
+ 0002:000015DC  Idle _Bel_Conf_Synt_Txt
+ 0001:0000B861  Idle _Blind_Tab_To
+ 0002:000030DC       _Blk_Mode
+ 0001:00003C96       _Blk_Rem_It
+ 0001:000000E0  Idle _Blockread
+ 0001:0000013B  Idle _Blockwrite
+ 0002:00002500  Idle _Block_Append_Txt
+ 0002:000013D0       _Block_Mode_Txt
+ 0002:000013CC       _Block_Pos
+ 0002:0000171C       _Block_Sel_Txt
+ 0001:00010929  Idle _Bottom
+ 0002:00002E58       _Bracket
+ 0002:000256E8       _Buffers
+ 0002:00002544       _Buffer_Beginning_Txt
+ 0002:0000253C       _Buffer_End_Txt
+ 0002:00001658       _Buffer_Err_Txt
+ 0002:000013B0       _Buffer_Pos
+ 0002:00025558       _Buffer_Stack
+ 0002:0000139C       _Buffer_Txt
+ 0002:0000165C       _Buffer_Wr_Err_Txt
+ 0002:00027A80       _Buf_Lines
+ 0001:00000C6D       _B_B_Get
+ 0001:00000D5F       _B_B_Search
+ 0001:00000B98       _B_Copy
+ 0001:00000944       _B_Del
+ 0001:00000567  Idle _B_Flush
+ 0001:000009A6       _B_Get
+ 0001:000009D0       _B_Get_N
+ 0001:00000A48       _B_Get_S
+ 0001:000005F9       _B_Goto
+ 0001:000006B8       _B_Init
+ 0001:0000072D       _B_Modify
+ 0001:0000079B       _B_Put
+ 0001:00000800       _B_Put_S
+ 0001:00000B1C       _B_Rem
+ 0001:00000902       _B_Replace
+ 0001:0000089C       _B_Repl_S
+ 0001:000006C6       _B_Reset
+ 0001:000005A4       _B_Rewind
+ 0001:0000238B       _B_Save
+ 0001:00000CC2       _B_Search
+ 0001:00011E09  Idle _B_Skip_Spaces
+ 0001:0001E444       _calloc
+ 0002:00002FD0       _Call_Color
+ 0002:00002FE8       _Call_Model
+ 0002:00002FCC       _Call_Type
+ 0001:00003497       _Cancel_Edit_Region
+ 0002:000016F0       _Cannot_Create_Context_Txt
+ 0002:000016FC       _Cannot_Create_File_Txt
+ 0002:000016E0       _Cannot_Undo_Txt
+ 0002:00003028       _Caps_Lock
+ 0002:000013EC       _Case_Ins_Txt
+ 0002:000013E4       _Case_Pos
+ 0002:0000301C       _Case_Sensitive
+ 0002:000013E8       _Case_Sen_Txt
+ 0001:000093BB       _Case_Toggle
+ 0002:00002FC4       _CC_Enable
+ 0002:00003018       _CC_Flag
+ 0002:00001380       _Cc_Mess
+ 0001:0000C058       _Center_Line
+ 0001:0000940F       _Change_Window
+ 0001:00010219  Idle _Char
+ 0002:00025AB4       _Character
+ 0001:000144F6       _Char_Rep
+ 0001:0001D58C       _chdir
+ 0001:0000194A       _Check_CC
+ 0001:00018EDF  Idle _Check_Comb
+ 0001:00009E0C       _Check_Point
+ 0001:0001011C  Idle _Chk_CRLF_B
+ 0001:00010188  Idle _Chk_CRLF_BF
+ 0001:0001003E  Idle _Chk_CRLF_F
+ 0001:000100B0  Idle _Chk_CRLF_FB
+ 0001:00004C92       _Chk_EL
+ 0001:0001D5A8       _chmod
+ 0002:000025A9       _Chr_N
+ 0002:000025A8       _Chr_Y
+ 0001:0000C8FF       _Ch_Case
+ 0001:0000D23D       _Ch_Edt_Style
+ 0001:0000C96E  Idle _Ch_It
+ 0001:0000C922       _Ch_Lower
+ 0001:0000C948       _Ch_Upper
+ 0001:00005625       _Ch_Window
+ 0001:000034C1       _Clear_Region
+ 0001:0001BBDC       _close
+ 0001:000058A6       _Clr_Changes
+ 0001:0000F41E       _Clr_Error
+ 0001:0001859B       _Clr_Screen
+ 0001:00006DC0       _Clr_Typeahead
+ 0001:0000F90C       _Clr_Working
+ 0001:0001782D  Idle _Cnf_Error
+ 0001:00012A2A  Idle _Cnt_B_Lines
+ 0001:00012A06       _Cnt_F_Lines
+ 0001:00019B67  Idle _color
+ 0002:00002E4C       _Color
+ 0002:00001600       _Color_Txt
+ 0002:000013A4       _Col_Arg_Pos
+ 0002:00001744  Idle _Col_Ascii_Value_Txt
+ 0002:000013A0       _Col_Pos
+ 0002:00001394       _Col_Txt
+ 0002:0002AE0C       _Com
+ 0002:00003080       _Comb_Defs
+ 0002:00027C94       _Comb_Tab
+ 0002:000024FC       _Command_File_Txt
+ 0002:0002444F       _Com_Arg
+ 0002:0002444E       _Com_Char
+ 0002:00025B30       _Com_Direction
+ 0002:00025504       _Com_End
+ 0001:00005809       _Com_Error
+ 0001:00000F9C       _Com_Parse
+ 0002:00000098  Idle _Com_Tab
+ 0002:00003024       _Conf_Error
+ 0002:000015D8       _Conf_Synt_Txt
+ 0001:000187E8  Idle _Conin
+ 0002:000016D4       _Context_Match_Txt
+ 0001:00009BC5       _Context_Save
+ 0002:00003054       _Control_Display
+ 0002:00001610       _Copyright_Txt
+ 0002:00027A84       _Count
+ 0002:00027A8C       _Counter
+ 0001:00009B59       _Counter_Absolute_Value
+ 0001:0000365C       _Counter_Add
+ 0001:00003531       _Counter_Get
+ 0001:00009B13       _Counter_Increment
+ 0002:00025B7C       _Counter_Index
+ 0001:00009AC2       _Counter_Put
+ 0001:00009A7A       _Counter_Set
+ 0001:0001BCA0       _creat
+ 0001:0001FE7C       _ctime
+ 0002:00029A18       _Current
+ 0002:00003034       _Cursor_Free
+ 0001:000093F3       _Cursor_Free_Toggle
+ 0001:0000968B       _Curs_Bottom
+ 0001:00009776       _Curs_Middle
+ 0001:000095C1       _Curs_Top
+ 0002:00025A9C       _Cur_Attributes
+ 0002:00025B34       _Cur_Buffer
+ 0002:00025B78       _Cur_Direction
+ 0001:00000E53  Idle _C_Bscan
+ 0001:00000074       _C_Move
+ 0001:00008979  Idle _C_Read_I
+ 0001:0000894B  Idle _C_Read_L
+ 0001:00000E35       _C_Scan
+ 0001:00009DC5  Idle _C_Write
+ 0002:000024B0  Idle _December_Txt
+ 0002:000048C8  Idle _DEC_Mode
+ 0002:000030C4       _Def_Direction
+ 0002:00002FD8       _Def_Font
+ 0001:0000907F       _Def_Function
+ 0002:00001400       _Def_Ins_Txt
+ 0001:00008DF8  Idle _Def_Key
+ 0001:00008D8C       _Def_Key_Alpha
+ 0001:00008CA0       _Def_Key_Function
+ 0001:00008DBF       _Def_Key_G_Alpha
+ 0001:00008DDD       _Def_Key_G_Key
+ 0001:00008DA7       _Def_Key_Key
+ 0001:0000903E       _Def_Key_Number
+ 0002:00001404       _Def_Noins_Txt
+ 0002:000013FC       _Def_Pos
+ 0002:0002B804       _Del
+ 0001:00009D93  Idle _Delete_The_Context
+ 0001:00012ACF       _Delim_Error
+ 0001:0000D207       _Del_Append
+ 0001:000076BB       _Del_It
+ 0001:00018693       _Del_To_End_Line
+ 0002:000015F4       _Device_Txt
+ 0001:0000F0FF  Idle _Diag
+ 0001:00003A50  Idle _Diag_Error
+ 0002:00025B70       _Direction
+ 0002:00001630       _Dir_Load_Txt
+ 0002:000013B4       _Dir_Pos
+ 0002:00001708       _Dir_Save_Txt
+ 0002:00002FE4       _Dir_Video
+ 0002:00002E84       _Display_Column
+ 0001:00005B91  Idle _Display_Help
+ 0002:000015FC       _Display_Txt
+ 0002:00027548       _Dl_Pointers
+ 0002:00025B44       _Dl_Positions
+ 0002:00002FC8       _Doreturn
+ 0002:00001654  Idle _Double_Def_Txt
+ 0002:00003060       _Down_Type
+ 0001:0000F4DE  Idle _Do_Command
+ 0002:0000303C       _Do_Debug
+ 0001:0000B8BF       _Do_Fill
+ 0001:00005CE3  Idle _Do_Help
+ 0001:0001870D       _Do_Mapping
+ 0001:00007497       _Do_New_Line
+ 0002:000030D0       _Do_Shift
+ 0002:00001664       _Dsk_Full_Err_Txt
+ 0002:00023C4D       _Dsk_Rec
+ 0001:0001BBE4       _dup
+ 0001:0001BBEC       _dup2
+ 0002:00002E88       _D_Border
+ 0002:00003100       _D_Next
+ 0001:0000D7F4       _Editor
+ 0001:0000869D  Idle _Edit_File
+ 0002:00002540       _Edit_Region_Begin_Txt
+ 0002:00002538       _Edit_Region_End_Txt
+ 0002:00002FE0       _EGA43
+ 0002:000024CC       _Empty_Line_Txt
+ 0001:00008C8E       _End_Com
+ 0001:00012A67  Idle _End_Error
+ 0001:00009B9C       _End_Learn
+ 0002:00027544       _End_Line
+ 0001:00007C9D       _End_Mark
+ 0002:00027AF4       _End_Points
+ 0002:0002753C       _End_Pos
+ 0002:000278C4       _End_Region
+ 0002:00001704       _End_Region_Txt
+ 0002:000258AC       _Enhanced
+ 0002:000254FC       _Ent_Char
+ 0002:00027A88       _Ent_Count
+ 0002:00025B74       _Ent_Direction
+ 0001:00012AE4  Idle _Ent_Error
+ 0002:00000F50  Idle _Ent_Tab
+ 0001:000145D8       _Erase_Del
+ 0002:00004190       _errno
+ 0001:0000EDB2       _Error
+ 0002:00025AAC       _Err_Display
+ 0002:00025500       _Err_Flag
+ 0001:00009419       _Err_Level
+ 0001:00019175  Idle _Esc_Error
+ 0001:00003975       _Execute_Function
+ 0001:00003865       _Execute_Key
+ 0002:000030B4       _Executing
+ 0002:00001428       _Executing_Txt
+ 0001:00012EA5       _Exec_Key
+ 0001:0001ED9C       _exit
+ 0001:00006F35       _Exit_Sedt
+ 0002:00000F4C       _Exp
+ 0001:00012F9E       _Expand_Com
+ 0002:00003058       _Expand_Tabs
+ 0001:0000198E  Idle _Ex_Command
+ 0002:00025B08       _Ex_Count
+ 0002:000030BC       _Ex_Debth
+ 0001:00012897       _Ex_Entity
+ 0001:0000CDE2       _Ex_File
+ 0002:00025AB8       _Ex_Function
+ 0002:00025AE0       _Ex_Index
+ 0001:0000D60B       _Ex_Learn
+ 0002:00003048       _E_Type
+ 0001:000000B6       _Fatalerror
+ 0001:0001BCBC       _fclose
+ 0002:00002488  Idle _February_Txt
+ 0001:0001BD50       _fflush
+ 0001:0001C4D4       _fgetc
+ 0001:0000EB76       _Fildir
+ 0002:00003114       _File_Arguments
+ 0001:0000867B       _File_Edit
+ 0001:0000CD90       _File_Execute
+ 0001:00007A4D       _File_Get
+ 0002:000016A8       _File_Not_Found_Txt
+ 0002:000049E8       _File_Protection
+ 0002:00004B78       _File_Reserved
+ 0002:0000255C       _File_Reserved_Txt
+ 0001:00008B8A       _File_Save
+ 0002:00001390       _File_Txt
+ 0001:00008C51       _File_Write
+ 0001:0000EB04       _Filjnam
+ 0001:0000B7BA       _Fill
+ 0001:0000DF61       _Fill_Rest
+ 0001:0000E33F       _Fill_Screen
+ 0001:0000E9E8       _Filnam
+ 0001:0000EA78       _Filtyp
+ 0002:000015E0  Idle _Fil_Buff_Txt
+ 0001:00010950  Idle _Find
+ 0001:0000FEF7       _Find_Env
+ 0001:0000FEA7       _Find_From
+ 0001:000075B8       _Find_Margin
+ 0001:00010989  Idle _Find_Next
+ 0001:0000FF50       _Find_Path
+ 0002:0002484F       _Find_Str
+ 0001:00010A88       _Find_This
+ 0002:00003008  Idle _Firmware
+ 0002:00002FB8       _First_Line
+ 0002:000030E0       _Float_Cursor
+ 0001:0001BBF4       _flushall
+ 0001:000098C4       _Font_Larger
+ 0001:000098C5       _Font_Smaller
+ 0001:0001BFDC       _fopen
+ 0002:000016C4       _Forget_Buffer_Txt
+ 0002:000239FC       _Format_Line
+ 0002:000013B8       _Forward_Txt
+ 0001:0001C008       _fprintf
+ 0001:0001C5A0       _fputc
+ 0001:0001C0F8       _fputs
+ 0001:0001C268       _fread
+ 0001:0001E5A8       _free
+ 0002:000030FC       _Free_List
+ 0002:00001408       _Free_Pos
+ 0002:0000140C       _Free_Txt
+ 0001:0001C2F8       _fseek
+ 0001:0001C35C       _ftell
+ 0002:00025D38       _Funcs
+ 0002:00025AA4       _Function
+ 0002:0000173C       _Fun_Create_Error
+ 0001:0001C3E0       _fwrite
+ 0001:00012B94       _F_close
+ 0001:00012D04       _F_getc
+ 0001:00012BE0       _F_gets
+ 0001:00012AFC       _F_open
+ 0001:00012D81  Idle _F_putc
+ 0001:00002F81  Idle _f_puti
+ 0001:00012CD3       _F_read
+ 0001:00012D52       _F_write
+ 0001:00007707       _Get
+ 0001:0000F245       _Get16
+ 0001:0001C410       _getcwd
+ 0001:0001EDEC       _getenv
+ 0001:000189EC       _Getkbd
+ 0001:00018C23  Idle _Getkey
+ 0001:0000D222       _Get_Append
+ 0001:000079CC       _Get_Arg
+ 0002:0000258C  Idle _Get_Buf_Txt
+ 0002:00002584  Idle _Get_Char_Txt
+ 0001:00000ED0  Idle _Get_Count
+ 0001:00003787       _Get_Counter_Index
+ 0001:00002569       _Get_Entity
+ 0001:00007761  Idle _Get_E_Type
+ 0002:00002580  Idle _Get_File_Txt
+ 0001:0000CFB2       _Get_Key
+ 0002:00002588  Idle _Get_Line_Txt
+ 0001:00011A6C  Idle _Get_Mark
+ 0001:00009363       _Get_Ruler
+ 0001:0000B6EB  Idle _Get_Spaces
+ 0001:000197B3       _Get_Type
+ 0001:0000B75C  Idle _Get_Word
+ 0001:00020000  Idle _gmtime
+ 0002:00025AA8       _Gold
+ 0002:00001734  Idle _Gold_Txt
+ 0002:00002E50  Idle _Gotmouse
+ 0001:0000223B  Idle _Goto_This
+ 0002:0000256C  Idle _Group_Txt
+ 0002:000254D4       _Hdr_Block
+ 0002:000254EC       _Hdr_Case
+ 0002:00002FD4       _Hdr_Changes
+ 0002:00025D34       _Hdr_Col
+ 0002:000254B4       _Hdr_Direction
+ 0002:000254D0       _Hdr_Do_Shift
+ 0002:000254C4       _Hdr_Executing
+ 0002:00003038       _Hdr_Free
+ 0002:000254F0       _Hdr_Ins_Defs
+ 0002:000254B8       _Hdr_Learning
+ 0002:00025D2C       _Hdr_Line
+ 0002:00025D30  Idle _Hdr_Lines
+ 0002:000254B0       _Hdr_Mods
+ 0002:000254F4       _Hdr_Reg
+ 0002:000254C0       _Hdr_Replace
+ 0002:000254CC       _Hdr_Shift
+ 0002:000254C8       _Hdr_Xpand
+ 0001:00005C9F       _Help
+ 0001:000187D8       _Helpfile
+ 0002:00024C4F       _Help_File
+ 0002:00025B8C       _Help_Level
+ 0002:00024C9F       _Help_Levels
+ 0002:000016B4       _Help_Menu_Txt
+ 0002:00027C88       _Help_Pos
+ 0002:00025AA0       _His_Attributes
+ 0002:00003090       _His_Col
+ 0002:0000308C       _His_Line
+ 0002:00025B40       _Home
+ 0002:000016A0       _Illegal_ASCII_Txt
+ 0002:000024B4       _Illegal_Char_Txt
+ 0002:00001684       _Illegal_Keystroke_Txt
+ 0002:000016B0       _Illegal_Mark_Txt
+ 0002:000016E8       _Illegal_Ruler_Txt
+ 0002:00001640       _Illegal_Token_Txt
+ 0002:0000169C       _Illegal_Window_Txt
+ 0002:0000161C       _Ill_Ruler_Txt
+ 0001:0000EBEB       _Include_File
+ 0002:0000170C       _Incomplete_Command_Txt
+ 0002:0000312C       _Indent
+ 0001:0000CEF8       _Ind_Decrease
+ 0001:0000CF29       _Ind_Increase
+ 0001:0000CEDB       _Ind_Set
+ 0002:000231FC       _Infile
+ 0001:0001824B       _Initerror
+ 0001:00000E76       _Init_Buf
+ 0001:00016C91  Idle _Init_Buffer
+ 0001:00003C50       _Init_Entity
+ 0002:00023BFD       _Init_File
+ 0002:0002377C       _Init_T_String
+ 0001:0000925E       _Input_Test
+ 0001:0000854F       _Insert
+ 0002:000013C8       _Insert_Mode_Txt
+ 0001:00014129  Idle _Ins_A_Key
+ 0001:0000F971       _Ins_Char
+ 0002:00003030       _Ins_Defs
+ 0001:000093D7       _Ins_Defs_Toggle
+ 0001:00007DCB       _Ins_Del
+ 0001:00014066  Idle _Ins_Key
+ 0001:0000290B  Idle _Ins_String
+ 0002:00002E54  Idle _Int16_Ext
+ 0001:000003CD  Idle _In_Buf
+ 0002:00025B88       _In_Help
+ 0002:0000305C       _In_Prompt
+ 0001:0001E358  Idle _itoa
+ 0002:00002484  Idle _January_Txt
+ 0002:0000249C  Idle _July_Txt
+ 0002:00002498  Idle _June_Txt
+ 0002:000254BC       _Justify
+ 0002:000048C4  Idle _KBD_Handle
+ 0002:000015F8       _Keyboard_Txt
+ 0002:00004874  Idle _Keyb_File
+ 0002:00004824       _Keyb_Name
+ 0002:00002E18       _Keyb_Names
+ 0002:00002E48       _Keyb_Type
+ 0001:000187B8       _Keyfile
+ 0001:0001460A       _Key_Addr
+ 0002:00002518  Idle _Key_Create_Txt
+ 0002:00003074       _Key_Defs
+ 0001:00019159  Idle _Key_Error
+ 0001:000140F3  Idle _Key_Get
+ 0001:0000CF47  Idle _Key_Load
+ 0001:000034B0       _Key_Mess
+ 0002:0002589C       _Key_Number
+ 0002:00027C90  Idle _Key_Pointer
+ 0001:0000D0D2  Idle _Key_Save
+ 0002:00027C8C       _Key_Tab
+ 0002:0000252C       _Last_Mark_Txt
+ 0002:00001750  Idle _Last_Not_Search_Txt
+ 0002:000016F4       _Learned_Input_Txt
+ 0002:000030B0       _Learning
+ 0002:00001424       _Learning_Pos
+ 0002:0000142C       _Learning_Txt
+ 0002:0000251C       _Learn_Key_Txt
+ 0002:00003068       _Left_Col
+ 0002:00003130       _Left_Margin
+ 0002:000024BC       _Left_Margin_Txt
+ 0002:000025AC       _License_Txt
+ 0001:0001072F       _Line
+ 0002:000013AC       _Line_Arg_Pos
+ 0001:00011C2D  Idle _Line_End
+ 0002:000013D4       _Line_Mode_Txt
+ 0002:000013A8       _Line_Pos
+ 0002:00001398       _Line_Txt
+ 0002:000254F8  Idle _List_Files
+ 0002:00025AB0       _Ln_Function
+ 0001:0000D015       _Load_Key
+ 0001:0000D4F8       _Load_Learn
+ 0001:00005250       _Load_Window
+ 0001:00020018       _localtime
+ 0002:000278CC       _Local_Count
+ 0001:00010A25  Idle _Lower_Case
+ 0002:00027A78       _Lst_Char_Move
+ 0002:00003108       _Lst_Cmd
+ 0002:000258B4       _Lst_Col
+ 0002:000030C0       _Lst_Current
+ 0002:00023254       _Lst_Input
+ 0002:00027A7C       _Lst_Line_Move
+ 0001:0001E3A8       _ltoa
+ 0001:00015584       _main
+ 0002:00029A1C       _Main_Buffer
+ 0001:00000753  Idle _Make_Room
+ 0001:0001E6E4       _malloc
+ 0001:000187C8       _Mapfile
+ 0002:00002FF0       _Mapping
+ 0002:00001738       _Map_Create_Error
+ 0002:00003078       _Map_Defs
+ 0002:00023204       _Map_Ext
+ 0002:000258A0       _Map_Index
+ 0002:00027E18       _Map_Tab
+ 0002:0000248C  Idle _March_Txt
+ 0002:00003118       _Margin
+ 0001:00013E89       _Mark_Cursor
+ 0001:00007C06       _Mark_Pos
+ 0001:00012653  Idle _Match_Bracket
+ 0002:00001660       _Max_Err_Txt
+ 0002:00001728       _Max_Func_Txt
+ 0002:0002588C       _Max_Length
+ 0002:00002FDC       _Max_Scroll
+ 0002:00025890       _Max_Width
+ 0002:00002494  Idle _May_Txt
+ 0001:00019BE4       _memchr
+ 0001:00019DB4       _memcmp
+ 0001:00019C04       _memcpy
+ 0001:00019C28       _memmove
+ 0001:00019C74       _memset
+ 0002:00002E14       _Mem_Entries
+ 0002:00003124       _Mem_Limit
+ 0002:00000070  Idle _Mem_List
+ 0001:00000DF9  Idle _Mem_Return
+ 0001:0000EF84       _Message
+ 0002:00002534       _Missing_Match_Txt
+ 0001:0001C728       _mktemp
+ 0002:00001438       _Modified_Txt
+ 0002:00001434       _Mod_List_Pos
+ 0002:00001430       _Mod_Pos
+ 0002:00001604       _Mono_Txt
+ 0002:00002EC8       _Mouse_OK
+ 0002:0002C254  Idle _Mouse_Stack
+ 0002:00001674  Idle _Mouse_Toggle_Txt
+ 0002:00001678  Idle _Mouse_Window_Txt
+ 0001:00001E4B       _Move_Back
+ 0001:00001A7A       _Move_Entity
+ 0001:00001B7E  Idle _Move_Forward
+ 0001:00003BF8       _Move_Key
+ 0001:00018653  Idle _Move_Left
+ 0001:00018634  Idle _Move_Right
+ 0002:00013F81       _My_Attributes
+ 0002:0000313C       _My_Col
+ 0002:00003094       _My_Line
+ 0002:00003140       _My_Pos
+ 0002:00004D08       _My_Screen
+ 0002:00003104       _M_Next
+ 0001:00019143  Idle _Narrow_Screen
+ 0001:000054F6       _Newwindow
+ 0002:00024A4F       _New_File
+ 0001:0000744B       _New_Line
+ 0002:00002E40       _New_Mode
+ 0001:00018D79  Idle _Next_Comb
+ 0002:00003088       _Next_Func
+ 0001:00011B1E  Idle _Next_Mark
+ 0002:00002E80       _Nobak
+ 0002:00001410       _Nofree_Txt
+ 0002:00002FBC       _Nosub
+ 0002:000030A8       _Not_End
+ 0002:00002590  Idle _Not_Enough_Memory_Txt
+ 0002:0000257C  Idle _Not_Implemented_Txt
+ 0002:000024EC       _Not_Search_Txt
+ 0002:000024AC  Idle _November_Txt
+ 0002:0000254C       _No_Buffer_Txt
+ 0002:000024D0       _No_Command_Txt
+ 0002:000024D4       _No_Compec_Txt
+ 0002:000016CC       _No_Context_Txt
+ 0002:000016EC       _No_Contxt_Name_Txt
+ 0002:00001638       _No_Delimiter_Txt
+ 0002:00001690       _No_File_Txt
+ 0002:000016C0       _No_Help_File_Txt
+ 0002:00001614       _No_Init_Txt
+ 0002:00001608       _No_Key_Txt
+ 0002:0000160C       _No_Map_Txt
+ 0002:00002528       _No_Mark_Txt
+ 0002:00002530       _No_Match_Txt
+ 0002:00001670       _No_Memory_Txt
+ 0002:00001724  Idle _No_Messages_Txt
+ 0002:00002520       _No_Number_Txt
+ 0002:000016DC       _No_Output_File_Txt
+ 0002:000024F0       _No_Print_Txt
+ 0002:00002564       _No_Protection_Change_Txt
+ 0002:00002574       _No_Reset_Txt
+ 0002:000024C8       _No_Right_Margin_Txt
+ 0002:00001618       _No_Ruler_Txt
+ 0002:00002524       _No_Sel_Txt
+ 0002:000024D8       _No_Spawn_Txt
+ 0002:00002558       _No_Stat_Txt
+ 0002:000024E8       _No_Stderr_Txt
+ 0002:000024E4       _No_Stdout_Txt
+ 0002:0000167C  Idle _No_Termcap_Txt
+ 0002:0000163C       _No_Token_Txt
+ 0002:00001700  Idle _No_Window_Txt
+ 0002:00002510       _Null_String_Txt
+ 0002:000024A8  Idle _October_Txt
+ 0002:00025B90       _Offset
+ 0002:00001420       _Off_Txt
+ 0002:0000304C       _Old_E_Type
+ 0002:00002E44  Idle _Old_Mode
+ 0001:0001BBFC       _open
+ 0001:0000D467       _Open_Line
+ 0001:0000A613  Idle _Open_Window
+ 0001:00019527       _Opt_Char
+ 0001:000194AF       _Opt_Cursor
+ 0001:00019717       _Opt_Erase_Line
+ 0001:00018672       _Opt_Force_Attributes
+ 0001:00019360       _Opt_Init
+ 0001:000194F1       _Opt_Move_Cursor
+ 0001:00018405       _Opt_Scroll
+ 0001:000196F9       _Opt_String
+ 0002:000278C8       _Other_Pos
+ 0002:00002570  Idle _Other_Txt
+ 0001:00002722       _Other_Window
+ 0002:00023200       _Outfile
+ 0002:000048CC       _Output
+ 0001:00000196  Idle _Out_Buf
+ 0001:00019190       _Out_C
+ 0002:00025A98       _Out_Count
+ 0001:000026F8       _Out_Error
+ 0002:00002560       _Out_File_Reserved_Txt
+ 0001:000191B7  Idle _Out_I
+ 0001:00000691  Idle _Out_In_Buf
+ 0001:0000D720       _Out_Message
+ 0001:000191FC       _Out_S
+ 0002:0002397C       _Out_String
+ 0001:0001922C       _Out_Zap
+ 0002:0002C1FC       _Overflow
+ 0001:000092FF       _Overstrike_Mode
+ 0002:0002A414       _Pad
+ 0001:0000F1C3  Idle _Pad_Get
+ 0001:0000F141  Idle _Pad_Put
+ 0001:000124A8  Idle _Page
+ 0001:0000228B  Idle _Paint_To_This
+ 0001:00011E72  Idle _Par
+ 0001:0000782C       _Paste
+ 0002:00002508       _Paste_Create_Txt
+ 0002:00002504       _Paste_File_Txt
+ 0001:0000D2E3       _Past_Load
+ 0001:0000D395       _Past_Save
+ 0001:0001C7D4  Idle _perror
+ 0002:00025894       _Phys_Length
+ 0002:00025898       _Phys_Width
+ 0001:0000EEAF       _Plain_Error
+ 0001:0000F051       _Plain_Message
+ 0002:000278D4       _Points
+ 0001:00013E76  Idle _Pop
+ 0001:00009E7C       _Pop_Changes
+ 0001:00003A65       _Pos_Cursor
+ 0001:0000CBE1       _Print
+ 0001:0001C850       _printf
+ 0001:00013E5C  Idle _Push
+ 0001:00009E64       _Push_Changes
+ 0001:0000B83A       _Put_A_Char
+ 0001:000194C4  Idle _Put_Char
+ 0001:0000FE58       _Put_Count
+ 0001:0000D742       _Put_Date
+ 0001:0001766D       _Put_I
+ 0001:00002535       _Put_Out
+ 0001:000084B0       _Put_Rep
+ 0001:000026B8       _Put_Time
+ 0001:00003820       _Query
+ 0001:00007168       _Quit
+ 0001:0000C670       _Q_Spawn
+ 0001:0001FA00       _raise
+ 0001:0001BC04       _read
+ 0002:00001730       _Reading_Help_Txt
+ 0001:00014217       _Readkeys
+ 0001:000142E2       _Readmaps
+ 0001:0000DC62       _Readruler
+ 0001:00015B1B  Idle _Read_Config
+ 0001:000089A7       _Read_Context
+ 0002:000016D0       _Read_Context_Txt
+ 0001:0000FCDB       _Read_Count
+ 0001:0000E922       _Read_File
+ 0002:00025C64       _Read_Only
+ 0001:0001E8E8       _realloc
+ 0001:0001768A  Idle _Rec_I
+ 0001:0000A08F       _Redefine_Key
+ 0001:0000C275       _Refresh
+ 0001:0000A627       _Refresh_Window
+ 0001:00014790  Idle _reg
+ 0001:00014B49  Idle _regatom
+ 0001:00014906  Idle _regbranch
+ 0001:00014E8C  Idle _regc
+ 0001:00014620       _regcomp
+ 0001:0001002C       _regerror
+ 0001:00014F73       _regexec
+ 0001:00014EB6  Idle _reginsert
+ 0001:000150D6  Idle _regmatch
+ 0001:00015454  Idle _regnext
+ 0001:00014E57  Idle _regnode
+ 0001:00014F4C  Idle _regoptail
+ 0001:0001498F  Idle _regpiece
+ 0001:000153C7  Idle _regrepeat
+ 0001:00015494       _regsub
+ 0001:00014F06  Idle _regtail
+ 0001:00015073  Idle _regtry
+ 0002:000013F8       _Reg_Off_Txt
+ 0002:000013F4       _Reg_On_Txt
+ 0002:000013F0       _Reg_Pos
+ 0002:00003050       _Reg_Search
+ 0002:0000166C       _Rel_Bad_Txt
+ 0002:00025B38       _Rel_First
+ 0002:00025B3C       _Rel_Last
+ 0002:00003004       _Remember
+ 0001:0000991D       _Remove_Char
+ 0001:0000992D       _Remove_Help
+ 0001:0000993D       _Remove_Line
+ 0001:0000994D       _Remove_Page
+ 0001:0000995D       _Remove_Par
+ 0001:0000996D       _Remove_Paste
+ 0001:0000997D       _Remove_Search
+ 0001:0000998D       _Remove_Sent
+ 0001:0000999D       _Remove_Subs
+ 0001:000032B7       _Remove_Tabs
+ 0001:000099AD       _Remove_Unknown
+ 0001:000099BD       _Remove_Word
+ 0001:00007086       _Rem_Autosave
+ 0001:00012E0A  Idle _Rem_Del
+ 0001:00004115       _Rem_It
+ 0001:00012DC0       _Rem_Pad
+ 0001:0001DAFC       _rename
+ 0002:00002ED0       _Rep
+ 0001:0000C322       _Repaint
+ 0001:0000CB8F       _Repl
+ 0002:000030B8       _Replace_Mode
+ 0002:000013C4       _Replace_Mode_Txt
+ 0002:000013C0       _Replace_Pos
+ 0002:00002554       _Replace_This_Txt
+ 0002:0002464F       _Rep_Str
+ 0002:0000311C       _Requested_Margin
+ 0002:00003110       _Reservation
+ 0002:00002568       _Reserved_Txt
+ 0001:000090F0       _Reset
+ 0001:00000EA9       _Reset_Buf
+ 0001:000185F1       _Reset_Screen
+ 0001:0001911F       _Reset_Term
+ 0002:00002578       _Reset_Txt
+ 0002:0002387C       _Reset_T_String
+ 0001:0000D7D4       _Reset_Width
+ 0002:000024DC       _Return_To_Sedt_Txt
+ 0002:000254D8       _Return_Value
+ 0002:000013BC       _Reverse_Txt
+ 0002:00003134       _Right_Margin
+ 0002:000024C4       _Right_Margin_Txt
+ 0001:0000AF0C       _Ruler
+ 0002:00002514       _Ruler_Syntax_Txt
+ 0001:00002743       _Rul_Load
+ 0001:0000296F       _Rul_Save
+ 0002:000046F0       _Run_From
+ 0001:0000C6FD       _R_Spawn
+ 0001:000047A5       _Save_Auto
+ 0002:000016C8       _Save_Changes_Txt
+ 0002:00002FFC       _Save_Context
+ 0001:00002D64       _Save_Functions
+ 0001:00002A35       _Save_Keys
+ 0002:000256F0       _Save_Left
+ 0002:000256F4       _Save_Length
+ 0002:00025508       _Save_Stack
+ 0001:00009BFF       _Save_The_Context
+ 0002:000256EC       _Save_Top
+ 0002:000256F8       _Save_Width
+ 0001:0000D1C5       _Sav_Key
+ 0001:00006D64       _Sav_Set
+ 0001:00004CDA       _Sav_Window
+ 0002:000258A8       _Scancode
+ 0002:0000307C       _Scan_Defs
+ 0002:00027C98       _Scan_Tab
+ 0002:000030A0       _Scl_Bottom
+ 0001:00018540  Idle _Scl_Down
+ 0002:000258A4       _Scl_Regions
+ 0002:0000309C       _Scl_Top
+ 0001:000184E5  Idle _Scl_Up
+ 0001:00012607  Idle _Screen
+ 0002:0000141C       _Screen_Shft_Txt
+ 0002:000258B0       _Scr_Col
+ 0002:000030A4       _Scr_Length
+ 0002:00003138       _Scr_Shift
+ 0002:00003098       _Scr_Width
+ 0001:00012866  Idle _Search_End
+ 0001:0000D6F3       _Search_Load
+ 0001:00017838  Idle _Sedt_Args
+ 0001:00016D3B  Idle _Sedt_Cleanup
+ 0001:00017E8E  Idle _Sedt_Files
+ 0001:00015705  Idle _Sedt_Init
+ 0001:00016D27  Idle _Sedt_Main
+ 0001:00016D80       _Sedt_Shutdown
+ 0001:000077FB       _Select
+ 0002:000278D0       _Sel_Col
+ 0001:0001160C       _Sel_Range
+ 0001:00012198  Idle _Sentence
+ 0002:000024A4  Idle _September_Txt
+ 0001:00019101       _Setup_Term
+ 0001:0001C870       _setvbuf
+ 0001:000099CD       _Set_Block
+ 0001:00009A26       _Set_Case_Sensitive
+ 0001:0000587B       _Set_Changes
+ 0001:000183BF       _Set_Cursor
+ 0001:00009A65       _Set_Cursor_Free
+ 0001:000099F7       _Set_Direction
+ 0001:0000345E       _Set_Edit_Region
+ 0001:00009A50       _Set_Ins_Defs
+ 0001:00004839       _Set_Key
+ 0001:00013E2A       _Set_Logical
+ 0002:00002E3C       _Set_Num_Lock
+ 0001:00003B01       _Set_Offset
+ 0001:00013DD0       _Set_Physical
+ 0001:00012A4E       _Set_Region
+ 0001:00009A3B       _Set_Reg_Search
+ 0001:000099E2       _Set_Replace
+ 0001:00006DA4       _Set_Save
+ 0001:00018606       _Set_Scroll
+ 0001:00003101       _Set_Tabs
+ 0001:00009A11       _Set_Tab_Expand
+ 0001:00018268       _Set_Terminal
+ 0002:000030CC       _Severe_Error
+ 0002:000015E8  Idle _Severe_Txt
+ 0002:00003020       _Sharemess
+ 0002:000025B0       _Share_1_Txt
+ 0002:000025B4       _Share_2_Txt
+ 0002:000025B8       _Share_3_Txt
+ 0002:000025BC       _Share_4_Txt
+ 0002:000025C0       _Share_5_Txt
+ 0002:000025C4       _Share_6_Txt
+ 0002:000030E8  Idle _Shifted_Out
+ 0002:00001418       _Shift_Arg_Pos
+ 0001:000098C2       _Shift_In
+ 0001:000098C3       _Shift_Out
+ 0002:00001414       _Shift_Pos
+ 0002:0000302C       _Shift_Screen
+ 0001:0000939F       _Shift_Toggle
+ 0001:0000A148       _Show_Ascii
+ 0001:00009E94       _Show_Bcast
+ 0001:00009337       _Show_Column
+ 0002:000016E4       _Show_Column_Txt
+ 0002:000030AC       _Show_Errors
+ 0001:00005B43  Idle _Show_Help
+ 0002:000030D8       _Show_Marks
+ 0002:00002FEC       _Show_Ruler
+ 0001:00009506       _Show_Version
+ 0001:0001F9A0  Idle _signal
+ 0001:0000196F  Idle _Signal_CC
+ 0002:000030EC       _Skip
+ 0001:00011DA2  Idle _Skip_Spaces
+ 0001:00017642       _Skip_To
+ 0002:000015F0  Idle _Small_Txt
+ 0001:00019485       _Space_Fill
+ 0001:0000C494       _Spawn
+ 0001:0001F0B4       _spawnl
+ 0002:000024E0       _Spawn_Error_Txt
+ 0002:00001634  Idle _Spec_Load_Txt
+ 0001:0001C8FC       _sprintf
+ 0001:0001DB1C       _stat
+ 0001:00019CA4       _strcat
+ 0001:00019CE0       _strchr
+ 0001:00019D08       _strcmp
+ 0001:00019D34       _strcpy
+ 0001:00019DF8       _strcspn
+ 0001:00019E24       _stricmp
+ 0001:00002FE5       _Strip_Trailing
+ 0001:00019D64       _strlen
+ 0001:00019D80       _strncmp
+ 0001:00019E68       _strncpy
+ 0001:00019EB8       _strpbrk
+ 0001:00019EE4       _strrchr
+ 0002:000049D8       _St_Col
+ 0002:000049D4       _St_Line
+ 0001:00007CFF       _Subs
+ 0001:00007D65       _Subs_Conf
+ 0001:00007DFC       _Subs_Next
+ 0001:0000814C  Idle _Subs_Next_Conf
+ 0002:000254DC       _Sub_H
+ 0001:0001836E  Idle _Sub_Set
+ 0002:000254E0       _Sub_W
+ 0002:0000300C       _Sub_Window
+ 0002:00003010       _Sub_X
+ 0002:00003014       _Sub_Y
+ 0001:00005828       _Syntax_Error
+ 0002:00001710       _Syntax_Error_Txt
+ 0001:0001FA7C       _system
+ 0002:00002EA8       _S_Border
+ 0001:0000008A  Idle _S_Copy
+ 0001:00016E43       _S_Header
+ 0001:000176CB       _S_Ruler
+ 0001:0000927E       _Tab
+ 0002:00024CAC       _Tabs
+ 0002:000030C8       _Tab_Expand
+ 0002:000013DC       _Tab_Exp_Txt
+ 0002:000013E0       _Tab_Ins_Txt
+ 0002:000013D8       _Tab_Pos
+ 0001:00007264       _Tab_To
+ 0001:0000931B       _Tab_Toggle
+ 0001:00019144  Idle _Term_Error
+ 0002:00002F50       _Term_Names
+ 0002:00003070       _Term_Type
+ 0001:000178B5  Idle _Test_Args
+ 0001:00016B99  Idle _Test_Auto
+ 0001:00015CE9  Idle _Test_Config
+ 0001:00013FC0  Idle _Test_Dir_Key
+ 0001:00016739  Idle _Test_Files
+ 0001:0000926F       _Test_Input
+ 0001:00016A85  Idle _Test_Keyboard
+ 0001:0001685C  Idle _Test_Mapping
+ 0001:00016B94  Idle _Test_Palette
+ 0001:000167D1  Idle _Test_Screenshift
+ 0001:00016785  Idle _Test_Searches
+ 0001:000168C7  Idle _Test_System
+ 0002:00025B94       _This_Cmd
+ 0002:00003120       _This_Line
+ 0002:00001698  Idle _This_Unsaved_Txt
+ 0001:0002050C       _time
+ 0001:0000944E       _Tog_Block
+ 0001:000094A1       _Tog_Control
+ 0001:00009517       _Tog_Cursor
+ 0001:000094E5       _Tog_Direction
+ 0001:00009424       _Tog_Marks
+ 0001:00009546       _Tog_Reg_Search
+ 0001:00009562       _Tog_Ruler
+ 0001:0001E188       _tolower
+ 0002:0000310C       _Toofar
+ 0002:000016A4       _Too_Long_Arg_Txt
+ 0001:000108EB  Idle _Top
+ 0002:00003084       _Top_Func
+ 0002:00003064       _Top_Row
+ 0001:0001E1B0       _toupper
+ 0002:00002550       _To_Deep_Ex_Txt
+ 0002:000014B8  Idle _Txt_ANSI
+ 0002:00001460       _Txt_At
+ 0002:00001580       _Txt_Autosave
+ 0002:00002594       _Txt_Auto_Warn
+ 0002:000014E8       _Txt_Backupfile
+ 0002:0000172C       _Txt_Bad_Version
+ 0002:00001510       _Txt_Bios
+ 0002:00001624       _Txt_Bof
+ 0002:00001584       _Txt_Buffering
+ 0002:00001644       _Txt_Cancelled
+ 0002:000015A0       _Txt_Caps_Lock
+ 0002:00001388  Idle _Txt_Changed_Read_Only
+ 0002:00001560       _Txt_Check
+ 0002:0000154C       _Txt_Cleared
+ 0002:00001440       _Txt_Color
+ 0002:00001564       _Txt_Column
+ 0002:00001554       _Txt_Context
+ 0002:000014E4       _Txt_Controlz
+ 0002:0000145C       _Txt_Convertible
+ 0002:000014CC       _Txt_Cursor
+ 0002:000014C0       _Txt_Cursorline
+ 0002:000015A8       _Txt_Debug
+ 0002:0000159C       _Txt_Dialog
+ 0002:00001514       _Txt_Direct
+ 0002:00001540       _Txt_Disabled
+ 0002:00001568       _Txt_Displayed
+ 0002:000015E4       _Txt_Done
+ 0002:00001530       _Txt_Edt
+ 0002:00001504       _Txt_Ega43
+ 0002:00001590  Idle _Txt_EMS
+ 0002:00001544       _Txt_Enabled
+ 0002:000016BC       _Txt_End
+ 0002:00001458       _Txt_Enhanced
+ 0002:00001620       _Txt_Eof
+ 0002:00001520       _Txt_Expanded
+ 0002:000015C8       _Txt_Files
+ 0002:00001574  Idle _Txt_Firmware
+ 0002:000014C4       _Txt_Fixed
+ 0002:000014C8       _Txt_Floating
+ 0002:000014F8       _Txt_Fontsize
+ 0002:0000155C       _Txt_Forgotten
+ 0002:000014D0       _Txt_Free
+ 0002:00001588  Idle _Txt_Freemem
+ 0002:00001500       _Txt_Gold
+ 0002:0000259C       _Txt_Got_Auto
+ 0002:00001474       _Txt_Ibmat
+ 0002:00001484       _Txt_Ibmat339
+ 0002:00001478       _Txt_Ibmconvertible
+ 0002:0000146C       _Txt_Ibmpc
+ 0002:00001470       _Txt_Ibmxt
+ 0002:00001488       _Txt_Ibmxt286
+ 0002:00001494       _Txt_Ibmxtii
+ 0002:0000151C       _Txt_Inserted
+ 0002:000014F4       _Txt_Ins_Defs
+ 0002:000014D8       _Txt_Journaling
+ 0002:0000144C       _Txt_Keyboard
+ 0002:000015BC       _Txt_Literal
+ 0002:00001450       _Txt_LK250
+ 0002:0000162C       _Txt_Loading
+ 0002:00001528       _Txt_Mapping
+ 0002:000015D0       _Txt_Margin
+ 0002:000014FC       _Txt_Maxscroll
+ 0002:00001550       _Txt_Mode
+ 0002:00001444       _Txt_Mono
+ 0002:000016B8       _Txt_More
+ 0002:0000156C       _Txt_Mouse
+ 0002:00001454       _Txt_New
+ 0002:00001578  Idle _Txt_Newint16
+ 0002:00001628       _Txt_New_File
+ 0002:00001594  Idle _Txt_NoEMS
+ 0002:0000158C  Idle _Txt_Nofreemem
+ 0002:000015A4       _Txt_Normal
+ 0002:0000153C       _Txt_Numlock
+ 0002:000014E0       _Txt_Off
+ 0002:0000152C  Idle _Txt_Old
+ 0002:0000157C  Idle _Txt_Oldint16
+ 0002:000014DC       _Txt_On
+ 0002:000015B4       _Txt_Overlapped
+ 0002:00001508       _Txt_Palette
+ 0002:00001480  Idle _Txt_Pc100
+ 0002:000024F4       _Txt_Printing
+ 0002:00001498       _Txt_Ps230
+ 0002:0000148C       _Txt_Ps250
+ 0002:00001490       _Txt_Ps260
+ 0002:0000149C       _Txt_Ps280
+ 0002:00001720       _Txt_Read_Only
+ 0002:000015C0       _Txt_Regular
+ 0002:00001570       _Txt_Remember
+ 0002:000015CC       _Txt_Reservation
+ 0002:000014D4       _Txt_Restricted
+ 0002:000014EC       _Txt_Return
+ 0002:00001524       _Txt_Ruler
+ 0002:00001558       _Txt_Saved
+ 0002:000016F8       _Txt_Saving
+ 0002:00001538  Idle _Txt_Scancode
+ 0002:0000143C       _Txt_Screen
+ 0002:000014F0       _Txt_Screenshift
+ 0002:000015B8       _Txt_Searches
+ 0002:00001548       _Txt_Set
+ 0002:00001598       _Txt_Share
+ 0002:00001464       _Txt_SLT
+ 0002:00001448       _Txt_Standard
+ 0002:00001468       _Txt_System
+ 0002:00001518       _Txt_Tabs
+ 0002:000014A0       _Txt_Tandy
+ 0002:000014BC  Idle _Txt_tcap
+ 0002:000015C4       _Txt_Terminal
+ 0002:0000147C       _Txt_Vaxmate
+ 0002:0000150C       _Txt_Video
+ 0002:000014B4  Idle _Txt_Vk100
+ 0002:000014A4  Idle _Txt_Vt100
+ 0002:000014A8  Idle _Txt_Vt200
+ 0002:000014AC  Idle _Txt_Vt300
+ 0002:000014B0  Idle _Txt_Vt52
+ 0002:000015AC       _Txt_Windows
+ 0002:00001668       _Txt_Working
+ 0002:00001534       _Txt_Wps
+ 0002:000015B0       _Txt_Zoomed
+ 0002:000025A4       _Txt_Zoomed_Error
+ 0001:00020044  Idle _tzset
+ 0001:0001E388  Idle _ultoa
+ 0002:000025A0       _Unassigned_Txt
+ 0002:00001688       _Undefined_Escape_Txt
+ 0001:00004854       _Undelete
+ 0001:0000910E       _Undo
+ 0001:00007854       _Und_Char
+ 0001:000078A4       _Und_Line
+ 0001:000078CC       _Und_Par
+ 0001:000078F4       _Und_Pg
+ 0001:00007944       _Und_Sen
+ 0001:0000791C       _Und_Unknown
+ 0001:0000787C       _Und_Word
+ 0002:00001714       _Unknown_Command_Txt
+ 0001:00005847       _Unk_Err
+ 0001:0001BC0C       _unlink
+ 0001:00013F2F       _Unmark_Cursor
+ 0002:00001648       _Unprogrammed_Txt
+ 0002:00001680       _Unrecognized_Terminal_Txt
+ 0002:0000138C  Idle _Unsaved_Blank_Txt
+ 0002:000016AC       _Unsaved_Chng_Sure_Txt
+ 0002:00001694       _Unsaved_Chng_Txt
+ 0002:00001384  Idle _Unsaved_Txt
+ 0002:00002598  Idle _Unsupported_Term_Txt
+ 0002:000030E4       _Update_Flag
+ 0001:000098C6       _Update_Off
+ 0001:000098CE       _Update_On
+ 0001:000171EA       _Upd_Header
+ 0001:0000D4E9       _Upd_Screen
+ 0001:000109C2  Idle _Upper_Case
+ 0002:00003000       _Use_Mouse
+ 0002:00002ECC       _Version
+ 0002:000015EC       _Version_Txt
+ 0001:00010411  Idle _Vertical
+ 0001:0001C9F8       _vfprintf
+ 0001:000070D0       _VKS_Exit
+ 0001:0000714C       _VKS_Quit
+ 0001:0001D100       _vprintf
+ 0001:0001C920       _vsprintf
+ 0001:00005AE8  Idle _Wait_Char
+ 0001:00006CFD  Idle _Wait_Mess
+ 0002:00025B98       _What_Kind
+ 0001:00019142  Idle _Wide_Screen
+ 0001:0000C493       _Width
+ 0001:0000C492       _Width132
+ 0001:0000C491       _Width80
+ 0001:00019B9F       _WIN32attrib
+ 0001:00019A7F  Idle _WIN32cleartoeol
+ 0001:00019982       _WIN32clrtypeahead
+ 0002:0000481C       _win32ConsoleHnd
+ 0001:0001994F       _WIN32cursor
+ 0001:00019925       _WIN32fini
+ 0001:000197C8       _WIN32init
+ 0001:00019992       _WIN32istypeahead
+ 0002:00004820       _win32KeybHnd
+ 0001:00019A21       _WIN32scrclear
+ 0001:00019B44       _WIN32scrdown
+ 0001:00019866  Idle _WIN32scrend
+ 0001:00019A9B       _WIN32scrup
+ 0001:0000796C       _Window
+ 0001:0000ACBE       _Window_Cascade
+ 0001:00009F43       _Window_Changed
+ 0001:0000A05B       _Window_Cycle
+ 0001:0000ACBF       _Window_Fix_Bottom
+ 0001:0000AD51       _Window_Fix_Left
+ 0001:0000ADE4       _Window_Fix_Right
+ 0001:0000AE75       _Window_Fix_Top
+ 0001:0000A6C4       _Window_Grow
+ 0001:0000A953       _Window_Move
+ 0001:00009FE4       _Window_Not_Used
+ 0001:000058BD       _Window_Position
+ 0002:000256FC       _Window_Ref
+ 0001:0000A81A       _Window_Shrink
+ 0001:0000AB7D       _Window_Tile
+ 0001:00009E95       _Window_Used
+ 0001:0000AA9D       _Window_Zoom
+ 0001:000116EA  Idle _Word
+ 0002:00003128       _Word_Wrap
+ 0002:000024C0       _Word_Wrap_Txt
+ 0002:000030F8       _Working_Flag
+ 0001:0001BC14       _write
+ 0002:00001718       _Write_Error_Txt
+ 0001:00015609  Idle _Write_Rem
+ 0002:000024B8       _Writing_Ruler_Txt
+ 0001:00004664       _Wr_Buffer
+ 0002:000030F4       _Wr_Count
+ 0001:00005866       _Wr_Error
+ 0001:0000A1A0       _W_D_Border
+ 0001:0000A3C7       _W_S_Border
+ 0001:00006DCA       _Yes_No
+ 0002:0000168C       _Yes_No_Txt
+ 0002:000049DC       _Zap_Col
+ 0002:000049E4       _Zap_Count
+ 0002:000049E0       _Zap_Line
+ 0001:00007ACC       _Zero
+ 0001:000006F5  Idle _Zero_Buffer
+ 0001:0001949A       _Zero_Fill
+ 0002:0000306C       _Zoomed
+ 0002:00003044       _Zoom_Windows
+ 0001:0001ED1C       __abort
+ 0001:00000000  Idle __acrtused
+ 0001:0001EFF0       __addarg
+ 0002:00004264       __add_pid_ptr
+ 0001:0001BC1C       __allocbuf
+ 0002:000043C4  Idle __AmPm
+ 0002:0002CE7C  Idle __argc
+ 0002:0002CE80       __argv
+ 0002:000041D4       __atexitcnt
+ 0002:0002CDFC       __atexittbl
+ 0001:0001FE10  Idle __atime
+ 0002:0002CEA4       __C0argc
+ 0002:0002CEA8       __C0argv
+ 0002:0002CEAC       __C0environ
+ 0001:0001EDCC  Idle __cexit
+ 0002:00003EC0       __cfinfo_get
+ 0001:0001FD84       __cleanup
+ 0001:0001E1D8       __clear87
+ 0001:0001E1EC       __control87
+ 0001:0001FB6C       __create_shmem
+ 0002:00004008       __ctype
+ 0001:0001B3E3       __CurrExcContext
+ 0001:0001EDDC  Idle __c_exit
+ 0002:000044FC       __daylight
+ 0002:000043CC       __Days
+ 0002:00004178       __default87
+ 0002:0002CA70       __DestructorCountPtr
+ 0002:0002CE90  Idle __dll_table
+ 0002:0002CBD8       __doserrno
+ 0002:00003EC8  Idle __dosErrorToSV
+ 0001:0001F200  Idle __dummy_add_pid
+ 0001:0001D828       __dup_handle
+ 0002:0002CE88       __environ
+ 0002:0002CE8C  Idle __env_lock
+ 0001:0001ECC0       __ErrorExit
+ 0001:0001EC00       __ErrorMessage
+ 0001:0001B95B       __ExceptInit
+ 0001:0001ABEB       __ExceptionHandler
+ 0002:00003528  Idle __ExceptVarsSize
+ 0002:0002CE98       __ExcRegPtr
+ 0001:0001EDB4       __exit
+ 0002:000041D8       __exitbuf
+ 0002:000041DC       __exitfopen
+ 0002:000041E0  Idle __exitopen
+ 0001:0001BB48  Idle __exit_except
+ 0001:0001E7CC  Idle __expand
+ 0002:000041E8  Idle __expandptr
+ 0001:0001C4C0       __fgetc
+ 0002:00003554       __fileinfo
+ 0001:0001D180       __flushall
+ 0001:0001BDD8       __flushout
+ 0002:000039BC       __fmode
+ 0002:000039C0       __fmodeptr
+ 0001:0001E22C       __fpreset
+ 0002:0002CDE0  Idle __free_dummy
+ 0001:0001D890  Idle __free_handle
+ 0002:0002CDF0       __free_list
+ 0001:0001D5EC       __fullpath
+ 0001:0001D688       __getdcwd
+ 0001:0000006E  Idle __GetExceptDLLinfo
+ 0001:0001BA14       __GetExceptDLLinfoInternal
+ 0001:0001E470       __getmem
+ 0001:0001FB64       __getpid
+ 0001:0001D7E8       __get_handle
+ 0001:0001A692  Idle __Global_unwind
+ 0002:0002CA74       __HandlerPtr
+ 0002:0002CB1C       __handles
+ 0001:0001E640       __heapadd
+ 0002:0002CBDC       __heaps
+ 0002:00004184       __heap_brk
+ 0002:00004188  Idle __heap_top
+ 0002:0000006A       __hInstance
+ 0001:0001BB5C       __InitDefaultHander
+ 0001:0001BE38       __initfmode
+ 0001:0001E42C       __initmatherr
+ 0001:0001EE3C       __initwild
+ 0001:0001BB30  Idle __init_except
+ 0001:0001FB74       __init_exit_proc
+ 0001:0001D940       __init_handles
+ 0001:0001C944       __init_streams
+ 0001:000201CC       __isDST
+ 0002:0002CEBC  Idle __isWindows
+ 0002:00004394  Idle __LMonth
+ 0001:0001F3E0       __LoadProg
+ 0001:0001AB6C       __Local_unwind
+ 0002:00004348  Idle __LWeekday
+ 0001:0001E3D0       __matherr
+ 0001:0001E3FC       __matherrl
+ 0001:0001EA40  Idle __msize
+ 0002:00004114       __nextrealptr
+ 0002:00003918       __nfile
+ 0002:0002CDDC       __nheaps
+ 0002:00003EC4       __notUmask
+ 0002:0000391C       __openfd
+ 0002:0002CEA0       __oscmd
+ 0002:0002CE9C       __osenv
+ 0002:0002CDF8       __ostype
+ 0002:0002CA7C       __pidtab
+ 0002:0000417C       __pmatherr
+ 0002:00004180       __pmatherrl
+ 0001:0001DCF4  Idle __read
+ 0002:00004110       __realcvtptr
+ 0001:0001E56C  Idle __release_heap
+ 0001:0001AB7F  Idle __Return_unwind
+ 0002:0002CDF4       __rover
+ 0001:0001DCAC       __rtl_read
+ 0001:0001DD10       __rtl_write
+ 0001:0001E226       __scanrslt
+ 0002:0000411C       __scanrsltptr
+ 0001:0001E220       __scantod
+ 0002:00004118       __scantodptr
+ 0001:0001F0D4       __searchenv
+ 0001:0001F104       __searchstr
+ 0001:0001EE40  Idle __setargv
+ 0002:000041E4       __setargv__
+ 0002:00004288  Idle __setenvp__
+ 0001:0001BAE4  Idle __setexc
+ 0001:0001BB94       __SetExceptionHandler
+ 0001:0001BB10  Idle __SetUserHandler
+ 0002:00004364       __SMonth
+ 0001:0001FC20       __startup
+ 0001:000204A4       __statcvt
+ 0002:0002CEB8  Idle __stkbase
+ 0002:00003540       __stkchk
+ 0001:00019F10       __stpcpy
+ 0002:00003558       __streams
+ 0002:0000432C       __SWeekday
+ 0002:000039D8       __sys_errlist
+ 0002:00003A9C       __sys_nerr
+ 0001:0001FDFC       __terminate
+ 0002:000044F8       __timezone
+ 0002:00000059  Idle __TLS_index
+ 0002:0000005D  Idle __TLS_index4
+ 0002:0002CBC4       __tmpnum
+ 0001:000202E0       __totalsec
+ 0002:000044F0       __tzname
+ 0001:0001D1B4       __umask
+ 0001:0001BB00  Idle __unsetexc
+ 0001:0001BBA9       __UnsetExceptionHandler
+ 0001:0001BB24  Idle __unsetuserhandler
+ 0001:0001BBD5  Idle __UnwindException
+ 0002:0002CA78  Idle __UserHandlerPtr
+ 0001:0001EAE8       __virt_commit
+ 0001:0001EB3C       __virt_decommit
+ 0001:0001EB7C       __virt_release
+ 0001:0001EA7C       __virt_reserve
+ 0001:0001DD58  Idle __write
+ 0001:0001D120       __xfclose
+ 0001:0001D148       __xfflush
+ 0002:000043D8       __YDays
+ 0001:0001DD74       ___access
+ 0001:0001B8AF       ___call_terminate
+ 0001:0001B928       ___call_unexpected
+ 0001:0001DDB0       ___close
+ 0002:00003450  Idle ___CPPexceptionList
+ 0001:0001BA3C       ___DefHandler
+ 0001:0001BB76       ___doGlobalUnwind
+ 0001:0001DAC8       ___DOSerror
+ 0001:0001DDF0       ___dup
+ 0001:0001DE04       ___dup2
+ 0001:0001D1CC       ___eof
+ 0001:0001ECB0  Idle ___ErrorMessage
+ 0002:00003454  Idle ___exceptFlags
+ 0002:00003470  Idle ___exceptMemAllocVars
+ 0002:0000346C  Idle ___exceptStaticBuffP
+ 0002:00003474  Idle ___ExceptStaticXbuff
+ 0001:0001C028       ___fputn
+ 0001:0001BFB0       ___getfp
+ 0001:0001DA84       ___IOerror
+ 0001:0001DED0       ___isatty
+ 0002:00000058       ___isDLL
+ 0002:00000069       ___isGUI
+ 0001:00019F3C  Idle ___JumpToCatch__
+ 0001:0001E2C8       ___longtoa
+ 0001:0001DF00       ___lseek
+ 0001:0001C694       ___mkname
+ 0001:0001E21A       ___nextreal
+ 0001:0001DAE8       ___NTerror
+ 0001:0001DF78       ___open
+ 0001:0001BF08       ___openfp
+ 0001:0001D2C4       ___read
+ 0001:0001E214       ___realcvt
+ 0002:00003458  Idle ___terminatePTR
+ 0002:00003468  Idle ___throwExceptionName
+ 0002:00003460  Idle ___throwFileName
+ 0002:00003464  Idle ___throwLineNumber
+ 0001:0001C6E4       ___tmpnam
+ 0002:0000345C  Idle ___unexpectdPTR
+ 0001:0001E168       ___unlink
+ 0001:0001E33C       ___utoa
+ 0001:0001CAA4       ___vprinter
+ 0001:0001D4AC       ___write
+
+  Address         Publics by Value
+
+ 0001:00000000  Idle __acrtused
+ 0001:0000006E  Idle __GetExceptDLLinfo
+ 0001:00000074       _C_Move
+ 0001:0000008A  Idle _S_Copy
+ 0001:000000B6       _Fatalerror
+ 0001:000000E0  Idle _Blockread
+ 0001:0000013B  Idle _Blockwrite
+ 0001:00000196  Idle _Out_Buf
+ 0001:000003CD  Idle _In_Buf
+ 0001:00000567  Idle _B_Flush
+ 0001:000005A4       _B_Rewind
+ 0001:000005F9       _B_Goto
+ 0001:00000691  Idle _Out_In_Buf
+ 0001:000006B8       _B_Init
+ 0001:000006C6       _B_Reset
+ 0001:000006F5  Idle _Zero_Buffer
+ 0001:0000072D       _B_Modify
+ 0001:00000753  Idle _Make_Room
+ 0001:0000079B       _B_Put
+ 0001:00000800       _B_Put_S
+ 0001:0000089C       _B_Repl_S
+ 0001:00000902       _B_Replace
+ 0001:00000944       _B_Del
+ 0001:000009A6       _B_Get
+ 0001:000009D0       _B_Get_N
+ 0001:00000A48       _B_Get_S
+ 0001:00000B1C       _B_Rem
+ 0001:00000B98       _B_Copy
+ 0001:00000C6D       _B_B_Get
+ 0001:00000CC2       _B_Search
+ 0001:00000D5F       _B_B_Search
+ 0001:00000DF9  Idle _Mem_Return
+ 0001:00000E35       _C_Scan
+ 0001:00000E53  Idle _C_Bscan
+ 0001:00000E76       _Init_Buf
+ 0001:00000EA9       _Reset_Buf
+ 0001:00000ED0  Idle _Get_Count
+ 0001:00000F9C       _Com_Parse
+ 0001:0000194A       _Check_CC
+ 0001:0000196F  Idle _Signal_CC
+ 0001:0000198E  Idle _Ex_Command
+ 0001:00001A7A       _Move_Entity
+ 0001:00001B7E  Idle _Move_Forward
+ 0001:00001E4B       _Move_Back
+ 0001:0000223B  Idle _Goto_This
+ 0001:0000228B  Idle _Paint_To_This
+ 0001:00002351       _Backto_This
+ 0001:0000238B       _B_Save
+ 0001:00002535       _Put_Out
+ 0001:00002569       _Get_Entity
+ 0001:0000263D       _Adj_Points
+ 0001:000026B8       _Put_Time
+ 0001:000026F8       _Out_Error
+ 0001:00002722       _Other_Window
+ 0001:00002743       _Rul_Load
+ 0001:0000290B  Idle _Ins_String
+ 0001:0000296F       _Rul_Save
+ 0001:00002A35       _Save_Keys
+ 0001:00002D64       _Save_Functions
+ 0001:00002F81  Idle _f_puti
+ 0001:00002FE5       _Strip_Trailing
+ 0001:00003101       _Set_Tabs
+ 0001:000032B7       _Remove_Tabs
+ 0001:0000345E       _Set_Edit_Region
+ 0001:00003497       _Cancel_Edit_Region
+ 0001:000034B0       _Key_Mess
+ 0001:000034C1       _Clear_Region
+ 0001:00003531       _Counter_Get
+ 0001:0000365C       _Counter_Add
+ 0001:00003787       _Get_Counter_Index
+ 0001:00003820       _Query
+ 0001:00003865       _Execute_Key
+ 0001:00003975       _Execute_Function
+ 0001:00003A50  Idle _Diag_Error
+ 0001:00003A65       _Pos_Cursor
+ 0001:00003B01       _Set_Offset
+ 0001:00003BEA       _Adj_Lines
+ 0001:00003BF8       _Move_Key
+ 0001:00003C50       _Init_Entity
+ 0001:00003C96       _Blk_Rem_It
+ 0001:00004115       _Rem_It
+ 0001:00004664       _Wr_Buffer
+ 0001:000047A5       _Save_Auto
+ 0001:00004839       _Set_Key
+ 0001:00004854       _Undelete
+ 0001:00004C92       _Chk_EL
+ 0001:00004CDA       _Sav_Window
+ 0001:00005250       _Load_Window
+ 0001:000054F6       _Newwindow
+ 0001:00005625       _Ch_Window
+ 0001:00005809       _Com_Error
+ 0001:00005828       _Syntax_Error
+ 0001:00005847       _Unk_Err
+ 0001:00005866       _Wr_Error
+ 0001:0000587B       _Set_Changes
+ 0001:000058A6       _Clr_Changes
+ 0001:000058BD       _Window_Position
+ 0001:00005AE8  Idle _Wait_Char
+ 0001:00005B43  Idle _Show_Help
+ 0001:00005B91  Idle _Display_Help
+ 0001:00005C9F       _Help
+ 0001:00005CE3  Idle _Do_Help
+ 0001:00006CFD  Idle _Wait_Mess
+ 0001:00006D64       _Sav_Set
+ 0001:00006DA4       _Set_Save
+ 0001:00006DC0       _Clr_Typeahead
+ 0001:00006DCA       _Yes_No
+ 0001:00006F35       _Exit_Sedt
+ 0001:00007086       _Rem_Autosave
+ 0001:000070D0       _VKS_Exit
+ 0001:0000714C       _VKS_Quit
+ 0001:00007168       _Quit
+ 0001:00007264       _Tab_To
+ 0001:00007385       _A_New_Line
+ 0001:0000744B       _New_Line
+ 0001:00007497       _Do_New_Line
+ 0001:000075B8       _Find_Margin
+ 0001:000076BB       _Del_It
+ 0001:00007707       _Get
+ 0001:00007761  Idle _Get_E_Type
+ 0001:000077CA       _Advance
+ 0001:000077E4       _Backup
+ 0001:000077FB       _Select
+ 0001:0000782C       _Paste
+ 0001:00007854       _Und_Char
+ 0001:0000787C       _Und_Word
+ 0001:000078A4       _Und_Line
+ 0001:000078CC       _Und_Par
+ 0001:000078F4       _Und_Pg
+ 0001:0000791C       _Und_Unknown
+ 0001:00007944       _Und_Sen
+ 0001:0000796C       _Window
+ 0001:00007998       _Ascii
+ 0001:000079CC       _Get_Arg
+ 0001:00007A4D       _File_Get
+ 0001:00007ACC       _Zero
+ 0001:00007C06       _Mark_Pos
+ 0001:00007C9D       _End_Mark
+ 0001:00007CFF       _Subs
+ 0001:00007D65       _Subs_Conf
+ 0001:00007DCB       _Ins_Del
+ 0001:00007DFC       _Subs_Next
+ 0001:0000814C  Idle _Subs_Next_Conf
+ 0001:000084B0       _Put_Rep
+ 0001:0000854F       _Insert
+ 0001:0000867B       _File_Edit
+ 0001:0000869D  Idle _Edit_File
+ 0001:0000894B  Idle _C_Read_L
+ 0001:00008979  Idle _C_Read_I
+ 0001:000089A7       _Read_Context
+ 0001:00008B8A       _File_Save
+ 0001:00008C51       _File_Write
+ 0001:00008C8E       _End_Com
+ 0001:00008CA0       _Def_Key_Function
+ 0001:00008D8C       _Def_Key_Alpha
+ 0001:00008DA7       _Def_Key_Key
+ 0001:00008DBF       _Def_Key_G_Alpha
+ 0001:00008DDD       _Def_Key_G_Key
+ 0001:00008DF8  Idle _Def_Key
+ 0001:0000903E       _Def_Key_Number
+ 0001:0000907F       _Def_Function
+ 0001:000090F0       _Reset
+ 0001:0000910E       _Undo
+ 0001:0000925E       _Input_Test
+ 0001:0000926F       _Test_Input
+ 0001:0000927E       _Tab
+ 0001:000092FF       _Overstrike_Mode
+ 0001:0000931B       _Tab_Toggle
+ 0001:00009337       _Show_Column
+ 0001:00009363       _Get_Ruler
+ 0001:0000939F       _Shift_Toggle
+ 0001:000093BB       _Case_Toggle
+ 0001:000093D7       _Ins_Defs_Toggle
+ 0001:000093F3       _Cursor_Free_Toggle
+ 0001:0000940F       _Change_Window
+ 0001:00009419       _Err_Level
+ 0001:00009424       _Tog_Marks
+ 0001:0000944E       _Tog_Block
+ 0001:000094A1       _Tog_Control
+ 0001:000094E5       _Tog_Direction
+ 0001:00009506       _Show_Version
+ 0001:00009517       _Tog_Cursor
+ 0001:00009546       _Tog_Reg_Search
+ 0001:00009562       _Tog_Ruler
+ 0001:000095C1       _Curs_Top
+ 0001:0000968B       _Curs_Bottom
+ 0001:00009776       _Curs_Middle
+ 0001:000098C2       _Shift_In
+ 0001:000098C3       _Shift_Out
+ 0001:000098C4       _Font_Larger
+ 0001:000098C5       _Font_Smaller
+ 0001:000098C6       _Update_Off
+ 0001:000098CE       _Update_On
+ 0001:0000991D       _Remove_Char
+ 0001:0000992D       _Remove_Help
+ 0001:0000993D       _Remove_Line
+ 0001:0000994D       _Remove_Page
+ 0001:0000995D       _Remove_Par
+ 0001:0000996D       _Remove_Paste
+ 0001:0000997D       _Remove_Search
+ 0001:0000998D       _Remove_Sent
+ 0001:0000999D       _Remove_Subs
+ 0001:000099AD       _Remove_Unknown
+ 0001:000099BD       _Remove_Word
+ 0001:000099CD       _Set_Block
+ 0001:000099E2       _Set_Replace
+ 0001:000099F7       _Set_Direction
+ 0001:00009A11       _Set_Tab_Expand
+ 0001:00009A26       _Set_Case_Sensitive
+ 0001:00009A3B       _Set_Reg_Search
+ 0001:00009A50       _Set_Ins_Defs
+ 0001:00009A65       _Set_Cursor_Free
+ 0001:00009A7A       _Counter_Set
+ 0001:00009AC2       _Counter_Put
+ 0001:00009B13       _Counter_Increment
+ 0001:00009B59       _Counter_Absolute_Value
+ 0001:00009B9C       _End_Learn
+ 0001:00009BC5       _Context_Save
+ 0001:00009BFF       _Save_The_Context
+ 0001:00009D93  Idle _Delete_The_Context
+ 0001:00009DC5  Idle _C_Write
+ 0001:00009E0C       _Check_Point
+ 0001:00009E64       _Push_Changes
+ 0001:00009E7C       _Pop_Changes
+ 0001:00009E94       _Show_Bcast
+ 0001:00009E95       _Window_Used
+ 0001:00009F43       _Window_Changed
+ 0001:00009FE4       _Window_Not_Used
+ 0001:0000A05B       _Window_Cycle
+ 0001:0000A08F       _Redefine_Key
+ 0001:0000A148       _Show_Ascii
+ 0001:0000A1A0       _W_D_Border
+ 0001:0000A3C7       _W_S_Border
+ 0001:0000A613  Idle _Open_Window
+ 0001:0000A627       _Refresh_Window
+ 0001:0000A6C4       _Window_Grow
+ 0001:0000A81A       _Window_Shrink
+ 0001:0000A953       _Window_Move
+ 0001:0000AA9D       _Window_Zoom
+ 0001:0000AB7D       _Window_Tile
+ 0001:0000ACBE       _Window_Cascade
+ 0001:0000ACBF       _Window_Fix_Bottom
+ 0001:0000AD51       _Window_Fix_Left
+ 0001:0000ADE4       _Window_Fix_Right
+ 0001:0000AE75       _Window_Fix_Top
+ 0001:0000AF0C       _Ruler
+ 0001:0000B6EB  Idle _Get_Spaces
+ 0001:0000B75C  Idle _Get_Word
+ 0001:0000B7BA       _Fill
+ 0001:0000B83A       _Put_A_Char
+ 0001:0000B861  Idle _Blind_Tab_To
+ 0001:0000B8BF       _Do_Fill
+ 0001:0000BE0E       _Adj_Tabs
+ 0001:0000C058       _Center_Line
+ 0001:0000C275       _Refresh
+ 0001:0000C322       _Repaint
+ 0001:0000C491       _Width80
+ 0001:0000C492       _Width132
+ 0001:0000C493       _Width
+ 0001:0000C494       _Spawn
+ 0001:0000C670       _Q_Spawn
+ 0001:0000C6FD       _R_Spawn
+ 0001:0000C8FF       _Ch_Case
+ 0001:0000C922       _Ch_Lower
+ 0001:0000C948       _Ch_Upper
+ 0001:0000C96E  Idle _Ch_It
+ 0001:0000CB8F       _Repl
+ 0001:0000CBE1       _Print
+ 0001:0000CD90       _File_Execute
+ 0001:0000CDE2       _Ex_File
+ 0001:0000CEDB       _Ind_Set
+ 0001:0000CEF8       _Ind_Decrease
+ 0001:0000CF29       _Ind_Increase
+ 0001:0000CF47  Idle _Key_Load
+ 0001:0000CFB2       _Get_Key
+ 0001:0000D015       _Load_Key
+ 0001:0000D0D2  Idle _Key_Save
+ 0001:0000D1C5       _Sav_Key
+ 0001:0000D207       _Del_Append
+ 0001:0000D222       _Get_Append
+ 0001:0000D23D       _Ch_Edt_Style
+ 0001:0000D2E3       _Past_Load
+ 0001:0000D395       _Past_Save
+ 0001:0000D467       _Open_Line
+ 0001:0000D4E9       _Upd_Screen
+ 0001:0000D4F8       _Load_Learn
+ 0001:0000D60B       _Ex_Learn
+ 0001:0000D6F3       _Search_Load
+ 0001:0000D720       _Out_Message
+ 0001:0000D742       _Put_Date
+ 0001:0000D7D4       _Reset_Width
+ 0001:0000D7F4       _Editor
+ 0001:0000DC62       _Readruler
+ 0001:0000DF61       _Fill_Rest
+ 0001:0000E33F       _Fill_Screen
+ 0001:0000E922       _Read_File
+ 0001:0000E9E8       _Filnam
+ 0001:0000EA78       _Filtyp
+ 0001:0000EB04       _Filjnam
+ 0001:0000EB76       _Fildir
+ 0001:0000EBEB       _Include_File
+ 0001:0000EDB2       _Error
+ 0001:0000EEAF       _Plain_Error
+ 0001:0000EF84       _Message
+ 0001:0000F051       _Plain_Message
+ 0001:0000F0FF  Idle _Diag
+ 0001:0000F141  Idle _Pad_Put
+ 0001:0000F1C3  Idle _Pad_Get
+ 0001:0000F245       _Get16
+ 0001:0000F41E       _Clr_Error
+ 0001:0000F4DE  Idle _Do_Command
+ 0001:0000F90C       _Clr_Working
+ 0001:0000F971       _Ins_Char
+ 0001:0000FCDB       _Read_Count
+ 0001:0000FE58       _Put_Count
+ 0001:0000FEA7       _Find_From
+ 0001:0000FEF7       _Find_Env
+ 0001:0000FF50       _Find_Path
+ 0001:0001002C       _regerror
+ 0001:0001003E  Idle _Chk_CRLF_F
+ 0001:000100B0  Idle _Chk_CRLF_FB
+ 0001:0001011C  Idle _Chk_CRLF_B
+ 0001:00010188  Idle _Chk_CRLF_BF
+ 0001:000101F4       _A_Char
+ 0001:00010219  Idle _Char
+ 0001:000103C9  Idle _Abs_Char
+ 0001:00010411  Idle _Vertical
+ 0001:0001072F       _Line
+ 0001:00010894       _Abs_Line
+ 0001:000108EB  Idle _Top
+ 0001:00010929  Idle _Bottom
+ 0001:00010950  Idle _Find
+ 0001:00010989  Idle _Find_Next
+ 0001:000109C2  Idle _Upper_Case
+ 0001:00010A25  Idle _Lower_Case
+ 0001:00010A88       _Find_This
+ 0001:0001160C       _Sel_Range
+ 0001:000116EA  Idle _Word
+ 0001:00011719  Idle _A_Word
+ 0001:00011A6C  Idle _Get_Mark
+ 0001:00011B1E  Idle _Next_Mark
+ 0001:00011C2D  Idle _Line_End
+ 0001:00011DA2  Idle _Skip_Spaces
+ 0001:00011E09  Idle _B_Skip_Spaces
+ 0001:00011E72  Idle _Par
+ 0001:00011EA6  Idle _A_Par
+ 0001:00012198  Idle _Sentence
+ 0001:000121CC  Idle _A_Sentence
+ 0001:000124A8  Idle _Page
+ 0001:00012607  Idle _Screen
+ 0001:00012653  Idle _Match_Bracket
+ 0001:00012866  Idle _Search_End
+ 0001:00012897       _Ex_Entity
+ 0001:00012A06       _Cnt_F_Lines
+ 0001:00012A2A  Idle _Cnt_B_Lines
+ 0001:00012A4E       _Set_Region
+ 0001:00012A67  Idle _End_Error
+ 0001:00012A9F  Idle _Beg_Error
+ 0001:00012ACF       _Delim_Error
+ 0001:00012AE4  Idle _Ent_Error
+ 0001:00012AFC       _F_open
+ 0001:00012B94       _F_close
+ 0001:00012BE0       _F_gets
+ 0001:00012CD3       _F_read
+ 0001:00012D04       _F_getc
+ 0001:00012D52       _F_write
+ 0001:00012D81  Idle _F_putc
+ 0001:00012DC0       _Rem_Pad
+ 0001:00012E0A  Idle _Rem_Del
+ 0001:00012E54       _Adj_Pad
+ 0001:00012E7F       _Adj_Del
+ 0001:00012EA5       _Exec_Key
+ 0001:00012F9E       _Expand_Com
+ 0001:00013DD0       _Set_Physical
+ 0001:00013E2A       _Set_Logical
+ 0001:00013E5C  Idle _Push
+ 0001:00013E76  Idle _Pop
+ 0001:00013E89       _Mark_Cursor
+ 0001:00013F2F       _Unmark_Cursor
+ 0001:00013FC0  Idle _Test_Dir_Key
+ 0001:00014066  Idle _Ins_Key
+ 0001:000140F3  Idle _Key_Get
+ 0001:00014129  Idle _Ins_A_Key
+ 0001:00014217       _Readkeys
+ 0001:000142E2       _Readmaps
+ 0001:000144F6       _Char_Rep
+ 0001:000145D8       _Erase_Del
+ 0001:0001460A       _Key_Addr
+ 0001:00014620       _regcomp
+ 0001:00014790  Idle _reg
+ 0001:00014906  Idle _regbranch
+ 0001:0001498F  Idle _regpiece
+ 0001:00014B49  Idle _regatom
+ 0001:00014E57  Idle _regnode
+ 0001:00014E8C  Idle _regc
+ 0001:00014EB6  Idle _reginsert
+ 0001:00014F06  Idle _regtail
+ 0001:00014F4C  Idle _regoptail
+ 0001:00014F73       _regexec
+ 0001:00015073  Idle _regtry
+ 0001:000150D6  Idle _regmatch
+ 0001:000153C7  Idle _regrepeat
+ 0001:00015454  Idle _regnext
+ 0001:00015494       _regsub
+ 0001:00015584       _main
+ 0001:00015609  Idle _Write_Rem
+ 0001:00015705  Idle _Sedt_Init
+ 0001:00015B1B  Idle _Read_Config
+ 0001:00015CE9  Idle _Test_Config
+ 0001:00016739  Idle _Test_Files
+ 0001:00016785  Idle _Test_Searches
+ 0001:000167D1  Idle _Test_Screenshift
+ 0001:0001685C  Idle _Test_Mapping
+ 0001:000168C7  Idle _Test_System
+ 0001:00016A85  Idle _Test_Keyboard
+ 0001:00016B94  Idle _Test_Palette
+ 0001:00016B99  Idle _Test_Auto
+ 0001:00016C91  Idle _Init_Buffer
+ 0001:00016D27  Idle _Sedt_Main
+ 0001:00016D3B  Idle _Sedt_Cleanup
+ 0001:00016D80       _Sedt_Shutdown
+ 0001:00016E43       _S_Header
+ 0001:000171EA       _Upd_Header
+ 0001:00017642       _Skip_To
+ 0001:0001766D       _Put_I
+ 0001:0001768A  Idle _Rec_I
+ 0001:000176CB       _S_Ruler
+ 0001:0001781C  Idle _Argerror
+ 0001:0001782D  Idle _Cnf_Error
+ 0001:00017838  Idle _Sedt_Args
+ 0001:000178B5  Idle _Test_Args
+ 0001:00017E8E  Idle _Sedt_Files
+ 0001:0001824B       _Initerror
+ 0001:00018268       _Set_Terminal
+ 0001:0001836E  Idle _Sub_Set
+ 0001:000183BF       _Set_Cursor
+ 0001:00018405       _Opt_Scroll
+ 0001:000184E5  Idle _Scl_Up
+ 0001:00018540  Idle _Scl_Down
+ 0001:0001859B       _Clr_Screen
+ 0001:000185F1       _Reset_Screen
+ 0001:00018606       _Set_Scroll
+ 0001:00018634  Idle _Move_Right
+ 0001:00018653  Idle _Move_Left
+ 0001:00018672       _Opt_Force_Attributes
+ 0001:00018693       _Del_To_End_Line
+ 0001:0001870D       _Do_Mapping
+ 0001:000187B8       _Keyfile
+ 0001:000187C8       _Mapfile
+ 0001:000187D8       _Helpfile
+ 0001:000187E8  Idle _Conin
+ 0001:000189EC       _Getkbd
+ 0001:00018C23  Idle _Getkey
+ 0001:00018D79  Idle _Next_Comb
+ 0001:00018EDF  Idle _Check_Comb
+ 0001:00019101       _Setup_Term
+ 0001:0001911F       _Reset_Term
+ 0001:00019142  Idle _Wide_Screen
+ 0001:00019143  Idle _Narrow_Screen
+ 0001:00019144  Idle _Term_Error
+ 0001:00019159  Idle _Key_Error
+ 0001:00019175  Idle _Esc_Error
+ 0001:00019190       _Out_C
+ 0001:000191B7  Idle _Out_I
+ 0001:000191FC       _Out_S
+ 0001:0001922C       _Out_Zap
+ 0001:00019360       _Opt_Init
+ 0001:00019485       _Space_Fill
+ 0001:0001949A       _Zero_Fill
+ 0001:000194AF       _Opt_Cursor
+ 0001:000194C4  Idle _Put_Char
+ 0001:000194F1       _Opt_Move_Cursor
+ 0001:00019527       _Opt_Char
+ 0001:000196F9       _Opt_String
+ 0001:00019717       _Opt_Erase_Line
+ 0001:000197B3       _Get_Type
+ 0001:000197C8       _WIN32init
+ 0001:00019866  Idle _WIN32scrend
+ 0001:00019925       _WIN32fini
+ 0001:0001994F       _WIN32cursor
+ 0001:00019982       _WIN32clrtypeahead
+ 0001:00019992       _WIN32istypeahead
+ 0001:00019A21       _WIN32scrclear
+ 0001:00019A7F  Idle _WIN32cleartoeol
+ 0001:00019A9B       _WIN32scrup
+ 0001:00019B44       _WIN32scrdown
+ 0001:00019B67  Idle _color
+ 0001:00019B9F       _WIN32attrib
+ 0001:00019BE4       _memchr
+ 0001:00019C04       _memcpy
+ 0001:00019C28       _memmove
+ 0001:00019C74       _memset
+ 0001:00019CA4       _strcat
+ 0001:00019CE0       _strchr
+ 0001:00019D08       _strcmp
+ 0001:00019D34       _strcpy
+ 0001:00019D64       _strlen
+ 0001:00019D80       _strncmp
+ 0001:00019DB4       _memcmp
+ 0001:00019DF8       _strcspn
+ 0001:00019E24       _stricmp
+ 0001:00019E68       _strncpy
+ 0001:00019EB8       _strpbrk
+ 0001:00019EE4       _strrchr
+ 0001:00019F10       __stpcpy
+ 0001:00019F3C  Idle ___JumpToCatch__
+ 0001:0001A614       _ThrowException(void*,void*,void*,void*,unsigned int,unsigned int,unsigned int,unsigned char*)
+ 0001:0001A641  Idle _ReThrowException(unsigned int,unsigned char*)
+ 0001:0001A692  Idle __Global_unwind
+ 0001:0001A78F       _CatchCleanup()
+ 0001:0001AB6C       __Local_unwind
+ 0001:0001AB7F  Idle __Return_unwind
+ 0001:0001ABEB       __ExceptionHandler
+ 0001:0001B3E3       __CurrExcContext
+ 0001:0001B41C  Idle __ThrowFileName()
+ 0001:0001B429  Idle __ThrowLineNumber()
+ 0001:0001B436  Idle __ThrowExceptionName()
+ 0001:0001B443  Idle typeinfo::typeinfo(const typeinfo&)
+ 0001:0001B479  Idle typeinfo::operator =(const typeinfo&)
+ 0001:0001B481  Idle typeinfo::~typeinfo()
+ 0001:0001B4A0  Idle typeinfo::operator ==(const typeinfo&) const
+ 0001:0001B4B9  Idle typeinfo::operator !=(const typeinfo&) const
+ 0001:0001B4D6  Idle typeinfo::before(const typeinfo&) const
+ 0001:0001B522  Idle typeinfo::name() const
+ 0001:0001B533  Idle __GetTypeInfo(void*,void*,void*,void*)
+ 0001:0001B6E8  Idle __DynamicCast(void*,void*,void*,void*,int)
+ 0001:0001B7AD       __tpdsc__[typeinfo*]
+ 0001:0001B7C4       __tpdsc__[Bad_typeid]
+ 0001:0001B7E0       __tpdsc__[Bad_cast]
+ 0001:0001B7FC       __tpdsc__[typeinfo]
+ 0001:0001B844       @__InitExceptBlock
+ 0001:0001B884  Idle terminate()
+ 0001:0001B88A  Idle set_terminate(void(*)())
+ 0001:0001B8AF       ___call_terminate
+ 0001:0001B8FD  Idle unexpected()
+ 0001:0001B903  Idle set_unexpected(void(*)())
+ 0001:0001B928       ___call_unexpected
+ 0001:0001B93C       __GetPolymorphicDTC(void*,unsigned int)
+ 0001:0001B95B       __ExceptInit
+ 0001:0001BA14       __GetExceptDLLinfoInternal
+ 0001:0001BA3C       ___DefHandler
+ 0001:0001BAE4  Idle __setexc
+ 0001:0001BB00  Idle __unsetexc
+ 0001:0001BB10  Idle __SetUserHandler
+ 0001:0001BB24  Idle __unsetuserhandler
+ 0001:0001BB30  Idle __init_except
+ 0001:0001BB48  Idle __exit_except
+ 0001:0001BB5C       __InitDefaultHander
+ 0001:0001BB70  Idle jump()
+ 0001:0001BB76       ___doGlobalUnwind
+ 0001:0001BB8B       invokeHnd()
+ 0001:0001BB94       __SetExceptionHandler
+ 0001:0001BBA9       __UnsetExceptionHandler
+ 0001:0001BBD5  Idle __UnwindException
+ 0001:0001BBDC       _close
+ 0001:0001BBE4       _dup
+ 0001:0001BBEC       _dup2
+ 0001:0001BBF4       _flushall
+ 0001:0001BBFC       _open
+ 0001:0001BC04       _read
+ 0001:0001BC0C       _unlink
+ 0001:0001BC14       _write
+ 0001:0001BC1C       __allocbuf
+ 0001:0001BCA0       _creat
+ 0001:0001BCBC       _fclose
+ 0001:0001BD50       _fflush
+ 0001:0001BDD8       __flushout
+ 0001:0001BE38       __initfmode
+ 0001:0001BF08       ___openfp
+ 0001:0001BFB0       ___getfp
+ 0001:0001BFDC       _fopen
+ 0001:0001C008       _fprintf
+ 0001:0001C028       ___fputn
+ 0001:0001C0F8       _fputs
+ 0001:0001C268       _fread
+ 0001:0001C2F8       _fseek
+ 0001:0001C35C       _ftell
+ 0001:0001C3E0       _fwrite
+ 0001:0001C410       _getcwd
+ 0001:0001C4C0       __fgetc
+ 0001:0001C4D4       _fgetc
+ 0001:0001C5A0       _fputc
+ 0001:0001C694       ___mkname
+ 0001:0001C6E4       ___tmpnam
+ 0001:0001C728       _mktemp
+ 0001:0001C7D4  Idle _perror
+ 0001:0001C850       _printf
+ 0001:0001C870       _setvbuf
+ 0001:0001C8FC       _sprintf
+ 0001:0001C920       _vsprintf
+ 0001:0001C944       __init_streams
+ 0001:0001C9F8       _vfprintf
+ 0001:0001CAA4       ___vprinter
+ 0001:0001D100       _vprintf
+ 0001:0001D120       __xfclose
+ 0001:0001D148       __xfflush
+ 0001:0001D180       __flushall
+ 0001:0001D1B4       __umask
+ 0001:0001D1CC       ___eof
+ 0001:0001D2C4       ___read
+ 0001:0001D4AC       ___write
+ 0001:0001D58C       _chdir
+ 0001:0001D5A8       _chmod
+ 0001:0001D5EC       __fullpath
+ 0001:0001D688       __getdcwd
+ 0001:0001D7E8       __get_handle
+ 0001:0001D828       __dup_handle
+ 0001:0001D890  Idle __free_handle
+ 0001:0001D940       __init_handles
+ 0001:0001DA84       ___IOerror
+ 0001:0001DAC8       ___DOSerror
+ 0001:0001DAE8       ___NTerror
+ 0001:0001DAFC       _rename
+ 0001:0001DB1C       _stat
+ 0001:0001DCAC       __rtl_read
+ 0001:0001DCF4  Idle __read
+ 0001:0001DD10       __rtl_write
+ 0001:0001DD58  Idle __write
+ 0001:0001DD74       ___access
+ 0001:0001DDB0       ___close
+ 0001:0001DDF0       ___dup
+ 0001:0001DE04       ___dup2
+ 0001:0001DED0       ___isatty
+ 0001:0001DF00       ___lseek
+ 0001:0001DF78       ___open
+ 0001:0001E168       ___unlink
+ 0001:0001E188       _tolower
+ 0001:0001E1B0       _toupper
+ 0001:0001E1D8       __clear87
+ 0001:0001E1EC       __control87
+ 0001:0001E214       ___realcvt
+ 0001:0001E21A       ___nextreal
+ 0001:0001E220       __scantod
+ 0001:0001E226       __scanrslt
+ 0001:0001E22C       __fpreset
+ 0001:0001E244       _atol
+ 0001:0001E2A0  Idle _atoi
+ 0001:0001E2C8       ___longtoa
+ 0001:0001E33C       ___utoa
+ 0001:0001E358  Idle _itoa
+ 0001:0001E388  Idle _ultoa
+ 0001:0001E3A8       _ltoa
+ 0001:0001E3D0       __matherr
+ 0001:0001E3FC       __matherrl
+ 0001:0001E42C       __initmatherr
+ 0001:0001E444       _calloc
+ 0001:0001E470       __getmem
+ 0001:0001E56C  Idle __release_heap
+ 0001:0001E5A8       _free
+ 0001:0001E640       __heapadd
+ 0001:0001E6E4       _malloc
+ 0001:0001E7CC  Idle __expand
+ 0001:0001E8E8       _realloc
+ 0001:0001EA40  Idle __msize
+ 0001:0001EA5C       operator delete(void*)
+ 0001:0001EA6C       operator delete[](void*)
+ 0001:0001EA7C       __virt_reserve
+ 0001:0001EAE8       __virt_commit
+ 0001:0001EB3C       __virt_decommit
+ 0001:0001EB7C       __virt_release
+ 0001:0001EC00       __ErrorMessage
+ 0001:0001ECB0  Idle ___ErrorMessage
+ 0001:0001ECC0       __ErrorExit
+ 0001:0001ED1C       __abort
+ 0001:0001ED30       _abort
+ 0001:0001ED9C       _exit
+ 0001:0001EDB4       __exit
+ 0001:0001EDCC  Idle __cexit
+ 0001:0001EDDC  Idle __c_exit
+ 0001:0001EDEC       _getenv
+ 0001:0001EE3C       __initwild
+ 0001:0001EE40  Idle __setargv
+ 0001:0001EFF0       __addarg
+ 0001:0001F0B4       _spawnl
+ 0001:0001F0D4       __searchenv
+ 0001:0001F104       __searchstr
+ 0001:0001F200  Idle __dummy_add_pid
+ 0001:0001F3E0       __LoadProg
+ 0001:0001F9A0  Idle _signal
+ 0001:0001FA00       _raise
+ 0001:0001FA7C       _system
+ 0001:0001FB64       __getpid
+ 0001:0001FB6C       __create_shmem
+ 0001:0001FB74       __init_exit_proc
+ 0001:0001FC20       __startup
+ 0001:0001FD84       __cleanup
+ 0001:0001FDFC       __terminate
+ 0001:0001FE10  Idle __atime
+ 0001:0001FE5C  Idle _asctime
+ 0001:0001FE7C       _ctime
+ 0001:00020000  Idle _gmtime
+ 0001:00020018       _localtime
+ 0001:00020044  Idle _tzset
+ 0001:000201CC       __isDST
+ 0001:000202E0       __totalsec
+ 0001:000204A4       __statcvt
+ 0001:0002050C       _time
+ 0002:00000058       ___isDLL
+ 0002:00000059  Idle __TLS_index
+ 0002:0000005D  Idle __TLS_index4
+ 0002:00000069       ___isGUI
+ 0002:0000006A       __hInstance
+ 0002:00000070  Idle _Mem_List
+ 0002:00000098  Idle _Com_Tab
+ 0002:00000F4C       _Exp
+ 0002:00000F50  Idle _Ent_Tab
+ 0002:00001380       _Cc_Mess
+ 0002:00001384  Idle _Unsaved_Txt
+ 0002:00001388  Idle _Txt_Changed_Read_Only
+ 0002:0000138C  Idle _Unsaved_Blank_Txt
+ 0002:00001390       _File_Txt
+ 0002:00001394       _Col_Txt
+ 0002:00001398       _Line_Txt
+ 0002:0000139C       _Buffer_Txt
+ 0002:000013A0       _Col_Pos
+ 0002:000013A4       _Col_Arg_Pos
+ 0002:000013A8       _Line_Pos
+ 0002:000013AC       _Line_Arg_Pos
+ 0002:000013B0       _Buffer_Pos
+ 0002:000013B4       _Dir_Pos
+ 0002:000013B8       _Forward_Txt
+ 0002:000013BC       _Reverse_Txt
+ 0002:000013C0       _Replace_Pos
+ 0002:000013C4       _Replace_Mode_Txt
+ 0002:000013C8       _Insert_Mode_Txt
+ 0002:000013CC       _Block_Pos
+ 0002:000013D0       _Block_Mode_Txt
+ 0002:000013D4       _Line_Mode_Txt
+ 0002:000013D8       _Tab_Pos
+ 0002:000013DC       _Tab_Exp_Txt
+ 0002:000013E0       _Tab_Ins_Txt
+ 0002:000013E4       _Case_Pos
+ 0002:000013E8       _Case_Sen_Txt
+ 0002:000013EC       _Case_Ins_Txt
+ 0002:000013F0       _Reg_Pos
+ 0002:000013F4       _Reg_On_Txt
+ 0002:000013F8       _Reg_Off_Txt
+ 0002:000013FC       _Def_Pos
+ 0002:00001400       _Def_Ins_Txt
+ 0002:00001404       _Def_Noins_Txt
+ 0002:00001408       _Free_Pos
+ 0002:0000140C       _Free_Txt
+ 0002:00001410       _Nofree_Txt
+ 0002:00001414       _Shift_Pos
+ 0002:00001418       _Shift_Arg_Pos
+ 0002:0000141C       _Screen_Shft_Txt
+ 0002:00001420       _Off_Txt
+ 0002:00001424       _Learning_Pos
+ 0002:00001428       _Executing_Txt
+ 0002:0000142C       _Learning_Txt
+ 0002:00001430       _Mod_Pos
+ 0002:00001434       _Mod_List_Pos
+ 0002:00001438       _Modified_Txt
+ 0002:0000143C       _Txt_Screen
+ 0002:00001440       _Txt_Color
+ 0002:00001444       _Txt_Mono
+ 0002:00001448       _Txt_Standard
+ 0002:0000144C       _Txt_Keyboard
+ 0002:00001450       _Txt_LK250
+ 0002:00001454       _Txt_New
+ 0002:00001458       _Txt_Enhanced
+ 0002:0000145C       _Txt_Convertible
+ 0002:00001460       _Txt_At
+ 0002:00001464       _Txt_SLT
+ 0002:00001468       _Txt_System
+ 0002:0000146C       _Txt_Ibmpc
+ 0002:00001470       _Txt_Ibmxt
+ 0002:00001474       _Txt_Ibmat
+ 0002:00001478       _Txt_Ibmconvertible
+ 0002:0000147C       _Txt_Vaxmate
+ 0002:00001480  Idle _Txt_Pc100
+ 0002:00001484       _Txt_Ibmat339
+ 0002:00001488       _Txt_Ibmxt286
+ 0002:0000148C       _Txt_Ps250
+ 0002:00001490       _Txt_Ps260
+ 0002:00001494       _Txt_Ibmxtii
+ 0002:00001498       _Txt_Ps230
+ 0002:0000149C       _Txt_Ps280
+ 0002:000014A0       _Txt_Tandy
+ 0002:000014A4  Idle _Txt_Vt100
+ 0002:000014A8  Idle _Txt_Vt200
+ 0002:000014AC  Idle _Txt_Vt300
+ 0002:000014B0  Idle _Txt_Vt52
+ 0002:000014B4  Idle _Txt_Vk100
+ 0002:000014B8  Idle _Txt_ANSI
+ 0002:000014BC  Idle _Txt_tcap
+ 0002:000014C0       _Txt_Cursorline
+ 0002:000014C4       _Txt_Fixed
+ 0002:000014C8       _Txt_Floating
+ 0002:000014CC       _Txt_Cursor
+ 0002:000014D0       _Txt_Free
+ 0002:000014D4       _Txt_Restricted
+ 0002:000014D8       _Txt_Journaling
+ 0002:000014DC       _Txt_On
+ 0002:000014E0       _Txt_Off
+ 0002:000014E4       _Txt_Controlz
+ 0002:000014E8       _Txt_Backupfile
+ 0002:000014EC       _Txt_Return
+ 0002:000014F0       _Txt_Screenshift
+ 0002:000014F4       _Txt_Ins_Defs
+ 0002:000014F8       _Txt_Fontsize
+ 0002:000014FC       _Txt_Maxscroll
+ 0002:00001500       _Txt_Gold
+ 0002:00001504       _Txt_Ega43
+ 0002:00001508       _Txt_Palette
+ 0002:0000150C       _Txt_Video
+ 0002:00001510       _Txt_Bios
+ 0002:00001514       _Txt_Direct
+ 0002:00001518       _Txt_Tabs
+ 0002:0000151C       _Txt_Inserted
+ 0002:00001520       _Txt_Expanded
+ 0002:00001524       _Txt_Ruler
+ 0002:00001528       _Txt_Mapping
+ 0002:0000152C  Idle _Txt_Old
+ 0002:00001530       _Txt_Edt
+ 0002:00001534       _Txt_Wps
+ 0002:00001538  Idle _Txt_Scancode
+ 0002:0000153C       _Txt_Numlock
+ 0002:00001540       _Txt_Disabled
+ 0002:00001544       _Txt_Enabled
+ 0002:00001548       _Txt_Set
+ 0002:0000154C       _Txt_Cleared
+ 0002:00001550       _Txt_Mode
+ 0002:00001554       _Txt_Context
+ 0002:00001558       _Txt_Saved
+ 0002:0000155C       _Txt_Forgotten
+ 0002:00001560       _Txt_Check
+ 0002:00001564       _Txt_Column
+ 0002:00001568       _Txt_Displayed
+ 0002:0000156C       _Txt_Mouse
+ 0002:00001570       _Txt_Remember
+ 0002:00001574  Idle _Txt_Firmware
+ 0002:00001578  Idle _Txt_Newint16
+ 0002:0000157C  Idle _Txt_Oldint16
+ 0002:00001580       _Txt_Autosave
+ 0002:00001584       _Txt_Buffering
+ 0002:00001588  Idle _Txt_Freemem
+ 0002:0000158C  Idle _Txt_Nofreemem
+ 0002:00001590  Idle _Txt_EMS
+ 0002:00001594  Idle _Txt_NoEMS
+ 0002:00001598       _Txt_Share
+ 0002:0000159C       _Txt_Dialog
+ 0002:000015A0       _Txt_Caps_Lock
+ 0002:000015A4       _Txt_Normal
+ 0002:000015A8       _Txt_Debug
+ 0002:000015AC       _Txt_Windows
+ 0002:000015B0       _Txt_Zoomed
+ 0002:000015B4       _Txt_Overlapped
+ 0002:000015B8       _Txt_Searches
+ 0002:000015BC       _Txt_Literal
+ 0002:000015C0       _Txt_Regular
+ 0002:000015C4       _Txt_Terminal
+ 0002:000015C8       _Txt_Files
+ 0002:000015CC       _Txt_Reservation
+ 0002:000015D0       _Txt_Margin
+ 0002:000015D4       _Arg_Error_Txt
+ 0002:000015D8       _Conf_Synt_Txt
+ 0002:000015DC  Idle _Bel_Conf_Synt_Txt
+ 0002:000015E0  Idle _Fil_Buff_Txt
+ 0002:000015E4       _Txt_Done
+ 0002:000015E8  Idle _Severe_Txt
+ 0002:000015EC       _Version_Txt
+ 0002:000015F0  Idle _Small_Txt
+ 0002:000015F4       _Device_Txt
+ 0002:000015F8       _Keyboard_Txt
+ 0002:000015FC       _Display_Txt
+ 0002:00001600       _Color_Txt
+ 0002:00001604       _Mono_Txt
+ 0002:00001608       _No_Key_Txt
+ 0002:0000160C       _No_Map_Txt
+ 0002:00001610       _Copyright_Txt
+ 0002:00001614       _No_Init_Txt
+ 0002:00001618       _No_Ruler_Txt
+ 0002:0000161C       _Ill_Ruler_Txt
+ 0002:00001620       _Txt_Eof
+ 0002:00001624       _Txt_Bof
+ 0002:00001628       _Txt_New_File
+ 0002:0000162C       _Txt_Loading
+ 0002:00001630       _Dir_Load_Txt
+ 0002:00001634  Idle _Spec_Load_Txt
+ 0002:00001638       _No_Delimiter_Txt
+ 0002:0000163C       _No_Token_Txt
+ 0002:00001640       _Illegal_Token_Txt
+ 0002:00001644       _Txt_Cancelled
+ 0002:00001648       _Unprogrammed_Txt
+ 0002:0000164C  Idle _Bad_Key_Txt
+ 0002:00001650  Idle _Bad_Key_Num_Txt
+ 0002:00001654  Idle _Double_Def_Txt
+ 0002:00001658       _Buffer_Err_Txt
+ 0002:0000165C       _Buffer_Wr_Err_Txt
+ 0002:00001660       _Max_Err_Txt
+ 0002:00001664       _Dsk_Full_Err_Txt
+ 0002:00001668       _Txt_Working
+ 0002:0000166C       _Rel_Bad_Txt
+ 0002:00001670       _No_Memory_Txt
+ 0002:00001674  Idle _Mouse_Toggle_Txt
+ 0002:00001678  Idle _Mouse_Window_Txt
+ 0002:0000167C  Idle _No_Termcap_Txt
+ 0002:00001680       _Unrecognized_Terminal_Txt
+ 0002:00001684       _Illegal_Keystroke_Txt
+ 0002:00001688       _Undefined_Escape_Txt
+ 0002:0000168C       _Yes_No_Txt
+ 0002:00001690       _No_File_Txt
+ 0002:00001694       _Unsaved_Chng_Txt
+ 0002:00001698  Idle _This_Unsaved_Txt
+ 0002:0000169C       _Illegal_Window_Txt
+ 0002:000016A0       _Illegal_ASCII_Txt
+ 0002:000016A4       _Too_Long_Arg_Txt
+ 0002:000016A8       _File_Not_Found_Txt
+ 0002:000016AC       _Unsaved_Chng_Sure_Txt
+ 0002:000016B0       _Illegal_Mark_Txt
+ 0002:000016B4       _Help_Menu_Txt
+ 0002:000016B8       _Txt_More
+ 0002:000016BC       _Txt_End
+ 0002:000016C0       _No_Help_File_Txt
+ 0002:000016C4       _Forget_Buffer_Txt
+ 0002:000016C8       _Save_Changes_Txt
+ 0002:000016CC       _No_Context_Txt
+ 0002:000016D0       _Read_Context_Txt
+ 0002:000016D4       _Context_Match_Txt
+ 0002:000016D8       _Bad_Context_Cursor_Txt
+ 0002:000016DC       _No_Output_File_Txt
+ 0002:000016E0       _Cannot_Undo_Txt
+ 0002:000016E4       _Show_Column_Txt
+ 0002:000016E8       _Illegal_Ruler_Txt
+ 0002:000016EC       _No_Contxt_Name_Txt
+ 0002:000016F0       _Cannot_Create_Context_Txt
+ 0002:000016F4       _Learned_Input_Txt
+ 0002:000016F8       _Txt_Saving
+ 0002:000016FC       _Cannot_Create_File_Txt
+ 0002:00001700  Idle _No_Window_Txt
+ 0002:00001704       _End_Region_Txt
+ 0002:00001708       _Dir_Save_Txt
+ 0002:0000170C       _Incomplete_Command_Txt
+ 0002:00001710       _Syntax_Error_Txt
+ 0002:00001714       _Unknown_Command_Txt
+ 0002:00001718       _Write_Error_Txt
+ 0002:0000171C       _Block_Sel_Txt
+ 0002:00001720       _Txt_Read_Only
+ 0002:00001724  Idle _No_Messages_Txt
+ 0002:00001728       _Max_Func_Txt
+ 0002:0000172C       _Txt_Bad_Version
+ 0002:00001730       _Reading_Help_Txt
+ 0002:00001734  Idle _Gold_Txt
+ 0002:00001738       _Map_Create_Error
+ 0002:0000173C       _Fun_Create_Error
+ 0002:00001740       _Ascii_Value_Txt
+ 0002:00001744  Idle _Col_Ascii_Value_Txt
+ 0002:00001748       _Bad_Argument_Txt
+ 0002:0000174C       _Bad_Window_Pos_Txt
+ 0002:00001750  Idle _Last_Not_Search_Txt
+ 0002:00002484  Idle _January_Txt
+ 0002:00002488  Idle _February_Txt
+ 0002:0000248C  Idle _March_Txt
+ 0002:00002490  Idle _April_Txt
+ 0002:00002494  Idle _May_Txt
+ 0002:00002498  Idle _June_Txt
+ 0002:0000249C  Idle _July_Txt
+ 0002:000024A0  Idle _August_Txt
+ 0002:000024A4  Idle _September_Txt
+ 0002:000024A8  Idle _October_Txt
+ 0002:000024AC  Idle _November_Txt
+ 0002:000024B0  Idle _December_Txt
+ 0002:000024B4       _Illegal_Char_Txt
+ 0002:000024B8       _Writing_Ruler_Txt
+ 0002:000024BC       _Left_Margin_Txt
+ 0002:000024C0       _Word_Wrap_Txt
+ 0002:000024C4       _Right_Margin_Txt
+ 0002:000024C8       _No_Right_Margin_Txt
+ 0002:000024CC       _Empty_Line_Txt
+ 0002:000024D0       _No_Command_Txt
+ 0002:000024D4       _No_Compec_Txt
+ 0002:000024D8       _No_Spawn_Txt
+ 0002:000024DC       _Return_To_Sedt_Txt
+ 0002:000024E0       _Spawn_Error_Txt
+ 0002:000024E4       _No_Stdout_Txt
+ 0002:000024E8       _No_Stderr_Txt
+ 0002:000024EC       _Not_Search_Txt
+ 0002:000024F0       _No_Print_Txt
+ 0002:000024F4       _Txt_Printing
+ 0002:000024F8       _Abort_Print_Txt
+ 0002:000024FC       _Command_File_Txt
+ 0002:00002500  Idle _Block_Append_Txt
+ 0002:00002504       _Paste_File_Txt
+ 0002:00002508       _Paste_Create_Txt
+ 0002:0000250C       _Already_Learning_Txt
+ 0002:00002510       _Null_String_Txt
+ 0002:00002514       _Ruler_Syntax_Txt
+ 0002:00002518  Idle _Key_Create_Txt
+ 0002:0000251C       _Learn_Key_Txt
+ 0002:00002520       _No_Number_Txt
+ 0002:00002524       _No_Sel_Txt
+ 0002:00002528       _No_Mark_Txt
+ 0002:0000252C       _Last_Mark_Txt
+ 0002:00002530       _No_Match_Txt
+ 0002:00002534       _Missing_Match_Txt
+ 0002:00002538       _Edit_Region_End_Txt
+ 0002:0000253C       _Buffer_End_Txt
+ 0002:00002540       _Edit_Region_Begin_Txt
+ 0002:00002544       _Buffer_Beginning_Txt
+ 0002:00002548       _Bad_Entity_Txt
+ 0002:0000254C       _No_Buffer_Txt
+ 0002:00002550       _To_Deep_Ex_Txt
+ 0002:00002554       _Replace_This_Txt
+ 0002:00002558       _No_Stat_Txt
+ 0002:0000255C       _File_Reserved_Txt
+ 0002:00002560       _Out_File_Reserved_Txt
+ 0002:00002564       _No_Protection_Change_Txt
+ 0002:00002568       _Reserved_Txt
+ 0002:0000256C  Idle _Group_Txt
+ 0002:00002570  Idle _Other_Txt
+ 0002:00002574       _No_Reset_Txt
+ 0002:00002578       _Reset_Txt
+ 0002:0000257C  Idle _Not_Implemented_Txt
+ 0002:00002580  Idle _Get_File_Txt
+ 0002:00002584  Idle _Get_Char_Txt
+ 0002:00002588  Idle _Get_Line_Txt
+ 0002:0000258C  Idle _Get_Buf_Txt
+ 0002:00002590  Idle _Not_Enough_Memory_Txt
+ 0002:00002594       _Txt_Auto_Warn
+ 0002:00002598  Idle _Unsupported_Term_Txt
+ 0002:0000259C       _Txt_Got_Auto
+ 0002:000025A0       _Unassigned_Txt
+ 0002:000025A4       _Txt_Zoomed_Error
+ 0002:000025A8       _Chr_Y
+ 0002:000025A9       _Chr_N
+ 0002:000025AC       _License_Txt
+ 0002:000025B0       _Share_1_Txt
+ 0002:000025B4       _Share_2_Txt
+ 0002:000025B8       _Share_3_Txt
+ 0002:000025BC       _Share_4_Txt
+ 0002:000025C0       _Share_5_Txt
+ 0002:000025C4       _Share_6_Txt
+ 0002:00002E14       _Mem_Entries
+ 0002:00002E18       _Keyb_Names
+ 0002:00002E3C       _Set_Num_Lock
+ 0002:00002E40       _New_Mode
+ 0002:00002E44  Idle _Old_Mode
+ 0002:00002E48       _Keyb_Type
+ 0002:00002E4C       _Color
+ 0002:00002E50  Idle _Gotmouse
+ 0002:00002E54  Idle _Int16_Ext
+ 0002:00002E58       _Bracket
+ 0002:00002E70       _Attab
+ 0002:00002E80       _Nobak
+ 0002:00002E84       _Display_Column
+ 0002:00002E88       _D_Border
+ 0002:00002EA8       _S_Border
+ 0002:00002EC8       _Mouse_OK
+ 0002:00002ECC       _Version
+ 0002:00002ED0       _Rep
+ 0002:00002F50       _Term_Names
+ 0002:00002FB8       _First_Line
+ 0002:00002FBC       _Nosub
+ 0002:00002FC0       _Auto_Margin
+ 0002:00002FC4       _CC_Enable
+ 0002:00002FC8       _Doreturn
+ 0002:00002FCC       _Call_Type
+ 0002:00002FD0       _Call_Color
+ 0002:00002FD4       _Hdr_Changes
+ 0002:00002FD8       _Def_Font
+ 0002:00002FDC       _Max_Scroll
+ 0002:00002FE0       _EGA43
+ 0002:00002FE4       _Dir_Video
+ 0002:00002FE8       _Call_Model
+ 0002:00002FEC       _Show_Ruler
+ 0002:00002FF0       _Mapping
+ 0002:00002FF4       _Auto_Save
+ 0002:00002FF8       _Auto_Warn
+ 0002:00002FFC       _Save_Context
+ 0002:00003000       _Use_Mouse
+ 0002:00003004       _Remember
+ 0002:00003008  Idle _Firmware
+ 0002:0000300C       _Sub_Window
+ 0002:00003010       _Sub_X
+ 0002:00003014       _Sub_Y
+ 0002:00003018       _CC_Flag
+ 0002:0000301C       _Case_Sensitive
+ 0002:00003020       _Sharemess
+ 0002:00003024       _Conf_Error
+ 0002:00003028       _Caps_Lock
+ 0002:0000302C       _Shift_Screen
+ 0002:00003030       _Ins_Defs
+ 0002:00003034       _Cursor_Free
+ 0002:00003038       _Hdr_Free
+ 0002:0000303C       _Do_Debug
+ 0002:00003040       _Batch_Mode
+ 0002:00003044       _Zoom_Windows
+ 0002:00003048       _E_Type
+ 0002:0000304C       _Old_E_Type
+ 0002:00003050       _Reg_Search
+ 0002:00003054       _Control_Display
+ 0002:00003058       _Expand_Tabs
+ 0002:0000305C       _In_Prompt
+ 0002:00003060       _Down_Type
+ 0002:00003064       _Top_Row
+ 0002:00003068       _Left_Col
+ 0002:0000306C       _Zoomed
+ 0002:00003070       _Term_Type
+ 0002:00003074       _Key_Defs
+ 0002:00003078       _Map_Defs
+ 0002:0000307C       _Scan_Defs
+ 0002:00003080       _Comb_Defs
+ 0002:00003084       _Top_Func
+ 0002:00003088       _Next_Func
+ 0002:0000308C       _His_Line
+ 0002:00003090       _His_Col
+ 0002:00003094       _My_Line
+ 0002:00003098       _Scr_Width
+ 0002:0000309C       _Scl_Top
+ 0002:000030A0       _Scl_Bottom
+ 0002:000030A4       _Scr_Length
+ 0002:000030A8       _Not_End
+ 0002:000030AC       _Show_Errors
+ 0002:000030B0       _Learning
+ 0002:000030B4       _Executing
+ 0002:000030B8       _Replace_Mode
+ 0002:000030BC       _Ex_Debth
+ 0002:000030C0       _Lst_Current
+ 0002:000030C4       _Def_Direction
+ 0002:000030C8       _Tab_Expand
+ 0002:000030CC       _Severe_Error
+ 0002:000030D0       _Do_Shift
+ 0002:000030D4       _Bell_Level
+ 0002:000030D8       _Show_Marks
+ 0002:000030DC       _Blk_Mode
+ 0002:000030E0       _Float_Cursor
+ 0002:000030E4       _Update_Flag
+ 0002:000030E8  Idle _Shifted_Out
+ 0002:000030EC       _Skip
+ 0002:000030F0       _Append_It
+ 0002:000030F4       _Wr_Count
+ 0002:000030F8       _Working_Flag
+ 0002:000030FC       _Free_List
+ 0002:00003100       _D_Next
+ 0002:00003104       _M_Next
+ 0002:00003108       _Lst_Cmd
+ 0002:0000310C       _Toofar
+ 0002:00003110       _Reservation
+ 0002:00003114       _File_Arguments
+ 0002:00003118       _Margin
+ 0002:0000311C       _Requested_Margin
+ 0002:00003120       _This_Line
+ 0002:00003124       _Mem_Limit
+ 0002:00003128       _Word_Wrap
+ 0002:0000312C       _Indent
+ 0002:00003130       _Left_Margin
+ 0002:00003134       _Right_Margin
+ 0002:00003138       _Scr_Shift
+ 0002:0000313C       _My_Col
+ 0002:00003140       _My_Pos
+ 0002:00003440       typeinfo::
+ 0002:00003450  Idle ___CPPexceptionList
+ 0002:00003454  Idle ___exceptFlags
+ 0002:00003458  Idle ___terminatePTR
+ 0002:0000345C  Idle ___unexpectdPTR
+ 0002:00003460  Idle ___throwFileName
+ 0002:00003464  Idle ___throwLineNumber
+ 0002:00003468  Idle ___throwExceptionName
+ 0002:0000346C  Idle ___exceptStaticBuffP
+ 0002:00003470  Idle ___exceptMemAllocVars
+ 0002:00003474  Idle ___ExceptStaticXbuff
+ 0002:00003528  Idle __ExceptVarsSize
+ 0002:00003540       __stkchk
+ 0002:00003554       __fileinfo
+ 0002:00003558       __streams
+ 0002:00003918       __nfile
+ 0002:0000391C       __openfd
+ 0002:000039BC       __fmode
+ 0002:000039C0       __fmodeptr
+ 0002:000039D8       __sys_errlist
+ 0002:00003A9C       __sys_nerr
+ 0002:00003EC0       __cfinfo_get
+ 0002:00003EC4       __notUmask
+ 0002:00003EC8  Idle __dosErrorToSV
+ 0002:00004008       __ctype
+ 0002:00004110       __realcvtptr
+ 0002:00004114       __nextrealptr
+ 0002:00004118       __scantodptr
+ 0002:0000411C       __scanrsltptr
+ 0002:00004178       __default87
+ 0002:0000417C       __pmatherr
+ 0002:00004180       __pmatherrl
+ 0002:00004184       __heap_brk
+ 0002:00004188  Idle __heap_top
+ 0002:00004190       _errno
+ 0002:000041D4       __atexitcnt
+ 0002:000041D8       __exitbuf
+ 0002:000041DC       __exitfopen
+ 0002:000041E0  Idle __exitopen
+ 0002:000041E4       __setargv__
+ 0002:000041E8  Idle __expandptr
+ 0002:00004264       __add_pid_ptr
+ 0002:00004288  Idle __setenvp__
+ 0002:0000432C       __SWeekday
+ 0002:00004348  Idle __LWeekday
+ 0002:00004364       __SMonth
+ 0002:00004394  Idle __LMonth
+ 0002:000043C4  Idle __AmPm
+ 0002:000043CC       __Days
+ 0002:000043D8       __YDays
+ 0002:000044F0       __tzname
+ 0002:000044F8       __timezone
+ 0002:000044FC       __daylight
+ 0002:000046F0       _Run_From
+ 0002:0000481C       _win32ConsoleHnd
+ 0002:00004820       _win32KeybHnd
+ 0002:00004824       _Keyb_Name
+ 0002:00004874  Idle _Keyb_File
+ 0002:000048C4  Idle _KBD_Handle
+ 0002:000048C8  Idle _DEC_Mode
+ 0002:000048CC       _Output
+ 0002:00004950       _Attr
+ 0002:000049D4       _St_Line
+ 0002:000049D8       _St_Col
+ 0002:000049DC       _Zap_Col
+ 0002:000049E0       _Zap_Line
+ 0002:000049E4       _Zap_Count
+ 0002:000049E8       _File_Protection
+ 0002:00004B78       _File_Reserved
+ 0002:00004D08       _My_Screen
+ 0002:00013F81       _My_Attributes
+ 0002:000231FC       _Infile
+ 0002:00023200       _Outfile
+ 0002:00023204       _Map_Ext
+ 0002:00023254       _Lst_Input
+ 0002:0002377C       _Init_T_String
+ 0002:0002387C       _Reset_T_String
+ 0002:0002397C       _Out_String
+ 0002:000239FC       _Format_Line
+ 0002:00023BFD       _Init_File
+ 0002:00023C4D       _Dsk_Rec
+ 0002:0002444E       _Com_Char
+ 0002:0002444F       _Com_Arg
+ 0002:0002464F       _Rep_Str
+ 0002:0002484F       _Find_Str
+ 0002:00024A4F       _New_File
+ 0002:00024C4F       _Help_File
+ 0002:00024C9F       _Help_Levels
+ 0002:00024CAC       _Tabs
+ 0002:000254B0       _Hdr_Mods
+ 0002:000254B4       _Hdr_Direction
+ 0002:000254B8       _Hdr_Learning
+ 0002:000254BC       _Justify
+ 0002:000254C0       _Hdr_Replace
+ 0002:000254C4       _Hdr_Executing
+ 0002:000254C8       _Hdr_Xpand
+ 0002:000254CC       _Hdr_Shift
+ 0002:000254D0       _Hdr_Do_Shift
+ 0002:000254D4       _Hdr_Block
+ 0002:000254D8       _Return_Value
+ 0002:000254DC       _Sub_H
+ 0002:000254E0       _Sub_W
+ 0002:000254E4       _Auto_Count
+ 0002:000254E8       _Auto_Saved
+ 0002:000254EC       _Hdr_Case
+ 0002:000254F0       _Hdr_Ins_Defs
+ 0002:000254F4       _Hdr_Reg
+ 0002:000254F8  Idle _List_Files
+ 0002:000254FC       _Ent_Char
+ 0002:00025500       _Err_Flag
+ 0002:00025504       _Com_End
+ 0002:00025508       _Save_Stack
+ 0002:00025558       _Buffer_Stack
+ 0002:000256E8       _Buffers
+ 0002:000256EC       _Save_Top
+ 0002:000256F0       _Save_Left
+ 0002:000256F4       _Save_Length
+ 0002:000256F8       _Save_Width
+ 0002:000256FC       _Window_Ref
+ 0002:0002588C       _Max_Length
+ 0002:00025890       _Max_Width
+ 0002:00025894       _Phys_Length
+ 0002:00025898       _Phys_Width
+ 0002:0002589C       _Key_Number
+ 0002:000258A0       _Map_Index
+ 0002:000258A4       _Scl_Regions
+ 0002:000258A8       _Scancode
+ 0002:000258AC       _Enhanced
+ 0002:000258B0       _Scr_Col
+ 0002:000258B4       _Lst_Col
+ 0002:00025A98       _Out_Count
+ 0002:00025A9C       _Cur_Attributes
+ 0002:00025AA0       _His_Attributes
+ 0002:00025AA4       _Function
+ 0002:00025AA8       _Gold
+ 0002:00025AAC       _Err_Display
+ 0002:00025AB0       _Ln_Function
+ 0002:00025AB4       _Character
+ 0002:00025AB8       _Ex_Function
+ 0002:00025AE0       _Ex_Index
+ 0002:00025B08       _Ex_Count
+ 0002:00025B30       _Com_Direction
+ 0002:00025B34       _Cur_Buffer
+ 0002:00025B38       _Rel_First
+ 0002:00025B3C       _Rel_Last
+ 0002:00025B40       _Home
+ 0002:00025B44       _Dl_Positions
+ 0002:00025B70       _Direction
+ 0002:00025B74       _Ent_Direction
+ 0002:00025B78       _Cur_Direction
+ 0002:00025B7C       _Counter_Index
+ 0002:00025B80       _Arg_Length
+ 0002:00025B84       _At_End
+ 0002:00025B88       _In_Help
+ 0002:00025B8C       _Help_Level
+ 0002:00025B90       _Offset
+ 0002:00025B94       _This_Cmd
+ 0002:00025B98       _What_Kind
+ 0002:00025B9C       _Any_Changes
+ 0002:00025C64       _Read_Only
+ 0002:00025D2C       _Hdr_Line
+ 0002:00025D30  Idle _Hdr_Lines
+ 0002:00025D34       _Hdr_Col
+ 0002:00025D38       _Funcs
+ 0002:00027538       _Beg_Pos
+ 0002:0002753C       _End_Pos
+ 0002:00027540       _Beg_Line
+ 0002:00027544       _End_Line
+ 0002:00027548       _Dl_Pointers
+ 0002:000278C0       _Beg_Region
+ 0002:000278C4       _End_Region
+ 0002:000278C8       _Other_Pos
+ 0002:000278CC       _Local_Count
+ 0002:000278D0       _Sel_Col
+ 0002:000278D4       _Points
+ 0002:00027A78       _Lst_Char_Move
+ 0002:00027A7C       _Lst_Line_Move
+ 0002:00027A80       _Buf_Lines
+ 0002:00027A84       _Count
+ 0002:00027A88       _Ent_Count
+ 0002:00027A8C       _Counter
+ 0002:00027AF4       _End_Points
+ 0002:00027C88       _Help_Pos
+ 0002:00027C8C       _Key_Tab
+ 0002:00027C90  Idle _Key_Pointer
+ 0002:00027C94       _Comb_Tab
+ 0002:00027C98       _Scan_Tab
+ 0002:00027E18       _Map_Tab
+ 0002:00029A18       _Current
+ 0002:00029A1C       _Main_Buffer
+ 0002:0002A414       _Pad
+ 0002:0002AE0C       _Com
+ 0002:0002B804       _Del
+ 0002:0002C1FC       _Overflow
+ 0002:0002C254  Idle _Mouse_Stack
+ 0002:0002CA70       __DestructorCountPtr
+ 0002:0002CA74       __HandlerPtr
+ 0002:0002CA78  Idle __UserHandlerPtr
+ 0002:0002CA7C       __pidtab
+ 0002:0002CB1C       __handles
+ 0002:0002CBC4       __tmpnum
+ 0002:0002CBD8       __doserrno
+ 0002:0002CBDC       __heaps
+ 0002:0002CDDC       __nheaps
+ 0002:0002CDE0  Idle __free_dummy
+ 0002:0002CDF0       __free_list
+ 0002:0002CDF4       __rover
+ 0002:0002CDF8       __ostype
+ 0002:0002CDFC       __atexittbl
+ 0002:0002CE7C  Idle __argc
+ 0002:0002CE80       __argv
+ 0002:0002CE88       __environ
+ 0002:0002CE8C  Idle __env_lock
+ 0002:0002CE90  Idle __dll_table
+ 0002:0002CE98       __ExcRegPtr
+ 0002:0002CE9C       __osenv
+ 0002:0002CEA0       __oscmd
+ 0002:0002CEA4       __C0argc
+ 0002:0002CEA8       __C0argv
+ 0002:0002CEAC       __C0environ
+ 0002:0002CEB8  Idle __stkbase
+ 0002:0002CEBC  Idle __isWindows

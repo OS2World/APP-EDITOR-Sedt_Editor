@@ -1,0 +1,679 @@
+;--------------------------------EMACS.DEF--------------------------------
+;
+;   EMACS key definitions (EMACS.DEF)
+;   SEDT V4.0
+;   Created by Chris Lord (MOSAIC::LORD)
+;   Based on MicroEMACS 3.9N
+;   12/29/89
+;
+;   This file contains all editing commands required by EMACS, as
+;   implemented by MicroEMACS version 3.9N.  Each sequence has been
+;   mapped as accurately as possible to some combination of SEDT
+;   primatives.
+;
+;   Build with "MAPKEY COMPILE FUNCTIONS EMACS.DEF FUNDEF.EDT"
+;
+;   These must be used with the EMACS.KEY keyboard map file since
+;   function values are completely different from the standard EDT
+;   or WPS keyboard map files.
+;
+;   I have defined function values 1-50 as those reserved by SEDT.  These
+;   functions must correspond to scancodes in the map file and are
+;   machine dependent.  I have also defined functions 51-100 as the
+;   gold state of functions 1-50.  These are available for user
+;   defined functions; I provide function key assignments convienent
+;   to me, but you could also use an EDT function assignment for these.
+;
+;
+;   Function   1 <F1>   Help
+;   Function   2 <F2>   Print file
+;   Function   3 <F3>
+;   Function   4 <F4>   Save
+;   Function   5 <F5>   Save with context
+;   Function   6 <F6>
+;   Function   7 <F7>
+;   Function   8 <F8>   Cancel
+;   Function   9 <F9>   
+;   Function  10 <F10>  Exit
+;   Function  11 <F11>
+;   Function  12 <F12>
+;   Function  13 <F13>
+;   Function  14 <F14>
+;   Function  15 <F15>
+;   Function  16 <F16>
+;   Function  17 <F17>
+;   Function  18 <F18>
+;   Function  19 <F19>
+;   Function  20 <F20>
+;   Function  21 <Find>
+;   Function  22 <Insert>
+;   Function  23 <Remove>
+;   Function  24 <Select>
+;   Function  25 <Prev>
+;   Function  26 <Next>
+;   Function  27 <Up>
+;   Function  28 <Left>
+;   Function  29 <Down>
+;   Function  30 <Right>
+;   Function  31 <Keypad 0>
+;   Function  32 <Keypad 1>
+;   Function  33 <Keypad 2>
+;   Function  34 <Keypad 3>
+;   Function  35 <Keypad 4>
+;   Function  36 <Keypad 5>
+;   Function  37 <Keypad 6>
+;   Function  38 <Keypad 7>
+;   Function  39 <Keypad 8>
+;   Function  40 <Keypad 9>
+;   Function  41 <Keypad ,>
+;   Function  42 <Keypad ->
+;   Function  43 <Keypad .>
+;   Function  44 <Keypad PF1>
+;   Function  45 <Keypad PF2>
+;   Function  46 <Keypad PF3>
+;   Function  47 <Keypad PF4>
+;   Function  48 <Keypad Enter>
+;   Function  49 <Delete>
+;   Function  50 <Return>
+;   Function  51 Gold <F1>
+;   Function  52 Gold <F2>
+;   Function  53 Gold <F3>
+;   Function  54 Gold <F4>
+;   Function  55 Gold <F5>
+;   Function  56 Gold <F6>
+;   Function  57 Gold <F7>
+;   Function  58 Gold <F8>
+;   Function  59 Gold <F9>
+;   Function  60 Gold <F10>
+;   Function  61 Gold <F11>
+;   Function  62 Gold <F12>
+;   Function  63 Gold <F13>
+;   Function  64 Gold <F14>
+;   Function  65 Gold <F15>
+;   Function  66 Gold <F16>
+;   Function  67 Gold <F17>
+;   Function  68 Gold <F18>
+;   Function  69 Gold <F19>
+;   Function  70 Gold <F20>
+;   Function  71 Gold <Find>
+;   Function  72 Gold <Insert>
+;   Function  73 Gold <Remove>
+;   Function  74 Gold <Select>
+;   Function  75 Gold <Prev>
+;   Function  76 Gold <Next>
+;   Function  77 Gold <Up>
+;   Function  78 Gold <Left>
+;   Function  79 Gold <Down>
+;   Function  80 Gold <Right>
+;   Function  81 Gold <Keypad 0>
+;   Function  82 Gold <Keypad 1>
+;   Function  83 Gold <Keypad 2>
+;   Function  84 Gold <Keypad 3>
+;   Function  85 Gold <Keypad 4>
+;   Function  86 Gold <Keypad 5>
+;   Function  87 Gold <Keypad 6>
+;   Function  88 Gold <Keypad 7>
+;   Function  89 Gold <Keypad 8>
+;   Function  90 Gold <Keypad 9>
+;   Function  91 Gold <Keypad ,>
+;   Function  92 Gold <Keypad ->
+;   Function  93 Gold <Keypad .>
+;   Function  94 Gold <Keypad PF1>
+;   Function  95 Gold <Keypad PF2>
+;   Function  96 Gold <Keypad PF3>
+;   Function  97 Gold <Keypad PF4>
+;   Function  98 Gold <Keypad Enter>
+;   Function  99 Gold <Delete>
+;   Function 100 Gold <Return>
+;
+;   The remaining functions are all reserved for EMACS key sequences.
+;   Note that the ^[ prefix for EMACS sequences is treated as a gold
+;   key and can be interchanged with the key mapping for PF1 (escape
+;   on the LK250).
+;
+;   The ^X prefix is defined in the combinations section and these
+;   appear first in the maps section to prevent conflicts with single
+;   character sequences.
+;
+;
+;   Function 101 ^X^B  Display buffer list                        
+;   Function 102 ^X^C  Exit                                       
+;   Function 103 ^X^D  Detab line                                 
+;   Function 104 ^X^E  Entab line                                 
+;   Function 105 ^X^F  Find file                                  
+;   Function 106 ^X^I  Insert file                                
+;   Function 107 ^X^L  Lowercase region                           
+;   Function 108 ^X^M  Delete mode                                
+;   Function 109 ^X^N  Move window down                           
+;   Function 110 ^X^O  Delete blank lines                         
+;   Function 111 ^X^P  Move window up                             
+;   Function 112 ^X^R  Get file from disk                         
+;   Function 113 ^X^S  Save current file                          
+;   Function 114 ^X^T  Trim line                                  
+;   Function 115 ^X^U  Uppercase region                           
+;   Function 116 ^X^V  View file                                  
+;   Function 117 ^X^W  Write file to disk                         
+;   Function 118 ^X^X  Swap cursor and mark                       
+;   Function 119 ^X^Z  Shrink window                              
+;   Function 120 ^X-<  Narrow to region                           
+;   Function 121 ^X->  Widen from region                          
+;   Function 122 ^X-=  Show cursor postion                        
+;   Function 123 ^X-^  Enlarge display window                     
+;   Function 124 ^X-0  Delete current window                      
+;   Function 125 ^X-1  Delete other windows                       
+;   Function 126 ^X-2  Split current window                       
+;   Function 127 ^X-?  Describe key                               
+;   Function 128 ^X-!  Run command in shell                       
+;   Function 129 ^X-@  Pipe shell command to buffer               
+;   Function 130 ^X-#  Filter buffer through shell filter         
+;   Function 131 ^X-$  Execute external program                   
+;   Function 132 ^X-(  Begin macro                                
+;   Function 133 ^X-)  End macro                                  
+;   Function 134 ^X-A  Set variable value                         
+;   Function 135 ^X-B  Switch window to a buffer                  
+;   Function 136 ^X-C  Start a new command processor              
+;   Function 137 ^X-D  Suspend editing session                    
+;   Function 138 ^X-E  Execute macro                              
+;   Function 139 ^X-F  Set fill column (ruler mode)               
+;   Function 140 ^X-K  Delete buffer                              
+;   Function 141 ^X-M  Add a mode                                 
+;   Function 142 ^X-N  Rename current filename                    
+;   Function 143 ^X-O  Move to next window                        
+;   Function 144 ^X-P  Move to previous window                    
+;   Function 145 ^X-R  Incremental reverse search                 
+;   Function 146 ^X-S  Incremental forward search                 
+;   Function 147 ^X-W  Resize window                              
+;   Function 148 ^X-X  Use next buffer                            
+;   Function 149 ^X-Z  Enlarge display window                     
+;   Function 150 ^A    Move to start of line                      
+;   Function 151 ^B    Move backwards by characters               
+;   Function 152 ^C    Insert space                               
+;   Function 153 ^D    Forward delete                             
+;   Function 154 ^E    Goto end of line                           
+;   Function 155 ^F    Move forwards by characters                
+;   Function 156 ^G    Abort out of things                        
+;   Function 157 ^H    Backwards delete                           
+;   Function 158 ^I    Insert tab                                 
+;   Function 159 ^J    Insert newline and indent                  
+;   Function 160 ^K    Kill forward                               
+;   Function 161 ^L    Refresh screen                             
+;   Function 162 ^M    Insert newline                             
+;   Function 163 ^N    Move forward by lines                      
+;   Function 164 ^O    Open line                                  
+;   Function 165 ^P    Move backwards by lines                    
+;   Function 166 ^Q    Insert literal                             
+;   Function 167 ^R    Search backwards                           
+;   Function 168 ^S    Search forward                             
+;   Function 169 ^T    Transpose characters                       
+;   Function 170 ^U    Repeat command four times                  
+;   Function 171 ^V    Move forward by pages                      
+;   Function 172 ^W    Kill region                                
+;   Function 173 ^Y    Yank back from kill buffer                 
+;   Function 174 ^Z    Move backward by pages                     
+;   Function 175 ^[^C  Count words in region                      
+;   Function 176 ^[^E  Execute named procedure                    
+;   Function 177 ^[^F  Goto matching fence                        
+;   Function 178 ^[^H  Delete backward word                       
+;   Function 179 ^[^K  Unbind key from function                   
+;   Function 180 ^[^L  Reposition window                          
+;   Function 181 ^[^M  Delete globalmode                          
+;   Function 182 ^[^N  Rename current buffer                      
+;   Function 183 ^[^R  Search and replace with query              
+;   Function 184 ^[^S  Change screen rows                         
+;   Function 185 ^[^T  Change screen columns                      
+;   Function 186 ^[^V  Scroll down next window                    
+;   Function 187 ^[^W  Delete paragraph                           
+;   Function 188 ^[^Z  Scroll up next window                      
+;   Function 189 ^[-A  Apropos (list some commands)               
+;   Function 190 ^[-B  Backup by words                            
+;   Function 191 ^[-C  Initial capitalize word                    
+;   Function 192 ^[-D  Delete forward word                        
+;   Function 193 ^[-E  Reset encryption key                       
+;   Function 194 ^[-F  Advance by words                           
+;   Function 195 ^[-G  Goto a specific line                       
+;   Function 196 ^[-K  Bind key to function                       
+;   Function 197 ^[-L  Lowercase word                             
+;   Function 198 ^[-M  Add global mode                            
+;   Function 199 ^[-N  Goto end of paragraph                      
+;   Function 200 ^[-P  Goto beginning of paragraph                
+;   Function 201 ^[-Q  Justify current paragraph                  
+;   Function 202 ^[-R  Search and replace                         
+;   Function 203 ^[-U  Uppercase word                             
+;   Function 204 ^[-V  Move backward by pages                     
+;   Function 205 ^[-W  Copy region to kill buffer                 
+;   Function 206 ^[-X  Execute named command                      
+;   Function 207 ^[-Z  Save all buffers and exit                  
+;   Function 208 ^[-~  Unmark current buffer                      
+;   Function 209 ^[-!  Reposition window                          
+;   Function 210 ^[-<  Move to start of buffer                    
+;   Function 211 ^[->  Move to end of buffer                      
+;   Function 212 ^[-.  Set mark                                   
+;   Function 213 ^[-   Set mark                                   
+1 :H//.
+<F1> Help
+2 :PR?"Print on file: ".
+<F2>    Print contents of buffer
+3 .
+<F3>
+4 ^C(:FS).
+<F4>    Save contents of buffer
+5 ^C(:FS):CS.
+<F5>    Save context and contents of buffer
+6 .
+<F6>
+7 .
+<F7>
+8 :Q.
+<F8>    Quit without saving buffer
+9 :WC.
+<F9>    Toggle windows
+10 0:X.
+<F10>   Save buffer and exit
+11 .
+<F11>
+12 .
+<F12>
+13 .
+<F13>
+14 .
+<F14>
+15 :H//.
+<F15> Help
+16 :LNL!"Learn to key: ".
+<F16> Learn to key
+17 0:WI.
+<F17>   Select buffer 0
+18 1:WI.
+<F18>   Select buffer 1
+19 2:WI.
+<F19>   Select buffer 2
+20 3:WI.
+<F20>   Select buffer 3
+21 @N.
+<Find> Goto next occurrence of search string
+22 :USR.
+<Insert> Paste
+23 :D@SR.
+<Remove> Cut
+24 :SEL.
+<Select> Set select point
+25 -@SCR.
+<Prev>  Go one screen up
+26 +@SCR.
+<Next>  Go one screen down
+27 -@V.
+<Up>    Go 1 line up vertically
+28 -@C.
+<Left>  Go 1 character back
+29 +@V.
+<Down>  Go 1 line down vertically
+30 +@C.
+<Right> Go 1 character forward
+31 :UM.
+<Keypad 0> Undo
+32 1@M.
+<Keypad 1> Goto mark 1
+33 2@M.
+<Keypad 2> Goto mark 2
+34 3@M.
+<Keypad 3> Goto mark 3
+35 (:D-@L).
+<Keypad 4> Delete to BOL
+36 (:D+@EL).
+<Keypad 5> Delete to EOL
+37 :OM/Key undefined: <Keypad 6>/.
+<Keypad 6>
+38 :D+@C.
+<Keypad 7> Delete character
+39 :D+@W.
+<Keypad 8> Delete word
+40 :D+@L.
+<Keypad 9> Delete line
+41 .
+<Keypad ,>
+42 :CM.
+<Keypad -> Center on current line
+43 .
+<Keypad .> Dead key
+44 .
+<Keypad PF1> Gold
+45 -@L.
+<Keypad PF2> Goto beginning of line
+46 +@EL.
+<Keypad PF3> Goto end of line
+47 @W.
+<Keypad PF4> Move one word
+48 :NS.
+<Keypad Enter> Replace next
+49 :D-@C.
+<Delete> Delete previous character
+50 :NL.
+<Return> Insert newline
+51 :OM/Key undefined: Gold <F1>/.
+Gold <F1>
+52 :OM/Key undefined: Gold <F2>/.
+Gold <F2>
+53 :OM/Key undefined: Gold <F3>/.
+Gold <F3>
+54 :OM/Key undefined: Gold <F4>/.
+Gold <F4>
+55 :OM/Key undefined: Gold <F5>/.
+Gold <F5>
+56 :OM/Key undefined: Gold <F6>/.
+Gold <F6>
+57 :OM/Key undefined: Gold <F7>/.
+Gold <F7>
+58 :OM/Key undefined: Gold <F8>/.
+Gold <F8>
+59 :OM/Key undefined: Gold <F9>/.
+Gold <F9>
+60 :OM/Key undefined: Gold <F10>/.
+Gold <F10>
+61 :OM/Key undefined: Gold <F11>/.
+Gold <F11>
+62 :OM/Key undefined: Gold <F12>/.
+Gold <F12>
+63 :OM/Key undefined: Gold <F13>/.
+Gold <F13>
+64 :OM/Key undefined: Gold <F14>/.
+Gold <F14>
+65 :OM/Key undefined: Gold <F15>/.
+Gold <F15>
+66 :OM/Key undefined: Gold <F16>/.
+Gold <F16>
+67 :OM/Key undefined: Gold <F17>/.
+Gold <F17>
+68 :OM/Key undefined: Gold <F18>/.
+Gold <F18>
+69 :OM/Key undefined: Gold <F19>/.
+Gold <F19>
+70 :OM/Key undefined: Gold <F20>/.
+Gold <F20>
+71 @F?"Find string: ".
+Gold <Find> Find string
+72 :PS?"Save paste buffer in file: ".
+Gold <Insert> Save paste buffer in file
+73 :PL?"Load paste buffer from file: ".
+Gold <Remove> Load paste buffer from file
+74 :RS.
+Gold <Select> Reset select point
+75 :CT.
+Gold <Prev> Goto top of screen
+76 :CB.
+Gold <Next> Goto bottom of screen
+77 @BB.
+Gold <Up> Goto top of buffer
+78 :B.
+Gold <Left> Set direction reverse
+79 @EB.
+Gold <Down> Goto bottom of buffer
+80 :A.
+Gold <Right> Set direction forward
+81 :CE.
+Gold <Keypad 0> Change case
+82 1:M.
+Gold <Keypad 1> Set mark 1
+83 2:M.
+Gold <Keypad 2> Set mark 2
+84 3:M.
+Gold <Keypad 3> Set mark 3
+85 :UL.
+Gold <Keypad 4> Undelete beginning of line
+86 :UL.
+Gold <Keypad 5> Undelete end of line
+87 :OM/Key undefined: Gold <Keypad 6>/.
+Gold <Keypad 6>
+88 :UC.
+Gold <Keypad 7> Undelete character
+89 :UW.
+Gold <Keypad 8> Undelete word
+90 :UL.
+Gold <Keypad 9> Undelete line
+91 :OM/Key undefined: Gold <Keypad ,>/.
+Gold <Keypad ,>
+92 :OM/Key undefined: Gold <Keypad ->/.
+Gold <Keypad ->
+93 :OM/Key undefined: Gold <Keypad .>/.
+Gold <Keypad .>
+94 27:CH.
+Gold <Keypad PF1> Insert escape
+95 :OM/Key undefined: Gold <Keypad PF2>/.
+Gold <Keypad PF2>
+96 :OM/Key undefined: Gold <Keypad PF3>/.
+Gold <Keypad PF3>
+97 @PAG.
+Gold <Keypad PF4> Move one page
+98 :SUB?"Replace string: "?"With: ".
+Gold <Keypad Enter> Replace
+99 :D-@W.
+^[^H  Delete backward word (Gold <Delete>)
+100 :T?"Mode (B/C/D/F/K/M/P/R/S/T/U/X): ".
+^[^M  Delete global mode (Gold <Return>)
+101 :OM/Buffers 0-3 available/.
+^X^B  Display buffer list
+102 :Q.
+^X^C  Exit
+103 ^S(RTAB@SR|:RTAB@L).
+^X^D  Detab line
+104 ^S(:STAB@SR|:STAB@L).
+^X^E  Entab line
+105 :FE?"Edit file: ".
+^X^F  Find file
+106 0:FG?"Append file: ".
+^X^I  Insert file
+107 ^S(:CD@SR|8:M:SEL9@M:CD@SR8@M).
+^X^L  Lowercase region
+108 :T?"Mode (B/C/D/F/K/M/P/R/S/T/U/X): ".
+^X^M  Delete mode
+109 :OW.
+^X^N  Move window down
+110 :OM/Unimplemented: ^X^O  Delete blank lines/.
+^X^O  Delete blank lines
+111 :OW.
+^X^P  Move window up
+112 :FE?"Read file: ".
+^X^R  Get file from disk
+113 ^C(:FS|:OM/Buffer has not changed/).
+^X^S  Save current file
+114 :STRP@L.
+^X^T  Trim line
+115 ^S(:CU@SR|8:M:SEL9@M:CU@SR8@M).
+^X^U  Uppercase region
+116 0:FE?"View file: ".
+^X^V  View file
+117 :FW?"Write file: ".
+^X^W  Write file to disk
+118 :UOFF7:M9@M8:M7@M9:M8@M:UON.
+^X^X  Swap cursor and mark
+119 :OE/Window cannot be shrunk/.
+^X^Z  Shrink window
+120 ^S(:ERS@SR|8:M:SEL9@M:ERS@SR8@M).
+^X-<  Narrow to region
+121 :ERC.
+^X->  Widen from region
+122 :OM/Status: %N.%T Line=%L Column=%W/.
+^X-=  Show cursor postion
+123 :OE/Window cannot be enlarged/.
+^X-^  Enlarge display window
+124 :WC.
+^X-0  Delete current window
+125 :WC.
+^X-1  Delete other windows
+126 :WC.
+^X-2  Split current window
+127 :OE/I wish I could tell you, but I can't/.
+^X-?  Describe key
+128 :SYS?"Operating system command: ".
+^X-!  Run command in shell
+129 :SYS?"Shell command: " >SEDTTMP1.$$$:FG/SEDTTMP1.$$$/.
+^X-@  Pipe shell command to buffer
+130 :FW/SEDTTMP1.$$$/:SYS?"Filter: " <SEDTTMP1.$$ >SEDTTMP2.$$$:FG/SEDTTMP2.$$$/.
+^X-#  Filter buffer through shell filter
+131 :SYS?"Program name: ".
+^X-$  Execute external program
+132 :LNL!"Key to bind to macro: ".
+^X-(  Begin macro
+133 :LNX.
+^X-)  End macro
+134 ?"Value: ":CNS#?"Variable (A-Z): ".
+^X-A  Set variable value
+135 ?"Buffer number (0-3): ":WI.
+^X-B  Switch window to a buffer
+136 :SYS//.
+^X-C  Start a new command processor
+137 :OM/Unimplemented: ^X-D  Suspend editing session/.
+^X-D  Suspend editing session
+138 :LNE!"Macro key to excute: ".
+^X-E  Execute macro
+139 :RL.
+^X-F  Set fill column (ruler mode)
+140 :Z.
+^X-K  Delete buffer
+141 :T?"Mode (B/C/D/F/K/M/P/R/S/T/U/X): ".
+^X-M  Add a mode
+142 :FS?"Rename as file: ".
+^X-N  Rename current filename
+143 :OW.
+^X-O  Move to next window
+144 :OW.
+^X-P  Move to previous window
+145 :OM/Unimplemented: ^X-R  Incremental reverse search/.
+^X-R  Incremental reverse search
+146 :OM/Unimplemented: ^X-S  Incremental forward search/.
+^X-S  Incremental forward search
+147 :OM/Unimplemented: ^X-W  Resize window/.
+^X-W  Resize window
+148 :OM/Unimplemented: ^X-X  Use next buffer/.
+^X-X  Use next buffer
+149 :OM/Unimplemented: ^X-Z  Enlarge display window/.
+^X-Z  Enlarge display window
+150 -@L.
+^A    Move to start of line
+151 -@C.
+^B    Move backwards by characters
+152 32:CH.
+^C    Insert space
+153 (:D+@C).
+^D    Forward delete
+154 +@EL.
+^E    Goto end of line
+155 +@C.
+^F    Move forwards by characters
+156 :OE/Use ^C to cancel command/.
+^G    Abort out of things
+157 (:D-@C).
+^H    Backwards delete
+158 :TAB.
+^I    Insert tab
+159 :NL:TAB.
+^J    Insert newline and indent
+160 (:D+@EL).
+^K    Kill forward
+161 :RF.
+^L    Refresh screen
+162 :NL.
+^M    Insert newline
+163 +@V.
+^N    Move forward by lines
+164 :OL.
+^O    Open line
+165 -@V.
+^P    Move backwards by lines
+166 ^TX(0:SETX:I/?"Quote: "/).
+^Q    Insert literal key
+167 -@F?"Reverse search: ".
+^R    Search backwards
+168 +@F?"Forward search: ".
+^S    Search forward
+169 (:D+@C+@C:UC).
+^T    Transpose characters
+170 ?"Repeat count: "$4
+^U    Repeat command four times
+171 +@SCR.
+^V    Move forward by pages
+172 ^S(:D@SR|8:M:SEL9@M:D@SR8@M).
+^W    Kill region
+173 :USR.
+^Y    Yank back from kill buffer
+174 -@SCR.
+^Z    Move backward by pages
+175 :OM/Unimplemented: ^[^C  Count words in region/.
+^[^C  Count words in region
+176 :OM/Unimplemented: ^[^E  Execute named procedure/.
+^[^E  Execute named procedure
+177 @BM.
+^[^F  Goto matching fence
+178 :D-@W.
+^[^H  Delete backward word
+179 :OM/Unimplemented: ^[^K  Unbind key from function/.
+^[^K  Unbind key from function
+180 :CM.
+^[^L  Reposition window
+181 :T?"Mode (B/C/D/F/K/M/P/R/S/T/U/X): ".
+^[^M  Delete global mode
+182 :OM/Unimplemented: ^[^N  Rename current buffer/.
+^[^N  Rename current buffer
+183 ^TX(0:SETX:SUB?"Replace string: "?"With: ":UM^E(:YN/Replace?? /:NS)(@N)).
+^[^R  Search and replace with query
+184 :OM/Unimplemented: ^[^S  Change screen rows/.
+^[^S  Change screen rows
+185 :WD.
+^[^T  Change screen columns
+186 :OW+@SCR:OW.
+^[^V  Scroll down next window
+187 (:D@PAR).
+^[^W  Delete paragraph
+188 :OW-@SCR:OW.
+^[^Z  Scroll up next window
+189 :H/%DEMACS.HLP/.
+^[-A  Apropos (list some commands)
+190 -@W.
+^[-B  Backup by words
+191 :CU@C.
+^[-C  Initial capitalize word
+192 (:D+@W).
+^[-D  Delete forward word
+193 :OM/Unimplemented: ^[^C  Count words in region/.
+^[-E  Reset encryption key
+194 +@W.
+^[-F  Advance by words
+195 ?"Line number: "@AL:CM.
+^[-G  Goto a specific line
+196 :KF!"Key: "?"As: ".
+^[-K  Bind key to function
+197 :CD@W.
+^[-L  Lowercase word
+198 :T?"Mode (B/C/D/F/K/M/P/R/S/T/U/X): ".
+^[-M  Add global mode
+199 +@PAR.
+^[-N  Goto end of paragraph
+200 -@PAR.
+^[-P  Goto beginning of paragraph
+201 :FT@PAR.
+^[-Q  Justify current paragraph
+202 ^TX(0:SETX:SUB?"Replace string: "?"With: ")0:NS.
+^[-R  Search and replace
+203 :CU@W.
+^[-U  Uppercase word
+204 -@SCR.
+^[-V  Move backward by pages
+205 ^S(:GAP@SR|8:M:SEL9@M:GAP@SR8@M).
+^[-W  Copy region to kill buffer
+206 ?"SEDT command: ".
+^[-X  Execute named command
+207 ^E(:YN/Save all buffers?? /0:WI^C(:FS//)1:WI^C(:FS//)2:WI^C(:FS//)3:WI^C(:FS//):Q)(:OM/Save aborted/).
+^[-Z  Save all buffers and exit
+208 :PUSHCH.
+^[-~  Unmark current buffer
+209 :CM.
+^[-!  Reposition window
+210 @BB.
+^[-<  Move to start of buffer
+211 @EB.
+^[->  Move to end of buffer
+212 9:M.
+^[-.  Set mark
+213 9:M.
+^[-   Set mark
+;213 ?"Set mark (1-5): ":M.
+;^[-   Set mark

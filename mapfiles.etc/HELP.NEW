@@ -1,0 +1,584 @@
+                                 Anker Software
+                                Sedt Version 4.2
+                                
+                           New editor key definitions
+
+        Type    For help on                 Type   For help on
+
+        a       Absolute position           m       Macros
+        b       Backup move or delete       n       Counters
+        c       Change case                 o       Operating system calls
+        d       Delete                      q       Quit
+        e       Edit                        r       Range
+        f       File functions              s       Set
+        g       Go to a position/Move       t       Text
+        h       Help                        u       Undelete
+        i       Insert                      w       Window
+        k       Special key assignments     x       eXecute
+        l       Ruler
+a
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                Absolute Position
+
+                                    Commands
+
+                `ac     Go to Absolute Character
+                `al     Go to Absolute Line
+b
+                                 Anker Software
+                                Sedt Version 4.2
+
+                              Backup move or delete
+
+                                    Commands
+
+                'b      Backup/undo move or delete
+c
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                   Change Case
+
+                                    Commands
+
+                `cl     Change case of current character to Lower
+                `cu     Change case of current character to Upper
+
+d
+                                 Anker Software
+                                Sedt Version 4.2
+
+
+                                     Delete
+
+                                    Commands
+
+                `da     Delete to sAme string
+                `db     Delete to Bottom of file
+                `dc     Delete Character
+                `de     Delete to End of line
+                `df     Delete to Find string
+                `dg     Delete paraGraph
+                `dl     Delete Line
+                `dm1    Delete to Mark One
+                `dm2    Delete to Mark Two
+                `dm3    Delete to Mark Three
+                `dm4    Delete to Mark Four
+                `dm5    Delete to Mark Five
+                `dm6    Delete to Mark Six
+                `dm7    Delete to Mark Seven
+                `dm8    Delete to Mark Eight
+                `dm9    Delete to Mark Nine
+                `dm0    Delete to Mark Ten
+                `dmn    Delete to Mark Next
+                `dn     Delete Sentence
+                `do     Delete to matching Other (),{},[],<>,'',""
+                `dp     Delete Page
+                `dq     Delete to matching Quote ',"
+                `ds     Delete Screen
+                `dt     Delete to Top of file
+                `dw     Delete Word
+e
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                      Edit
+
+                                    Commands
+
+                `ec     Cut
+                `el     Lower case
+                `em     Mark
+                `eo     cOpy
+                `ep     Paste
+                `er     Reset
+                `es     Strip trailing
+                `etr    Edit Tabs Remove
+                `ets    Edit Tabs Set
+f
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                      File
+
+                                    Commands
+
+                `fc     File Checkpoint
+                `fe     File Edit
+                `fg     File Get
+                `fk     File Save Key definitions
+                `fn     File save coNtext
+                `fs     File Save
+                `fw     File Write
+                `fx     File Execute sedt commands
+                `fz     File Zap
+g
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                   Go To/Move
+        
+                                    Commands
+
+                Control+B       Go forward one word
+                Control+F       Go backward one character
+                Control+G       Go forward one character
+                Control+H       Go to previous beginning of line
+                Control+J       Go to next end of line
+                Control+K       Go to next string
+                Control+L       Go to next same string
+                Control+N       Go down one screen
+                Control+T       Go up one line
+                Control+U       Go up one screen
+                Control+V       Go down one line
+                Control+Y       Go back one word
+                `A      Move to Same string
+                `B      Move to Bottom of file
+                `C      Move Character
+                `D      Move Down
+                `E      Move Eol
+                `F      Find string
+                `G      Move paraGraph
+                `L      Move Line
+                `M      Move to matching (),{},[],<>
+                `N      Move seNtence
+                `P      Move Page
+                `Q      Move to matching Quote "",''
+                `S      Move Screen
+                `T      Move to Top of file
+                `W      Move Word
+                `1      Move to mark 1
+                `2      Move to mark 2
+                `3      Move to mark 3
+                `4      Move to mark 4
+                `5      Move to mark 5
+                `6      Move to mark 6
+                `7      Move to mark 7
+                `8      Move to mark 8
+                `9      Move to mark 9
+                `0      Move to mark 10
+                `ga     Move to sAme string
+                `gb     Move to Bottom of file
+                `gc     Move Character
+                `gd     Move Down
+                `ge     Move to End line
+                `gf     Move to Find string
+                `gg     Move paraGraph
+                `gl     Move Line
+                `gn     Move Sentence
+                `go     Move to Other (),{},[],<>,'',""
+                `gp     Move Page
+                `gq     Move to Quote ',"
+                `gs     Move Screen
+                `gt     Move to Top of file
+                `gu     Move Up
+                `gv     Move Vertical
+                `gw     Move Word
+h
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                      Help
+
+                                    Commands
+
+                `h      Help
+i
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                     Insert
+
+                                    Commands
+
+                `ia     Insert Ascii character
+                `id     Insert Date
+                `ip     Insert page marker
+                `it     Insert Time
+k
+                                 Anker Software
+                                Sedt Version 4.2
+
+                             Special key assignments
+
+%k
+l
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                      Ruler
+
+                Type    For help on
+
+                c       Keystrokes when defining a ruler
+                
+                                    Commands
+
+                `ld     ruLer Define
+                `l0     ruLer 0
+                `l1     ruLer 1
+                `l2     ruLer 2
+                `l3     ruLer 3
+                `l4     ruLer 4
+                `l5     ruLer 5
+                `l6     ruLer 6
+                `l7     ruLer 7
+                `l8     ruLer 8
+                `l9     ruLer 9
+lc
+                                 Anker Software
+                                Sedt Version 4.2
+        
+                            Ruler definition commands
+        
+                -               Remove tab stop at current column
+                Tab             Move right to next tab position
+                Backspace       Move to column 1
+                T               Set a tab position at the current column
+                L               Set left margin
+                R               Set right margin for fill
+                J               Set right margin for justify
+                W               Set left margin for fill and justify
+                A               Set auto left margin mode
+                I               Set Tab indentation level
+                Space           Remove all format controls at current column
+                <Digit>         Load saved ruler number Digit
+                <~> <Digit>     Save ruler in named ruler Digit
+                Enter,Return    Return to edit mode
+m
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                      Macro
+
+                                    Commands
+
+                `md     Macro Define
+                `ml     Macro Learn
+n
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                    Counters
+
+                                    Commands
+
+                `na     couNter Add from buffer
+                `ng     couNter Get from buffer
+                `ni     couNter Increment
+                `np     couNter Put into buffer
+                `ns     couNter Set
+o
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                Operating System
+
+                                    Commands
+
+                `o      Operating system
+q
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                      Quit
+
+                                    Commands
+
+                `qa     Quit and Abandon changes
+                `qs     Quit and Save changes
+r
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                      Range
+
+                                    Commands
+
+                `rc    Range Clear
+                `rs    Range Set
+s
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                       Set
+
+                Type    For help on
+
+                d       Direction
+                e       End of mark
+                f       Font
+                m       Mark
+                r       Regular expressions
+                t       Toggle
+                
+                                    Commands
+                
+                'sw     Switch between 80 and 132 columns (VT terminals)
+sd
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                  Set Direction
+
+                                    Commands
+
+                `sdf    Set Direction Forward
+                `sdr    Set Direction Reverse
+se
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                 Set End of Mark
+
+                                    Commands
+
+                `em1    Set End of Mark One
+                `em2    Set End of Mark Two
+                `em3    Set End of Mark Three
+                `em4    Set End of Mark Four
+                `em5    Set End of Mark Five
+                `em6    Set End of Mark Six
+                `em7    Set End of Mark Seven
+                `em8    Set End of Mark Eight
+                `em9    Set End of Mark Nine
+                `em0    Set End of Mark Ten
+sf
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                    Set Font
+
+                                    Commands
+
+                `sfl    Set Font Larger
+                `sfs    Set Font Smaller
+sm
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                    Set Mark
+
+                                    Commands
+
+                `sm1    Set Mark One
+                `sm2    Set Mark Two
+                `sm3    Set Mark Three
+                `sm4    Set Mark Four
+                `sm5    Set Mark Five
+                `sm6    Set Mark Six
+                `sm7    Set Mark Seven
+                `sm8    Set Mark Eight
+                `sm9    Set Mark Nine
+                `sm0    Set Mark Ten
+sr
+                                 Anker Software
+                                Sedt Version 4.2
+
+                      Regular Expression Search and Replace
+        
+        The regular  expression algorithms were written by Henry Spencer.
+                  Copyright (c) 1986 by University of Toronto.
+        
+        A regular  expression is zero or more branches, separated by `|'.
+        It matches anything that matches one of the branches.
+
+        A branch is  zero  or  more  pieces,  concatenated.  It matches a
+        match for the first, followed by a match for the second, etc.
+
+        A piece is an  atom  possibly  followed  by `*', `+', or `?'.  An
+        atom followed by `*' matches  a  sequence of 0 or more matches of
+        the atom.  An atom followed  by  `+'  matches  a sequence of 1 or
+        more matches of the atom.  An  atom  followed  by  `?'  matches a
+        match of the atom, or the null string.
+
+        An atom is a regular expression in parentheses  (matching a match
+        for  the regular expression), a range (see below), `.'  (matching
+        any  single  character),  `^'  (matching  the  null string at the
+        beginning  of the input string), `$' (matching the null string at
+        the  end  of  the  input  string),  a  `\'  followed  by a single
+        character (matching that character),  or  a single character with
+        no other significance (matching that character).
+
+        A  range is a sequence  of  characters  enclosed  in  `[]'.    It
+        normally matches any single character from  the sequence.  If the
+        sequence  begins with `^', it matches any  single  character  not
+        from the rest of the sequence.  If two characters in the sequence
+        are  separated  by `-', this is shorthand for the  full  list  of
+        ASCII  characters between them (e.g.  `[0-9]' matches any decimal
+        digit).   To  include  a literal `]' in the sequence, make it the
+        first character (following a possible `^').  To include a literal
+        `-', make it the first or last character.
+
+        If a regular expression  could  match  two different parts of the
+        input string, it will match  the  one  which begins earliest.  If
+        both begin in the same place  but  match  different  lengths,  or
+        match the same length in different ways,  life  gets  messier, as
+        follows.
+
+        In  general,  the  possibilities  in  a  list  of   branches  are
+        considered  in  left-to-right  order,  the possibilities for `*',
+        `+', and  `?' are considered longest-first, nested constructs are
+        considered from the outermost in, and concatenated constructs are
+        considered leftmost-first.  The  match that will be chosen is the
+        one that uses the earliest  possibility  in the first choice that
+        has to be made.  If  there is more than one choice, the next will
+        be made in the same manner (earliest  possibility) subject to the
+        decision on the first choice.  And so forth.
+
+        For example, `(ab|a)b*c' could match `abc' in one  of  two  ways.
+        The first choice is between `ab' and `a';  since `ab' is earlier,
+        and does lead to a successful overall match, it is chosen.  Since
+        the  `b'  is  already  spoken  for, the `b*' must match its  last
+        possibility-the empty string-since it  must  respect  the earlier
+        choice.
+
+        In the particular case where  no  `|'s  are  present and there is
+        only one `*', `+', or `?',  the  net  effect  is that the longest
+        possible  match  will  be  chosen.    So  `ab*',  presented  with
+        `xabbbby',  will  match  `abbbb'.  Note that if  `ab*'  is  tried
+        against  `xabyabbbz', it will match `ab' just after `x',  due  to
+        the  begins-earliest rule.  (In effect, the decision on where  to
+        start the match is the first choice to be made, hence  subsequent
+        choices must respect it even if this leads them to less-preferred
+        alternatives.)
+        
+        Regular expression  replacement  causes  each  instance of `&' in
+        source  is  replaced  by  the substring indicated  by  the  found
+        pattern.  Each instance  of `\n', where n is a digit, is replaced
+        by  the substring indicated by the n'th subpattern.    To  get  a
+        literal `&' or `\n' into dest, prefix it with  `\';    to  get  a
+        literal `\' preceding `&' or `\n', prefix it with another `\'.
+st
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                    SetToggle
+
+                                    Commands
+
+                `stb    Set Toggle Block/Line mode
+                `stc    Set Toggle Case sensitivity
+                `std    Set Toggle Direction
+                `stf    Set Toggle Free movement
+                `sto    Set Toggle Overstrike/insert
+                `str    Set Toggle Ruler display
+                `sts    Set Toggle exact/regular Searches
+                `stt    Set Toggle Tabs
+                `stw    Set Toggle horizontal Window scrolling
+t
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                      Text
+
+                                    Commands
+
+                `tc     Text Center
+                `tj     Text Justify
+                `tn     Text replace Next
+                `to     Text Open line
+                `tr     Text Replace
+u
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                    Undelete
+
+                                    Commands
+
+                `uc     Undelete Character
+                `ug     Undelete paraGraph
+                `ul     Undelete Line
+                `up     Undelete Page
+                `ur     Undelete Region
+                `us     Undelete Sentence
+                `uw     Undelete Word
+w
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                     Window
+
+                Type    For help on
+
+                c       Cursor
+                l       spLit
+                m       Modify
+                s       Switch
+
+                                    Commands
+
+                `w0     Go to window 0
+                `w1     Go to window 1
+                `w2     Go to window 2
+                `w3     Go to window 3
+                `w4     Go to window 4
+                `w5     Go to window 5
+                `w6     Go to window 6
+                `w7     Go to window 7
+                `w8     Go to window 8
+                `w9     Go to window 9
+                `wa     Window cAscade
+                `wp     Window Position
+                `wr     Window Refresh
+                `wt     Window Tile
+                `wz     Window Zoom
+wc
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                  Window Cursor
+
+                                    Commands
+
+                `wcb    Window Cursor Bottom
+                `wcm    Window Cursor Middle
+                `wct    Window Cursor Top
+wl
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                  Window Split
+
+                                    Commands
+
+                `wlh    Window spLit Horizontally
+                `wlv    Window spLit Vertically
+wm
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                  Window Modify
+
+                                    Commands
+
+                `wmg    Window Modify Grow
+                `wmm    Window Modify Move
+                `wms    Window Modify Shrink
+ws
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                  Window Switch
+
+                                    Commands
+
+                `wsc    Window Switch next Changed
+                `wsf    Window Switch Free
+                `wsn    Window Switch Next
+                `wsp    Window Switch Previous
+                `wss    Window Switch Specify
+                `wsu    Window Switch Used
+x
+                                 Anker Software
+                                Sedt Version 4.2
+
+                                    eXecute
+
+                                    Commands
+
+                'xd     eXecute Sedt commands directly
+                'xf     eXecute Sedt commands in file

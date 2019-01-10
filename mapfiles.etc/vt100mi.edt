@@ -1,0 +1,203 @@
+;Assign keystrokes
+KEYS
+;1 <F1>
+;2 <F2>
+;3 <F3>
+;4 <F4>
+;5 <F5>
+;6 <F6>
+;7 <F7>
+;8 <F8>
+;9 <F9>
+;10 <F10>
+;11 <F11>
+;12 <F12>
+;13 <F13>
+;14 <F14>
+;15 <F15>
+;16 <F16>
+;17 <F17>
+;18 <F18>
+;19 <F19>
+;20 <F20>
+;21 <Find>
+;22 <Insert Here>
+;23 <Remove>
+;24 <Select>
+;25 <Prev Screen>
+;26 <Next Screen>
+;27 <Up Arrow>
+;28 <Left Arrow>
+;29 <Down Arrow>
+;30 <Right Arrow>
+;31 <Keypad 0>
+;32 <Keypad 1>
+;33 <Keypad 2>
+;34 <Keypad 3>
+;35 <Keypad 4>
+;36 <Keypad 5>
+;37 <Keypad 6>
+;38 <Keypad 7>
+;39 <Keypad 8>
+;40 <Keypad 9>
+;41 <Keypad ,>
+;42 <Keypad ->
+;43 <Keypad .>
+;44 <Keypad PF1>
+;45 <Keypad PF2>
+;46 <Keypad PF3>
+;47 <Keypad PF4>
+;48 <Keypad Enter>
+;49 <Backspace>
+;50 <Return>
+A13 50 Return
+;These are keystroke combinations
+COMBINATIONS
+1 A27
+;CSI 7 bit codes
+2 A91
+3 A49
+4 A126 21 "Find
+4 A55
+5 A126 6 "F6
+4 A56
+5 A126 7 "F7 
+4 A57
+5 A126 8 "F8
+3 A50
+4 A126 22 "Insert Here
+4 A48
+5 A126 9 "F9
+4 A49
+5 A126 10 "F10
+4 A51
+5 A126 11 "F11
+4 A52
+5 A126 12 "F12
+4 A53
+5 A126 13 "F13
+4 A54
+5 A126 14 "F14
+4 A56
+5 A126 15 "Help
+4 A57
+5 A126 16 "Do
+3 A51
+4 A126 23 "Remove
+4 A49
+5 A126 17 "F17
+4 A50
+5 A126 18 "F18
+4 A51
+5 A126 19 "F19
+4 A52
+5 A126 20 "F20
+3 A52
+4 A126 24 "Select
+3 A53
+4 A126 25 "Prev Screen
+3 A54
+4 A126 26 "Next Screen
+3 A65 27 "Up Arrow
+3 A66 29 "Down Arrow
+3 A67 30 "Right Arrow
+3 A68 28 "Left Arrow
+;SS3 7 bit codes
+2 A79
+3 A65 27 "Up Arrow
+3 A66 29 "Down Arrow
+3 A67 30 "Right Arrow
+3 A68 28 "Left Arrow
+3 A112 31 "Keypad 0
+3 A113 32 "Keypad 1
+3 A114 33 "Keypad 2
+3 A115 34 "Keypad 3
+3 A116 35 "Keypad 4
+3 A117 36 "Keypad 5
+3 A118 37 "Keypad 6
+3 A119 38 "Keypad 7
+3 A120 39 "Keypad 8
+3 A121 40 "Keypad 9
+3 A109 42 "Keypad -
+3 A108 41 "Keypad ,
+3 A110 43 "Keypad .
+3 A77 48 "Keypad Enter
+3 A80 44 "Keypad PF1
+3 A81 45 "Keypad PF2
+3 A82 46 "Keypad PF3
+3 A83 47 "Keypad PF4
+;CSI 8 bit codes
+1 A155
+2 A49
+3 A126 21 "Find
+3 A55
+4 A126 6 "F6
+3 A56
+4 A126 7 "F7
+3 A57
+4 A126 8 "F8
+2 A50
+3 A126 22 "Insert Here
+3 A48
+4 A126 9 "F9
+3 A49
+4 A126 10 "F10
+3 A51
+4 A126 11 "F11
+3 A52
+4 A126 12 "F12
+3 A53
+4 A126 13 "F13
+3 A54
+4 A126 14 "F14
+3 A56
+4 A126 15 "Help
+3 A57
+4 A126 16 "Do
+2 A51
+3 A126 23 "Remove
+3 A49
+4 A126 17 "F17
+3 A50
+4 A126 18 "F18
+3 A51
+4 A126 19 "F19
+3 A52
+4 A126 20 "F20
+2 A52
+3 A126 24 "Select
+2 A53
+3 A126 25 "Prev Screen
+2 A54
+3 A126 26 "Next Screen
+2 A65 27 "Up Arrow
+2 A66 29 "Down Arrow
+2 A67 30 "Right Arrow
+2 A68 28 "Left Arrow
+;SS3 8 bit codes
+1 A143
+2 A65 27 "Up Arrow
+2 A66 29 "Down Arrow
+2 A67 30 "Right Arrow
+2 A68 28 "Left Arrow
+2 A112 31 "Keypad 0
+2 A113 32 "Keypad 1
+2 A114 33 "Keypad 2
+2 A115 34 "Keypad 3
+2 A116 35 "Keypad 4
+2 A117 36 "Keypad 5
+2 A118 37 "Keypad 6
+2 A119 38 "Keypad 7
+2 A120 39 "Keypad 8
+2 A121 40 "Keypad 9
+2 A109 42 "Keypad -
+2 A108 41 "Keypad ,
+2 A110 43 "Keypad .
+2 A77 48 "Keypad Enter
+2 A80 44 "Keypad PF1
+2 A81 45 "Keypad PF2
+2 A82 46 "Keypad PF3
+2 A83 47 "Keypad PF4
+;Now for mapping keys to functions
+MAPS
+@defallmi.edt

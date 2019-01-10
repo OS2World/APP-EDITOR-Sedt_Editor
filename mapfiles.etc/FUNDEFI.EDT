@@ -1,0 +1,226 @@
+;Functions defined for keyboard mapping
+;Anker Berg-Sonne
+4 :EAP@SR.
+Append select range to paste buffer
+5 :SM.
+Show and select from menu
+6 ^C(:FS).
+Save contents of buffer
+7 ^C(:FS):CS.
+Save context and contents of buffer
+8 $1:Q.
+Quit without saving buffer
+9 .
+Dead key
+10 $0:X.
+Save buffer and exit
+11 (27:CH).
+Insert an escape character
+12 -@L.
+Goto beginning of line
+13 (:D-@W).
+Delete to beginning of word
+15 :H//.
+Help
+16 :SYS?"Operating system command: ".
+Execute operating system command
+17 0:WI.
+Select buffer 0
+18 1:WI.
+Select buffer 1
+19 2:WI.
+Select buffer 2
+20 3:WI.
+Select buffer 3
+21 @N.
+Goto next occurrence of search string
+22 :USR.
+Paste
+23 :D@SR.
+Cut
+24 :SEL.
+Set select point
+25 -@SCR.
+Go one screen up
+26 +@SCR.
+Go one screen down
+27 -@V.
+Go 1 line up vertically
+28 -@C.
+Go 1 character back
+29 +@V.
+Go 1 line down vertically
+30 +@C.
+Go 1 character forward
+31 @L.
+Goto beginning of next line
+32 @W.
+Goto next word
+33 @EL.
+Goto next end of line
+34 @C.
+Goto next character
+35 :A.
+Set default direction forward
+36 :B.
+Set default direction reverse
+38 @PAG.
+Goto next page
+39 @PAR.
+Goto next paragraph
+40 :NS.
+Substitute next occurrence of search string
+41 (:D+@C).
+Delete character forward
+42 (:D+@W).
+Delete word forward
+47 (:D+@L).
+Delete line forward
+49 (:D-@C).
+Delete character backward
+50 :LS.
+Set indentation level
+51 :LD.
+Decrease indentation level
+52 :LI.
+Increase indentation level
+54 :TAB.
+Insert a tab character
+55 (:D-@W).
+Delete to beginning of word
+56 :KF!"Key:"?"As: ".
+Define key
+57 :FNL.
+Enlargen Font
+58 :NL.
+Insert a carriage return
+59 :PR?"Print on file: ".
+Print contents of buffer
+60 :FNS.
+Reduce font
+61 :TAD@SR.
+Adjust text a tab stop
+62 (:D-@L).
+Delete to beginning of line
+63 :RF.
+Refresh display
+65 (^S(:D@SR|:D-@C)).
+Delete previous character
+66 :SK!"Key:".
+Save key definition in buffer
+67 :LK!"Key:"@SR.
+Load key definition from select range
+69 +
+Set temporary direction to forward
+70 -
+Set temporary direction to reverse
+71 @M.
+Goto mark
+74 :TS.
+Toggle automatic screen shifting
+75 +@EB.
+Goto end of buffer
+76 :CL.
+Center line
+77 :WC.
+Toggle between one and two window mode
+78 :FE?"Edit File: ".
+Edit new file in current buffer
+80 :FG?"Get File: ".
+Include file at current position
+82 :TT.
+Toggle tab expansion/insertion
+83 (9:M^LB(|-@L)():FT+@PAR9@M).
+Refill paragraph from beginning of line
+84 :TB.
+Toggle block/line cut and paste
+85 :M.
+Set mark
+86 :OS.
+Toggle overstrike mode
+87 (12:CH).
+Insert a form feed character
+89 :RL.
+Enter ruler definition mode
+90 :FS?"Save onto File: ".
+Save contents of buffer
+91 -@BB.
+Goto start of buffer
+92 :UM.
+Undo last command if possible
+93 :WD.
+Toggle between 132 and 80 character screen
+94 :OW.
+Switch to previous window
+95 :Z.
+Clear buffer
+96 :I- 9:M^E(-@L)():FT+@PAR9@M.
+Insert a hyphen and reindent paragraph
+97 :PL?"Load Paste Buffer From File: ".
+Load paste buffer from file
+100 ?"SEDT Command: ".
+Execute Sedt command
+101 :OM/Type control B to end learning and replay learned keystrokes/:LNL000.
+Learn keystrokes into ^Z
+102 :LNL!"Key to save learned input in:".
+Learn keystrokes into arbitrary key
+103 @BM.
+Goto matching bracketing character
+104 @F?"String: ".
+Goto next occurence of string
+105 :GE@SR.
+Load paste buffer from select range without deleting
+106 :RS.
+Cancel select point
+109 :CT.
+Position cursor at top of screen
+110 0(-@L:TI).
+Go backwards until key struck
+111 :CB.
+Position cursor at bottom of screen
+112 0(+@L:TI).
+Go forward until key struck
+113 :OL.
+Open line
+114 :CE.
+Change case EDT style (Select range,found string,character)
+115 (:D+@EL).
+Delete to end of line
+116 :CH.
+Insert ASCII character
+121 :FT+@PAR.
+Fill or justify to end of paragraph
+122 :SUB?"String: "?"By: ".
+Substitute one string by another
+123 :UC.
+Undelete character
+124 :UW.
+Undelete word
+127 :UL.
+Undelete Line
+128 (:D+@C+@C:UC).
+Swap characters
+129 2:CH.
+Insert a Control B character 
+130 :OM%H!"Press key you want help for".
+Print help text for a key
+131 :NWU.
+Cycle to next used buffer
+132 :NWN.
+Cycle to next unused buffer
+133 @AL.
+Go to absolute line number
+134 :WG.
+Grow window
+135 :WS.
+Shrink window
+136 :WM.
+Move window
+137 :WT.
+Tile windows
+138 :UOFF2:WC-:WFB:OW2:WC-:WFT:OW:UON.
+Split screen horizontally
+139 :UOFF2:WC-:WFR:OW2:WC-:WFL:OW:UON.
+Split screen vertically
+140 :UOFF0:WI-:WFR-:WFB1:WI-:WFL-:WFB2:WI-:WFT-:WFR3:WI-:WFT-:WFL0:WI:UON.
+Split screen into quarters

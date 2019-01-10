@@ -1,0 +1,476 @@
+1 :CU@C.
+Change character to Upper UCase
+2 :D@EB.
+Delete to End of buffer
+3 :D+@N.
+Delete Forward to sAme string
+4 :D+@C.
+Delete Forward to Character
+5 :D+@EL.
+Delete Forward to End line
+6 :D+@F?String: .
+Delete Forward to Find string
+7 :D+@PAR.
+Delete Forward to paraGraph
+8 :D+@L.
+Delete Forward to Line
+9 :D+@SEN.
+Delete Forward to Sentence
+10 :D+@PAG.
+Delete Forward to Page
+11 :D+@BM.
+Delete Forward to Quote `,"
+12 :D+@SCR.
+Delete Forward to Screen
+13 :D+@W.
+Delete Forward to Word
+14 :D+1@M.
+Delete to Mark One
+15 :D+2@M.
+Delete to Mark Two
+16 :D+3@M.
+Delete to Mark Three
+17 :D+4@M.
+Delete to Mark Four
+18 :D+5@M.
+Delete to Mark Five
+19 :D+6@M.
+Delete to Mark Six
+20 :D+7@M.
+Delete to Mark Seven
+21 :D+8@M.
+Delete to Mark Eight
+22 :D+9@M.
+Delete to Mark Nine
+23 :D+10@M.
+Delete to Mark Ten
+24 :D+@XNM.
+Delete to Mark, Next
+25 :D@N.
+Delete to Next sAme string
+26 :D@C.
+Delete to Next Character
+27 :D@EL.
+Delete to Next End line
+28 :D@F?String: .
+Delete to Next Find string
+29 :D@PAR.
+Delete to Next paraGraph
+30 :D@L.
+Delete to Next Line
+31 :D@SEN.
+Delete to Next seNtence
+32 :D@PAG.
+Delete to Next Page
+33 :D@BM.
+Delete to Next Quote `,"
+34 :D@SCR.
+Delete to Next Screen
+35 :D@W.
+Delete to Next Word
+36 :D@BM.
+Delete to Next Other (),{},[],<>,``,""
+37 :D-@N.
+Delete Reverse to sAme string
+38 :D-@C.
+Delete Reverse to Character
+39 :D-@EL.
+Delete Reverse to End line
+40 :D-@F?String: .
+Delete Reverse to Find string
+41 :D-@PAR.
+Delete Reverse to paraGraph
+42 :D-@L.
+Delete Reverse to Line
+43 :D-@SEN.
+Delete Reverse to Sentence
+44 :D-@PAG.
+Delete Reverse to Page
+45 :D-@BM.
+Delete Reverse to Quote `,"
+46 :D-@SCR.
+Delete Reverse to Screen
+47 :D-@W.
+Delete Reverse to Word
+48 :D@SR.
+Delete to Select point
+49 :D@BB.
+Delete to Top of file
+50 :CK.
+File Checkpoint
+51 :FE?File: .
+File Edit
+52 :FG?File: .
+File Get
+53 :SAVK//:SAVF//.
+File Save Key definitions
+54 :CS:FS//.
+File save coNtext
+55 ^C(:FS//).
+File Save
+56 :FW?File: .
+File Write
+57 :FX?File: .
+File Execute
+58 :Z.
+File Zap
+59 ?Character number: @AC.
+Go to Absolute Character
+60 ?Line number: @AL.
+Go to Absolute Line
+61 +@V.
+Go Down
+62 @EB.
+Go to End of file
+63 +@N.
+Go Forward to sAme string
+64 +@C.
+Go Forward to Character
+65 +@EL.
+Go Forward to End line
+66 +@F?String: .
+Go Forward to Find string
+67 +@PAR.
+Go Forward paraGraph
+68 +@L.
+Go Forward Line
+69 +@SEN.
+Go Forward Sentence
+70 +@PAG.
+Go Forward Page
+71 +@BM.
+Go Forward to Quote `,"
+72 +@SCR.
+Go Forward Screen
+73 +@V.
+Go Forward Vertical
+74 +@W.
+Go Forward Word
+75 1@M.
+Go to Mark One
+76 2@M.
+Go to Mark Two
+77 3@M.
+Go to Mark Three
+78 4@M.
+Go to Mark Four
+79 5@M.
+Go to Mark Five
+80 6@M.
+Go to Mark Six
+81 7@M.
+Go to Mark Seven
+82 8@M.
+Go to Mark Eight
+83 9@M.
+Go to Mark Nine
+84 10@M.
+Go to Mark Ten
+85 @XNM.
+Go to Mark Next
+86 @N.
+Go to Next sAme string
+87 @C.
+Go to Next Character
+88 @EL.
+Go to Next End line
+89 @F?String: .
+Go to Next Find string
+90 @PAR.
+Go to Next paraGraph
+91 @L.
+Go to Next Line
+92 @SEN.
+Go to Next seNtence
+93 @PAG.
+Go to Next Page
+94 @BM.
+Go to Next Quote `,"
+95 @SCR.
+Go to Next Screen
+96 @V.
+Go to Next Vertical
+97 @W.
+Go to Next Word
+98 @BM.
+Go to Other (),{},[],<>,``,""
+99 -@N.
+Go Reverse to sAme string
+100 -@C.
+Go Reverse to Character
+101 -@EL.
+Go Reverse to End line
+102 -@F?String: .
+Go Reverse to Find string
+103 -@PAR.
+Go Reverse to paraGraph
+104 -@L.
+Go Reverse to Line
+105 -@SEN.
+Go Reverse to seNtence
+106 -@PAG.
+Go Reverse to Page
+107 -@BM.
+Go Reverse to Quote `,"
+108 -@SCR.
+Go Reverse to Screen
+109 -@V.
+Go Reverse to Vertical
+110 -@W.
+Go Reverse to Word
+111 @SR.
+Go to Select point
+112 @BB.
+Go to Top of file
+113 -@V.
+Go Up
+114 :H//.
+Help
+115 (?ASCII value: :CH).
+Insert Ascii
+116 :PD.
+Insert Date
+117 :PT.
+Insert Time
+118 :RL.
+Ruler Define
+119 0:GR.
+Load ruler 0
+120 1:GR.
+Load ruler 1
+121 2:GR.
+Load ruler 2
+122 3:GR.
+Load ruler 3
+123 4:GR.
+Load ruler 4
+124 5:GR.
+Load ruler 5
+125 6:GR.
+Load ruler 6
+126 7:GR.
+Load ruler 7
+127 8:GR.
+Load ruler 8
+128 9:GR.
+Load ruler 9
+129 :KF!Key: ?As: .
+Macro Define
+130 :LNL!Key: .
+Macro Learn
+131 :CNA.
+couNter Add from buffer
+132 :CNG.
+couNter Get from buffer
+133 ?Increment: :CNI.
+couNter Increment
+134 :CNP.
+couNter Put into buffer
+135 ?Value: :CNS.
+couNter Set
+136 :SYS?Operating system command: .
+Operating system command
+137 $1:Q.
+Quit
+138 :RS.
+Edit Clear
+139 :D@SR.
+Edit Delete
+140 :GE@SR.
+Edit Get
+141 :CD@SR.
+Edit Lower case
+142 :SEL.
+Edit Mark
+143 :ERC.
+Region Clear
+144 :ERS@SR.
+Region Set
+145 :STRP@SR.
+Edit Strip trailing spaces
+146 :RTAB@SR.
+Edit Tab Remove
+147 :STAB@SR.
+Edit Tab Set
+148 :CU@SR.
+Edit Upper case
+149 :A.
+Set Direction Forward
+150 :B.
+Set Direction Reverse
+151 :FNL.
+Set Font Larger
+152 :FNS.
+Set Font Smaller
+153 1:M.
+Set Mark One
+154 2:M.
+Set Mark Two
+155 3:M.
+Set Mark Three
+156 4:M.
+Set Mark Four
+157 5:M.
+Set Mark Five
+158 6:M.
+Set Mark Six
+159 7:M.
+Set Mark Seven
+160 8:M.
+Set Mark Eight
+161 9:M.
+Set Mark Nine
+162 10:M.
+Set Mark Ten
+163 :TB.
+Set Toggle Block/line mode
+164 :TU.
+Set Toggle Case sensitivity
+165 :TD.
+Set Toggle Direction
+166 :TF.
+Set Toggle Free movement
+167 :OS.
+Set Toggle Overstrike
+168 :TR.
+Set Toggle Ruler display
+169 :TV.
+Set Toggle exact/regular Searches
+170 :TT.
+Set Toggle Tabs
+171 :TS
+Set Toggle horizontal Window scrolling
+172 :CL.
+Text Center
+173 (99:M^LB(|-@L):FT+@PAR99@M-99:M).
+Text Justify
+174 :NS.
+Text replace Next
+175 :OL.
+Text Open line
+176 :SUB?String: ?By: .
+Text Replace
+177 :UC.
+Undelete Character
+178 :UPAR.
+Undelete paraGraph
+179 :UL.
+Undelete Line
+180 :UPAG.
+Undelete Page
+181 :USR.
+Undelete Range
+182 :USEN.
+Undelete Sentence
+183 :UW.
+Undelete Word
+184 :CB.
+Window Cursor at Bottom
+185 :CM.
+Window Cursor at Middle
+186 :CT.
+Window Cursor at Top
+187 :WG.
+Window Modify Grow
+188 :WM.
+Window Modify Move
+189 :WS.
+Window Modify Shrink
+190 :RF.
+Window Refresh
+191 :NWC.
+Window Switch next Changed
+192 :NWN.
+Window Switch Free
+193 :NWG.
+Window Switch Next
+194 ?Window: :WI.
+Window Switch Specify
+195 :NWU.
+Window Switch Used
+196 :WT.
+Window Tile
+197 :WC.
+Window Zoom
+198 :I`.
+Insert `
+199 $0:X.
+save file and eXit
+200 :NL.
+New line
+201 :TAB.
+Space to next tab stop
+202 :OMCancelled.
+Abort command string
+203 (:CD@C).
+Change character to Lower case
+204 :OW.
+Previous window
+205 :OMUndefined key.
+Undefined key
+206 :I/~/.
+Insert ~
+207 ?Sedt command: .
+Execute Sedt command
+208 (12:CH).
+Insert a page marker
+209 (0:WI).
+Go to window 0
+210 (1:WI).
+Go to window 1
+211 (2:WI).
+Go to window 2
+212 (3:WI).
+Go to window 3
+213 (4:WI).
+Go to window 4
+214 (5:WI).
+Go to window 5
+215 (6:WI).
+Go to window 6
+216 (7:WI).
+Go to window 7
+217 (8:WI).
+Go to window 8
+218 (9:WI).
+Go to window 9
+219 :UM.
+Backup move or delete
+220 -
+Direction backward
+221 +
+Direction forward
+222 ?"Position: ":WP.
+Position window
+223 :PR//.
+Print file
+224 1:EM.
+Set end of mark 1
+225 2:EM.
+Set end of mark 2
+226 3:EM.
+Set end of mark 3
+227 4:EM.
+Set end of mark 4
+228 5:EM.
+Set end of mark 5
+229 6:EM.
+Set end of mark 6
+230 7:EM.
+Set end of mark 7
+231 8:EM.
+Set end of mark 8
+232 9:EM.
+Set end of mark 9
+233 10:EM.
+Set end of mark 10
+234 :UOFF2:WC-:WFB:OW2:WC-:WFT:OW:UON.
+Split screen horizontally
+235 :UOFF2:WC-:WFR:OW2:WC-:WFL:OW:UON.
+Split screen vertically
+236 :UOFF0:WI-:WFR-:WFB1:WI-:WFL-:WFB2:WI-:WFT-:WFR3:WI-:WFT-:WFL0:WI:UON.
+Split screen into quarters
+237 :WD.
+Toggle screen width
+238 :WA.
+Cascade windows

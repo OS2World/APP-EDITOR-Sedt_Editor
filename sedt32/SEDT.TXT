@@ -1,0 +1,708 @@
+				Sedt Version 4.0
+						
+			    Author: Anker Berg-Sonne
+						
+				   Description	
+						
+		Sedt  is  a  screen  editor  written  with  the  goal  of
+	providing  a  common  editor  across  a  wide range of	operating
+	systems.    For  ease-of-use  Sedt  is programmed with a keyboard
+	layout similar to EDT.
+
+		For a  complete  description  of Sedt's features read the
+	documentation in SEDTMAN.EDT.
+
+		Sedt version 4.0  (151)  and  higher  edit  numbers  is a
+	shareware program and must  be	properly  licensed  by	paying	a
+	license fee.
+
+		Properly  licensed  users will receive	support  if  they
+	submit a report in writing to  the  author,  Anker  Berg-Sonne, 8
+	Middlemost Way, Stow, MA 01775, U.S.A.
+
+
+
+			       Distribution Policy
+
+		You  may distribute Sedt freely by any means as  long  as
+	the  License  Agreement  and  all  other  files from the original
+	distribution are included.
+
+		Sedt  may  not	be  used  beyond a one month trial period
+	without payment of a license fee.
+        
+		The  license  fee  includes  ONE  copy of  Sedt  for  ONE
+	operating system.  Additional copies and updates require  payment
+	of a fee.
+	
+		Sedt is currently available in the following versions:
+	
+			MS-DOS for Rainbow 100
+			MS-DOS for VAXmate
+			MS-DOS for IBM PC/XT/AT and compatibles
+			MS-DOS for PS/2 and compatibles
+			MS-DOS Microsoft Windows for IBM PC/AT and compatibles
+			OS/2 protected mode
+			ATARI ST 
+			VAX/VMS
+			VAX ULTRIX
+			SCO XENIX
+			SCO UNIX
+
+
+				   Installation
+
+		Each installation kit  contains a file named INSTALL.HOW.
+	This text file contains the installtion instructions for the kit.
+
+
+				 Known Problems
+
+		Under MS/DOS you may  run  out of files when using 3 to 4
+	concurrent buffers.  You should increase the number of concurrent
+	files in CONFIG.SYS to at least  12.	The  symptom  is either a
+	fatal  message "Error creating buffer file" or	non-fatal  "Could
+	not open journal file" or "Could not open input file".
+
+		When on the MS/DOS versions the column number exceeds 64K
+	the  display will become corrupted and Sedt may not  be  able  to
+	recover.  There are no plans to correct this problem.
+
+
+				   Edit History
+	
+	Version 4.0
+	
+       249:	13-Feb-1989
+		Remove all journaling
+		CAPSLOCK=DISPLAYED to display caps lock state on DOS
+		or CAPSLOCK=NORMAL to treat caps lock normally
+		Fix bug in block remove to end of buffer
+		Fix bug in removing characters>127 on VMS in block and
+		replace mode
+		Fix bug with % signs in :OM and :OE
+		Make VIDEO= work on Rainbows. VIDEO=DIRECT uses high
+		speed output, VIDEO=BIOS uses normal character output
+		Make :SI and :SO work on Rainbows
+		%R tokes ins replaced with line feed under UNIX and
+		carriage return/line feed on other systems
+		Make NUMLOCK=ENABLE stay completely clear of Num Lock
+		Have :SB return an error when broadcast buffer is empty
+		Allow up to 99 saved broadcasts on VMS
+		Only ring bell if broadcast message contains one
+		Fix minor bug in displaying # displaying multiple buffers
+		Allow up to 512 columns on VMS systems
+		Make maximum ruler 512 characters wide
+		
+	250:	20-Mar-1989
+		Ensure that a typed count of 1 is inserted before $
+		Make context save work on UNIX
+		Make :PR with no argument default to printer 0 on UNIX
+		Prevent :PR from aborting on UNIX, GEM and Windows
+		Allow integer argument to SCREENSHIFT
+		
+	251:	 1-Apr-1989
+		Rewrite keyboard driver:
+			Scancode to function key translation done by
+			map files XXYYYM.ZZZ where  XX is a two character
+			code for a keyboard type, YYY  is  DOS,  WIN,  or
+			OS2,  ZZZ  is  EDT  or WPS.   XXYYYH.ZZZ  is  the
+			corresponding  help  file.    FUNDEF.ZZZ  defines
+			function keys.
+			Eliminate scancode and old mapping
+		Make Autosave default to 200 key strokes
+		Add KEYBOARD=<type> where type is the prefix of map and
+			help files
+		Allow argument to -k<type> where type is the prefix of
+			map and help files
+		Remove GOLD= option from SEDT.CNF
+		Fix bug where autosaved file was not removed when changing
+		output file
+		Preserve original file protection when saving file under UNIX
+		
+	252:	17-Jun-1989
+		Change :K command to :KF
+		Add :FN command to assign keys to function numbers
+		Make Num_Lock state default to off for SLT, on for other
+		PC compatible keyboards and leave alone for others
+		:H format change to :H<Delimiter><Help file><Delimiter>
+		If <Help file> is empty it defaults to HELP.XXX where
+		XXX is EDT or WPS
+		Prevent unnecessary autosaves between changes
+		Expand maximum number of function definitions to 512
+		Expand maximum string space in MAPKEY to 10K
+		Allow / in DOS and OS/2 directory specs
+		Fix problem parsing :SUB commands in skip mode
+		Make backupfile for .profile .profile.bak on UNIX
+		Fix problem with crash searching backwards in edit region
+		Try to fix disappearing mouse problem on DEC mouse driver
+		
+	253:	 1-Jul-1989
+		Make learned keys repeat
+		Save and restore current directory on DOS and OS2
+		:CW to switch to other window on screen
+		Fix problem reading context files
+		Fix problem with VAXmates including an A when started
+		Remove FIRMWARE= option, causes multiple problems
+		
+	254:	26-Jul-1989
+		Make Sedt DesqView aware
+		Do not open the mouse under Desqview
+		Make VIDEO=DIRECT under DESQview use shadow video ram
+		Set default num lock states depending on keyboard types
+			on for all known except SLT (OFF) and unchanged 
+			for others
+		Make VIDEO=DIRECT work under DESQview 386
+		Fix problem with :SK not working (! problem with any already
+		mapped key)
+		
+	255:	23-Aug-1989
+		UNIX version work
+		Make Gold sequence work properly
+		Make ULTRIX version use TERM environment variable and
+		termcap when either SYSTEM=TERMCAP or terminal type is
+		unknown
+		-m<Hex number> to force Sedt into a specific video mode
+		Fix several bugs in video initialization
+		Fix OS/2 LK250 map files
+		
+	256:	31-Aug-1989
+		Fix %T token, was inserting garbage
+		Rainbow 100 should work now, needs testing
+		
+	257:	 5-Sep-1989
+		Make UNIX version look for lowercase help file name
+		
+	258:	12-Sep-1989
+		Make file names in VMS consistent with other operating systems
+		Make :RK work properly
+		Make :EK work properly
+		<Count>:EF to execute function definition number given in
+			<Count>
+		Fix bug with :SK picking up wrong function table entry
+		Make ATARI GEM version use command arguments
+		Fix problem with GEM version  opening buffers in read only
+		mode from menu
+		Make help routines search combination table for key texts
+		Make :KN work properly
+		<Function>:FD<Delimiter><Text><Delimiter> defines function
+		table entry <Function> as <Text>
+		
+	 259:	3-Oct-1989
+		Fix mapkey problems on VMS and ULTIX
+		Add %a in help files to give expansion of all keys mapping to
+		function
+		
+	260:	19-Oct-1989
+		Make Tandy 1400 behave the same as other pcs as far as 
+		color/mono
+		Make Yes-No use international routines properly
+		Read key files before reading input file
+		Make no mappings work properly
+		:TX to toggle expansion of function definitions on prompts
+		:SETX to set expansion of function definitions on prompts
+		^TX to save and restore state of inserting function
+		definitions
+		^IX to make execution consitional on state of function
+		definition expansion state
+		DEFINITION=ON or OFF in SEDT.CNF to determine whether
+		function definitions are inserted in response to prompts
+		More work on mouse interface
+		Make Sedt know when an autosaved file has been loaded
+		
+	261:	28-Oct-1989
+		<Count>:EF to execute a function definition directly
+		Do not assign negative character values
+		%W token for the current cursor column
+		Fix termcap for UNIX systems
+		New function :SAVF to save function definitions
+		Change :SAVK to save key definitions and mappings
+		Enable mouse cursor twice to work around bug in DECPCA mouse
+		driver
+		
+	262:	 4-Nov-1989
+		Make ^Z signal on UNIX work correctly
+		Make the default key for learned keystrokes ^B
+		Add functions :KA :KGA :KK :KGK
+		Fix problem with gold del word not working on EDT keypad
+		
+	263:	11-Nov-1989
+		Fix gold problem with :KGA, :KA, :KK and :KGK
+		Sort MAPS sections of key definition files
+		Fix SLT key definition file so Escape works as Gold
+		Fix printout of keyboard type
+		
+	264:	14-Nov-1989
+		Use current video state to set screen size using int 10
+		function 1bh
+		Fix problem writing ruler files under UNIX
+		Fix spelling error in VMS broadcast message
+		Get Windows version running on enhanced keyboard
+		Toggle to allow free or restricted cursor movement
+		:TF renamed to FT to allow symmetry in toggle function names
+		:TF toggle free cursor movement, :SETF to set it
+		^TF to save and restore it, ^IF for conditional execution
+		Make a return in replace mode go to the next file
+		Fix bug with more than 43 lines on DOS
+		
+	265:	22-Nov-1989
+		Fix side effects of free cursor movement
+		Change learned keystroke indicator from NUL to SI
+		Make learned strings all readable
+		Highlight entire block when selecting in block mode
+		
+	266:	27-Nov-1989
+		Fix problem with free cursor move mode
+		
+	267:	Make critical error handler under DOS more sophisticated
+		Make OS2 version trap control C and set error condition
+		Improve some video performance on DOS and OS/2
+		Make DOS version default to VIDEO=DIRECT
+		Fix line wrap problem under XENIX
+		
+	268:	11-Dec-1989
+		Optimize character output routine
+		
+	269:	17-Dec-1989
+		Fix several minor bugs reading help files
+		
+	270:	21-Dec-1989
+		Fix minor screen update problem in DOS
+		
+	271:	29-Dec-1989
+		Make DESQview mouse work properly
+		Make UNIX versions use ioctl to get window size information
+		Change argument syntax:
+		 Files for multiple buffers are separated by spaces
+		 Output file for a given input file is specified with
+		 -o<file name>
+		 sedt one.ext two.ext -othree.ext four.ext 
+		 will place one.ext in buffer 0 two.ext in buffer 1 
+		 and will save buffer 1 in three.ext and place four.ext 
+		 in buffer 2
+		Turn updates off from initial greeting screen is displayed
+		until ready for input
+		Don't destroy links on UNIX
+		Read all files in during initialization
+		MAPPING=<extention> allows mapping of other than EDT and WPS
+		
+
+	272:	 4-Jan-1990
+		:NWC switches to next buffer with unsaved changes
+		:NWU switches to next buffer with content
+		:NWN switches to next unused buffer
+		Error returned if no buffer satisfies the criteria
+		Abort command competely if response to :YN is ^U
+		Create AT mapping file for Windows
+		Make menu help work in Windows
+		%HNNN inserts help text for map entry NNN
+		Make MAPKEY strip trailing spaces from function definitions
+		Fix compose character bug in OS/2 version
+		
+	273:	10-Jan-1990
+		:NWG simply cycles through buffers
+		Make {Direction} determine direction that :NW* cycle through 
+		buffers
+		Use BIOS flag to determine whether enhanced keyboard is
+		installed
+		Make repeats on Microsoft Windows work properly
+		
+	274:	 5-Feb-1990
+		Make sure linked files remain linked under UNIX
+		Don't expand tabs when processing prompts
+		Document incompatibility of BACUPFILE=ON and UNIX linked files
+		Make :EAP and :GAP use same code as :D and :GE
+		Make UNIX Sedt recognize ~ in file specification
+		
+	275:	 3-Apr-1990
+		Fix problem with mouse clicks hanging Sedt under OS/2
+		
+				   Version 4.1
+	
+		Key map files compiled under version 4.1 cannot be loaded
+		under version 4.0!
+		
+	276:	 7-May-1990
+		Make SUN port permanent
+		Allow Gold Number before Gold F and Gold Q to set exit code
+		Make :NL insert carriage returns at the end of the buffer
+		in overstrike mode
+		:SASC prints decimal value of ASCII character under cursor
+		Prevent I's from appearing at cursor position when prompting
+		Fix problem with spawning with no arguments under DOS
+		Include tests for editing directories in OS2 and UNIX versions
+		Test for special files and refuse to load on UNIX version
+		Document MAPPING=<string> for other than EDT and WPS mapping
+		Flag is a MAPS index is used twice in MAPKEY
+		Add new features to MAPKEY
+			INITIALIZE
+			<string>
+				initializes the terminal by transmitting 
+				<string>
+			RESET
+			<string>
+				resets the terminal by transmitting <string>
+			SPECIAL
+				is the header for the previous first section
+				containing  scancodes	 for   which  the
+				firmware must be bypassed.
+		Make :OW switch to other window when in split screen mode
+		Add VT400
+		Do some loop optimizations
+		
+	277:	14-Jul-1990
+		Vitualize buffers and set maximum number to 100
+		Improve fatal error message handling
+		Increase max buffer size to 10MB on all systems
+		Make significant changes to program logic
+		
+		
+	278:	29-Jul-1990
+		Make keys with :A. and :B. in definition cause prompts to
+		be completed and direction to be set temporarily in the 
+		direction definied by the key. This is for EDT compatibility
+		
+	279:	 2-Sep-1990
+		Fix problems caused by edit 278
+		Eliminate test for typeahead before updating header, speeds
+		up VMS version
+		Fix problem with spurious characters appearing when switching
+		buffers
+		Make %H token work correctly
+		Improve critical error handling under DOS
+		Make Sedt work with Windows version 3.0
+		Make MAPKEY TEST work properly
+		
+	280:	23-Sep-1990
+		Make Windows version interpret command line
+		
+				   Version 4.2
+		
+	281:	 2-Oct-1990
+		Convert DOS version to overlapped windows
+		:WG Window grow
+		:WS Window shrink
+		:WM Window move
+		Change :NWU to move to any buffer that has been
+		selected before
+		Make :WC zoom and unzoom the current window under DOS
+		Add menus
+		Make Gold F1 grow window, Gold F2 shrink window,
+		Gold F3 move window, Gold F4 cycle through used buffers,
+		Gold F5 cycle to next unused buffer, F5 display the menu
+		:WT tiles all windows
+		Gold F6 tiles all windows
+		Eliminate period from %T in UNIX
+		Implement terminal windowing directly and save lots of
+		memory
+		WINDOWS=ZOOMED or WINDOWS=OVERLAPPED to determine
+		initial state of windows
+		WINDOWS=ZOOMED is default
+		Regular expression search toggle implemented
+		:SETV, :TV, ^TV, and ^IV to complement this toggle
+		SEARCHES=LITERAL and SEARCHES=REGULAR options in SEDT.CNF
+		Make :SAVK and :SAVF default to loaded key definition and
+		function definition files
+		Change key map file format, requires recompilation of
+		map files
+		Allow direct specification of characters in MAPKEY with
+		A\<C>
+		Eliminate noop after illegal key sequence
+		Make key map search algorithm roll over to default map files
+		if the proper one isn't found: defm.<map> for VMS and
+		UNIX, def<OS>.<map> for others except ATARI.
+		Eliminate automatic test for LK250 keyboards
+		Fix several problems with num lock and scroll lock under OS/2
+		Make messages stick on the bottom line
+		Eliminate all key-programming commands
+		Eliminate non-echoed input in VMS
+		-y<Mapping> to controlmapping from the command line
+		Remove some command line options
+		Make -y overrride SEDT.CNF settings
+		Under UNIX allow arbitrary strings as arguments to SYSTEM=
+		in SEDT.CNF and also implement -t<Type> to define terminal
+		type in the command line
+		Make SYSTEM and TERMINAL synonyms in SEDT.CNF
+		Allow macro execution to be nested down to 10 levels, that
+		means that macro keys can be used in other macros
+		Implement indirect files in key mapping input files with
+		@filename
+		Update EDT keyboard definitions to include new windowing
+		capabilities
+		
+	282:	22-Jan-1991
+		Fix ODT scrolling problem
+		Fix Sethost screen update problem
+		Fix update on problem with unzoomed windows
+		Implement :WP for positioning and sizing windows
+		Fix minor problem with recursive calls to Check_Comb
+		Fix problem with cursor marking switching windows
+		Eliminate old style screen splitting from sources and
+		the TWINDOWS conditional
+		Fix problem using extended keyboard BIOS routines when
+		testing for typeahead
+		Fix line counting problem with indirect files in Mapkey
+		Fix several problems with :EAP
+		Fix several potisitoning problems in UNIX in windows
+		Fix problem with scroll region on exit from windowed buffer
+		Fix problem with borders switching windows
+		Zoom windows before showing help
+		Change help screen layout, remove banner lines
+		Make UNIX version default to curses
+		Add TERMCAP compile option to force termcap screen management
+		Finish curses and terminfo implementation under UNIX
+		
+	283:	11-Feb-1991
+		Fix error moving more than 32K lines back
+		Fix buffering performance problem
+		Always display prompts and message on last physical line
+		Clear curses screen before exiting
+		Make sure windows never overlap the last physical line
+		Fix many problems in Wsedt
+		Do not load initialization file (after -i)
+		Allow column numbers higher than 32K
+		Change <Count>:PR to use <Count> as the number of lines
+		to print before a form feed is issued. 1:PR becomes
+		61 lines for backward compatibility
+		Fix minor problem with column position in ruler definition mode
+		Increase number of marks to 100
+		Make ' precede prompt texts and " precede help texts in
+		COMBINATIONS
+		Fix problem loading files after -i
+		
+	284:	22-Mar-1991
+		<count>:EM sets the end of a marked region. :M and :EM mark
+		a highlighted region.
+		
+	285:	25-Mar-1991
+		Fix scrolling problem under TERMCAP
+		Fix several problems on ATARI ST with endianism
+		Change ATARI ST memory allocation algorithm
+		Fix a really strange Windows problem, CharHeight cannot
+		be used as a variable name in my program!
+		MAPKEY CREATE to create map files interactively
+		Fix problem with MAPKEY DUMP KEYS
+		MAPKEY EDIT modifies map files interactively
+		
+	286:	 7-Apr-1991
+		Make unzoomed window extensible to screen borders
+		Fix 132 columns
+		2:WC ensures window is zoomed
+		3:WC ensures window is unzoomed
+		<Left>:WFL sets left window border at column <Left>
+		<Right>:WFR sets right border at column <Right>
+		<Top>:WFT sets top window border on line <Top>
+		<Bottom>:WFB sets bottom window burder on line <Bottom>
+		Fix problem with KEYBOARD= being ignored
+		Fix UNIX scrolling problem
+		If negative direction the :WFx commands will set the border
+		on the middle of the physical screen
+		
+	287:	26-Apr-1991
+		Make -wi work propoerly again on DOS
+		Implement bug fixes and changes from Knut Petersen
+			Critical error handler
+			ANSI C prototyping
+		More bug fixes to 132 column switching
+		Save end-points too when switching windows
+		Fix divide by zero (R6000) bug in :I
+		Make 80 to 132 column switching work perfectly
+		
+	288:	 3-May-1991
+		Fix problem with very long filenames on VMS
+		Eliminate all testing for LK250 keyboard
+		Implement @ES to point to opposite end of found string
+		Fix problem with context files creating strange errors
+		Fix problem with mouse not responding on line 1 or column 1
+		
+	289:	12-May-1991
+		Implement  ^Z  conditional to test  whether  the  current
+		buffer is empty and not assigned to a file (Zapped)
+		Fix minor bug highlighting marks
+	        SCO conditional used for all SCO specific code
+                XENIX conditional used for all XENIX specific code
+                
+        290:    29-Jun-1991
+                Extract all variables and externals into vars.c and vars.h
+                Allow wildcard file names in command line under DOS
+                Fix up the reference manual
+                Make Control Break interrupt on DOS
+                Eliminate "Not enough memory" errors in readin map files
+                Make sure Sedt exits cleanly when not enough memory is
+                available
+		Make sure cursor position is restored after broadcast
+		on VMS
+		Do not write in the bottom write corner on VMS and UNIX
+		this is to get ready for not touching line wrap
+                Eliminate modifying line wrap on VMS and UNIX
+                Fix problem with column positioning when context is used
+		Fix problem with mouse doing strange things on some drivers
+
+	291:    24-Nov-1991
+		Make maximum screen size on all UNIX versions 66 by 512
+                Prevent endless loops on fatal errors
+                Make inside of Sedt icon non-transparent
+
+        292:    16-Dec-1991
+                Make split screen refresh properly after a spawn
+                Fix problem with :SAVK and mapkey incompatibility
+                Make Sedt C++ compatible
+                Convert DOS version to large memory model
+                Fix problem with delete on VMS EDT version
+                :WA to cascade windows (TV only)
+                Set character to 0 when key number is assigned
+                
+        5.0 (293):
+                Fix spawn() for TV
+                Fix help for TV
+                Fix TAB and Alt W problem in TV
+                
+        294:    22-Feb-1992
+                Don't save prompt if it's the same as the on on top of
+                        the stack
+                Fix problem with :FG into an empty buffer on VMS
+                
+        295:     7-Mar-1992
+                Make TSEDT exit gracefully on error and not hang
+                Fix extremely long filename error on VMS
+                
+        296:     6-Apr-1992
+                Incorporate a number of changes made by Rudolf Sedlaczek
+                        from Technical University Vienna
+                        
+    13-NOV-1991	VMS-version:
+      -	Don't set terminal to pasthru (in qio.mar) to enable Ctrl/C, Ctrl/Y and
+	Ctrl/T again as in former versions. 
+	These keys can therefore not be defined as SEDT keys.
+      -	Allow logical names for function definitions, keyboard maps, help file, 
+      	keyboard diagrams, configuration and initialization file.
+	SEDT now first looks for these logicals before trying to open
+	the files in the current directory, SEDT$DIR and SEDT$LIBRARY
+	All logicals are built by replacing the . by $
+	The benefits are to have to maintain only one keyboard diagram file
+	and one keyboard map file for up to 4 different terminal-types or
+	be able to edit a file in a directory containing these files.
+	For EDT Mapping, following logicals apply: 
+	FUNDEF$EDT VT100M$EDT VT200M$EDT VT300M$EDT VT400M$EDT HELP$EDT 	
+	VT100H$EDT VT200H$EDT VT300H$EDT VT400H$EDT SEDT$CNF SEDTCOM$TXT
+
+    27-NOV-1991 all versions
+      -	fix bug in :NWC
+      - On :UOFF or :RF do not repaint windows on buffer stack if current 
+      	window is zoomed (avoids multiple flushing of hidden windows to 
+	the screen)
+        else if current window is not zoomed and in case of zoomed windows 
+	in the buffer stack start repainting of all windows at the zoomed
+	window, not at the beginning of the buffer stack.
+      - change status line to appear only once for any counts of windows.
+	Multiple lines with the same information or multiple first halfs of
+	the status line (in case of vertically splitted windows) makes no
+	sense.
+      - Show filename on window border if this border is in the upper half 
+      	of the screen and if the window is not the current window.
+      - Lower left corner  of  window  border  was  displaced 1 column to 
+	the left.
+      - Change :SASC to sho current column and ASCII value (only VMS, UNIX)
+    11-DEC-1991
+      - Help System enhancements:
+        Allow F12 in help to function as Backspace (There is no Backspace 
+      	key on a VT200 keyboard)
+        Allow Keypad keys 0 to 9 besides numeric keys 0 to 9 to select 
+      	menus in help.
+	Prev Screen or Cursor Up redisplay first page of multiscreen help 
+	topics, Next Screen and Cursor Down act like Return.
+      - Add mouse support for terminals with ANSI locator support 
+        (e.g. DECterm, VWS terminal-emulator on VAXstations: VT200, VT300, 
+	VT400. Mouse is disabled if Device-Type is VT100) for VMS.
+	Mouse is enabled by default.
+	Add following new mouse features:
+	- Clicking on the string B=n in the top status line cycles to the 
+	  next used buffer.
+	- Clicking on the string Mod=n in the bottom status line cycles to 
+	  the next modified buffer.
+	- Clicking on the Character M in the right corner of the top 
+	  status line displays the next broadcast message.
+	- Disable mouse during prompts, repeat-count entry, learn and help.
+          To disable mouse permanently add MOUSE=DISABLED to SEDT.CNF;
+          To disable mouse temporarily enter learn mode;
+	  To disable mouse for one command (e.g. local cut/paste) enter Gold 1.
+	- Restrict recognized mouse events outside the edit window to left
+	  button down clicks.
+	- Allow multiple resizing of windows with mouse without 
+	  disturbing screen refreshs.
+    	ANSI locator input are escape sequences embedded
+	in the normal keyboard input stream. Corresponding keyboard mappings
+	and function definitions must exist for the mouse to function properly.
+	These consistent definitions are only included in the FUNDEF.INP and
+	VT200M.INP files!
+      - Fix Bug in MAPKEY to be able to compile key sequences with more
+      	than 8 characters, for VMS allow at least CTRL/C and CTRL/Y to exit.
+     3-JAN-1992
+      - Define characters `~[{]}\| as input string terminators in qio.mar
+        and corresponding functions definitions and keyboard mappings. This 
+        fixes an old VMS-specific behaviour, where normal typewriter keys
+        where incorrectly echoed (by the multiple character read qio with
+        echo) when these keys were redefined (e.g. as German Umlaut) and the
+        cursor was positioned at end of line. This was also necessary for the
+        proper function of the new style commands starting with `, as the
+        menu was sometimes not immediatly displayed due to the same reason. 
+      - Add some new style menu commands to EDT mapping.
+      - Add new command :RI (Reposition Input stream one character) for 
+        internal use, corresponding function definition and keyboard mapping
+        to allow pending new style menu commands to be cancelled by an
+        escape- sequence (any keypad or function key). This sequence is no
+        longer inserted into the buffer, but executed normally.
+     3-FEB-1992
+      - Add new command :CNV (CouNter absolute Value) to convert the current 
+        value of a counter to its absolute value. This is needed for the 
+        indentation functions (Gold Left/Right Arrow) to prevent a syntax
+        error when the current direction is reverse.
+      - Add mouse support for terminals with ANSI locator for CONVEX and SUN.
+	Include appropriate definitions in FUNDEF.INP and DEFM.INP files.
+     16-MAR-1992
+      - Enable mouse support for terminals with ANSI locator for all UNIX 
+	systems.
+
+                Include Prev. and Next boxes in prompt dialog box in TSEDT
+                
+        297:    23-May-1992
+                Fix problem with return at end of file in replace mode
+                Fix problem with tab at end of file in replace mode
+                Make MODE= and -m define mode and then get screen size
+                from BIOS. Effect is that Sedt will support whatever mode the
+                adapter supports
+                Fix problem wupplying command arguments in Windows version
+                Fix problem with too high mouse sensitivity to dragging under
+                Windows
+                Make Windows version use new font selection dialog boxes
+                Make Windows version use TrueType (R) fonts
+                
+        298:    21-Aug-1992
+                Include MPE changes
+                Fix execute bug that has plagued me for a long time!
+                
+        299:    25-Sep-1992
+                Fix bug in VMS help
+                Add code for UNIX to do :SYQ and :SYR
+                Work aroung echoing problem in VMS with []{}\|`~
+                Implement print under Windows
+                
+        300:    18-Feb-1993
+                Disable mouse under VMS/UNIX by default
+                Make error stick when NNN@C goes out of range
+                
+        301:     2-May-1993
+                Add ^LB() - test for beginning of line - and ^LE() - test
+                for end of line - as conditionals
+                Start implementing :SUC - Substitute and confirm
+                Fix problem with :A, :B, and :SETD having deferred effect
+                Fix problem with learning on UNIX
+
+	302:	Speed up Windows printing
+                Fix -@PAR
+        
+        303:    31-Jan-1994
+                Fix several type conversion bugs internally
+                Fix Num lock problem at startup with Windows version
+                Implement file reservation system by manipulating protection
+                codes. DOS, Windows and UNIX version.

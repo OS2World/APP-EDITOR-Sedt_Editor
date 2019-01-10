@@ -1,0 +1,685 @@
+
+                    Anker Berg-Sonne, Copyright (C) 1985-1989
+ 
+                       (This file was from) Sedt Version 4.2
+
+                               EDT Style Help Menu
+                                   
+                At any  point  type Backspace (<Ctrl> H) to go
+        up one level,  Return  to continue and go up one level at
+        the end, or a digit to make a menu selection.
+
+                0       Keyboard Diagram
+                1       Keyboard Commands
+                2       Internal Commands
+
+0
+%K
+
+1
+
+                    Anker Berg-Sonne, Copyright (C) 1985-1989
+
+                       (This file was from) Sedt Version 4.2
+
+                                Keyboard Commands
+                                
+                0       Cursor Movement
+                1       Deletion
+                2       Insertion
+                3       Selecting Text Ranges
+                4       Text Formatting
+                5       Session Control
+                6       Key Definition
+                7       Miscellaneous
+                8       Ruler Definition Commands
+
+10
+
+ C U R S O R   M O V E M E N T
+
+        <%A35>: %C40%T35
+        <%A36>: %C40%T36
+        <%A71>: %C40%T71
+        <%A75>: %C40%T75
+        <%A85>: %C40%T85
+        <%A91>: %C40%T91
+        <%A12>: %C40%T12
+        <%A21>: %C40%T21
+        <%A25>: %C40%T25
+        <%A26>: %C40%T26
+        <%A27>: %C40%T27
+        <%A28>: %C40%T28
+        <%A29>: %C40%T29
+        <%A30>: %C40%T30
+        <%A31>: %C40%T31
+        <%A32>: %C40%T32
+        <%A33>: %C40%T33
+        <%A34>: %C40%T34
+        <%A35>: %C40%T35
+        <%A36>: %C40%T36
+        <%A38>: %C40%T38
+        <%A39>: %C40%T39
+        <%A40>: %C40%T40
+        <%A103>: %C40%T103
+        <%A109>: %C40%T109
+        <%A110>: %C40%T110
+        <%A111>: %C40%T111
+        <%A112>: %C40%T112
+        <%A133>:%C40%T133
+11
+
+ D E L E T I O N
+
+        <%A13>: %C40%T13
+        <%A62>: %C40%T62
+        <%A95>: %C40%T95
+        <%A23>: %C40%T23
+        <%A41>: %C40%T41
+        <%A42>: %C40%T42
+        <%A47>: %C40%T47
+        <%A115>: %C40%T115
+12
+
+ I N S E R T I O N
+
+        <%A54>: %C40%T54
+        <%A58>: %C40%T58
+        <%A80>: %C40%T80
+        <%A82>: %C40%T82
+        <%A87>: %C40%T87
+        <%A11>: %C40%T11
+        <%A22>: %C40%T22
+        <%A113>: %C40%T113
+        <%A116>: %C40%T116
+        <%A123>: %C40%T123
+        <%A124>: %C40%T124
+        <%A127>: %C40%T127
+13
+
+ S E L E C T I N G   T E X T   R A N G E S
+
+        <%A24>: %C40%T24
+        <%A106>: %C40%T106
+        <%A84>: %C40%T84
+14
+
+ T E X T   F O R M A T T I N G
+
+        <%A50>: %C40%T50
+        <%A51>: %C40%T51
+        <%A52>: %C40%T52
+        <%A61>: %C40%T61
+        <%A76>: %C40%T76
+        <%A82>: %C40%T82
+        <%A84>: %C40%T84
+        <%A86>: %C40%T86
+        <%A83>: %C40%T83
+        <%A89>: %C40%T89
+        <%A96>: %C40%T96
+        <%A121>: %C40%T121
+15
+
+ S E S S I O N   C O N T R O L
+
+        <%A131>:  %C40%T131
+        <%A132>:  %C40%T132
+        <%A63>: %C40%T63
+        <%A77>: %C40%T77
+        <%A78>: %C40%T78
+        <%A10>: %C40%T10
+        <%A8>: %C40%T8
+        <%A6>: %C40%T6
+        <%A7>: %C40%T7
+        <%A93>: %C40%T93
+        <%A17>: %C40%T17
+        <%A18>: %C40%T18
+        <%A19>: %C40%T19
+        <%A20>: %C40%T20
+        <%A131>:%C40%T131
+        <%A132>:%C40%T132
+        <%A134>:%C40%T134
+        <%A135>:%C40%T135
+        <%A136>:%C40%T136
+        <%A137>:%C40%T137
+        <%A138>:%C40%T138
+        <%A139>:%C40%T139
+        <%A140>:%C40%T140
+        
+16
+
+ K E Y   D E F I N I T I O N
+
+        <%A56>: %C40%T56
+        <%A66>: %C40%T66
+        <%A67>: %C40%T67
+        <%A101>: %C40%T101
+        <%A102>: %C40%T102
+17
+
+ M I S C E L L A N E O U S
+
+        <%A57>: %C40%T57
+        <%A59>: %C40%T59
+        <%A60>: %C40%T60
+        <%A16>: %C40%T16
+        <%A74>: %C40%T74
+        <%A15>: %C40%T15
+        <%A92>: %C40%T92
+        <%A94>: %C40%T94
+        <%A4>: %C40%T4
+        <%A9>: %C40%T9
+        <%A40>: %C40%T40
+        <%A97>: %C40%T97
+        <%A10>: %C40%T10
+        <%A105>: %C40%T105
+        <%A114>: %C40%T114
+        <%A122>: %C40%T122
+        <%A128>: %C40%T128
+18
+
+ R U L E R   D E F I N I T I O N   C O M M A N D S
+
+        <%A30> %C40%T30
+        <%A28> %C40%T28
+        - %C40Remove tab stop at current column
+        <Tab> %C40Move right to next tab position
+        <Ctrl> H %C40Move to column 1
+        T %C40Set a tab position at the current column
+        L %C40Set left margin
+        R %C40Set right margin for fill
+        J %C40Set right margin for justify
+        W %C40Set left margin for fill and justify
+        A %C40Set auto left margin mode
+        I %C40Set Tab indentation level
+        <Spacebar> %C40Remove all format controls at current column
+        <Digit> %C40Load saved ruler number Digit
+        <%A0> <Digit> %C40Save ruler in named ruler Digit
+        <Enter> %C40Return to edit mode
+2
+
+                    Anker Berg-Sonne, Copyright (C) 1985-1989
+
+                       (This file was from) Sedt Version 4.2
+
+                                Internal Commands
+                                
+                0       Execution
+                1       Tokens
+                2       Prompts
+                3       Conditionals
+                4       State Control
+                5       Regular expression search and replace
+                6       Movement Commands
+                7       Action Commands
+20
+
+                                Sedt Version 4.2
+                                    Execution
+                                
+        Key definitions  terminated  by  a period are executed immediatly
+        after the key is pressed.
+        
+        Key definitions not  terminated by a period are saved until a key
+        with a defition terminated by a period is pressed.
+21
+
+                                Sedt Version 4.2
+                                     Tokens
+
+        Tokens  are  replaced  by  the  value  that  the  token  definies
+        immediatly before command execution.  Tokens replacement will not
+        happen in responses to prompts.
+        
+        %%%%              Replaced by a single %% character
+        %%#              The current value of the counter
+        %%A              Value of  the  environment  variable  SEDT or, on
+                        VMS, the string Sedt$Dir:
+        %%B              Next unseen broadcast message on VMS
+        %%C              Current  character  position
+        %%D              The device and directory of the  output  file  of
+                        the current buffer
+        %%E              Value  of  environment variable SEDT or, on  VMS,
+                        the string Sedt$Library:
+        %%F              Output file name of the current buffer
+        %%HNNN           Help text for MAP entry NNN
+        %%L              Current  line  number
+        %%N              Filename, excluding extention, of the output file
+                        of the current buffer
+        %%P              The contents of the paste buffer
+        %%T              The file type of the output file of the current
+                        buffer
+        %%W              The current cursor column
+22
+
+                                Sedt Version 4.2
+                                     Prompts
+                                
+        If a key definition contains  one of the following characters:  ?
+        or ! the following actions will take place:
+
+        ?? is replaced by ?
+
+        !! is replaced by !
+
+        ?<Delimiter><String><Delimiter> will prompt with <String> at  the
+                bottom of the screen, read a string from the keyboard and
+                replace the contruct with the string.
+
+        !<Delimiter><String><Delimiter>  will prompt with <String> at the
+                bottom of  the  screen,  wait for a key to be pressed and
+                replace  the  construct   with  a  string  that  uniquely
+                identifies the key.
+23
+
+                                Sedt Version 4.2
+                                  Conditionals
+                                
+        ^C(<Commands>)  causes  <Commands>  to be executed  only  if  the
+                current buffer contains unsaved changes.
+        
+        ^C(<Commands1>|<Commands2>)  causes <Commands1> to be executed if
+                the  buffer  contains  unsaved changes and <Commands2> to
+                executed if the buffer is unchanged.
+        
+        ^E(<Commands1>)(<Commands2>) causes  <Commands1>  to be executed.
+                If any error  occurs  during  the  execution  the rest of
+                <Commands1>  will  be skipped  and  <Commands2>  will  be
+                executed.   <Commands2> string is  ignored  if  no  error
+                occurs.
+        
+        ^E(<Commands1>)(<Commands2>|<Commands3>)        will      execute
+                <Commands1>.  If an  error occurs the rest of <Commands1>
+                will be skipped and then  <Commands2>  will  be executed,
+                otherwise  <Commands3>  is  executed after completion  of
+                <Commands1>.
+                
+        ^LB(<Commands>) causes <Commands>  to  be  executed  only  if the
+                cursor is at the beginning of a line.
+        
+        ^LB(<Commands1>|<Commands2>) causes <Commands1> to be executed if
+                the cursor is at the beginning of  a line.  If the cursor
+                is at a different position <Commands2> will be executed.
+
+        ^LE(<Commands>) causes <Commands>  to  be  executed  only  if the
+                cursor is at the end of a line.
+        
+        ^LE(<Commands1>|<Commands2>) causes <Commands1> to be executed if
+                the cursor is at the end of a  line.  If the cursor is at
+                a different position <Commands2> will be executed.
+
+        ^S(<Commands>) causes  <Commands> to be executed only if there is
+                a select region active.
+        
+        ^S(<Commands1>|<Commands2>) causes  <Commands1> to be executed if
+                a select region is active.  If no select region is active
+                <Commands2> will be executed>.  24
+
+        ^ID(<commands>) Executes  <commands>  if the default direction is
+                forward.
+        
+        ^ID(<commands1>|<commands2>) Executes <commands1>  if the default
+                direction  is  forward and  <commands2>  if  the  default
+                direction is reverse.
+
+        ^IF(<commands>) Executes  <commands>  if  the cursor is alowed to
+                move freely.
+        
+        ^IF(<commands1>|<commands2>) Executes <commands1>  if  the cursor
+                is  allowed to move  freely  and  <commands2>  if  it  is
+                restricted to the length of lines in the file.
+
+        ^II(<commands>)  Executes <commands> if characters  are  inserted
+                wne typed.
+                
+        ^II(<commands1>|<commands2>)    Executes   <commands1>  if  typed
+                characters  are    inserted   and  <commands2>  if  typed
+                characters replace existing text.
+
+        ^IB(<commands>) Executes <commands> if cut operates in line mode.
+        
+        ^IB(<commands1>|<commands2>) Executes <commands1> if cut operates
+                in line mode and  <commands2>  if  cut  operates in block
+                mode.
+
+        ^IT(<commands>) Executes <commands> if typed  tab  characters are
+                expanded to spaces.
+        
+        ^IT(<commands1>|<commands2>)  Executes  <commands1>  if typed tab
+                characters  are  expanded  to  spaces and <commands2>  if
+                types tab characters are inserted.
+
+        ^IV(<commands>)  Executes    <commands>    searches  use  regular
+                expressions.
+        
+        ^IV(<commands1>|<commands2>) Executes <commands1> if searches use
+                regular  expressions  and  <commands2>  if  searches  are
+                literal.  
+
+        ^IX(<commands>) Executes  <commands>  if function definitions are
+                inserted in response to prompts.
+        
+        ^IX(<commands1>|<commands2>)  Executes  <commands1>  if  function
+                defintitions  are inserted in  response  to  prompts  and
+                <commands2> characters only are inserted.  
+24
+
+                                Sedt Version 4.2
+                                  State Control
+
+        ^TD(<commands>)  Saves the direction flag and restores  it  after
+                <commands> have been executed.
+        
+        ^TF(<commands>) Saves the cursor behavior  toggle and restores it
+                after <commands> have been executed.
+
+        ^TI(<commands>)  Saves  the replace/insert mode flag and restores
+                it after <commands> have been executed.
+        
+        ^TB(<commands>)  Saves  the  block/line mode flag and restores it
+                after <commands> have been executed.
+        
+        ^TT(<commands>) Saves the the tab insert/expand flag and restores
+                it after <commands> have been executed.
+
+        ^TU(<commands>) Saves the  the case sensitivity flag and restores
+                it after <commands> have been executed.  
+
+        ^TV(<commands>) Saves the  the regular expression search flag and
+                restores it after <commands> have been executed.  
+
+        ^TX(<commands>)  Saves  the  the  state  on  inserting  functions
+                definitions in response to prompts and  restores it after
+                <commands> have been executed.  
+25
+        
+                      Regular Expression Search and Replace
+        
+        The regular  expression algorithms were written by Henry Spencer.
+                  Copyright (c) 1986 by University of Toronto.
+        
+        A regular  expression is zero or more branches, separated by `|'.
+        It matches anything that matches one of the branches.
+
+        A branch is  zero  or  more  pieces,  concatenated.  It matches a
+        match for the first, followed by a match for the second, etc.
+
+        A piece is an  atom  possibly  followed  by `*', `+', or `?'.  An
+        atom followed by `*' matches  a  sequence of 0 or more matches of
+        the atom.  An atom followed  by  `+'  matches  a sequence of 1 or
+        more matches of the atom.  An  atom  followed  by  `?'  matches a
+        match of the atom, or the null string.
+
+        An atom is a regular expression in parentheses  (matching a match
+        for  the regular expression), a range (see below), `.'  (matching
+        any  single  character),  `^'  (matching  the  null string at the
+        beginning  of the input string), `$' (matching the null string at
+        the  end  of  the  input  string),  a  `\'  followed  by a single
+        character (matching that character),  or  a single character with
+        no other significance (matching that character).
+
+        A  range is a sequence  of  characters  enclosed  in  `[]'.    It
+        normally matches any single character from  the sequence.  If the
+        sequence  begins with `^', it matches any  single  character  not
+        from the rest of the sequence.  If two characters in the sequence
+        are  separated  by `-', this is shorthand for the  full  list  of
+        ASCII  characters between them (e.g.  `[0-9]' matches any decimal
+        digit).   To  include  a literal `]' in the sequence, make it the
+        first character (following a possible `^').  To include a literal
+        `-', make it the first or last character.
+
+        If a regular expression  could  match  two different parts of the
+        input string, it will match  the  one  which begins earliest.  If
+        both begin in the same place  but  match  different  lengths,  or
+        match the same length in different ways,  life  gets  messier, as
+        follows.
+
+        In  general,  the  possibilities  in  a  list  of   branches  are
+        considered  in  left-to-right  order,  the possibilities for `*',
+        `+', and  `?' are considered longest-first, nested constructs are
+        considered from the outermost in, and concatenated constructs are
+        considered leftmost-first.  The  match that will be chosen is the
+        one that uses the earliest  possibility  in the first choice that
+        has to be made.  If  there is more than one choice, the next will
+        be made in the same manner (earliest  possibility) subject to the
+        decision on the first choice.  And so forth.
+
+        For example, `(ab|a)b*c' could match `abc' in one  of  two  ways.
+        The first choice is between `ab' and `a';  since `ab' is earlier,
+        and does lead to a successful overall match, it is chosen.  Since
+        the  `b'  is  already  spoken  for, the `b*' must match its  last
+        possibility-the empty string-since it  must  respect  the earlier
+        choice.
+
+        In the particular case where  no  `|'s  are  present and there is
+        only one `*', `+', or `?',  the  net  effect  is that the longest
+        possible  match  will  be  chosen.    So  `ab*',  presented  with
+        `xabbbby',  will  match  `abbbb'.  Note that if  `ab*'  is  tried
+        against  `xabyabbbz', it will match `ab' just after `x',  due  to
+        the  begins-earliest rule.  (In effect, the decision on where  to
+        start the match is the first choice to be made, hence  subsequent
+        choices must respect it even if this leads them to less-preferred
+        alternatives.)
+        
+        Regular expression  replacement  causes  each  instance of `&' in
+        source  is  replaced  by  the substring indicated  by  the  found
+        pattern.  Each instance  of `\n', where n is a digit, is replaced
+        by  the substring indicated by the n'th subpattern.    To  get  a
+        literal `&' or `\n' into dest, prefix it with  `\';    to  get  a
+        literal `\' preceding `&' or `\n', prefix it with another `\'.
+26
+
+                                Sedt Version 4.2
+                                Movement Commands
+                                
+        {<Count>}@AC            Absolute Character
+        {<Count>}@AL            Absolute Line
+        @BB                     Beginning of Buffer
+        @BM                     Matching bracketing character:'"<>[]{}()
+        @EB                     End of Buffer
+        <Count>@EL              End of Line
+        {+|-|<|>}{<Count>}@C    Character
+        {+|-|<|>}{<Count>}@F<Delimiter><String><Delimiter>
+                                Find <String>
+        {+|-|<|>}{<Count>}@L    Line
+        {<Count>}@M             Mark
+        {+|-|<|>}{<Count>}@N    Next ocurrence of <String>
+        {+|-|<|>}{<Count>}@PAG  Page
+        {+|-|<|>}{<Count>}@PAR  Paragraph
+        {+|-|<|>}{<Count>}@SCR  Screen
+        {+|-|<|>}{<Count>}@SEN  Sentence
+        @SR                     Select Range
+        {+|-|<|>}{<Count>}@V    Vertical
+        {+|-|<|>}{<Count>}@W    Word
+        @XSR                    Select Range without clear
+27
+
+                                Sedt Version 4.2
+                                 Action Commands
+
+        :A                      Advance as Default
+        :B                      Backward as Default
+        :CB                     Cursor at Bottom of Screen
+        :CC<@ command>          Change Case
+        :CD<@ command>          Change to Lower case
+        <Count>:CE              Change Case Edt Style
+        <Count>:CH              Insert ASCII Character
+        :CK                     Checkpoint buffer
+        :CL                     Center Line
+        :CM                     Cursor at Middle of Screen
+        :CNA                    Add number to counter
+        :CNG                    Get counter from buffer
+        <Count>:CNI             Increment or decrement counter
+        :CNP                    Insert value of counter in buffer
+        <Count>:CNS             Set counter value
+        :CS                     Save buffer context
+        :CT                     Cursor at Top of Screen
+        :CU<@ command>          Change to Upper Case
+        :CW                     Change to other window on screen
+        :D<@ command>           Delete
+        :EAP<@ command>         Delete and Append to Delete Buffer
+        <Count>:EF              Execute function number <Count>
+        :EK<Key>                Execute key
+        <Count>:EL              Set Error Level for Audible Warning
+        <Count>:EM              Set end point of mark at cursor
+        :ERC                    Clear edit region
+        :ERS<@ Command>         Set edit region
+        <Count>:FD<Delimiter><Definition><Delimiter>
+                                Define function number <Count> as <Definition>
+        :FE<Delimiter><File Name><Delimiter>
+                                Edit File
+        :FG<Delimiter><File Name><Delimiter>    
+                                Get File
+        :FNL                    Use Larger Font
+        :FNS                    Use Smaller Font
+        :FS<Delimiter><File Name><Delimiter>    
+                                Save File
+        :FT<@ command>          Fill
+        :FW<Delimiter><File Name><Delimiter>    
+                                Write Buffer to File
+        :FX<Delimiter><File Name><Delimiter>    
+                                Execute File
+        :GAP<@ command>         Get and Append to Delete Buffer
+        :GE<@ command>          Get
+        <Count>:GR              Get Ruler from Ruler Definition File
+        :H                      Help
+        :I<Delimiter><Any text><Delimiter>      
+                                Insert Text
+        :KA<Char><Delimiter><Definition><Delimiter>
+                                Define character key
+        :KF<Key><Delimiter><Definition><Delimiter>       
+                                Define key
+        :KGA<Char><Delimiter><Definition><Delimiter>
+                                Define gold character key
+        :KGK<Key><Delimiter><Definition><Delimiter>
+                                Define gold function key
+        :KK<Key><Delimiter><Definition><Delimiter>
+                                Define function key
+        <Count>:KN<Key>         Define key as function number
+        {<Count>}:LD            Decrease Indentation
+        {<Count>}:LI            Increase Indentation
+        :LK<Key><@ Command>     Load Key Definition from Buffer
+        {<Count>}:LNE<Key>      Execute Keystrokes Stored in Key
+        :LNL<Key>               Store Keystrokes in Key
+        :LNX                    End keystroke learning
+        :LS                     Set Indentation Level
+        {<Count>}:M             Mark cursor position
+        {<Count>}:NL            New line
+        {+|-|<|>}{<Count>}:NS   Substitute Next
+        {+|-}:NWC               Switch to next modified buffer
+        {+|-}:NWG               Switch to the next buffer
+        {+|-}:NWN               Switch to next unused buffer
+        {+|-}:NWU               Switch to next used buffer
+        :OE<Delimiter><Message><Delimiter>      
+                                Output Error Message
+        {<Count>}:OL            Open Line
+        :OM<Delimiter><Message><Delimiter>      
+                                Output Message
+        :OS                     Toggle Overstrike Mode
+        :OW                     Switch to Previous Buffer
+        :PD                     Insert Current Date
+        :PL<Delimiter><File name><Delimiter>    
+                                Load Paste Buffer from File
+        :POPCH                  Restore buffer change flag
+        :PR<Delimiter><File name><Delimiter>    
+                                Print Current Buffer
+        :PS<Delimiter><File name><Delimiter>    
+                                Save Paste Buffer
+        :PT                     Insert Current Time
+        :PUSHCH                 Save buffer change flag
+        :Q                      Quit
+        :REP                    Replace
+        :RF                     Refresh Display
+        <Count>:RK<Key>         Redefine key as character
+        :RL                     Ruler
+        :RMCHA                  Clear character delete buffer
+        :RMHEL                  Clear help buffer
+        :RMLIN                  Clear line delete buffer
+        :RMPAG                  Clear page delete buffer
+        :RMPAR                  Clear paragraph delete buffer
+        :RMPAS                  Clear paste buffer
+        :RMSEA                  Clear search buffer
+        :RMSEN                  Clear sentence delete buffer
+        :RMSUB                  Clear substitute buffer
+        :RMUNK                  Clear unknown delete buffer
+        :RMWOR                  Clear word delete buffer
+        :RS                     Reset Select Range
+        :RTAB<@ command>        Replace tabs with spaces
+        :RUL<@ command>         Load Ruler from Entity
+        :RUS                    Save Ruler in Buffer
+        :SASC                   Show ASCII value of character under cursor
+        :SAVF<Delimiter><File name><Delimiter>
+                                Save function definitions in file
+        :SAVK<Delimiter><File name><Delimiter>
+                                Save key mappings in file
+        :SB                     Show VMS broadcast
+        :SC                     Show Current Column
+        :SEL                    Select
+        :SETB                   Set block/line mode toggle
+        :SETD                   Set forward/reverse toggle
+        :SETF                   Set cursor behavior
+        :SETR                   Set replace/insert mode toggle
+        :SETT                   Set tab insert/expand toggle
+        :SETU                   Set case sensitivity toggle
+        :SETV                   Set regular expression toggle
+        :SETX                   Set function definition toggle
+        :SI                     Send a shift in character
+        :SK<Key>                Save Key Definition in Buffer
+        :SL<@ command>          Load Search Buffer
+        :SO                     Send a shift out character
+        :STAB<@ command>        Replace multiple spaces with tabs
+        :STRP<@ command>        Strip trailing spaces from end of lines
+        {+|-|<|>}{<Count>}:SUB<Delimiter><Target><Delimiter><Object><Delimiter> 
+                                Substitute
+        :SV                     Show Version
+        :SYQ<Delimiter><Command><Delimiter>
+                                Spawn without clearing and refreshing screen
+        :SYR<Delimiter><New stdout><Delimiter><New stderr>
+                <Delimiter><Command><Delimiter>
+                                Spawn and redirect stdout and sterr
+        :SYS<Delimiter><Command><Delimiter>     
+                                Spawn to Operating System
+        {<Count>}:TAB           Move to Next Tab Stop
+        {+|-|<|>}{<Count>}:TAD<@ command>       
+                                Adjust Text by One Tab Stop
+        :TB                     Toggle Block Mode
+        :TC                     Toggle Control Character Display
+        :TD                     Toggle Direction
+        :TF                     Toggle cursor behavior
+        :TI                     Test for Input Pending
+        :TM                     Toggle Buffer Markers
+        :TP                     Toggle Cursor Line
+        :TR                     Toggle ruler display
+        :TS                     Toggle Automatic Screen Shifts
+        :TT                     Toggle Tab Expansion
+        :TU                     Toggle case sensitivity
+        :TV                     Toggle regular expression searches
+        :TX                     Toggle function definition toggle
+        {<Count>}:UC            Undelete Character
+        {<Count>}:UL            Undelete Line
+        :UM                     Undo Last Command
+        :UOFF                   Turn off screen updating
+        :UON                    Turn on screen updating
+        {<Count>}:UPAG          Undelete Page
+        {<Count>}:UPAR          Undelete Paragraph
+        :UPD                    Update Buffer Header Line
+        {<Count>}:USEN          Undelete Sentence
+        {<Count>}:USR           Paste
+        {<Count>}:UU            Undelete Unknown
+        {<Count>}:UW            Undelete Word
+        :WC                     Toggle Windows
+        :WD                     Toggle Width
+        <Count>:WFB             Set bottom border at <Count>
+        <Count>:WFL             Set left border at <Count>
+        <Count>:WFR             Set right border at <Count>
+        <Count>:WFT             Set top border at <Count>
+        :WG                     Grow window
+        <Count>:WI              Select Buffer
+        :WM                     Move window
+        <Count>:WP              Position window
+        :WS                     Shrink window
+        :WT                     Tile all windows
+        :X                      Exit
+        :YN<Delimiter><Text><Delimiter>
+                                Prompt for confirmation
+        :Z                      Zap Buffer

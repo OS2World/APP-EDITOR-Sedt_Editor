@@ -1,0 +1,84 @@
+
+                                   21-Sep-1991
+        
+         Sedt Installation instructions for MS-DOS and Microsoft Windows
+
+        It is strongly advisable to install Sedt in its own subdirectory.
+        This makes organization  of  the  files  and  future updates much
+        easier.   To create a subdirectory under DOS use the MD  command.
+        For example
+        
+                MD C:\SEDT
+        
+        will create a directory called SEDT on drive C.
+        
+        The EXE files on the distribution floppy  are all self-extracting
+        archives.  SEDDOS.EXE contains all DOS-specific files, SEDWIN.EXE
+        contains all  Windows-specific files.
+        
+        To extract file files from the archives simply run the EXE files.
+        Make sure your current  working  directory  is the disrectory you
+        want the files placed in.   For example to extract all files from
+        floppy A into C:\SEDT:
+        
+                C:
+                CD \SEDT
+                A:SEDDOS
+                A:SEDWIN
+                
+        If you  extract  both SEDDOS and SEDWIN you will be asked whether
+        you want to  overwrite  some of the files.  They are identical in
+        both archives and its save to respond either way.
+        
+        Sedt is configured for two editing  styles,  EDT  and  NEW.   EDT
+        style is designed to be familiar to  users of the Digital VAX/VMS
+        EDT editor.  The NEW style is designed  to be easily portable and
+        to offer a consistent interface to the capabilities of  Sedt.   I
+        recommend  you  select  the  NEW  style  unless  you  require EDT
+        compatibility.
+        
+        Before you go any further you should select an editing style.  To
+        select EDT style enter the DOS command
+        
+                COPY EDT.CNF SEDT.CNF
+        
+        The NEW editing style is selected by entering
+        
+                COPY NEW.CNF SEDT.CNF
+        
+        Make  sure you have a  copy  of  the  appropriate  users  manual.
+        SEDTMAN.EDT for EDT style and SEDTMAN.NEW for NEW style editing.
+        
+        Now you are ready to call Sedt and make sure it works properly by
+        entering
+                
+                SEDT
+        
+        Sedt should fire up and be ready to accept commands.
+        
+        The next step is to make Sedt  runnable  from any directory.  The
+        simplest way to do this is to include  the  directory  containing
+        Sedt in your PATH statement in AUTOEXEC.BAT.  See your DOS manual
+        for instructions.
+        
+        You  can  speed up initialization if you create the logical  name
+        SEDT which  should  contain  the  directory  with the Sedt files.
+        This is done with the SET command in AUTOEXEC.BAT.  For example
+        
+                SET SEDT=C:\SEDT
+        
+        In a file  server  environment you may wish to separate the files
+        into  public,  sharable  files    and   user-specific  files  for
+        customization  and data files.   The  environment  variable  SEDT
+        should point at the public directory,  which  may  be  read only.
+        The  logical  name  PSEDT  should  point  at  the  users  private
+        directory, to which there must be write access.    Here  the user
+        can  create a private SEDT.CNF file, rulers will be  saved  here,
+        and any other data file created by Sedt will reside here.
+        
+                Once you have Sedt up and running, you will probably want
+        to start customizing it for your preferences.  By creating a file
+        called SEDT.CNF as instructed  in SEDTMAN.REF, section 2, you can
+        increase performance dramatically and also make it behave the way
+        you prefer.
+        

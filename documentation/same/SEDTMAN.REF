@@ -1,0 +1,5284 @@
+Copyright (c) Anker Berg-Sonne, 1985-1991
+	Sedt Version 4.2 (290)
+
+
+			     Sedt Reference Manual
+
+				     Index
+
+	0		Introduction
+
+	1		Entering Sedt
+	1.1		-<Line Number>	Cursor position
+	1.2		-a		Autosave
+	1.3		-at		AT keyboard
+	1.4		-b		Backup file
+	1.5		-co		Color adaptor
+	1.6		-e		^Z termination
+	1.7		-edt		EDT style editing
+	1.8		-ega		43 line EGA
+	1.9 		-i<File Name>	Command file
+	1.10		-k		Enhanced keyboard
+	1.11		-l<Size>	DOS memory limit
+	1.12		-m<Hex number>	DOS display mode
+	1.13		-mo		Monochrome adaptor
+	1.14		-p<PID> 	Process PID
+	1.15		-pc		PC keyboard
+	1.16		-r		CR termination
+	1.17		-ro		Read only
+	1.18		-s<Size>	Max buffer size in MB
+	1.19		-t<Terminal>	Specify terminal type
+	1.20		-v		BIOS routines
+	1.21		-wi		Subwindow
+	1.22		-wps		WPS style editing
+	1.23		-y<Style>	Editing style
+
+	2		Sedt's Data Files
+	2.1		Configuration File
+	2.1.1 	        AUTOSAVE
+	2.1.2		BACKUPFILE
+	2.1.3 	        BUFFERING
+	2.1.4		COLUMN
+	2.1.5		CONTEXT
+	2.1.6		CONTROLZ
+	2.1.7 	        CURSOR
+	2.1.8	     	CURSORLINE
+	2.1.9 	        DIALOG
+	2.1.10	        DEFINITIONS
+	2.1.11	        EGA43
+	2.1.12	        FILES
+	2.1.13	        FONTSIZE
+	2.1.14	        GOLD
+	2.1.15	        JOURNALING
+	2.1.16	        KEYBOARD
+	2.1.17	        MAPPING
+        2.1.18          MARGIN
+	2.1.19	        MAXSCROLL
+	2.1.20	        MODE
+	2.1.21	        MOUSE
+	2.1.22	        NUMLOCK
+	2.1.23	        PALETTE
+	2.1.24	        REMEMBER
+        2.1.25          RESERVATION
+	2.1.26	        RETURN
+	2.1.27	        RULER
+	2.1.28	        SCREEN
+	2.1.29	        SCREENSHIFT
+	2.1.30	        SEARCHES
+	2.1.31	        SHAREMESSAGE
+	2.1.32	        SYSTEM/TERMINAL
+	2.1.33	        TAB
+	2.1.34	        VIDEO
+	2.1.35	        WINDOWS
+
+	3  		Initialization
+
+	4	        Using the MS-DOS version of Sedt
+	4.1             Support of the Microsoft mouse driver
+
+	5	        Using the Microsoft Windows version of Sedt
+	5.1	        Window Control
+	5.2		Mouse Control
+	5.3		Menu Control
+	5.4.1	        File
+	5.3.1.1 	New
+	5.3.1.2 	Open..
+	5.3.1.2 	Save
+	5.3.1.3 	Save as..
+	5.3.1.4 	Insert..
+	5.3.1.5 	Quit
+	5.3.2	        Window
+	5.3.2.1 	Untitled
+	5.3.2.2 	Switch
+	5.3.3	        Edit
+	5.3.3.1 	Clear
+	5.3.3.2 	Cut
+	5.3.3.3 	Paste
+	5.3.4	        Ruler
+	5.3.4.1 	Load <X>
+	5.3.5	        Help
+
+	6		Sedt hints and tricks
+	6.1		Using Sedt for programming
+	6.2		Using Sedt for text and documents
+	6.3		Repetitive tasks
+	6.4		Creating menus
+	6.5		Using  different    initialization    files   for
+			different file types
+	6.6		Using linked files under UNIX
+        6.7             Changing the keyboard macros
+
+	7		Customizing keyboards
+	7.1		Function definition file
+	7.2		Key map file
+	7.3		MAPKEY program
+	7.4		Porting a new keyboard to Sedt
+
+	8		Help file
+
+	9		Reference
+	9.1		Interpreting Keyboard Input
+	9.2		Translating Keystrokes
+	9.3		Command Syntax
+	9.4		Commands
+	9.4.1		Movement Commands
+	9.4.1.1 	@AC	Absolute Character
+	9.4.1.2 	@AL	Absolute Line
+	9.4.1.3 	@BB	Beginning of Buffer
+	9.4.1.4 	@BM	Match bracketing character
+	9.4.1.5 	@EB	End of Buffer
+	9.4.1.6 	@EL	End of Line
+	9.4.1.7 	@ES	Other end of found text
+	9.4.1.8 	@C	Character
+	9.4.1.9 	@F	Find
+	9.4.1.10	@L	Line
+	9.4.1.11	@M	Mark
+	9.4.1.12	@N	Next
+	9.4.1.13	@PAG	Page
+	9.4.1.14	@PAR	Paragraph
+	9.4.1.15	@SCR	Screen
+	9.4.1.16	@SEN	Sentence
+	9.4.1.17	@SR	Select Range
+	9.4.1.18	@V	Vertical
+	9.4.1.19	@W	Word
+	9.4.1.20	@XNM	Next Mark
+	9.4.1.21	@XSR	Select Region with no clear
+	9.4.2		Action Commands
+	9.4.2.1 	:A	Advance
+	9.4.2.2 	:B	Backward
+	9.4.2.3 	:CB	Cursor at Bottom
+	9.4.2.4 	:CC	Change Case
+	9.4.2.5 	:CD	Change to Lower case
+	9.4.2.6 	:CE	Change Case Edt Style
+	9.4.2.7 	:CH	Insert ASCII Character
+	9.4.2.8 	:CK	Checkpoint buffer
+	9.4.2.9 	:CL	Center Line
+	9.4.2.10	:CM	Cursor at Middle
+	9.4.2.11	:CNA	Add number to counter
+	9.4.2.12	:CNG	Get counter from buffer
+	9.4.2.13	:CNI	Increment or decrement counter
+	9.4.2.14	:CNP	Insert value of counter in buffer
+	9.4.2.15	:CNS	Set counter value
+	9.4.2.16	:CS	Save buffer context
+	9.4.2.17	:CT	Cursor at Top
+	9.4.2.18	:CU	Change to Upper Case
+	9.4.2.19	:CW	Change to other window on screen
+	9.4.2.20	:D	Delete
+	9.4.2.21	:EAP	Delete and Append
+	9.4.2.22	:EF	Execute function
+	9.4.2.23	:EK	Execute key
+	9.4.2.24	:EL	Set error level
+	9.4.2.25	:EM	Set the end point of a mark
+	9.4.2.26	:ERC	Clear edit region
+	9.4.2.27	:ERS	Set edit region
+	9.4.2.28	:FE	Edit File
+	9.4.2.29	:FG	Get File
+	9.4.2.30	:FNL	Larger Font
+	9.4.2.31	:FNS	Smaller Font
+	9.4.2.32	:FS	Save File
+	9.4.2.33 	:FT	Fill
+	9.4.2.34	:FW	Write File
+	9.4.2.35	:FX	Execute File
+	9.4.2.36	:GAP	Get and append
+	9.4.2.37	:GE	Get
+	9.4.2.38	:GR	Get ruler
+	9.4.2.39	:H	Help
+	9.4.2.40	:I	Insert
+	9.4.2.41	:KA	Define character key
+	9.4.2.42	:KF	Define key function string
+	9.4.2.43	:KGA	Define gold character key
+	9.4.2.44	:KGK	Define gold function key key
+	9.4.2.45	:KK	Define function key key
+	9.4.2.46	:KN	Define key function number
+	9.4.2.47	:LD	Decrease indentation
+	9.4.2.48	:LI	Increase indentation
+	9.4.2.49	:LK	Load key definition
+	9.4.2.50	:LNE	Execute keystrokes stored in key
+	9.4.2.51	:LNL	Store keystrokes in key
+	9.4.2.52	:LNX	End learning
+	9.4.2.53	:LS	Set indentation level
+	9.4.2.54	:M	Mark cursor position
+	9.4.2.55	:NL	New line
+	9.4.2.56	:NS	Substitute next
+	9.4.2.57	:NWC	Switch to next unsaved buffer
+	9.4.2.58	:NWG	Switch to next buffer
+	9.4.2.59	:NWN	Switch to next unused buffer
+	9.4.2.60	:NWU	Switch to next used buffer
+	9.4.2.61	:OE	Output error message
+	9.4.2.62	:OL	Open line
+	9.4.2.63	:OM	Output message
+	9.4.2.64	:OS	Toggle overstrike mode
+	9.4.2.65	:OW	Switch to previous buffer
+	9.4.2.66	:PD	Insert current date
+	9.4.2.67	:PL	Load paste buffer
+	9.4.2.68	:POPCH	Restore saved buffer change flag
+	9.4.2.69	:PR	Print current buffer
+	9.4.2.70	:PS	Save paste buffer
+	9.4.2.71	:PT	Insert current time
+	9.4.2.72	:PUSHCH Save buffer change flag and clear
+	9.4.2.73	:Q	Quit
+	9.4.2.74	:REP	Replace
+	9.4.2.75	:RF	Refresh display
+	9.4.2.76	:RK	Redefine key as character
+	9.4.2.77	:RL	Ruler
+	9.4.2.78	:RMCHA	Clear character delete buffer
+	9.4.2.79	:RMHEL	Clear help buffer
+	9.4.2.80	:RMLIN	Clear line delete buffer
+	9.4.2.81	:RMPAG	Clear page delete buffer
+	9.4.2.82	:RMPAR	Clear paragraph delete buffer
+	9.4.2.83	:RMPAS	Clear paste buffer
+	9.4.2.84	:RMSEA	Clear search buffer
+	9.4.2.85	:RMSEN	Clear sentence delete buffer
+	9.4.2.86	:RMSUB	Clear substitute buffer
+	9.4.2.87	:RMUNK	Clear unknown delete buffer
+	9.4.2.88	:RMWOR	Clear word delete buffer
+	9.4.2.89	:RS	Reset select range
+	9.4.2.90	:RTAB	Replace tabs with spaces
+	9.4.2.91	:RUL	Load ruler from entity
+	9.4.2.92	:RUS	Save ruler in buffer
+	9.4.2.93	:SASC	Show ASCII value
+	9.4.2.94	:SAVF	Save function definitions in a file
+	9.4.2.95	:SAVK	Save key definitions in a file
+	9.4.2.96	:SC	Show current column
+	9.4.2.97	:SEL	Select
+	9.4.2.98	:SETB	Set block/line mode toggle
+	9.4.2.99	:SETD	Set direction toggle
+	9.4.2.100	:SETF	Set cursor behavior toggle
+	9.4.2.101	:SETR	Set replace/insert toggle
+	9.4.2.102	:SETT	Set tab insert/expand toggle
+	9.4.2.103	:SETU	Set case sensitivity toggle
+	9.4.2.104	:SETV	Set regular expression toggle
+	9.4.2.105	:SETX	Set function expansion toggle
+	9.4.2.106	:SI	Send a shift in character
+	9.4.2.107	:SK	Save key definition
+	9.4.2.108	:SL	Load search buffer
+	9.4.2.109	:SO	Send a shift out character
+	9.4.2.110	:STAB	Replace multiple spaces with tabs
+	9.4.2.111	:STRP	Strip trailing spaces
+	9.4.2.112	:SUB	Substitute
+	9.4.2.113	:SV	Show Version
+	9.4.2.114	:SYQ	Spawn with no output
+	9.4.2.115	:SYR	Spawn with redirected output
+	9.4.2.116	:SYS	Spawn to operating system
+	9.4.2.117	:TAB	Move to next tab stop
+	9.4.2.118	:TAD	Adjust text by one tab stop
+	9.4.2.119	:TB	Toggle Block Mode
+	9.4.2.120	:TC	Toggle Control Character Display
+	9.4.2.121	:TD	Toggle Direction
+	9.4.2.122	:TF	Toggle cursor key behavior
+	9.4.2.123	:TI	Test for input
+	9.4.2.124	:TM	Toggle buffer markers
+	9.4.2.125	:TP	Toggle Cursor Line
+	9.4.2.126	:TR	Toggle ruler display
+	9.4.2.127	:TS	Toggle automatic screen shifts
+	9.4.2.128	:TT	Toggle tab expansion
+	9.4.2.129	:TU	Toggle case sensitivity
+	9.4.2.130	:TV	Toggle regular expression searches
+	9.4.2.131	:TX	Toggle functions expansion
+	9.4.2.132	:UC	Undelete character
+	9.4.2.133	:UL	Undelete line
+	9.4.2.134	:UM	Undo last command
+	9.4.2.135	:UOFF	Turn off screen updating
+	9.4.2.136	:UON	Turn on screen updating
+	9.4.2.137	:UPAG	Undelete page
+	9.4.2.138	:UPAR	Undelete paragraph
+	9.4.2.139	:UPD	Update screen header
+	9.4.2.140	:USEN	Undelete sentence
+	9.4.2.141	:USR	Paste
+	9.4.2.142	:UU	Undelete unknown
+	9.4.2.143	:UW	Undelete word
+        9.4.2.143       :WA     Cascade windows
+	9.4.2.144	:WC	Zoom window
+	9.4.2.145	:WD	Toggle width
+	9.4.2.145	:WFB	Fix window bottom
+	9.4.2.145	:WFL	Fix window left
+	9.4.2.145	:WFR	Fix window right
+	9.4.2.145	:WFT	Fix window top
+	9.4.2.146	:WG	Grow window
+	9.4.2.147	:WI	Select buffer
+	9.4.2.148	:WM	Move window
+	9.4.2.149	:WP	Position window
+	9.4.2.150	:WS	Shrink window
+	9.4.2.151	:WT	Tile all windows
+	9.4.2.152	:X	Exit
+	9.4.2.153	:YN	Prompt for confirmation
+	9.4.2.154	:Z	Zap buffer
+
+	Appendix A	Keyboard translation
+	Appendix B	Installation
+	Appendix C	Error Messages
+	
+	Copyright (c) Anker Berg-Sonne, 1985-1991
+	Sedt Version 4.2 (290)
+
+
+			      Sedt Reference Manual
+
+	0			  Introduction
+
+		The Advanced Guide attempts to take you logically through
+	the  extremely rich command set of Sedt.  Even	though	care  has
+	been  taken  not to mention features without describing them, you
+	may find  that	you  have  to  cross-reference different sections
+	before you fully understand a feature.	The Reference section may
+	come in very useful for this purpose.
+
+	1			  Entering Sedt
+
+		The complete syntax for calling Sedt is
+
+	SEDT {<Input File> {-o<Output file>}} {<Option>... }
+
+		The input file will be loaded into buffer number 0, which
+	is  the  editing  buffer  at  start-up.  If  an  output  file  is
+	specified,  buffer  0  will be saved into the specified  file  by
+	default.
+
+		Options  change the behavior of  Sedt  for  the  complete
+	editing session. A complete list of options follows:
+
+	1.1		-<Line Number>
+				After initialization Sedt  will  position
+				the  cursor  at the  start  of	the  line
+				number	you provided.  This  function  is
+				most useful for programmers that need  to
+				go to a line number that the compiler has
+				passed a syntax error message for.
+
+	1.2		-a
+				Turns  autosaves  on  for    the  editing
+				session.    Autosaves  ensures that  your
+				file  is  saved  at regular intervals  in
+				case of a system crash.  Autosaved copies
+				are stored in  files  with  the extension
+				.AUS.
+
+	1.3		-at
+				Suppresses  Sedt's automatic  recognition
+				of the system and  makes Sedt assume that
+				it is  running	on  an IBM AT with the AT
+				keyboard.  Use	this when the recognition
+				code  fails  to  recognize    the  system
+				properly.
+
+	1.4		-b
+				Suppresses the renaming  of  old versions
+				when files are saved.	 By  default Sedt
+				will rename any existing file  to .BAK on
+				the  MS-DOS  and  ATARI  versions  before
+				writing the new version.  This allows you
+				to recover  from  editing  sessions where
+				you have accidentally corrupted the file.
+				On VMS there is  no  need  for .BAK files
+				since  VMS  supports multiple generations
+				of files.  Normally -b is  used when disk
+				space is too tight for both the  new file
+				and the backup.
+
+	1.5		-co
+				Suppresses  Sedt's automatic  recognition
+				of the system and  makes Sedt assume that
+				it is running on  a  color  system.   Use
+				this when the recognition code	fails  to
+				recognize the system properly.
+
+	1.6		-e
+				Terminate all files written with an ASCII
+				SUB character.	Some applications require
+				a SUB character to recognize the  end  of
+				data files.
+
+	1.7		-edt
+				Use the EDT style editing.
+
+	1.8		-ega
+				Switch the display into  EGA 43 line mode
+				during the session and switch  back  into
+				25 line mode at the end.
+
+	1.9 		-i<File Name>
+				Read  internal	Sedt  commands	from  the
+				given  file  after    initialization  and
+				before accepting keyboard input.    Using
+				the    -i    option   prevents	automatic
+				execution  of  the default initialization
+				file.
+
+	1.10		-k
+				Suppresses Sedt's  automatic  recognition
+				of the keyboard  type  and  informs  Sedt
+				that the system  uses  the  enhanced  IBM
+				keyboard.
+
+			-k<type>
+				Suppresses Sedt's  automatic  recognition
+				of the keyboard  and  forces  Sedt to use
+				<type> as the prefix for keyboard map and
+				help files.
+
+	1.11		-l<Size>
+				Limits	the  main   memory  buffering  of
+				information to <Size> bytes.  This option
+				is  used  to ensure that enough memory is
+				left  over  to	spawn	sub-processes  on
+				MS-DOS	systems.    This  option  has  no
+				effect	    on	  other    than    MS-DOS
+				implementations.
+
+	1.12		-m<Hex number>
+				Changes the  video mode of Sedt under DOS
+				to  <Hex  number>.  Sedt  will  configure
+                                itself  for  the correct number of  lines
+                                and  columns  supported  by  the selected
+                                mode.   On  super VGA adapters mode 54 is
+                                often 132 columns by 43 lines and mode 55
+                                is often 132 columns by 25 lines.
+
+	1.13		-mo
+				Suppresses  Sedt's automatic  recognition
+				of the system and  makes Sedt assume that
+				it is  running	on  a  monochrome system.
+				Use this when  the recognition code fails
+				to recognize the system properly.
+
+	1.14		-p<PID>
+				Informs  Sedt  of the Process ID  of  the
+				parent process.  This option is only used
+				on the VMS version of Sedt and creates	a
+				resident version  of  Sedt.  On exit Sedt
+				will attach to	the  parent  process  and
+				remain resident.  Upon	reattachment Sedt
+				will continue the editing session.
+
+	1.15		-pc
+				Suppresses  Sedt's automatic  recognition
+				of the system and  makes Sedt assume that
+				it is running on an IBM PC with the PC or
+				XT    keyboard.    Use	this  when    the
+				recognition  code  fails to recognize the
+				system properly.
+
+	1.16		-r
+				When you  supply  the  -r  qualifier  all
+				files written to  disk will have the last
+				line  terminated  with	an    ASCII    CR
+				character.  Use this when you are writing
+				or editing a file for an application that
+				requires this.
+
+	1.17		-ro
+				Set the  buffer  that  the file is loaded
+				into in read only mode.
+
+	1.18		-s<Size>
+				Set the maximum amount of buffer space to
+				<Size> megabytes.   The  buffer  space is
+				used  to  contain  files   being  edited,
+				delete	 and  paste  buffers  plus    key
+				definitions.
+
+	1.19		-t<Type>
+				Under  UNIX  defines  the  terminal  type
+				(prefix  for  key    definition   files).
+				Overrides using the contents  of the term
+				environment variable.
+
+	1.20		-v
+				On IBM	PCs  and  compatibles  Sedt  will
+				write directly to  video RAM.  The result
+				is a faster display  than  when the video
+				firmware  calls  are  used.	 It  may,
+				however,  be incompatible with some video
+				adaptors.  The -v argument forces Sedt to
+				use BIOS calls for all screen output.
+
+	1.21		-wi
+				Use the window defined	by the upper left
+				hand  corner  with  coordinates  XX,YY (0
+				based) and dimensions HH,WW.
+
+	1.22		-wps
+				Use the WPS layout with physical  mapping
+				to the LK250 keyboard.	  This	switch is
+				not applicable to VMS.
+
+	1.23		-y<Style>
+				Use the  argument  as  the editing style.
+				<Style> is used  as  the extention to key
+				definition and help files.
+
+	
+	Copyright (c) Anker Berg-Sonne, 1985-1991
+	Sedt Version 4.2 (290)
+
+
+	2		       Sedt's Data Files
+
+		For Sedt to function properly it needs a  number  of data
+	files.	  To  help organize the files Sedt uses  the  concept  of
+	libraries where the operating system supports such a facility.
+
+		The files used by Sedt are:
+
+			An optional  configuration file that sedt uses to
+			set  various  options.	  The	 name	 of   the
+			configuration file is always SEDT.CNF.
+
+			A  keyboard  map  file	that  determines  key  to
+			function mapping.
+
+			A  function  definition  file  that  defines  all
+			predefined functions.
+
+			A Help file that can  displayed during an editing
+			session  to  assist the user in  remembering  the
+			programming of the keyboard.
+
+			A file	containing  a  graphical  display  of the
+			keyboard commands.
+
+			A  default  ruler file that is used  to  set  the
+			ruler at initialization time.
+
+			A set of optional ruler files that can	be loaded
+			or saved during an editing session.
+
+			An optional  command file that is executed during
+			Sedt  initialization  for  customization  of  the
+			editing interface.
+
+		On  MS-DOS,  OS/2, ATARI ST, and UNIX the data files  are
+	located  through  a combination of the default directory, and the
+	environment variables SEDT, SEDTP, and PATH.	Key map, function
+	definition and help files are looked for  in the following order:
+	default  directory,  the  directory  that  SEDTP  points to,  the
+	directory  SEDT points to and finally in all directories  pointed
+	by PATH.    Ruler  files,  SEDTCOM.TXT,  SEDT.REM,  user supplied
+	initialization files are  looked  for  in  the	order:	  default
+	directory, the directory SEDTP	points	to,  the  directory  SEDT
+	points to and finally in  all  directories  pointed  to  by PATH.
+	SEDT and SEDTP must be defined	as  a  single directory as in SET
+	SEDT=C:\SEDT\.	  This	scheme	allow  a lot  of  flexibility  in
+	organizing  Sedt's  files.    On  single  user systems	the  most
+	efficient  is  to  define  SEDT  only.	On multiuser  systems  or
+	networks  SEDT	can  be set up to point at a  shared,  read  only
+	directory  and	SEDTP  at  a  private  writable directory that is
+	different for every user.  The easiest, but least efficient is to
+	install Sedt in a directory that is included in PATH.
+
+		The names of the files	under MS-DOS, OS/2, ATARI ST, and
+	UNIX depend on the configuration.   This  facilitates  using SEDT
+	from a shared server directory with different PC models.
+
+		The configuration file is always named SEDT.CNF.
+
+		The function definition file names are:
+
+			FUNDEF.yyy
+
+		Key mapping files are:
+
+			For VMS:
+
+				VAX/VMS VT100	VT100M.yyy
+				VAX/VMS VT200	VT200M.yyy
+
+			For UNIX:
+
+				UNIX	VT100	vt100m.yyy
+				UNIX	VT200	vt200m.yyy
+				SCO XENIX
+					console ansim.yyy
+
+			On DOS, OS/2 and ATARI:
+
+			System		Keyboard	File
+
+			Rainbow 	LK201		RBxxxM.yyy
+			IBM PC		IBM		PCxxxM.yyy
+			IBM PC/XT	IBM		PCxxxM.yyy
+			IBM PC/AT	IBM		ATxxxM.yyy
+			IBM CONVERTIBLE IBM		CVxxxM.yyy
+			PS/2		IBM		NPxxxM.yyy
+			ANY IBM PC	ENHANCED	NPxxxM.yyy
+			ANY IBM PC	LK250		LKxxxM.yyy
+			TANDY 1400 LT	TANDY		TCxxxM.yyy
+			Compaq SLT	Compact 	SLTxxxM.yyy
+			ATARI ST			STxxxM.yyy
+
+			Where xxx is  DOS  for	MS/DOS, WIN for Microsoft
+			Windows, OS2 for OS/2  and  TOS for ATARI TOS and
+			GEM.  yyy is EDT  for  EDT  style mapping and WPS
+			for WPS style mapping.
+
+		The name of the help file is:
+
+			HELP.yyy
+
+		The names of the graphical keyboard display files are:
+
+			System		Keyboard	File
+
+			Rainbow 	LK201		RBxxxH.yyy
+			IBM PC		IBM		PCxxxH.yyy
+			IBM PC/XT	IBM		PCxxxH.yyy
+			IBM PC/AT	IBM		ATxxxH.yyy
+			IBM CONVERTIBLE IBM		CVxxxH.yyy
+			PS/2		IBM		NPxxxH.yyy
+			ANY IBM PC	ENHANCED	NPxxxH.yyy
+			ANY IBM PC	LK250		LKxxxH.yyy
+			TANDY 1400 LT	TANDY		TCxxxH.yyy
+			Compaq SLT	Compact 	SLTxxxH.yyy
+			VAX/VMS 	VT100		VT100H.yyy
+			VAX/VMS 	VT200		VT200H.yyy
+			ATARI ST			STxxxH.yyy
+			UNIX		VT100		vt100h.yyy
+			UNIX		VT200		vt200h.yyy
+			SCO XENIX	console 	ansi.hlp
+
+			Where xxx is  DOS  for	MS/DOS, WIN for Microsoft
+			Windows, OS2 for OS/2  and  TOS for ATARI TOS and
+			GEM.  yyy is EDT  for  EDT  style mapping and WPS
+			for WPS style mapping.
+
+		The initialization file is  named SEDTCOM.TXT and must be
+	located in the directory pointed  to  by the environment variable
+	SEDT.
+
+		On the ATARI ST  under ATARI GEM all files must be in the
+	current directory.
+
+		On  the  ATARI ST under the Mark  Williams  C  shell  the
+	library  for  all  data  files used by Sedt  is  defined  by  the
+	environment  variable  SEDT.	The  contents  of the environment
+	variable has  the  name of the data file appended to it to locate
+	the data file.	  If no environment variable is defined the files
+	must  be  found  in  the  default  directory.	 To  set  up  the
+	environment use the SET command.   SETENV SEDT=C:\SEDT\ specifies
+	that the files are found in the directory SEDT on drive C.
+
+		The names are:
+
+		Key mapping file:	STTOSM.yyy
+		Key definition file:	FUNDEF.yyy
+		Help file:		HELP.yyy
+		Keyboard display file:	STTOSH.yyy
+		Initialization file:	SEDTCOM.TXT
+
+		Where yyy is EDT for EDT style mapping	and  WPS  for WPS
+		style mapping.
+
+		The names of the ruler files  are RULERn.TXT where n is a
+	digit from 0 to 9.  RULER0.TXT	is  the  default ruler file.  The
+	initialization command file is named SEDTCOM.TXT.
+
+	2.1			Configuration File
+
+		The configuration file, SEDT.CNF, is an  ASCII	data file
+	containing one-line commands.  Valid commands are:
+
+	2.1.1 	        AUTOSAVE=ON (Default)
+
+				After any  change  to  a buffer Sedt will
+				count the keystrokes  made  while editing
+				the  buffer.	After  180  keystrokes	a
+				warning will be displayed on the bottom
+				line.	If the File has  not  been  saved
+				after	200  keystrokes,  Sedt	saves  it
+				automatically  in  a  file  in	the  same
+				directory  as the file being edited,  but
+				with  the  extension .AUS.  The autosaved
+				version is automatically deleted when the
+				file is properly  saved.  If an autosaved
+				file is found when  a  file is loaded you
+				will be asked whether you  want  to  load
+				the autosave instead.  If you provide the
+				wrong  answer to this question reload the
+				file.
+
+			AUTOSAVE=n,m
+
+				Will  autosave	after  n  keystrokes  and
+				display the warning  m	keystrokes before
+				the autosave is due.
+
+			AUTOSAVE=OFF
+
+				Autosaving is disabled.
+
+	2.1.2 	        BACKUPFILE=ON (Default)
+
+				Causes	Sedt  to  ensure  that	a  backup
+				version of all files are kept.
+
+			BACKUPFILE=OFF
+
+				Causes Sedt to not create backup versions
+				of saved files.
+
+	2.1.3 	        BUFFERING=EMS (default)
+
+				On  MS-DOS files  being  edited  will  be
+				buffered in EMS memory before overflowing
+				to free DOS memory and disk.
+
+			BUFFERING=NOEMS
+
+				EMS memory will not be used for buffering
+				of files.
+
+			BUFFERING=FREE (default)
+
+				On  MS-DOS  files  being  edited will  be
+				buffered    in	free  DOS  memory  before
+				overflowing to disk.  You may not be able
+				to spawn to  DOS when editing large files
+				when this option is set.
+
+			BUFFERING=NOFREE
+
+				Free  DOS memory will  not  be	used  for
+				buffering of files.  This  preserves  the
+				ability  to  spawn out of Sedt,  but  may
+				impact performance.
+
+	2.1.4 	        COLUMN=DISPLAYED (Default, except VMS and ULTRIX)
+
+				Enables continuous display of the current
+				cursor	column on the banner line.   This
+				is the default on all versions other than
+				VMS and  ULTRIX.  Enabling this option on
+				VMS and ULTRIX	may  have  a  significant
+				impact on performance across a network.
+
+			COLUMN=OFF (Default for VMS and ULTRIX)
+
+				Disables   continuous  display	of    the
+				current cursor column on the banner line.
+				This is the default on VMS and ULTRIX.
+
+	2.1.5 	        CONTEXT=SAVED
+
+				Save the editing context when a  file  is
+				saved.	   The	context,  containing  the
+				current  position,  all   marks  and  the
+				current ruler are saved  in  a	file with
+				the  same  file  name and  the	extension
+				.CTX.  When Sedt edits a  file,  and this
+				option is set, it will look for  the file
+				.CTX and restore the context.  The result
+				is  that when a file is edited again  the
+				cursor and  marks  from the previous edit
+				session will be restored.
+
+				If  you  have  two   files  in	the  same
+				directory  with identical filenames, they
+				will  default to the same .CTX	file  and
+				the  .CTX file may be overwritten by  the
+				.CTX   file  for  the  other  file.    To
+				safeguard against  loading the wrong file
+				Sedt will verify  that	a  file  and it's
+				corresponding  .CTX  file match.    If	a
+				mismatch  is  found the message  "Context
+				file does not match input file"  will  be
+				issued.
+
+			CONTEXT=FORGOTTEN (Default)
+
+				To  not  perform  the  actions	described
+				under CONTEXT=SAVED.
+
+			CONTEXT=CHECK
+
+				Do  not    save  a  context  (.CTX)  file
+				automatically, but check for the presence
+				of one when loading  a file and use it of
+				it is found.
+
+	2.1.6 	        CONTROLZ=ON
+
+				Causes	Sedt  to  terminate  all    files
+				written with a control Z (EOT) character.
+
+			CONTROLZ=OFF (Default)
+
+				Causes	  Sedt	to  not  terminate  files
+				written with a control Z (EOT) character.
+
+	2.1.7 	        CURSOR=FREE
+
+				The cursor can move freely on the screen.
+				Lines  will  be  padded  to   the  cursor
+				position.
+
+			CURSOR=RESTRICTED (Default)
+
+				The  cursor  can  only move to	positions
+				within the file.
+
+	2.1.8 	        CURSORLINE=FIXED
+
+				Causes	Sedt  to  keep the cursor on  the
+				middle	line  of the editing window.  The
+				benefit is  ease  of  finding the current
+				position and always  being  able  to  see
+				several lines above and below the cursor.
+
+			CURSORLINE=FLOATING (Default)
+
+				Causes Sedt to float  the  cursor through
+				the editing window.  The benefit is fewer
+				screen scrolls.
+
+	2.1.9 	        DEFINITIONS=ON
+
+				When  a  key  with an associated function
+				definition  is	pressed  in response to a
+				prompt the definition will be inserted.
+
+			DEFINITIONS=OFF (Default)
+
+				When a	key  with  an associated function
+				definition is pressed  in  response  to a
+				prompt the character associated  with the
+				key is inserted.
+
+	2.1.10	        DIALOG=ON
+
+				Windows and  GEM versions will use dialog
+				boxes  to prompt  for  input  instead  of
+				using the bottom line of the display.
+
+			DIALOG=OFF
+
+				Windows  and GEM versions  will  use  the
+				bottom line of the display  to prompt for
+				input.
+
+	2.1.11	        EGA43=ON
+
+				Causes Sedt to switch the display into 43
+				line  mode.  Unpredictable results can be
+				expected on other than EGA displays.
+
+			EGA43=OFF (Default)
+
+				Turns off 43 line mode.
+
+	2.1.12	        FILES=ON
+
+				The  names  of	the  key  definition  and
+				function definition files are appended to
+				the file dump, which  is  in  the current
+				working directory.
+
+			FILES=OFF (Default)
+
+				Nothing.
+
+	2.1.13	        FONTSIZE=<number>
+
+				Causes Sedt  to default to a font that is
+				close to <number> pixels high.
+
+	2.1.14	        GOLD
+
+				Has no	effect.   Setting the gold key is
+				done in the  key  mapping  file  starting
+				with version 4.0.
+
+	2.1.15	        JOURNALING
+
+				Has  no  effect in the current version of
+				Sedt and exists only for historic reasons.
+
+	2.1.16	        KEYBOARD=STANDARD
+
+				Forces Sedt  to  assume  that  the system
+				uses the original PC and XT keyboard.
+
+			KEYBOARD=LK250
+
+				Forces Sedt to assume that the system has
+				an LK250 keyboard attached.
+
+			KEYBOARD=NEW
+			KEYBOARD=ENHANCED
+
+				Forces Sedt to assume that the system has
+				the new style IBM keyboard attached.
+
+			KEYBOARD=CONVERTIBLE
+
+				Forces Sedt to assume that the system has
+				an  IBM  keyboard   convertible  keyboard
+				attached.
+
+			KEYBOARD=AT
+
+				Forces	Sedt  to  assume that the  system
+				uses an original AT style keyboard.
+
+			KEYBOARD=SLT
+
+				Forces	Sedt to assume	that  the  system
+				uses a Compaq SLT keyboard.
+
+			KEYBOARD=<type>
+
+				Forces Sedt to use <type>  as  the prefix
+				for keyboard map and help files.
+
+	2.1.17	        MAPPING=EDT (Default)
+
+				Use  .EDT    extensions    on	key  map,
+				definition and help  files.
+
+			MAPPING=WPS
+
+				Use    .WPS   extensions  on  key    map,
+				definition  and  help  files.
+
+			MAPPING=<String>
+
+				Use .<string>  as  extentions on key map,
+				definition and help files.
+                                
+        2.1.18          MARGIN=<Number>
+        
+                                Ensure that <Number> lines are left
+                                visible between the cursor and the top
+                                and bottom of the window.
+
+	2.1.19	        MAXSCROLL=<Number>
+
+				Limits	scrolling  during cursor movement
+				to <Number> lines.
+
+	2.1.20	        MODE=<Hex Number>
+
+				Use  video  mode  <Hex	Number>  on    PC
+				compatible systems.   Sedt will configure
+                                itself for the  correct  number  of lines
+                                and  columns  supported by  the  selected
+                                mode.   On  super VGA adapters mode 54 is
+                                often 132 columns by 43 lines and mode 55
+                                is often 132 columns by 25 lines.
+
+	2.1.21	        MOUSE=ENABLED (Default)
+
+				Enabled use of the mouse from Sedt.  Sedt
+				will  try  to  detect  the  presence of a
+				mouse  and  enable  the  use of the mouse
+				cursor.
+
+			MOUSE=DISABLED
+
+				Sedt will  not	use a mouse even if it is
+				present.
+
+	2.1.22	        NUMLOCK=SET  (Default  if the  Num  Lock  key  is
+				mapped by the keyboard map file)
+
+				Saves  the  Num Lock state when  Sedt  is
+				entered and then  sets	it.  On exit from
+				Sed the Num Lock state is retored.
+
+			NUMLOCK=CLEARED
+
+				Saves  the  Num  Lock  state when Sedt is
+				entered and then clears it.  On exit from
+				Sedt the Num Lock state is restored.
+
+	2.1.23	        PALETTE=<hex string>
+
+				Causes	Sedt to use the characters  given
+				in  <hex  string> as it's palette.   Each
+				pair  of    hex   digits  determines  the
+				attribute character as	defined  for  the
+				IBM Color Graphics Adapter.  The position
+				of  the  pair  defines	the  use  of  the
+				attribute character:  (Sedt only uses the
+				REVERSE and BOLD attributes).
+
+				NORMAL
+				BOLD
+				BLINK
+				BOLD BLINK
+				UNDERLINE
+				BOLD UNDERLINE
+				BLINK UNDERLINE
+				BOLD BLINK UNDERLINE
+				REVERSE
+				BOLD REVERSE
+				BLINK REVERSE
+				BOLD BLINK REVERSE
+				UNDERLINE REVERSE
+				BOLD UNDERLINE REVERSE
+				BLINK UNDERLINE REVERSE
+				BOLD BLINK UNDERLINE REVERSE
+
+	2.1.24	        REMEMBER=ON
+
+				Remember the filename  that Sedt last was
+				called with and use  this  filename  when
+				Sedt	is   called  without  any    file
+				arguments.
+
+			REMEMBER=OFF (Default)
+
+				Do not	load any file when Sedt is called
+				without any file arguments.
+                                
+        2.1.25          RESERVATION=ON
+        
+                                Change file  protection to read only when
+                                files are being  edited.  Issue a warning
+                                if the user attempts  to edit a read only
+                                file and load as a  read  only  buffer if
+                                the user elects to load the  file.  Reset
+                                to  the original file protection when the
+                                file is saved and the buffer cleared.
+                                
+                        RESERVATION=OFF (default)
+                        
+                                Do not  manipulate file protection codes,
+                                and do not  warn if the user loads a read
+                                only file.
+
+	2.1.26	        RETURN=ON
+
+				Causes Sedt to ensure that the last  line
+				of saved files is terminates with a CR/LF
+				pair.
+
+			RETURN=OFF (Default)
+
+				Causes Sedt to not append a CR/LF pair to
+				the last line of saved files.
+
+	2.1.27	        RULER=ON (Default)
+
+				The current ruler  will  be  displayed at
+				the top of the window.
+
+			RULER=OFF
+
+				No ruler will displayed unless Sedt is in
+				ruler definition mode.
+
+	2.1.28	        SCREEN=COLOR
+
+				Forces	 Sedt  to  use	color	 graphics
+				firmware calls.
+
+			SCREEN=MONO
+
+				Forces	Sedt  to  use monochrome firmware
+				calls.
+
+	2.1.29       	SCREENSHIFT=ON (Default)
+
+				Enables horizontal shifting of the screen
+				to  keep  the cursor position  on-screen.
+				The screen is shifted a half-screen  at a
+				time.
+
+			SCREENSHIFT=OFF
+
+				Disables  horizontal	shifting  of  the
+				screen.
+
+			SCREENSHIFT=<decimal number>
+
+				Enables horizontal shifting of the screen
+				to keep the  cursor  position  on-screen.
+				The  number  of characters  shifted  each
+				time is given by <deciman number>.
+
+	2.1.30	        SEARCHES=LITERAL (Default)
+
+				Searches look for the literal string.
+
+			SEARCHES=REGULAR
+
+				Searches  use	the  input  string  as	a
+				regular expression.
+
+	2.1.31	        SHAREMESSAGE=ON (Default)
+
+				When  exiting,	 Sedt  prints  a  message
+				informing  the	operator  that	it  is	a
+				shareware program.
+
+			SHAREMESSAGE=OFF
+
+				Suppresses the shareware message on exit.
+
+	2.1.32	        SYSTEM=IBMPC
+
+				Forces Sedt to	assume	that it's running
+				on an IBM PC or compatible.
+
+			SYSTEM=IBMXT
+
+				Forces Sedt to assume  that  it's running
+				on an IBM PC/XT or compatible.
+
+			SYSTEM=IBMAT
+
+				Forces Sedt to assume that  it's  running
+				on an IBM PC/AT or compatible.
+
+			SYSTEM=VAXMATE
+
+				Forces	Sedt to assume that it's  running
+				on a Digital VAXmate.
+
+			SYSTEM=PC100
+
+				Forces	Sedt  to assume that it's running
+				on a Digital Rainbow 100.
+
+			SYSTEM=IBMCONVERTIBLE
+
+				Forces	Sedt  to assume that it's running
+				on an IBM Convertible.
+
+			SYSTEM=IBMAT-339
+
+				Forces Sedt  to  assume that it's running
+				on an IBM PC AT model 339.
+
+			SYSTEM=IBMXT-286
+
+				Forces Sedt to	assume	that it's running
+				on an IBM PC XT model 286.
+
+			SYSTEM=PS/2-50
+
+				Forces Sedt to assume  that  it's running
+				on an IBM PS/2 model 50.
+
+			SYSTEM=PS/2-60
+
+				Forces Sedt to assume that  it's  running
+				on an IBM PS/2 model 60.
+
+			SYSTEM=IBMXT-II
+
+				Forces	Sedt to assume that it's  running
+				on an IBM XT with new firmware.
+
+			SYSTEM=PS/2-30
+
+				Forces	Sedt  to assume that it's running
+				on an IBM PS/2 model 30.
+
+			SYSTEM=PS/2-80
+
+				Forces	Sedt  to assume that it's running
+				on an IBM PS/2 model 80.
+
+			SYSTEM=TANDY1400
+
+				Forces	Sedt  to assume that it's running
+				on a TANDY 1400 LT laptop computer.
+
+			SYSTEM=VT100
+			SYSTEM=VT200
+			SYSTEM=VT300
+			SYSTEM=VT52
+			SYSTEM=VK100
+			SYSTEM=ANSI
+			TERMINAL=VT100
+			TERMINAL=VT200
+			TERMINAL=VT300
+			TERMINAL=VT52
+			TERMINAL=VK100
+			TERMINAL=ANSI
+
+				Forces Sedt  to  assume  it  is being run
+				from the specified terminal type.
+
+			SYSTEM=<type>
+			TERMINAL=<type>
+
+				Under UNIX forces Sedt to use <System> as
+				the terminal type.
+
+	2.1.33	        TABS=EXPANDED (Default)
+
+				Causes Sedt  to  use  space characters to
+				space to tab stops and indentation.
+
+			TABS=INSERTED
+
+				Cases  Sedt  to    use	  space  and  tab
+				characters  to	space to  tab  stops  and
+				indentation.
+
+	2.1.34	        VIDEO=BIOS
+
+				Makes  Sedt  use  BIOS	calls  for  video
+				control on IBM PCs and compatibles.
+
+			VIDEO=DIRECT (Default)
+
+				Makes  Sedt access video RAM directly  on
+				IBM PCs and compatibles.
+
+	2.1.35	        WINDOWS=OVERLAPPED
+
+				Windows for  new  buffers  will partially
+				overlap already existing windows.
+
+			WINDOWS=ZOOMED (default)
+
+				Windows for new  buffers  will	cover the
+				entire screen.
+
+
+	
+	Copyright (c) Anker Berg-Sonne, 1985-1991
+	Sedt Version 4.2 (290)
+
+
+	3  			 Initialization
+
+		The initialization sequence for Sedt will  go through the
+	following steps:
+
+			First the configuration file SEDT.CNF  in  Sedt's
+		library is read and Sedt is  configured  as  described in
+		the file.
+
+			Then a	default  ruler	file  is read from Sedt's
+		library.    The   name	of  the  default  ruler  file  is
+		RULER0.TXT.
+
+		On  DOS,  OS/2,  Microsoft  Windows  and  ATARI ST a  key
+		mapping file is read next.  This file translates keyboard
+		scan codes into function key codes. The file names are:
+
+			System		Keyboard	File
+
+			Rainbow 	LK201		RBxxxM.yyy
+			IBM PC		IBM		PCxxxM.yyy
+			IBM PC/XT	IBM		PCxxxM.yyy
+			IBM PC/AT	IBM		ATxxxM.yyy
+			IBM CONVERTIBLE IBM		CVxxxM.yyy
+			PS/2		IBM		NPxxxM.yyy
+			ANY IBM PC	ENHANCED	NPxxxM.yyy
+			ANY IBM PC	LK250		LKxxxM.yyy
+			TANDY 1400 LT	TANDY		TCxxxM.yyy
+			Compaq SLT	Compact 	SLTxxxM.yyy
+			ATARI ST			STxxxM.yyy
+
+			Where yyy  is  EDT  for EDT style mapping and WPS
+		for WPS style mapping.
+
+			Next, the key definition file is read from Sedt's
+		library.   The name of the key definition file depends on
+		the system that Sedt is run on:
+
+			System		Keyboard	File
+
+			MS/DOS				KEYDEF.yyy
+			Microsoft Windows		KEYDEF.yyy
+			OS/2				KEYDEF.yyy
+			ATARI ST			KEYDEF.yyy
+			VAX		VT100		VT100M.yyy
+			VAX		VT200		VT200M.yyy
+			UNIX		VT100		vt100.key
+			UNIX		VT200		vt200.key
+			SCO XENIX	console 	ansi.key
+
+			Where yyy  is  EDT  for EDT style mapping and WPS
+		for WPS style mapping.
+
+			Next Sedt will position the cursor  at	the  line
+		number requested in the command  line if a -<line number>
+		qualifier was supplied.
+
+			Then Sedt  will look in Sedt's library for a file
+		containing initialization commands  for the editor.  If a
+		file  is  found it's  contents	will  be  interpreted  as
+		internal  Sedt	commands.    The  name	of  the  file  is
+		SEDTCOM.TXT.
+
+			Finally, Sedt  will look for a checkpoint file in
+		the same directory  as	the file you are editing and with
+		the same name except  for  the extension .AUS.	If one is
+		found, Sedt will ask you whether you  want  to	load  the
+		checkpoint file instead.
+
+	
+	Copyright (c) Anker Berg-Sonne, 1985-1991
+	Sedt Version 4.2 (290)
+
+
+	4	   Using the MS-DOS version of Sedt
+
+		The  MS-DOS  version  of    Sedt    follows  the  generic
+	description given in the previous  two chapters, but adds support
+	for a mouse if a Microsoft mouse compatible driver is installed.
+
+	4.1 Support of the Microsoft mouse driver
+
+			If  Sedt recognizes the presence of  a	mouse  it
+		will  display  a  block cursor within the  window.    The
+		cursor will move around the window if you move the mouse.
+
+			Clicking the left mouse button will move the text
+		cursor to the position you clicked at.	Any active select
+		region is canceled.	If  the mouse is dragged with the
+		left mouse button held down the cursor will move with the
+		mouse and the region between  the  point where the cursor
+		was  originally pressed and the current  cursor  will  be
+		selected.
+
+			Clicking the right  mouse  button will select the
+		text between the mouse cursor and the text cursor.
+	
+	Copyright (c) Anker Berg-Sonne, 1985-1991
+	Sedt Version 4.2 (290)
+
+
+	5	   Using the Microsoft Windows version of Sedt
+
+
+		WSEDT.EXE is special version of Sedt running as a class A
+	application  under  Microsoft	Windows.    In	addition  to  the
+	functionality described elsewhere in  this manual it offers mouse
+	control, menus, sizable and movable  windows  and an interface to
+	the  Windows clipboard.
+
+		Because of  the multitasking environment Sedt cannot take
+	full control of  the  keyboard	or  even assume that the keyboard
+	state is known.  Therefore Sedt does not support the Num Lock and
+	Scroll Lock keys as normal editing keys.
+
+	5.1			  Window Control
+
+			When you  run Sedt is displays a normal MS window
+		with a menu  bar,  a  size box and a vertical scroll bar.
+		All of these controls  work  exactly  as  with	any other
+		Windows application.  When the window is resized you will
+		notice that Sedt  adapts  to the new windows size so that
+		horizontal shifting and vertical  scrolling  work exactly
+		the same.
+
+			The initial window will display buffer 0.  As you
+		open  other  buffers,  they  will  be  displayed  in  new
+		windows.  You can display the contents of several buffers
+		at a time.  As with the stand alone version, you can have
+		four concurrently open	windows.   These are displayed in
+		independent  MS-Windows windows that  can  be  moved  and
+		controlled independently.
+
+	5.2			  Mouse Control
+
+			The mouse cursor is an	I-bar text cursor when it
+		moves within the file display.	 Outside the file display
+		it changes into an arrow pointer.
+
+			Apart  from  the  normal  mouse  controls of  the
+		windows and menus, you can also use the mouse to position
+		the text cursor within the visible window and to select a
+		region of text.
+
+			To  position  the cursor, place the mouse pointer
+		at the	character  position  you  want the cursor at, and
+		click the left	button.    The	cursor	will  move to the
+		selected position unless the  position	is further to the
+		right than the last character  on  the	line, or past the
+		end of the buffer.  If	the  selected position is further
+		to the right than the end of  the line the cursor will be
+		placed over the last character on the line.    If  it  is
+		past the end of the buffer you will get an error message.
+
+			If you select a point on  the  first or last line
+		of the buffer the window will scroll one line.
+
+			To  select a region of text you can use the mouse
+		in two	different  ways.    If	you drag the cursor after
+		clicking  it  the  region  from  the  initially  selected
+		cursor position to the	point where you release the mouse
+		button will be the selected  region.  If you accidentally
+		select a region by dragging, you  can  cancel  the select
+		region by moving the mouse cursor to the block cursor and
+		clicking  the right mouse button.  Alternately, a  region
+		can be selected by moving the mouse cursor to  the end of
+		the  select  region  and clicking the right mouse button.
+		In either case the selected region will change to reverse
+		video.
+
+	5.3			   Menu Control
+
+			The menu  bar  will  display  five titles:  File,
+		Window, Edit, Ruler and Help.	To  select  any  of these
+		move the mouse cursor to the title  and  a drop down menu
+		will appear.  To select an item move  the mouse cursor to
+		the item and click the left mouse button.   A  drop  down
+		menu will appear as long as you hold down the  left mouse
+		button.   To select a menu item drag the cursor till  the
+		item  you want	is  highlighted  and  release  the  mouse
+		button.
+
+	5.4.1	File
+
+			This  menu is used  to	control  the  file  being
+			edited in the window.
+
+	5.3.1.1 	New
+
+				Clears the current window.  If the window
+				contains  an  unsaved  file  a dialog box
+				will  appear  and  you	will be asked for
+				confirmation before the unsaved edits are
+				removed.
+
+	5.3.1.2 	Open..
+
+				Displays  a  file  selector dialog box.
+				The file you select in the box	is loaded
+				into the current buffer.
+
+	5.3.1.2 	Save
+
+				Saves the file in the current buffer onto
+				the  file  displayed after "File:" in the
+				top line of the window.
+
+	5.3.1.3 	Save as..
+
+				Displays a file selector dialog box.  The
+				contents of the buffer are saved onto the
+				file you select.  The file name displayed
+				after  "File:"	in  the  top line of  the
+				window is also changed to the name of the
+				file you selected.
+
+	5.3.1.4 	Insert..
+
+				Displays a file selector dialog box.  The
+				file  selected is included in the  buffer
+				at the current cursor position.
+
+	5.3.1.5 	Quit
+
+				Closes the current window.  If	there are
+				unchanged  buffers  you will be asked for
+				confirmation  before  the    session   is
+				terminated.  Sedt will terminate when the
+				last window is closed.
+
+	5.3.2	Window
+
+			The  window menu allows  you  to  switch  between
+			buffers and to clear the contents of a window.
+
+	5.3.2.1 	Untitled
+			Unused
+			<File name>
+
+				Makes the window containing the indicated
+				buffer	the  currently	selected  window.
+				The menu item shows the  current state of
+				the window.  Untitled is an  open  window
+				with  no file associated with it.   <File
+				name>  is  the	name  of  the  file being
+				edited, and Unused is a closed window.
+
+	5.3.2.2 	Switch
+
+				Selects  the window you were in when  you
+				last selected a new window.
+
+	5.3.3	Edit
+
+			The edit menu allows you to  control the select
+			region.
+
+	5.3.3.1 	Clear
+
+				Clears the select region.  This is useful
+				when you  have	accidentally  activated a
+				select region by  moving  the mouse while
+				holding the button down.
+
+	5.3.3.2 	Cut
+
+				Cuts the selected region  and saves it in
+				the paste buffer.
+
+	5.3.3.3 	Paste
+
+				Inserts the contents of the  paste buffer
+				at the text cursor position.
+
+	5.3.4	Ruler
+
+			Loads a saved ruler.
+
+	5.3.4.1 	Load <X>
+
+				Load saved ruler number <X>
+
+	5.3.5	Help
+
+			The help menu displays the interactive help menus
+			in the current window.
+	
+	Copyright (c) Anker Berg-Sonne, 1985-1991
+	Sedt Version 4.2 (290)
+
+			      Sedt hints and tricks
+
+				    EDT Mode
+
+	6.1 Using Sedt for programming
+
+			A number of features in Sedt are designed to make
+		programming  easier.	  This	section  describes  these
+		features and how best to take advantage of them.
+
+		Autoindentation
+
+			By setting the	ruler  for  automatic indentation
+			(type  A anywhere on  the  ruler  when	in  ruler
+			definition  mode)  Sedt  is  set   up  to  indent
+			automatically to the level of the  line  you just
+			terminated  after  you	type  a  <Return>.   This
+			facility  makes  it  easy to write programs in	a
+			structured  fashion with  the  indentation  level
+			proportional to the level of nesting.
+
+		Matching bracketing characters
+
+			When  programming,  especially	in  C  and  LISP,
+			nesting is often hard to  get  right.	Sedt will
+			locate a matching bracket (', ",  <,  >, [, ], {,
+			}, (, or )) if you position  the  cursor over the
+			character  and	type <Gold> <F19>.  This facility
+			can also  be  used  to	move over sections of the
+			program.
+
+		Compiling from within Sedt
+
+			By defining a  key  to	save the current file and
+			spawn  a  compiler  you  can  compile  a  program
+			without leaving Sedt.  If  the compiler generates
+			a listing of error messages, you  can  define the
+			key to also load the listing in another buffer.
+
+		Defining templates
+
+			By using the lean key feature, you  can  define a
+			series	of  keys in such a way that  they  insert
+			templates for key language constructs.
+
+	6.2 Using Sedt for text and documents
+
+		Formatting
+
+			Use word wrap  and right margin, either ragged or
+			justified to format paragraphs	as  you type.  If
+			you  make  changes  to	an    already	formatted
+			paragraph, reformat the paragraph with <Gold>  J.
+			It is a good idea to have  multiple stored rulers
+			for different levels of indentation.
+
+		Post processing
+
+			Sedt is not a word processor and does not support
+			many  features	such  as bolding and underlining.
+			There  are,  however, a number of post processors
+			that  together with Sedt will provide a more than
+			acceptable word processing environment.  Define a
+			key to save the file,  post  process  it and then
+			print the final output.
+
+		Spelling checkers
+
+			Sedt  works  very  well  with  resident  spelling
+			checkers  such	as Turbo Lightning on PC/DOS  and
+			Thunder on the ATARI ST.  With a spelling checker
+			and  thesaurus, you have a superb environment for
+			producing documents.
+
+	6.3 Repetitive tasks
+
+			A number of tricks  can  be  used  to  facilitate
+		tasks that require repetition of  a task many times.  The
+		techniques are based on the ability to dynamically change
+		key definitions.  Usually a combination of the techniques
+		described lead to the optimal effort reduction.
+
+		Using learned key sequences
+
+			The  standard  technique  for  reexecuting  a key
+			sequence is to type <Gold> <F17> at the  start of
+			the sequence and terminate  the sequence with ^B.
+			The sequence can then be  replayed once by typing
+			^B  and  many  times  by typing  <Gold>  <Number>
+			^B.  <Number> is the number of times you  want to
+			repeat	the  sequence  and  must  be typed on the
+			regular typewriter keyboard.
+
+		More advanced use of learned key sequences
+
+			You can  learn keystrokes into other keys than ^B
+			by starting the  process  by  typing <Gold> <F18>
+			and then typing the  key  you  want to learn into
+			when prompted.	To exit  learning  mode  type the
+			key you are learning into.  The learned keystroke
+			sequence can be replayed by typing the	same  key
+			again.
+
+		Redefining complex keystroke sequences
+
+			A very simple technique is to redefine a  command
+			that  is  tied	to  a  complex key sequence to	a
+			single keystroke.  You can very easily redefine a
+			gold key sequence to a single keystroke by typing
+			^K, then the single  key you will tie the command
+			to,  <Return>,	the old keystroke  sequence,  and
+			finally <Return>.
+
+		Using commands not tied to keys by default
+
+			The default key definitions only use  a subset of
+			Sedt's capabilities.	You  can  often  simplify
+			tasks by taking  advantage  of the more extensive
+			capabilities of the basic command set.
+
+		Turning screen updates off
+
+			When  a repetitive sequence  generates	extensive
+			screen	updates it can be  simplified  by  taking
+			advantage of the ability to turn  screen  updates
+			off.
+
+	6.4 Creating Menus
+
+		Often, you  would  like  to  taylor  Sedt to more complex
+		editing environments.	The command structure offers many
+		opportunities to do this.  One way, which is not obvious,
+		is described here.
+
+		If you would like to  take  an	action	determined  by	a
+		choice by the user, you can do	so  by	tying  a  command
+		sequence like the following to a key:
+
+	^E(:FX|%e?"Enter document type L)etter, P)rogram, M)emo :"tpe.sed|)(:OM"Invalid menu selection").
+
+		When the key is pressed the commands in  a file stored in
+		Sedt's library area will be executed.  If L  is typed the
+		file Ltpe.sed is selected.  P and M will execute Ptpe.sed
+		and Mtpe.sed.
+
+	6.5 Using different initialization files for different file types
+
+		You can make  Sedt  initialize	itself	automatically for
+		different file types by creating a SEDTCOM.TXT file with
+
+		^E(:FX\%E%T.INI\)(:OM"No initialization file").
+
+		For any file type you edit Sedt will look for a file with
+		the name <type>.INI in Sedt's  library	area.  If none is
+		found, a message will be issued.
+
+	6.6 Using linked files under UNIX
+
+		If you use linked files under UNIX you will find that the
+		links get broken  if BACKUPFILE=ON, which is the default.
+		This is caused by  Sedt using file links to create backup
+		files.	  You  can  prevent    this  problem  by  putting
+		BACKUPFILE=OFF in SEDT.CNF.  Unfortunately, you  will not
+		have the added security of backup files,  but you will be
+		able to edit linked files without breaking the links.
+                
+        6.7 Changing the keyboard macros
+        
+                It is often desirable to change Sedt's keyboard macros or
+                the keys they  are assigned to.  A very common example is
+                laptop users who want  to  use  EDT  emulation.  You will
+                need to change up to 3 files:
+        
+                        The macro file: FUNDEF.???
+        
+                        The key mapping file: ?????M.???
+        
+                        The key layout help file: ?????H.???
+        
+                The key macro and mapping  files are binary files created
+                from  files  named  FUNDEFI.???  and  ?????MI.???    with
+                MAPKEY.    See the documentation on MAPKEY  elsewhere  in
+                this document.
+        
+                The  macro file contains all predefined macros.   If  you
+                want to change how a macro works, find it in FUNDEFI.???,
+                edit it and recompile with MAPKEY.
+        
+                The assigment of macros to actual keys is done by the key
+                mapping file.   This  has  several  sections.   The first
+                assigns keystrokes to a  number of standard keys.  MAPKEY
+                can automate this section with the MAPKEY CREATE command.
+                This  is particularly useful when you  use  EDT  mapping,
+                where all the keys are defined as standard keys.  Where a
+                key generates a multicharacter sequence MAPKEY CREATE can
+                save  you  significant work.  This is particularly useful
+                when porting Sedt to terminals under VMS and UNIX.
+	
+	Copyright (c) Anker Berg-Sonne, 1985-1991
+	Sedt Version 4.2 (290)
+
+	7		      Customizing Keyboards
+
+		Keyboard commands are defined by two files.  The keyboard
+	map file defines how  keyboard	input  is  mapped  into  a set of
+	predefined functions.  The predefined  functions are defined in a
+	function definition file.  Both of  these  files  are in a binary
+	format and must be created with a utility program called MAPKEY.
+
+		The  keyboard  map files are unique for  every	keyboard,
+	wheras	there  is  only  one  function definition file	for  each
+	editing style (EDT or WPS).
+
+		To customize  Sedt  for  a  new keyboard you can normally
+	leave the function  definition	file  and the MAPS section of the
+	key definition file unchanged.	  What	remains  is to change the
+	KEYS and COMBINATIONS sections in the  key  mapping  file.   Take
+	some time to compare different key mapping files.  This will give
+	you and idea of the work to be	done.	 You will be surprised at
+	how similar they are.
+
+	7.1 Function definition file
+
+		Before	building a keyboard map file you need to build	a
+	function  definition  file,  or print the contents of the one you
+	want to  map  the  keyboard  to.   The Sedt distribution contains
+	FUNDEF.INP, which is  the ASCII file used to create the EDT style
+	function definition file FUNDEF.EDT.
+
+		The format of this file is as follows:
+
+			Comment lines  have  a	;    as  the  very  first
+		character of the line.
+
+			Function  definitions  are   two  lines  with  NO
+		comments allowed between the two.
+
+			The first line has the format:
+
+			<No> <Definition>
+
+			Where <No> is the  number  that you have assigned
+		to the function being defined,	and  <Definition>  is the
+		function  definition.	 The  contents	of    a  function
+		definition  is	described  in  the next section  of  this
+		manual.
+
+			The second line is the help text assigned  to the
+		function and is free format text.
+
+	7.2 Keyboard map file
+
+		Keyboard map  files  can  either be created interactively
+	using the MAPKEY  program's  CREATE  command,  or by using a text
+	editor.    MAPKEY  CREATE    only  implements  a  subset  on  the
+	capabilites the other method implements, but requires very little
+	knowledge of keyboards and the codes they send.
+
+	MAPKEY CREATE FOO.BAR
+
+		creates  an ASCII file names FOO.BAR with valid input  to
+	the MAPKEY COMPILE KEYS function.  It will first prompt you for a
+	terminator  key  which should be chosen carefully since it cannot
+	be one	of  the  keys  you  want  to  program.	The spacebar is a
+	potential good choice.	  MAPKEY  will	then issue prompts for 52
+	predefined keys.  In response  to  each  key  you should type the
+	key, or a combination of keys that you want to use instead of the
+	key,  and  terminate  the input woth the  terminator  key  MAPKEY
+	prompted you  for.    Typing the terminator only in response to a
+	prompt will skip that  particular key.	At the end of the prompts
+	MAPKEY will write the file  you  selected.    You need to further
+	edit this file to include the  appropriate  MAPS  section, but in
+	most cases you will be able to	copy this section from an already
+	existing file.
+
+	MAPKEY EDIT FOO.BAR BAR.DAT
+
+		will read  an  ASCII mapfile, FOO.BAR, add new entries to
+	it interactively and  save  the  resultant  in	an ASCII mapfile,
+	BAR.DAT.
+
+		To create a keyboard map file  with  an  editor you first
+	need to know the characters that each  key  sends.   This is done
+	with MAPKEY using the command
+
+	MAPKEY CHAR
+
+	and
+
+	MAPKEY SCAN
+
+		Only use MAPKEY  SCAN  if  MAPKEY  CHAR  does not print a
+	value when the key  is	pressed,  or  if  the  values printed are
+	ambiguous.
+
+		To exit  from  MAPKEY type an Escape character under DOS,
+	OS/2, or ATARI ST and a control Z on all other systems.
+
+		You  may find  that  some  keys  that  you  want  to  use
+	differently send identical codes,  and	other  keys  transmit  no
+	codes to the application.   Under  DOS	and  OS/2  you	have  the
+	ability to bypass the keyboard firmware.    The codes transmitted
+	to the firmware can be explored with MAPKEY typing
+
+	MAPKEY SCAN
+
+		You also exit from this mode by typing Escape.
+
+		MAPKEY is not supported under  Windows.  To get access to
+	the codes, include a line with	DEBUG=ON  in SEDT.CNF and run the
+	Windows version of Sedt.  Whenever a  key is pressed the scan and
+	windows code for the key will be inserted in a file named DUMP in
+	the directory you run WSEDT from.
+
+		Once you know the codes transmitted by	all  keys you are
+	ready to start building the ASCII file that  MAPKEY uses to build
+	the keyboard map file.
+
+		Any line starting with a semicolon (;) is a comment line.
+
+		Any line starting with	an  ampersand  (@)  includes  the
+			contents of a file named in the rest of the line.
+
+		The start of the keyboard file	contains  optional  setup
+			and reset strings for the system or terminal.
+
+		The setup string for the terminal is  defined  by  a line
+			containing the word INITIALIZE followed by a line
+			containing the initialization string.
+
+		The reset  string for the terminal is defined by  a  line
+			containingthe  word  RESET  followed  by  a  line
+			containing the reset string.
+
+		The rest of input file has four optional sections:
+
+			1:  Codes that the  firmware needs to be bypassed
+			with.
+
+			2:  Assignment of single keystroke  codes  to key
+			numbers.
+
+			3:  Assignment of multiple keystroke sequences to
+			key numbers.
+
+			4:  Mapping of keystrokes to function numbers.
+
+		Section 1 contains  a  the  keyword SPECIAL followed by a
+			single line for each code that the firmware needs
+			to be bypassed for in the firmat:
+
+			S<Scancode> <Character>
+			E<Scancode> <Character>
+
+				or
+
+			W<Windows code> <Character>
+
+			<Scancode> is  the  scancode  value  that  MAPKEY
+			printed and <Character>  is  the  ASCII character
+			that  you have decided	to  assign  to	the  key.
+			(ASCII character values are normally  assigned by
+			the firmware).	  E is used where MAPKEY informed
+			you that the  scancode	is extended and S is used
+			for normal scancodes.
+
+			For OS/2  E<Scancode>  <Character>  has a special
+			meaning:    Special  handling	by  OS/2  of  the
+			scancode/character  combination will be disabled.
+			This makes it possible to treat  ^C  among  other
+			characters as normal input to Sedt.
+
+			<Windows code> is a keycode assigned by Microsoft
+			Windows.  When referring to the key  later in the
+			key  definition  file use S<Windows code>.  These
+			codes  are   only  partially  documented  in  the
+			Windows developer's kit.    The  following is the
+			best  listing  of Windows  keycodes  that  I  can
+			supply.
+
+			Backspace	8
+			Tab		9
+			Return		13
+			Escape		27
+			Space		32
+			Page Up 	33
+			Page Dn 	34
+			End		35
+			Home		36
+			Left Arrow	37
+			Up Arrow	38
+			Right Arrow	39
+			Down Arrow	40
+			Select		41
+			Print Screen	42
+			Insert		45
+			Delete		46
+			Keypad 0	96
+			Keypad 1	97
+			Keypad 2	98
+			Keypad 3	99
+			Keypad 4	100
+			Keypad 5	101
+			Keypad 6	102
+			Keypad 7	103
+			Keypad 8	104
+			Keypad 9	105
+			Keypad *	106
+			Keypad +	107
+			Keypad ,	108
+			Keypad -	109
+			Keypad .	110
+			Keypad /	111
+
+			F1		112
+			F2		113
+			F3		114
+			F4		115
+			F5		116
+			F6		117
+			F7		118
+			F8		119
+			F9		120
+			F10		121
+			F11		122
+			F12		123
+			F13		124
+			F14		125
+			F15		126
+			F16		127
+
+			You should only enter values into this section if
+			MAPKEY CHAR either doesn't return any value for a
+			key, or if the	keystroke  generates an ambiguous
+			code.  Failure to do  so  will result in problems
+			accessing TSR programs  from DOS and also creates
+                        unnecessary overhead.
+
+		Section  2  consists of a line containing the  text  KEYS
+			followed by a line for each key number assignment
+			you want to make.
+
+			Each line has the format:
+
+			S<Scancode> <Character> <Value>
+			E<Scancode> <Character> <Value>
+			A<Character> <Value>
+
+			The S format is  used for normal scancodes, E for
+			enhanced  scancodes,  and  A where  you  want  to
+			assign a character to a key  value regardless the
+			scancode.
+
+			Where <Scancode> and <Character> are values given
+			to you by MAPKEY or assigned in section 1 of this
+			file,  and  <Value> is the  key  value	you  have
+			assigned to the key.  Sedt  uses  some key values
+			internally,  and  you  should  use  the following
+			meanings  for  the  values given in the following
+			table:
+
+			1		<F1>
+			2		<F2>
+			3		<F3>
+			4		<F4>
+			5		<F5>
+			6		<F6>
+			7		<F7>
+			8		<F8>
+			9		<F9>
+			10		<F10>
+			11		<F11>
+			12		<F12>
+			13		<F13>
+			14		<F14>
+			15		<F15>
+			16		<F16>
+			17		<F17>
+			18		<F18>
+			19		<F19>
+			20		<F20>
+			21		<Find>
+			22		<Insert Here>
+			23		<Remove>
+			24		<Select>
+			25		<Prev Screen>
+			26		<Next Screen>
+			27		<Up Arrow>
+			28		<Left Arrow>
+			29		<Down Arrow>
+			30		<Right Arrow>
+			31		<Keypad 0>
+			32		<Keypad 1>
+			33		<Keypad 2>
+			34		<Keypad 3>
+			35		<Keypad 4>
+			36		<Keypad 5>
+			37		<Keypad 6>
+			38		<Keypad 7>
+			39		<Keypad 8>
+			40		<Keypad 9>
+			41		<Keypad ,>
+			42		<Keypad ->
+			43		<Keypad .>
+			44		<Keypad PF1>
+			45		<Keypad PF2>
+			46		<Keypad PF3>
+			47		<Keypad PF4>
+			48		<Keypad Enter>
+			49		<Backspace>
+			50		<Return>
+			51		<Home>
+			52		<End>
+
+			Any  other  key numbers are freely assignable and
+			carry no special meaning.
+
+		Section 3  consists  of  a  line  containing  the    text
+			COMBINATIONS followed by a number of lines of the
+			following formats
+
+			<Level> E<Scancode> <Character>
+			<Level> S<Scancode> <Character>
+			<Level> A<Character>
+			<Level> K<Key>
+			<Level> E<Scancode> <Character> <Key #> <Help text>
+			<Level> S<Scancode> <Character> <Key #> <Help text>
+			<Level> A<Character> <Key #> <Help text>
+			<Level> K<Key> <Key #> <Help text>
+
+			<Level> designates the number of the keystroke in
+			the sequence.
+
+			E<Scancode>    <Character>    is   an	 extended
+			scancode/character combination.
+
+			S<Scancode>	 <Character>	is    a    normal
+			scancode/character combination.
+
+			A<Character> is any ASCII character.
+
+			K<Key> is a key number assigned  in  the previous
+			section.
+
+			For the final character in a sequence <Key  #> is
+			the  key  nymber  you  assign to the sequence.
+
+			<Help  Text>  is  the  help  text  to  be used in
+			interactive help,  or  a  prompts  given  on  the
+			bottom line of	the  screen.	Which  it  is  is
+			determined by the first  character,  which is not
+			included in the text.	A single quote labels the
+			text as a prompt and a	double	quote  as  a help
+			text.  If neither is sees the  text is assumed to
+			be a help text.
+
+			To  describe a sequence consisting of ^A^B  which
+			you want to assign as key number 99  and give the
+			help text ^A^B to include:
+
+			1 A1
+			2 A2 99 ^A^B
+
+			To describe  two  sequences  consisting of ^A^B^C
+			and ^A^B^D and	assign them to key bumbers 99 and
+			100 include:
+
+			1 A1
+			2 A2
+			3 A3 99 ^A^B^C
+			4 A4 100 ^A^B^D
+
+			Two sequences consisting of ^A^B^C^D and ^A^B^D^E
+			would be described as:
+
+			1 A1
+			2 A2
+			3 A3
+			4 A4 99 ^A^B^C^D
+			3 A4
+			4 A5 100 ^A^B^D^E
+
+			As you can see, you are building a tree structure
+			where  common  root  sequences are only  included
+			once. You must follow this scheme.
+
+		Section 4 consists of a line containing the text MAPS and
+			a number of lines in the following formats:
+
+			<Number> S<Scancode> <Character> <Function> <Help Text>
+			<Number> E<Scancode> <Character> <Function> <Help Text>
+			<Number> A<Character> <Function> <Help Text>
+			<Number> K<Key> <Function> <Help Text>
+			<Number> G S<Scancode> <Character> <Function> <Help Text>
+			<Number> G E<Scancode> <Character> <Function> <Help Text>
+			<Number> G A<Character> <Function> <Help Text>
+			<Number> G K<Key> <Function> <Help Text>
+
+			<Number> is the index into the table.  This index
+			is  used by several commands that reference keys.
+			It  is	suggested  that  you  number  all entries
+			sequentially starting with 0.
+
+			G just	after  <Number>  means	that this mapping
+			value  applies when  the  <Gold>  key  was  typed
+			immediatly before the key generating the entry.
+
+			<Scancode>,  <Character>,  and	<Key> define  the
+			key.
+
+			<Function> specifies the function  the	key is to
+			assigned  to.	 A function number of  0  or  the
+			letter	G means that the key being defined  is	a
+			<Gold> key.
+
+			<Help Text> is the help text  assigned to the key
+			or key sequence.
+
+			Sedt  searches	all  of these tables sequentially
+		from the  start  to  the  finish.   You must take care to
+		ensure that an	A<Character> entry is not placed before a
+		S<Scancode> <Character> or E<Scancode>	<Character>  with
+		the same character value.   You  must also place a K<Key>
+		entry before any entry that might produce a match for the
+		same  character.    It is helpful to  start  with  all	K
+		entries,  followed  by	all  E	and  S	entries,  finally
+		followed by all A entries.
+
+	7.3	MAPKEY Program
+
+		The MAPKEY program is  used  to maintain keyboard map and
+	function definition files.
+
+	MAPKEY Commands:
+
+		MAPKEY SCAN
+
+			Prints scancodes for keys pressed.   This command
+			bypasses  the  firmware and prints scancodes  for
+			all keys, even those that normally are trapped by
+			the firmware. To terminate MAPKEY type Esc.
+
+		MAPKEY CHAR
+
+			Prints	scancode  and  character  values for keys
+			pressed.  This command shows the keypresses after
+			they are processed by the firmware.  To terminate
+			MAPKEY type Esc.
+
+		MAPKEY CREATE <ASCII file>
+
+			Created a valid input file to MAPKEY COMPILE KEYS
+			by prompting you to type the appropriate keys.
+
+		MAPKEY COMPILE KEYS <ASCII file> <Binary file>
+
+			Comverts  an ASCII keyboard  map  file	into  the
+			binary format required by Sedt.
+
+		MAPKEY DUMP KEYS <Binary file> <ASCII file>
+
+			Converts  a  binary  keyboard map  file  into  an
+			editable ASCII format suitable for input  to  the
+			COMPILE KEYS command.
+
+		MAPKEY TEST <ASCII file>
+
+			Reads  a file suitable for input to  the  COMPILE
+			KEYS command and displays how Sedt will interpret
+			keystrokes. To terminate MAPKEY type Esc.
+
+		MAPKEY COMPILE FUNCTIONS <ASCII file> <Binary file>
+
+			Converts an  ASCII  function definition file into
+			the binary format expected by Sedt.
+
+		MAPKEY DUMP FUNCTIONS <Binary file> <ASCII file>
+
+			Converts a function definition file in the binary
+			format required by Sedt  into  an  editable ASCII
+			format	suitable  for  input  to    the   COMPILE
+			FUNCTIONS command.
+
+	7.4 Porting Sedt to a new keyboard
+
+		To port Sedt  to  a  new  keyboard chose a name which you
+		will use in SEDT.CNF to refer to the new keyboard.  Under
+		UNIX you should chose the  value  of the TERM environment
+		variable.
+
+		Next,  run MAPKEY CREATE to record  the  character  codes
+		sent by the terminal.
+
+		The next step is to copy the  MAPS  section of an already
+		existing  keyboard file that implements the editing style
+		you prefer into the MAPS section of the file  you created
+		with MAPKEY CREATE.
+
+		The last step is to use MAPKEY COMPILE KEYS to	create	a
+		binary map file.
+	
+	Copyright (c) Anker Berg-Sonne, 1985-1991
+	Sedt Version 4.2 (290)
+
+	8			    Help File
+
+		The  help file is designed to create  a  tree  structured
+	menu of help screens.  The first few characters of every line are
+	used to drive the menu structure.
+
+	Space		Lines  starting with space are displayed  on  the
+			screen	and  constitute the normal output, either
+			help text or menu screens.
+
+	Character	Lines  starting  with any other character defines
+			the menu  structure.   The first character is the
+			first level selection.	 Lines starting with just
+			this character come just before the first line of
+			output for this level.	 Lines with more than one
+			character define inner menus.
+
+		Inside	the help text a number	of  tokens  are  allowed.
+	Each  token starts with a % character.	  A  special  token,  %%,
+	leaves a single % character in the help text.
+
+	%A<Number>	Inserts the  help  text  for all keys that map to
+			the given function number.  Multiple help strings
+			are separated by commas and spaces.
+
+	%F<Number>	Inserts  the  help  text  for the first key found
+			that points to the function number given.
+
+	%T<Number>	Inserts the  help  text  for  the  given function
+			number.
+
+	%C<Number>	Advances the cursor to the given column.
+
+	%K		Inserts the contents of the keyboard map file.
+	
+	Copyright (c) Anker Berg-Sonne, 1985-1991
+	Sedt Version 4.2 (290)
+
+				Reference Manual
+
+	9.1		  Interpreting Keyboard Input
+
+		Whenever  a  control  character, a function key or a  key
+	preceded  by  <Gold>  is  typed Sedt will translate the keystroke
+	into  a  series  of  internal  commands.  The mapping of keys  to
+	internal  commands is defined by a key definition file and can be
+	modified during the editing session.
+
+		This chapter describes	the  syntax for internal commands
+	and describes the sequence of events between typing a key and the
+	effect of the command being displayed on the terminal.
+
+		Sedt understands a large variety  of commands and command
+	combinations that have not been tied  to  any keys.  To take full
+	advantage  of  Sedt's  power  you  will need  to  understand  the
+	internal command structure.
+
+	9.2		     Translating Keystrokes
+
+		When a key is typed the commands tied  to the key will be
+	written  to  an  internal buffer.  If the command string  is  not
+	terminated by a period the command sequence will be stored and	a
+	new  key  will	be  read.    This  continues  until a key with	a
+	definition terminated by a period is typed.  This facilitates the
+	use of multiple keystrokes to input a command sequence.
+
+		The next  step	is  to scan the command string for tokens
+	and prompts.   Tokens  are  replaced by the value of the token at
+	the time of scanning  and  prompts  will  be  displayed  and then
+	replaced by the response to  the  prompts.  The recognized tokens
+	and prompt strings are:
+
+		? will cause SEDT to expect the following syntax:
+
+			?<delimiter><string><delimiter>
+
+		where  <delimiter>  is	any ASCII character.   SEDT  will
+		display  <string> on the bottom line of the  display  and
+		then accept input from the keyboard.
+
+		! will cause SEDT to expect the following syntax:
+
+			!<delimiter><string><delimiter>
+
+		where <delimiter>  is  any  ASCII  character.	SEDT will
+		display <string> on  the  bottom  line of the display and
+		wait for a key or <Gold>  followed by a key to be struck.
+		A  unique  ASCII  representation  for  the  key  will  be
+		inserted  in  the  command  string  instead of the  above
+		construct.
+
+		% must be followed by one of  the  following  characters:
+			%, #, B, C, D, E, F, H, L, N, P, T, or W.
+
+			%% is replaced by a single %.
+
+			%#<Letter>  is replaced by the current	value  of
+			the  counters controlled by :CNS, :CNI and  :CNP.
+			<Letter> must be in the range A to Z.
+
+			%A  is only supported on VMS  and  MS-DOS,  OS/2,
+			ATARI ST, and UNIX.  On VMS  it  will be replaced
+			by the	string	Sedt$Dir:,  and  on MS-DOS, OS/2,
+			ATARI ST, and  UNIX  by  the  value  of the SEDTP
+			environment variable.
+
+			%B is only supported on VMS  and inserts the next
+			unseen broadcast message.
+
+			%C is replaced by the current character position.
+
+			%D  is	replaced  by  the  device  and	directory
+			specification of the output file  of  the current
+			buffer.
+
+			%E  is	only  supported on VMS and MS-DOS,  OS/2,
+			ATARI ST, and UNIX.  On VMS it will  be  replaced
+			by the string Sedt$Library:, and on MS-DOS, OS/2,
+			ATARI  ST, and UNIX by	the  value  of	the  SEDT
+			environment variable.
+
+			%F is replaced by the name of the  output file of
+			the current buffer being edited.
+
+			%HNNN is  replaced  by	the  help  text  for  the
+			function  pointed to  by  MAP  entry  NNN.    The
+			command sequence :OM/!"Key:   "/.  will print the
+			help text for the key  pressed in response to the
+			prompt.
+
+			%L is replaced by the current line number.
+
+			%N is replaced by the name of the output  file of
+			the current buffer being edited,  up  to, but not
+			including, the first period.
+
+			%P is  replaced  by  the  contents  of	the paste
+			buffer
+
+			%T is  replaced  by  the file type, including the
+			leading period, of the output file of the current
+			buffer.
+
+			%W is replaced by the current cursor column.
+
+	9.3		     Command Syntax
+
+		Once  the  command  string has been  preprocessed  it  is
+	interpreted as a  series of commands.  This chapter describes all
+	SEDT commands.	 For  some  examples  of  how keys are programmed
+	study the keyboard definition file supplied with Sedt.
+
+		If an  error  occurs during execution of a command string
+	all commands following the one that the error occurred in will be
+	skipped.  Also, if  the  command  was  in  a  series  of commands
+	enclosed in parentheses preceded by a  count  the parentheses are
+	exited and further iterations skipped.
+
+		SEDT  commands	may  be    grouped  by	placing  them  in
+	parentheses.	A count in  front  of  a  group  of  commands  in
+	parentheses causes the group to be  repeated  the number of times
+	given in the count.
+
+		It is also possible to execute commands conditionally.
+
+		^C(<Commands>)	causes	<Commands> to be executed only if
+		the current buffer contains unsaved changes.
+
+		^C(<Commands1>|<Commands2>)   causes  <Commands1>  to  be
+		executed  if  the  buffer  contains  unsaved changes  and
+		<Commands2> to executed if the buffer is unchanged.
+
+		^E(<Commands1>)(<Commands2>)  causes  <Commands1>  to  be
+		executed.  If any  error  occurs during the execution the
+		rest of <Commands1> will be skipped and  <Commands2> will
+		be  executed.  <Commands2> string is ignored if no  error
+		occurs.
+
+		^E(<Commands1>)(<Commands2>|<Commands3>)    will  execute
+		<Commands1>.   If an error occurs the rest of <Commands1>
+		will be skipped  and  then  <Commands2> will be executed,
+		otherwise  <Commands3> is executed  after  completion  of
+		<Commands1>.
+                
+                ^LB(<Commands1>) causes <Commands1> to be executed if the
+                cursor is at the beginning of a line.
+        
+                ^LB(<Commands1>|<Commands2>)  causes  <Commands1>  to  be
+                executed if the cursor is  at  the  beginning  of a line,
+                otherwise <Commands2> is executed.
+                
+                ^LE(<Commands1>) causes <Commands1> to be executed if the
+                cursor is at the end of a line.
+        
+                ^LE(<Commands1>|<Commands2>)  causes  <Commands1>  to  be
+                executed if the cursor is at the end of a line, otherwise
+                <Commands2> is executed.
+                
+   		^S(<Commands>) causes  <Commands>  to be executed only if
+		there is a select region active.
+
+		^S(<Commands1>|<Commands2>)   causes  <Commands1>  to  be
+		executed if a select region is	active.    If  no  select
+		region is active <Commands2> will be executed>.
+
+		^Z(<Commands>) causes  <Commands>  to  be executed if the
+		current buffer is empty and not assigned to a file.
+
+		^Z(<Commands1>|<Commands2>)  causes  <Commands1>   to  be
+		executed if the current  buffer is empty and not assigned
+		to a file, otherwise <Commands2> is executed.
+
+		To save a flag	and  have  it  restored  after	a command
+	sequence you bracket the command sequence and precede it with one
+	of the following commands:
+
+		^TB(<commands>)  Saves	 the  block/line  mode	flag  and
+			restores it after <commands> have been executed.
+
+		^TD(<commands>) Saves the direction flag and restores  it
+			after <commands> have been executed.
+
+		^TF(<commands>)  Saves	the  cursor  behavior toggle  and
+			restores it after <commands> have been executed.
+
+		^TI(<commands>)  Saves	the  replace/insert mode flag and
+			restores it after <commands> have been executed.
+
+		^TT(<commands>) Saves the  the tab insert/expand flag and
+			restores it after <commands> have been executed.
+
+		^TU(<commands>) Saves  the  the case sensitivity flag and
+			restores it after <commands> have been executed.
+
+		^TX(<commands>)  Saves	  the	the  state  of	inserting
+			function definitions in  prompts  and restores it
+			after <commands> have been executed.
+
+		The    following    construct	 will	execute  commands
+	conditionally depending on the value of a toggle:
+
+		^IB(<commands>) Executes <commands>  if  cut  operates in
+			line mode.
+
+		^IB(<commands1>|<commands2>) Executes  <commands1> if cut
+			operates  in  line mode and  <commands2>  if  cut
+			operates in block mode.
+
+		^ID(<commands>)  Executes    <commands>  if  the  default
+			direction is forward.
+
+		^ID(<commands1>|<commands2>) Executes <commands1>  if the
+			default direction is forward  and  <commands2> if
+			the default direction is reverse.
+
+		^IF(<commands>)    Executes   <commands>  if  the  cursor
+			is alowed to move freely.
+
+		^IF(<commands1>|<commands2>) Executes  <commands1> if the
+			cursor is allowed  to move freely and <commands2>
+			if it is restricted to the length of lines in the
+			file.
+
+		^II(<commands>) Executes  <commands>  if  characters  are
+			inserted when typed.
+
+		^II(<commands1>|<commands2>)  Executes	<commands1>    if
+			typed characters are inserted and <commands2>  if
+			typed characters replace existing text.
+
+		^IT(<commands>)    Executes    <commands>  if  typed  tab
+			characters are expanded to spaces.
+
+		^IT(<commands1>|<commands2>)  Executes	<commands1>    if
+			typed tab characters are  expanded  to spaces and
+			<commands2> if types tab characters are inserted.
+
+		^IU(<commands>) Executes <commands> if searches  are case
+			insensitive.
+
+		^IU(<commands1>|<commands2>)  Executes	  <commands1>  if
+			searches are case insensitive and  <commands2> if
+			searches are case sensitive.
+
+		^IX(<commands>)    Executes    <commands>  if	 function
+			definitions are inserted in responses to prompts.
+
+		^IX(<commands1>|<commands2>)  Executes	  <commands1>  if
+			functio definitions are inserted in  responses to
+			prompts and <commands2> if they are not.
+
+		SEDT commands are alphanumeric strings preceded by either
+	the  symbol  @	or  :.	Commands preceded by @	define	a  cursor
+	position and normally move the cursor to the position the command
+	defines.    Commands preceded by :    are  action  commands  that
+	perform a change on the file being  edited  or change the editing
+	environment.  Some action commands must be followed by a position
+	command that defines the range of text that the command acts on.
+
+		All  commands  can  be preceded by a direction	indicator
+	and/or a count.  Not all commands use the  direction indicator or
+	count.	 Those that do have the direction indicator or	count  in
+	the syntactical description.
+
+		The direction indicator is one of +, -, <  or >.  + and >
+	set  the  current  direction  to  be  forward,	toward	the  last
+	character in the buffer.  - and < set the current direction to be
+	backward, toward  the  first  character  in  the  buffer.   If no
+	direction indicator is	provided the command will use the default
+	direction, which initially is forward but can be changed with the
+	commands :A and :B.
+
+		Count  is either a string of  decimal  digits  optionally
+	followed  by  a dollar sign, $, and  another  string  of  decimal
+	digits,  or a dollar sign, $, followed by  a  string  of  decimal
+	digits.  If no dollar sign is in the count, or it  starts  with a
+	dollar sign, it is interpreted	as  the  decimal value defined by
+	the string.  If the count  contains  a	dollar	sign  between two
+	decimal strings it is interpreted at the decimal value defined by
+	the first string.  If no count is  given  the  command will use a
+	count of one.  This feature allows you to program a key to have a
+	default count by starting the  definition  with $<count>;  If the
+	user supplies a count, it will override the one after $.
+
+			$10	returns the count 10
+			20$30	returns the count 20
+			40	returns the count 40
+
+	9.4			    Commands
+
+	9.4.1.1 		       @AC
+
+			       Absolute Character
+
+	Syntax: 	{<Count>}@AC
+
+	Semantics:	Move  the  cursor    to  the  absolute	character
+			position <Count> in the current buffer.
+
+	9.4.1.2 		       @AL
+
+				 Absolute Line
+
+	Syntax: 	{<Count>}@AL
+
+	Semantics:	Move the cursor to  the  start	of  absolute line
+			<Count> in the current buffer.
+
+	9.4.1.3 		       @BB
+
+			      Beginning of Buffer
+
+	Syntax: 	@BB
+
+	Semantics:	Move the cursor to the	first  character  in  the
+			current buffer.
+
+	9.4.1.4 		       @BM
+
+			  Matching Bracketing Character
+
+	Syntax: 	@BM
+
+	Semantics:	Move the  cursor to the matching character if the
+			character under the  cursor  is one of:  ', ", <,
+			>, [, ], {, }, (, or ).  ' and " are searched for
+			in  the  current  direction, the  others  in  the
+			direction the character implies.
+
+	9.4.1.5 		       @EB
+
+				 End of Buffer
+
+	Syntax: 	@EB
+
+	Semantics:	Move the cursor to the end of the current buffer.
+			The cursor  position will be right after the last
+			character in the buffer.
+
+	9.4.1.6 		       @EL
+
+				  End of Line
+
+	Syntax: 	<Count>@EL
+
+	Semantics:	Move the cursor to  the  next  end of line in the
+			current  direction.    The end	of  line  is  the
+			position  to  the  immediate  right of	the  last
+			character in the line.	 0+@EL	is a special case
+			which  always  stays at the end  of  the  current
+			line.
+
+	9.4.1.7 		       @ES
+
+			     Other end of found text
+
+	Syntax: 	@ES
+
+	Semantics:
+			If the previous command was  a	search,  the  new
+			entity is the other end of  the text that matched
+			the search.  This command does not work  properly
+			with regular expression searches.
+
+	9.4.1.8 		       @C
+
+				   Character
+
+	Syntax: 	{+|-|<|>}{<Count>}@C
+
+	Semantics:	Move the cursor <Count> characters in the current
+			direction.  The end of line terminator is counted
+			as a  character.
+
+	9.4.1.9 		       @F
+
+				      Find
+
+	Syntax: 	{+|-|<|>}{<Count>}@F<Delimiter><String><Delimiter>
+
+	Semantics:	If  the  <String>  is not empty load it  into  an
+			internal buffer called the current search string.
+			The  search  for  an  occurrence  of  the current
+			search	string in the current direction and place
+			the  cursor  over  the	first  character  in  the
+			occurrence.  The search is case insensitive.
+
+	9.4.1.10		       @L
+
+				      Line
+
+	Syntax: 	{+|-|<|>}{<Count>}@L
+
+	Semantics:	Move  the  cursor to the <Count>'th start of line
+			in  the  current direction.  The start of line is
+			the  first   character	on  the  line,	blank  or
+			non-blank.  0-@L is  a	special case, which stays
+			at the beginning of the current line.
+
+	9.4.1.11		       @M
+
+				      Mark
+
+	Syntax: 	{<Count>}@M
+
+	Semantics:	Move  the  cursor  to  the  position  in the file
+			where the  cursor  was when a :M command with the
+			same count was executed last.  Valid counts are 1
+			through 10.  An error message is  displayed if an
+			invalid  count is given or a :M command  has  not
+			previously been executed with the same count.
+
+	9.4.1.12		       @N
+
+				      Next
+
+	Syntax: 	{+|-|<|>}{<Count>}@N
+
+	Semantics:	Move  the cursor to the <Count>'th occurrence  in
+			the current direction of the string last given in
+			an  @F	command.   The cursor is placed over  the
+			first character  of  the  string.   The search is
+			case insensitive.
+
+	9.4.1.13		      @PAG
+
+				      Page
+
+	Syntax: 	{+|-|<|>}{<Count>}@PAG
+
+	Semantics:	Move  the cursor to the first character after the
+			<Count>'th ASCII  <FF>	in the current direction.
+			If  there  are	<Count>-1  ASCII  <FF>'s  in  the
+			current direction the cursor  will  be	placed at
+			the beginning of the file  if  the  direction  is
+			backwards  or  at  the end of  the  file  if  the
+			direction is forward.
+
+	9.4.1.14		      @PAR
+
+				   Paragraph
+
+	Syntax: 	{+|-|<|>}{<Count>}@PAR
+
+	Semantics:	Move  the  cursor  to  the  <Count>'th	start  of
+			paragraph in the current direction.  If there are
+			exactly  <Count>-1 beginning  of  paragraphs  the
+			cursor will be placed  at  the	beginning  of the
+			file if the direction is  backward  or at the end
+			of  the  file if the direction	is  forward.	A
+			beginning  of  paragraph  is a sequence of  ASCII
+			space, tab and line feeds containing at least two
+			line  feeds.   The cursor is placed on the  first
+			character after  the  string  of spaces, tabs and
+			line feeds.
+
+	9.4.1.15		      @SCR
+
+				      Screen
+
+	Syntax: 	{+|-|<|>}{<Count>}@SCR
+
+	Semantics:	Move <Count> times one	less  than  the number of
+			lines in the current window  lines in the current
+			direction.
+
+
+	9.4.1.16		      @SEN
+
+				    Sentence
+
+	Syntax: 	{+|-|<|>}{<Count>}@SEN
+
+	Semantics:	Move to the  <Count>'th  start of sentence in the
+			current direction.  A  start  of  sentence is the
+			first character after a string	of  ASCII spaces,
+			tabs, line feeds,  <.>,  <;>,  <?>,  <!>,  or <:>
+			containing  exactly one line feed, <.>, <;>, <?>,
+			<!>,  or  <:>  .  If there are exactly	<Count>-1
+			sentences  the cursor will be placed at the start
+			of the	file  if the direction is backwards or at
+			the end of the file if the direction is forward.
+
+	9.4.1.17		       @SR
+
+				  Select Range
+
+	Syntax: 	@SR
+
+	Semantics:	Move the cursor to the	point  the  cursor was at
+			the last time a :SEL command  was  executed.   An
+			error message is displayed if a :SEL command  has
+			not been executed.
+
+	9.4.1.18		       @V
+
+				    Vertical
+
+	Syntax: 	{+|-|<|>}{<Count>}@V
+
+	Semantics:	Move  the  cursor  <Count>  lines  in the current
+			direction.   SEDT attempts to position the cursor
+			at the same  column as the cursor was at before a
+			series of @V commands were issued.  The cursor is
+			never placed further to the right than one column
+			to the right of the last character on a line.  If
+			the    line  contains  ASCII  tab  characters  or
+			characters    that    SEDT     represents    with
+			multi-character sequences it may  not  be able to
+			position at exactly the same column.
+
+			A series of these commands will  attempt  to keep
+			the cursor at the column it was at when the first
+			command was executed.
+
+	9.4.1.19		       @W
+
+				      Word
+
+	Syntax: 	{+|-|<|>}{<Count>}@W
+
+	Semantics:	Move  the  cursor <Count> words  in  the  current
+			direction.    A  word is either  an  alphanumeric
+			string	containing  underscores  <_> or printable
+			ASCII characters or  a	single	non-alphanumeric,
+			printable  ASCII  character.	  The  cursor  is
+			positioned over the first character in the word.
+
+	9.4.1.20		      @XNM
+
+				    Next Mark
+
+	Syntax: 	@XNM
+
+	Semantics:	Move to  the next marked position.  The next mark
+			is the closest	in  the  current  direction.   An
+			error is caused if there are no more marks in the
+			current direction.
+
+	9.4.1.21		      @XSR
+
+			   Select Range with no clear
+
+	Syntax: 	@XSR
+
+	Semantics:	Exactly the same as @SR, but the select region is
+			not cleared.
+
+	9.4.2.1 		       :A
+
+				    Advance
+
+	Syntax: 	:A
+
+	Semantics:	Set  the default  direction  for  cursor-movement
+			commands to be	forward  toward  the  end  of the
+			file.
+
+			The default direction is displayed  on	the  mode
+			line of the display.
+
+	9.4.2.2 		       :B
+
+				    Backward
+
+	Syntax: 	:B
+
+	Semantics:	Set  the  default  direction for  cursor-movement
+			commands to be backward  toward  the start of the
+			file.
+
+			The  default direction is displayed on	the  mode
+			line of the display.
+
+	9.4.2.3 		       :CB
+
+				 Cursor at Bottom
+
+	Syntax: 	:CB
+
+	Semantics:	Scrolls the  current  window  to place the cursor
+			line at the  next to last line in the window.  Is
+			only available in full screen editing mode.
+
+	9.4.2.4 		       :CC
+
+				  Change Case
+
+	Syntax: 	:CC<@ command>
+
+	Semantics:	Switch	all  lower  case characters to upper case
+			and  all upper case characters to lower case from
+			the  current  cursor  position	to  the  position
+			defined by the @ command.
+
+	9.4.2.5 		       :CD
+
+			      Change to Lower case
+
+	Syntax: 	:CD<@ command>
+
+	Semantics:	Change all upper  case	characters  to lower case
+			from the current cursor  position to the position
+			defined by the @ command.
+
+	9.4.2.6 		       :CE
+
+			     Change Case Edt Style
+
+	Syntax: 	<Count>:CE
+
+	Semantics:	Change	the  case  of	 alphabetic    characters
+			according to the following rules:
+
+			If  a  select range is	active	change	the  case
+			within the select range.  Otherwise,  if the last
+			command  was a search command change the case  of
+			the string found by the search.  Otherwise change
+			the case  of  <Count>  characters from the cursor
+			position.
+
+	9.4.2.7 		       :CH
+
+			     Insert ASCII Character
+
+	Syntax: 	<Count>:CH
+
+	Semantics:	Insert	an  ASCII   character  of  decimal  value
+			<Count> at the cursor position.
+
+	9.4.2.8 		       :CK
+
+				Checkpoint buffer
+
+	Syntax: 	:CK
+
+	Semantics:	Perform an autosave on the current buffer exactly
+			as if an automatic autosave had happened.
+
+	9.4.2.9 		       :CL
+
+				  Center Line
+
+	Syntax: 	:CL
+
+	Semantics:	Center	the line containing  the  cursor  between
+			the left and right margins (denoted by L and R or
+			J in the ruler line).
+
+	9.4.2.10		       :CM
+
+				 Cursor at Middle
+
+	Syntax: 	:CM
+
+	Semantics:	Scrolls the  current  window  to place the cursor
+			line on the middle  line  in the window.  Is only
+			available in full screen editing mode.
+
+	9.4.2.11		      :CNA
+
+			      Add number to counter
+
+	Syntax: 	:CNA{#<Letter>}
+
+	Semantics:	Add the  contents  of the buffer, starting at the
+			current cursor position as an  integer	up to the
+			first non-numeric character, to the value  of the
+			counter.  The value  can  be preceded by a + or -
+			character.  If #<Letter> is  included  the  value
+			will  be  taken  from  the  variable	<Letter>.
+			Omitting  #<Letter>  has the same effects as  #A.
+			<Letter> must be in the range A to Z.
+
+	9.4.2.12		      :CNG
+
+			     Get counter from buffer
+
+	Syntax: 	:CNG{#<Letter>}
+
+	Semantics:	Interpret the contents of the buffer, starting at
+			the current cursor  position  as an integer up to
+			the  first non-numeric character  and  place  the
+			value in the counter.  The value can be preceeded
+			by a  + or - character.  If #<Letter> is included
+			the  value  will   be  taken  from  the  variable
+			<Letter>.    Omitting  #<Letter>   has	the  same
+			effects as #A.	<Letter> must be in  the  range A
+			to Z.
+
+	9.4.2.13		      :CNI
+
+			 Increment or Decrement Counter
+
+	Syntax: 	{+|-}{<Count>}:CNI{#<Letter>}
+
+	Semantics:	Increment  or	decrement  the	value  of  Sedt's
+			internal  counter by <Count>.	If  #<Letter>  is
+			included  the  value  will  be	taken	from  the
+			variable  <Letter>.    Omitting #<Letter> has the
+			same  effects  as  #A.	 <Letter> must be in  the
+			range A to Z.
+
+	9.4.2.14		      :CNP
+
+			Insert Value of Counter in Buffer
+
+	Syntax: 	:CNP{#<Letter>}
+
+	Semantics:	Insert	the  decimal  value  of  Sedt's  internal
+			counter into the current  buffer  at  the  cursor
+			location.   If	#<Letter>  is  included the value
+			will  be  taken    from  the  variable	<Letter>.
+			Omitting #<Letter>  has  the  same effects as #A.
+			<Letter> must be in the range A to Z.
+
+	9.4.2.15		      :CNS
+
+			      Set Value of Counter
+
+	Syntax: 	{+|-|}{<Count>}:CNS{#<Letter>}
+
+	Semantics:	Set  the  value  of Sedt's  internal  counter  to
+			<Count>.  If #<Letter> is included the value will
+			be taken from the variable  <Letter>.	 Omitting
+			#<Letter> has the  same  effects as #A.  <Letter>
+			must be in the range A to Z.
+
+	9.4.2.16		       :CS
+
+			       Save Buffer Context
+
+	Syntax: 	:CS
+
+	Semantics:	Save the  cursor  position,  all  marks  and  the
+			current ruler in  a  file with the same file name
+			as the output file  of	the  current  buffer, but
+			with  the  extension  .CTX.	 If   the  option
+			CONTEXT=SAVED  is  set	these  setting	will   be
+			restored when the file is opened for editing.
+
+	9.4.2.17		       :CT
+
+				  Cursor at Top
+
+	Syntax: 	:CT
+
+	Semantics:	Scrolls the  current  window  to place the cursor
+			line at the second line  in  the window.  Is only
+			available in full screen editing mode.
+
+	9.4.2.18		       :CU
+
+			      Change to Upper Case
+
+	Syntax: 	:CU<@ command>
+
+	Semantics:	Change all lower  case	characters  to upper case
+			from the current cursor  position to the position
+			defined by the @ command.
+
+	9.4.2.19		       :CW
+
+			  Change to Other Screen Window
+
+	Syntax: 	:CW
+
+	Senamtics:	If the screen is in two window mode switch to the
+			other window on  the  screen, otherwise switch to
+			the previous buffer used.
+
+	9.4.2.20		       :D
+
+				     Delete
+
+	Syntax: 	:D<@ command>
+
+	Semantics:	Delete all characters from the	current  position
+			to  the  position defined by the  @  command  and
+			place  the  deleted  text in an internal  buffer.
+			Separate buffers exist for different  @ commands;
+			The  relationship  between @ commands and  delete
+			buffers is:
+
+				@AC	Unknown
+				@AL	Unknown
+				@BB	Unknown
+				@EB	Unknown
+				@EL	Line
+				@C	Char
+				@F	Find
+				@L	Line
+				@M	Unknown
+				@N	Find
+				@PAG	Pag
+				@PAR	Par
+				@SEN	Sen
+				@SR	Paste
+				@V	Unknown
+				@W	Word
+
+				In insert mode	the  text will be removed
+			entirely and the text  after  the  block  removed
+			will  immediately  follow  the	text  before  the
+			block.	In replace mode the block removed will be
+			replaced  with	space  characters, preserving any
+			line terminators.
+
+	9.4.2.21		      :EAP
+
+			       Delete and Append
+
+	Syntax: 	:EAP<@ command>
+
+	Semantics:	Delete all characters from the	current  position
+			to  the  position defined by the  @  command  and
+			appends the text to  the  contents of an internal
+			buffer.  Separate buffers exist  for  different @
+			commands;    The relationship between @  commands
+			and delete buffers is:
+
+				@AC	Unknown
+				@AL	Unknown
+				@BB	Unknown
+				@EB	Unknown
+				@EL	Line
+				@C	Char
+				@F	Find
+				@L	Line
+				@M	Unknown
+				@N	Find
+				@PAG	Pag
+				@PAR	Par
+				@SEN	Sen
+				@SR	Paste
+				@V	Unknown
+				@W	Word
+
+				In insert mode	the  text will be removed
+			entirely and the text  after  the  block  removed
+			will  immediately  follow  the	text  before  the
+			block.	In replace mode the block removed will be
+			replaced with space  characters,  preserving  any
+			line terminators.
+
+	9.4.2.22		       :EF
+
+				Execute Function
+
+	Syntax: 	<Count>:EK
+
+	Semantics:	Execute the  function  entry  number  <Count>  in
+			FUNDEF.EDT exectly as  if  it were invoked from a
+			keystroke.    FUNDEF.INP  is  an  ASCII  readable
+			version of FUNDEF.EDT.
+
+	9.4.2.23		       :EK
+
+				   Execute Key
+
+	Syntax: 	:EK<Key>
+
+	Semantics:	Execute the definition of <Key> exactly as  if it
+			had  been  typed on the keyboard.  This  includes
+			prompting for input and replacement of tokens.
+
+			<Key>  is a code that identifies  the  class  and
+			value of  the  key.  It consists of a three digit
+			decimal number that defines the  value.  <Key> is
+			the index into the key mapping table described in
+			chapter 7 of this manual.  Normally  the value is
+			inserted into the command with the !  contruct.
+
+	9.4.2.24		       :EL
+
+				Set error level
+
+	Syntax: 	<Count>:EL
+
+	Semantics:	Set the error level to ring the bell at <count>
+			3: All errors
+			2: All errors except entity errors (default)
+			1: Only serious and fatal errors
+			0: never
+
+	9.4.2.25		       :EM
+
+			      Set end point of mark
+
+	Syntax: 	<Count>:EM
+
+	Semantics:	Sets the  end  point  of  a  marked  region.  The
+			marked region, defined	by  a  mark  and  the end
+			point of the same  mark,  is  highlighted  in the
+			text.
+
+	9.4.2.26		      :ERC
+
+				Clear Edit Region
+
+	Syntax: 	:ERC
+
+	Semantics:	Cancels any edit region in effect.
+
+	9.4.2.27		      :ERS
+
+				 Set Edit Region
+
+	Syntax: 	:ERS<@ Command>
+
+	Semantics:	Sets the edit region of the  current buffer to go
+			from  the  current  cursor position to the  point
+			defined by <@ Command>.
+
+			As long as an edit region is in effect the cursor
+			cannot	be  moved  outside  it, thus limiting any
+			editing operations be happen within the region.
+
+	9.4.2.28		       :FE
+
+				   Edit File
+
+	Syntax: 	<Count>:FE<Delimiter><File Name><Delimiter>
+
+	Semantics:	If the current buffer contains modified text  the
+			user is asked whether the current contents should
+			be saved.  If affirmative, the contents are saved
+			in  the    current  output  file,  otherwise  the
+			contents  are discarded.   The	contents  of  the
+			buffer	are  then  cleared.    The   <File  Name>
+			argument is assigned to the input file	name  and
+			output	file  name of the current buffer and  the
+			file is read into the buffer if it  exists.   The
+			cursor	is  placed  at the first character of the
+			file.
+
+			If <Count>  is zero the buffer will be read-only.
+			The file will not be automatically saved on a :X.
+
+	9.4.2.29		       :FG
+
+				    Get File
+
+	Syntax: 	:FG<Delimiter><File Name><Delimiter>
+
+	Semantics:	Read  the  contents  of the file into the current
+			buffer	at the	current  cursor  position.    The
+			cursor is placed at the first character read in.
+
+	9.4.2.30		      :FNL
+
+				   Font Larger
+
+	Syntax: 	:FNL
+
+	Semantics:	Select the  next  larger font that the system can
+			display.
+
+	9.4.2.31		      :FNS
+
+				   Font Smaller
+
+	Syntax: 	:FNS
+
+	Semantics:	Select the next  smaller font that the system can
+			display.
+
+	9.4.2.32		       :FS
+
+				   Save File
+
+	Syntax: 	:FS<Delimiter><File Name><Delimiter>
+
+	Semantics:	Save the contents of  the  current  buffer in the
+			file given in the <File  Name>	argument.  If the
+			argument is empty, save in the output file of the
+			current  buffer.
+
+	9.4.2.33 		       :FT
+
+				      Fill
+
+	Syntax: 	:FT<@ command>
+
+	Semantics:	Fill or  justify  all  text  between  the current
+			cursor position and  the  point  defined by the @
+			command.  If the ruler contains an R to the right
+			of column 1 the text will be filled (jagged right
+			margin).  If it contains a  J  to  the	right  of
+			column	1  the	text will be justified	(straight
+			right margin).	The left margin is defined by the
+			position  of  either  A  or W in the ruler.    To
+			justify  text  SEDT  packs the text as closely as
+			possible with  single spaces between words except
+			after punctuation, where two spaces are used.  It
+			then inserts extra spaces until the text lines up
+			with the right margin.
+
+	9.4.2.34		       :FW
+
+				    Write File
+
+	Syntax: 	:FW<Delimiter><File Name><Delimiter>
+
+	Semantics:	Write the contents  of	the current buffer to the
+			file given in the  <File  Name> argument.
+
+	9.4.2.35		       :FX
+
+				  Execute File
+
+	Syntax: 	:FX<Delimiter><File Name><Delimiter>
+
+	Semantics:	Read the file given  in  <File	Name> and execute
+			each  line  as SEDT  commands.	  ?,  !    and	%
+			expansion is done before execution of each line.
+
+	9.4.2.36		      :GAP
+
+				 Get and append
+
+	Syntax: 	:GAP<@ command>
+
+	Semantics:	Append	the   text  between  the  current  cursor
+			position  and  the  position  defined  by  the	@
+			command to the contents  of  an  internal buffer.
+			The text is not deleted  from the current buffer.
+			Several buffers are used for different @ commands
+			as follows:
+
+				@AC	Unknown
+				@AL	Unknown
+				@BB	Unknown
+				@EB	Unknown
+				@EL	Line
+				@C	Char
+				@F	Find
+				@L	Line
+				@M	Unknown
+				@N	Find
+				@PAG	Pag
+				@PAR	Par
+				@SEN	Sen
+				@SR	Paste
+				@V	Unknown
+				@W	Word
+
+	9.4.2.37		       :GE
+
+				      Get
+
+	Syntax: 	:GE<@ command>
+
+	Semantics:	Place  the  text  between  the	current    cursor
+			position  and  the  position  defined  by  the	@
+			command and  place it in an internal buffer.  The
+			text is not  deleted  from  the  current  buffer.
+			Several buffers are used for different @ commands
+			as follows:
+
+				@AC	Unknown
+				@AL	Unknown
+				@BB	Unknown
+				@EB	Unknown
+				@EL	Line
+				@C	Char
+				@F	Find
+				@L	Line
+				@M	Unknown
+				@N	Find
+				@PAG	Pag
+				@PAR	Par
+				@SEN	Sen
+				@SR	Paste
+				@V	Unknown
+				@W	Word
+
+	9.4.2.38		       :GR
+
+				   Get ruler
+
+	Syntax: 	<Count>:GR
+
+	Semantics:	Read  the  contents  of the file RULER<Count>.TXT
+			and  define  the  ruler from the contents of  the
+			file.	 The  file should have been written by	a
+			save ruler command within the :RL command.  On PC
+			versions the file should  be  located  in  SEDT's
+			master directory.  Under VMS  the  file is should
+			be placed in the directory defined by the logical
+			variable SEDT$DIR.
+
+	9.4.2.39		       :H
+
+				      Help
+
+	Syntax: 	:H<Delimiter><Help file><Delimiter>
+
+	Semantics:	Read the help and display it page by  page on the
+			screen.   If  <Help  file> is empty the help file
+			used is HELP.EDT  or  HELP.WPS	depending  on the
+			editing style.
+
+
+
+	9.4.2.40		       :I
+
+				     Insert
+
+	Syntax: 	:I<Delimiter><Any text><Delimiter>
+
+	Semantics:	Insert	the  text  in  the  current buffer.   The
+			cursor	is    placed   after  the  last  inserted
+			character.
+
+	9.4.2.41		       :KA
+
+			      Define character key
+
+	Syntax: 	:KA<Char><Delimiter><Definition><Delimiter>
+
+	Semantics:	Program the key  generating  character	<Char> to
+			perform the commands given  in	<Definition>.  If
+			<Definition> ends with a period the commands will
+			be  executed when the key is  pressed,	otherwise
+			the execution is stored and executed when  a  key
+			ending with a period is struck.
+
+			<Char> is a three digit decimal number containing
+			the ASCII value of the character.
+
+	9.4.2.42		       :KF
+
+			   Define key function string
+
+	Syntax: 	:KF<Key><Delimiter><Definition><Delimiter>
+
+	Semantics:    	Program  the  key given in <Key> to  perform  the
+			commands given	in <Definition>.  If <Definition>
+			ends with a  period the commands will be executed
+			when the key is  pressed, otherwise the execution
+			is stored and executed when  a	key ending with a
+			period is struck.
+
+			<Key>  is a code that identifies  the  class  and
+			value of  the  key.  It consists of a three digit
+			decimal number that defines the value.	 <Key> is
+			the index into the key mapping table described in
+			chapter 7 of this manual.  Normally the  value is
+			inserted into the command with the !  contruct.
+
+			If the	key  was  originally defined at startup a
+			new  entry  will   be  created	in  the  function
+			definition  table  to  ensure  that   other  keys
+			pointing to the same entry are not redefined.
+
+	9.4.2.43		       :KGA
+
+			    Define gold character key
+
+	Syntax: 	:KGA<Char><Delimiter><Definition><Delimiter>
+
+	Semantics:	Program <Gold> and  the  key generating character
+			<Char>	to  perform    the    commands	given  in
+			<Definition>.  If <Definition> ends with a period
+			the commands will be executed  when  the  key  is
+			pressed,  otherwise  the execution is stored  and
+			executed  when	a  key	ending with a  period  is
+			struck.
+
+			<Char> is a three digit decimal number containing
+			the ASCII value of the character.
+
+	9.4.2.44		       :KGK
+
+			    Define gold function key
+
+	Syntax: 	:KGK<Key><Delimiter><Definition><Delimiter>
+
+	Semantics:	Program <Gold> and the	key assigned  key  number
+			<key>  to  perform  the    commands    given   in
+			<Definition>.  If <Definition> ends with a period
+			the  commands will be executed when  the  key  is
+			pressed,  otherwise  the  execution is stored and
+			executed  when	a  key	ending	with a period  is
+			struck.
+
+			<Key> is  a three digit decimal number containing
+			the key.
+
+	9.4.2.45		       :KK
+
+			       Define function key
+
+	Syntax: 	:KK<Key><Delimiter><Definition><Delimiter>
+
+	Semantics:	Program the key  assigned  key	number	<key>  to
+			perform the commands  given  in <Definition>.  If
+			<Definition> ends with a period the commands will
+			be executed when the key  is  pressed,	otherwise
+			the execution is stored and executed  when  a key
+			ending with a period is struck.
+
+			<Key> is  a three digit decimal number containing
+			the key.
+
+	9.4.2.46		       :KN
+
+			   Define key function number
+
+	Syntax: 	<Number>:KN<Key>
+
+	Semantics:    	Program  the  key given in <Key> to  perform  the
+			commands given	in function number <Number>.
+
+			<Key>  is a code that identifies  the  class  and
+			value of  the  key.  It consists of a three digit
+			decimal  number that defines the value.  <Key> is
+			the index into the key mapping table described in
+			chapter 7 of  this manual.  Normally the value is
+			inserted into the command with the !  contruct.
+
+	9.4.2.47		       :LD
+
+			  Decrease indentation
+
+	Syntax: 	{<Count>}:LD
+
+	Semantics:	Reduce	the indentation level by  <Count>,  which
+			defaults to 1.	The :TAB command moves the cursor
+			to the indentation level if the cursor	is placed
+			to  the  left  of  the	indentation  level.   The
+			indentation level is shown with an I on the ruler
+			display.
+
+	9.4.2.48		       :LI
+
+			  Increase indentation
+
+	Syntax: 	{<Count>}:LI
+
+	Semantics:	Increase the indentation  level by <Count>, which
+			defaults to 1.	The :TAB command moves the cursor
+			to the indentation level if  the cursor is placed
+			to  the  left  of  the indentation  level.    The
+			indentation level is shown with an I on the ruler
+			display.
+
+	9.4.2.49		       :LK
+
+			  Load key definition
+
+	Syntax: 	:LK<Key><@ Command>
+
+	Semantics:	Program  the  key  given in <Key> to contain  the
+			contents of  the  given  entity.   See :K for the
+			valid codes for <Key>.
+
+	9.4.2.50		      :LNE
+
+		    Execute keystrokes stored in key
+
+	Syntax: 	{<Count>}:LNE<Key>
+
+	Semantics:	Interpret the  programming  of the key defined by
+			<Key> as a  sequence  of  keystrokes.  The key is
+			assumed to have been  programmed  through the use
+			of the :LNL command.  See :K for a description of
+			valid codes for <Key>.
+
+	9.4.2.51		      :LNL
+
+			Store keystrokes in key
+
+	Syntax: 	:LNL<Key>
+
+	Semantics:	Store subsequent keystrokes in the programming of
+			the  key  defined  by  <Key>  until that  key  is
+			struck.  The keystrokes are executed as they  are
+			stored.   The commands :LNL and :LNE are used  to
+			store  the  keystrokes	 required  to  perform	a
+			repeated task and then	perform  the task without
+			having to repeat the keystroke	sequence.  See :K
+			for a description of valid codes for <Key>.
+
+			The stored keystrokes are encoded as  a  code for
+			the class of the key followed by  either an ASCII
+			character or a 3 digit ASCII value for the key.
+
+			Codes are:
+
+				A	ASCII character
+				G	Gold ASCII character
+				F	Function key
+				B	Gold function key
+
+			For printable  ASCII  characters,  except digits,
+			the code is followed by the character.	Otherwise
+			the code is followed  by  a  3 digit function key
+			number,  see :K for valid  values,  or	an  ASCII
+			character value.
+
+	9.4.2.52		      :LNX
+
+				  End learning
+
+	Syntax: 	:LNX
+
+	Semantics:	Terminate keystroke  learning if it is in effect.
+			This command has  no effect if keystroke learning
+			is not in effect.
+
+	9.4.2.53		       :LS
+
+			 Set indentation level
+
+	Syntax: 	:LS
+
+	Semantics:	Set the indentation level to the  current  cursor
+			position.  The :TAB command moves the  cursor  to
+			the indentation level if the cursor is placed  to
+			the  left    of   the  indentation  level.    The
+			indentation level is shown with an I on the ruler
+			display.
+
+	9.4.2.54		       :M
+
+			  Mark cursor position
+
+	Syntax: 	{-}{<Count>}:M
+
+	Semantics:	Store the  current  cursor  position in one of 99
+			marks.	<Count>,  which  defaults to 1, specifies
+			the mark to save  the  position  in.  Valid marks
+			are  1	through 99.   As  text	is  inserted  and
+			deleted  from  the buffer marks are  adjusted  to
+			point to the same logical  positions in the file.
+			The end point of the mark,  see  :EM, is also set
+			to the current cursor position.
+
+			-<Count>:M clears mark number <Count>.
+
+	9.4.2.55		       :NL
+
+				New line
+
+	Syntax: 	{<Count>}:NL
+
+	Semantics:	Insert	a  new	line  at  the cursor position and
+			advance  the  cursor  to the beginning of the new
+			line.
+
+			If the	ruler  line  has automatic margin control
+			set the margin	is  set to the leftmost character
+			position not containing spaces	and  tabs  in the
+			line the cursor was on.  If the old line had only
+			spaces	or tabs the automatic margin  is  set  to
+			column	1.    Finally insert spaces and  tabs  to
+			advance  the  cursor to the automatic margin just
+			defined.    The  result will be that left margins
+			will line up at any column position.
+
+			If a non-automatic left margin is set  spaces and
+			tabs  are  inserted  to advance the cursor to the
+			left margin.
+
+	9.4.2.56		       :NS
+
+			    Substitute next
+
+	Syntax: 	{+|-|<|>}{<Count>}:NS
+
+	Semantics:	Search in the current  direction  for the current
+			search	string and if it  is  found  replace  the
+			occurrence  with the current  substitute  string.
+			If the cursor is placed on the first character of
+			an occurrence the first substitution will be made
+			on that occurrence.  The current search string is
+			set  with  @F.	  :SL  or  :SUB.     The  current
+			substitute  string is set with :SUB.  The  search
+			is case insensitive.
+
+	9.4.2.57		      :NWC
+
+			  Change to next unsaved buffer
+
+	Syntax: 	{+|-}:NWC
+
+	Semantics:	Switches to the next buffer that contains unsaved
+			changes.   Buffers  will be cycled through in the
+			default  direction.   You  can	use  +	or  -  to
+			override the default.
+
+	9.4.2.58		      :NWG
+
+			      Change to next buffer
+
+	Syntax: 	{+|-}:NWC
+
+	Semantics:	Switches to the next  buffer.	 Buffers  will be
+			cycled through in the default direction.  You can
+			use + or - to override the default.
+
+	9.4.2.59		      :NWN
+
+			  Change to next unused buffer
+
+	Syntax: 	{+|-}:NWN
+
+	Semantics:	Switches  to  the  next  buffer that  is  unused.
+			Buffers  will  be  cycled through in the  default
+			direction.  You can use + or -	to  override  the
+			default.
+
+	9.4.2.60		      :NWU
+
+			  Change to next used buffer
+
+	Syntax: 	{+|-}:NWU
+
+	Semantics:	Switches   to  the  next  buffer  that	is  used.
+			Buffers will  be  cycled  through  in the default
+			direction.  You  can  use  + or - to override the
+			default.
+
+	9.4.2.61		       :OE
+
+			      Output error message
+
+	Syntax: 	<Count>:OE<Delimiter><Message><Delimiter>
+
+	Semantics:	Output <Message> exactly  as  an  internal  error
+			message from SEDT and  perform	the  normal error
+			skipping of  commands.	 Count is used to set the
+			error level.
+
+	9.4.2.62		       :OL
+
+			       Open line
+
+	Syntax: 	{<Count>}:OL
+
+	Semantics:	Insert <Count>, which defaults to  1,  line feeds
+			after the current cursor position.
+
+	9.4.2.63		       :OM
+
+			     Output message
+
+		   Syntax: 	:OM<Delimiter><Message><Delimiter>
+
+	Semantics:	Output	<Message>  on  the  message line  of  the
+			display.
+
+	9.4.2.64		       :OS
+
+			     Toggle over-strike mode
+
+	Syntax: 	:OS
+
+	Semantics:	Switch between	insert	and  replace mode.
+
+			In    insert  mode  typed  input  and  characters
+			inserted  with	:I  are  inserted  at  the cursor
+			position and  the  cursor  position  is advanced,
+			thus pushing the  text	after the cursor in front
+			of it.
+
+			In  replace  mode  the	character  at the  cursor
+			position  is  replaced	by  the  character  being
+			inserted.   If	the  cursor  is at the end of the
+			line the character  will  be inserted rather than
+			replaced.  If the  cursor  is  at a tab character
+			the tab will be expanded  to  spaces  before  the
+			replacement takes place.
+
+			The  current replace/insert mode is displayed  on
+			the mode line of the display.
+
+	9.4.2.65		       :OW
+
+			   Switch to previous buffer
+
+	Syntax:		:OW
+
+	Semantics:	Switch to displaying the buffer that was selected
+			before switching to the current.  In  two  window
+			display  mode the displays in the top and  bottom
+			windows will be switched.   If no buffer has been
+			selected switch to buffer number 1.
+
+	9.4.2.66		       :PD
+
+			      Insert current date
+
+	Syntax: 	:PD
+
+	Semantics:	Insert	the  current  system  date in the format:
+			DD-MMM-YYYY.   This  command  has  no  effect  on
+			systems that do not maintain the current date.
+
+	9.4.2.67		       :PL
+
+			       Load paste buffer
+
+	Syntax: 	:PL<Delimiter><File name><Delimiter>
+
+	Semantics:	Insert the contents  of  the  file given in <File
+			name>  in the paste  buffer.	This  command  is
+			normally used in conjunction with the :PS command
+			to  preserve  the  contents of the  paste  buffer
+			across multiple sessions.
+
+	9.4.2.68		     :POPCH
+
+			Restore saved buffer change flag
+
+	Syntax: 	:POPCH
+
+	Semantics:	Restore a buffer change flag  that was previously
+			saved with a :PUSHCH command.	PUSHCH	and POPCH
+			commands can be nested up to 16 levels deep.
+
+	9.4.2.69		       :PR
+
+			      Print current buffer
+
+	Syntax: 	<Lines>:PR<Delimiter><File name><Delimiter>
+
+	Semantics:	Save  the  current  buffer in the file	given  in
+			<File name>.  After every <Lines> lines of output
+			and at the end	of the file a form feed character
+			is inserted.  If any  character  is  typed on the
+			keyboard  during  the  process the save  will  be
+			terminated.    If <Lines> is 1, the  default,  it
+			will be changed to 61.
+
+	9.4.2.70		       :PS
+
+			       Save paste buffer
+
+	Syntax: 	:PS<Delimiter><File name><Delimiter>
+
+	Semantics:	Save the contents of the paste buffer in the file
+			given in <File name>.  This  command  is normally
+			used  in  conjunction with :PL to preserve  paste
+			buffers across multiple edit sessions.
+
+	9.4.2.71		       :PT
+
+			      Insert current time
+
+	Syntax: 	:PT
+
+	Semantics:	Insert	the  current  system  time in the format:
+			HH-MM-SS.   This command has no effect on systems
+			that do not maintain the current date.
+
+	9.4.2.72		    :PUSHCH
+
+			Save and clear buffer change flag
+
+	Syntax: 	:PUSHCH
+
+	Semantics:	The buffer change flag is saved for  the  current
+			buffer	and is then cleared.  The original  state
+			of  the  flag  can  be	restored  with	a  :POPCH
+			command.  :PUSHCH  and	:POPCH	commands  can  be
+			nested up to 16 levels deep.
+
+	9.4.2.73		       :Q
+
+				      Quit
+
+	Syntax: 	:Q
+
+	Semantics:	Terminate the Sedt session if no  buffers contain
+			modified text.	If a buffer has been modified ask
+			for confirmation and, if positive, terminate the
+			session.    ATARI  GEM	and    Microsoft  Windows
+			versions will only close the current window.
+
+	9.4.2.74		      :REP
+
+				    Replace
+
+	Syntax: 	:REP
+
+	Semantics:	If  the  last  command	was @F or @N  remove  the
+			occurrence  found  and	insert	it in the unknown
+			delete buffer.	  Then insert the contents of the
+			paste buffer.
+
+	9.4.2.75		       :RF
+
+				Refresh display
+
+	Syntax: 	:RF
+
+	Semantics:	Clear and reinitialize	the  display  and rewrite
+			it.    This  command  is  used	to  recover  from
+			corruption of the display.
+
+	9.4.2.76		       :RK
+
+			    Redefine key as character
+
+	Syntax: 	<Count>:RK<Key>
+
+	Semantics:    	Redefine the  key  given  in  <Key> to insert the
+			character whose value is given in <Count>.
+
+			<Key>  is a code that identifies  the  class  and
+			value of  the  key.  It consists of a three digit
+			decimal number that defines  the value.  <Key> is
+			the index into the key mapping table described in
+			chapter 7 of this manual.   Normally the value is
+			inserted into the command with the !  contruct.
+
+	9.4.2.77		       :RL
+
+				     Ruler
+
+	Syntax: 	:RL
+
+	Semantics:	Switch into ruler definition mode.  The cursor is
+			placed	on  the  first	character  on  the  ruler
+			display  in  the  second  line	of  the   screen.
+			Commands that affect the ruler are:
+
+			Right arrow	Moves the cursor one character to
+					the right.  The column number can
+					be read on the status line.
+
+			Left arrow	Moves  the cursor one  column  to
+					the left.
+
+			- 		Removes a tab stop at the current
+					position.
+
+			Tab		Moves to next tab stop
+
+			^H		Moves to column 1
+
+			T		Inserts a tab stop at the current
+					position
+
+			L		Sets   the  left  margin  to  the
+					current position.   When a Return
+					is  entered the  cursor  will  be
+					indented to the left margin.
+
+			R		Sets  the  right  margin  to  the
+					current  position.  If the  right
+					margin	is  reached when entering
+					text, a  new line will be entered
+					before the word  being	typed and
+					the word will be  indented to the
+					word wrap margin.
+
+			J		Sets  the  right  margin  to  the
+					current  position.   If the right
+					margin is  reached  when entering
+					text, a new  line will be entered
+					before the word being  typed  and
+					the word will be indented  to the
+					word wrap margin after adjustment
+					of the text to the right margin.
+
+			W		Sets the  word wrap margin to the
+					current position.   W  fixes  the
+					word wrap position.
+
+			A		Sets  automatic  margin  control.
+					The margin is always the leftmost
+					non-blank position on the current
+					line.
+
+			I		Sets  the    indentation  at  the
+					current position.
+
+			Space		Removes  all formatting  controls
+					at the current position.
+
+			Digit	 	Load  saved  ruler number  digit.
+					The  rulers are saved  in  SEDT's
+					master directory under MS-DOS and
+					in  the  directory  pointed to by
+					the logical  name  SEDT$Dir under
+					VMS.  The  name of the ruler file
+					is  RulerN.Txt	where  N  is  the
+					number of the ruler.
+
+			Gold Digit	Save current ruler in saved ruler
+					number digit.
+
+			Return		Returns  from  ruler   definition
+					mode to normal edit mode.
+
+			If more than one  ruler setting is commonly used,
+			much time can be saved by storing the settings in
+			rulers 0 through 9.  Ruler 0 is loaded by default
+			and any of the other rulers can be called up with
+			four key strokes:  Gold R Digit Return.
+
+			The  ruler  line  controls  both  left	and right
+			margins.  Several  options  exist for controlling
+			the margins.
+
+			No margin control is  done  if	L, W, R and I are
+			set in column 1.   Lines  can  be infinitely long
+			and the cursor is always positioned  in  column 1
+			after a Return is typed.
+
+			If L is set in a column different from 1 and W is
+			set  in  column  1  a Return will cause  SEDT  to
+			indent to the column defined by L.
+
+			If I is set in a column different from	1 and the
+			cursor	is positioned to the left of the column a
+			Tab will indent to the column defined by I.
+
+			The  left  and	right  margin  controls  work  as
+			follows:
+
+			W and R:
+
+				When a non-blank character  is	typed  to
+				the right of R SEDT  will insert a Return
+				in front of the first word  that  extends
+				to  the right of R and indent  to  the	W
+				column.    The	effect	will be that text
+				will be filled between W and R.  The fill
+				command, Gold Keypad  8  will  fill  text
+				from the current cursor  position  to the
+				end of the current paragraph.	 Text  to
+				the left of W will be left unaffected.
+
+			W and J:
+
+				When  a  non-blank character is typed  to
+				the  right  of	J  SEDT  will change  the
+				spacing between  the current position and
+				W  so  that   spacing  after  punctuation
+				characters will be exactly  2  and  after
+				non-punctuation characters will be 1.	A
+				return	will then be inserted before  the
+				first  word that extends to the right  of
+				J,  after  which  spaces will be inserted
+				between words  until  the right margin is
+				justified to J.  Finally the wrapped word
+				will be indented to  W.  Text to the left
+				of W will be left unaffected.
+
+			A and R:
+
+				When a non-blank character is inserted to
+				the right of  R a return will be inserted
+				in front of the  first	word that extends
+				to the right of R.    The  text after the
+				return will be indented to the same level
+				as the line just terminated.
+
+			A and J:
+
+				When  a  non-blank  character is typed to
+				the  right  of	J  SEDT  will  change the
+				spacing  between all words to the left of
+				the  current  position	so  that  spacing
+				after  punctuation  characters	 will  be
+				exactly  2  and  after	  non-punctuation
+				characters will be 1.  A return will then
+				be  inserted  before the first word  that
+				extends  to  the right of J, after  which
+				spaces will  be  inserted  between  words
+				until the right  margin  is  justified to
+				the  same  level  as	the    line  just
+				terminated.
+
+			W to the right of, or at J/R:
+
+				No filling or justification will occur.
+
+			A to the right of or at J/R:
+
+				When a Return is typed the cursor will be
+				indented  to the same level as	the  line
+				just  terminated.  If the terminated line
+				is  empty   the  indentation  level  will
+				remain	unchanged.	This	mode   is
+				particularly	useful	  for  structured
+				programming.
+
+	9.4.2.78		     :RMCHA
+
+			  Clear character delete buffer
+
+	Syntax: 	:RMCHA
+
+	Semantics:	Clear  the   contents  of  the	character  delete
+			buffer.
+
+	9.4.2.79		     :RMHEL
+
+				Clear help buffer
+
+	Syntax: 	:RMHEL
+
+	Semantics:	Clear the contents of the help buffer.
+
+	9.4.2.80		     :RMLIN
+
+			     Clear line delete buffer
+
+	Syntax: 	:RMLIN
+
+	Semantics:	Clear the contents of the line delete buffer.
+
+	9.4.2.81		     :RMPAG
+
+			     Clear page delete buffer
+
+	Syntax: 	:RMPAG
+
+	Semantics:	Clear the contents of the page delete buffer.
+
+	9.4.2.82		     :RMPAR
+
+			  Clear paragraph delete buffer
+
+	Syntax: 	:RMPAR
+
+	Semantics:	Clear  the  contents   of  the	paragraph  delete
+			buffer.
+
+	9.4.2.83		     :RMPAS
+
+				Clear paste buffer
+
+	Syntax: 	:RMPAS
+
+	Semantics:	Clear the contents of the paste buffer.
+
+	9.4.2.84		     :RMSEA
+
+			       Clear search buffer
+
+	Syntax: 	:RMSEA
+
+	Semantics:	Clear the contents of the search buffer.
+
+	9.4.2.85		     :RMSEN
+
+			   Clear sentence delete buffer
+
+	Syntax: 	:RMSEN
+
+	Semantics:	Clear the contents of the sentence delete buffer.
+
+	9.4.2.86		     :RMSUB
+
+			     Clear substitute buffer
+
+	Syntax: 	:RMSUB
+
+	Semantics:	Clear the contents of the substitute buffer.
+
+	9.4.2.87		     :RMUNK
+
+			   Clear unknown delete buffer
+
+	Syntax: 	:RMUNK
+
+	Semantics:	Clear the contents of the unknown delete buffer.
+
+	9.4.2.88		     :RMWOR
+
+			     Clear word delete buffer
+
+	Syntax: 	:RMWOR
+
+	Semantics:	Clear the contents of the word delete buffer.
+
+	9.4.2.89		       :RS
+
+			       Reset select range
+
+	Syntax: 	:RS
+
+	Semantics:	Remove the select point and  repaint  the current
+			window.
+
+	9.4.2.90		      :RTAB
+
+			    Replace tabs with spaces
+
+	Syntax: 	:RTAB<@ command>
+
+	Semantics:	Within	the    given	entity	replace  all  tab
+			characters with multiple spaces.
+
+	9.4.2.91		      :RUL
+
+			     Load ruler from entity
+
+	Syntax:		:RUL<@ command>
+
+	Semantics:	Interpret  the	text  within the @ command  as	a
+			ruler definition string in the same format as the
+			ruler files.
+
+	9.4.2.92		      :RUS
+
+			      Save ruler in buffer
+
+	Syntax:		:RUS
+
+	Semantics:	Write  the contents of the ruler into the current
+			buffer	in  the same format as a ruler definition
+			file.
+
+	9.4.2.93		      :SASC
+
+		   Show ASCII value of character under cursor
+
+	Syntax: 	:SASC
+
+	Semantics:	Prints the ASCII value of the character under the
+			cursor on the message line.
+
+	9.4.2.94		      :SAVF
+
+			Save function definitions in file
+
+	Syntax: 	:SAVF<Delimiter><File name><Delimiter>
+
+	Semantics:	Saves	all  function  definitions  (loaded    at
+			startup, defined later and learned) in	the given
+			file.	 The definitions are saved in the  binary
+			format for function definition files.  Use MAPKEY
+			DUMP FUNCTIONS to  convert  to an ASCII file.  If
+			an empty file name  is	supplied,  Sedt will save
+			the  function  definitions  into a  file  in  the
+			current directory with the same name  as  the one
+			it   loaded  the  function  definitions  from  at
+			startup.
+
+	9.4.2.95		      :SAVK
+
+			   Save key definitions in file
+
+	Syntax: 	:SAVK<Delimiter><File name><Delimiter>
+
+	Semantics:	Saves the definitions of all key mappings (loaded
+			at startup,  defined  later  and  learned) in the
+			given file.  The mappings are saved in the binary
+			format for key map files.  USE	MAPKEY	DUMP KEYS
+			to convert to an ASCII file.  If  an  empty  file
+			name	is  supplied,  Sedt  will  save  the  key
+			definitions into  a file in the current directory
+			with the same  name  as the one it loaded the key
+			definitions from at startup.
+
+	9.4.2.96		       :SC
+
+			      Show current column
+
+	Syntax: 	:SC
+
+	Semantics:	Display the column that the cursor  is	currently
+			placed at on the bottom line of the display.
+
+	9.4.2.97		      :SEL
+
+				     Select
+
+	Syntax: 	:SEL
+
+	Semantics:	Set  the  select point to be the  current  cursor
+			position.
+
+	9.4.2.98		      :SETB
+
+			   Set block/line mode toggle
+
+	Syntax: 	<Count>:SETB
+
+	Semantics:	Sets the  value  of the block/line mode toggle to
+			the value of  <Count>.	  A  value of 0 sets line
+			mode. 1 sets block mode.
+
+	9.4.2.99		      :SETD
+
+			      Set direction toggle
+
+	Syntax: 	<Count>:SETD
+
+	Semantics:	Sets  the value of the direction  toggle  to  the
+			value  of  <Count>.    A  value of 0 sets  it  to
+			reverse.  1 sets it to forward.
+
+	9.4.2.100		      :SETF
+
+			   Set cursor behavior toggle
+
+	Syntax: 	<Count>:SETF
+
+	Semantics:	Sets the value of the  cursor  behavior toggle to
+			the value of <Count>.  A value	of  0  makes  the
+			left and right cursor keys move through the  file
+			a  character at a time and the up and  down  keys
+			never  move  the cursor beyond the end of a line.
+			1 makes  the  left  and  right	cursor	keys move
+			freely on the  current	line  and the up and down
+			keys move straight.   Lines  will  be padded with
+			spaces if the cursor is  moved	beyond the end of
+			the line.
+
+	9.4.2.101		      :SETR
+
+			    Set replace/insert toggle
+
+	Syntax: 	<Count>:SETR
+
+	Semantics:	Sets the value of  the replace/insert mode toggle
+			to the value of <Count>.  A value of 0 sets it to
+			insert.  1 sets it to replace.
+
+	9.4.2.102		      :SETT
+
+			  Set tab insert/expand toggle
+
+	Syntax: 	<Count>:SETT
+
+	Semantics:	Sets the value of the tab insert/expand toggle to
+			the value of <Count>.  A value	of  0  sets it to
+			inserted.  1 sets it to expand.
+
+	9.4.2.103		      :SETU
+
+			   Set case sensitivity toggle
+
+	Syntax: 	<Count>:SETU
+
+	Semantics:	Sets the value of the  case sensitivity toggle to
+			the value of <Count>.  A value	of  0  sets  case
+			insensitive searches.	 1  sets  case	sensitive
+			searches.
+
+	9.4.2.104		      :SETV
+
+			  Set regular expression toggle
+
+	Syntax: 	<Count>:SETV
+
+	Semantics:	Sets the value	of  the regular expression toggle
+			to <Count>.  A	value of 0 sets literal searches,
+			while	 any   non-zero  value	forces	  regular
+			expression searches.
+
+	9.4.2.105		      :SETX
+
+			 Set function definition toggle
+
+	Syntax: 	<Count>:SETX
+
+	Semantics:  Sets the value of  the  function definition toggle to
+			the value of  <Count>.	  A  value of 0 makes all
+			keys insert a single  character  in  responses to
+			prompts.  1 causes keys  assiciated with function
+			definitions to insert the definition in responses
+			to prompts.
+
+	9.4.2.106		       :SI
+
+			    Send a shift in character
+
+	:Syntax:	:SI
+
+	Semantics:	Under VMS or ULTRIX a shift in character (decimal
+			15) is sent to the terminal.  This will shift the
+			displayed character set into the normal character
+			set.
+
+	9.4.2.107		       :SK
+
+			      Save key definition
+
+	Syntax: 	:SK<Key>
+
+	Semantics:	Insert	the  definition  of  <Key> in the current
+			buffer.  For valid codes for <Key> see :K.   This
+			command  is  used in conjunction with :LK to edit
+			key definitions.
+
+	9.4.2.108		       :SL
+
+			       Load search buffer
+
+	Syntax: 	:SL<@ command>
+
+	Semantics:	Copy  the contents  of	the  buffer  between  the
+			cursor position and the position defined by the @
+			command  into  the  search buffer.    The  search
+			buffer is used by the @F, @N and :SUB commands.
+
+	9.4.2.109		       :SO
+
+			   Send a shift out character
+
+	Syntax: 	:SO
+
+	Semantics:	Under  VMS  or	ULTRIX	 a  shift  out	character
+			(decimal 14) is sent to  the terminal.	This will
+			change	the  character	set  displayed	to    the
+			alternate character set.
+
+	9.4.2.110		      :STAB
+
+			Replace multiple spaces with tabs
+
+	Syntax: 	:STAB<@ command>
+
+	Semantics:	Replace  multiple  spaces within the given entity
+			with tab characters where possible.
+
+	9.4.2.111		      :STRP
+
+			      Strip trailing spaces
+
+	Syntax: 	:STRP<@ command>
+
+	Semantics:	Strip  all  trailing  space  and  tab  characters
+			within the given  entity.    Trailing  spaces are
+			those after the last  printable  character on the
+			line.
+
+	9.4.2.112		      :SUB
+
+				   Substitute
+
+	Syntax:
+	{+|-|<|>}{<Count>}:SUB<Delimiter><Target><Delimiter><Object><Delimiter>
+
+	Semantics:	Find the  next	occurrence  of	<Target>  in  the
+			current direction and  replace	it with <Object>.
+			If the cursor is placed on the first character of
+			<Target> and the direction is  forward	make  the
+			substitution.	 If  <Target>  is empty  use  the
+			current  search  string, set by @F or  :SL.    If
+			<Object>  is  empty  use  the  current substitute
+			string.   If Target is non-empty insert it in the
+			current search string.	 If <Object> in non-empty
+			insert it in the  current  substitute string.  If
+			the direction is forward, place the cursor at the
+			end if the inserted string, end if it is backward
+			place the cursor at the beginning.  The search is
+			case insensitive.
+
+	9.4.2.113		       :SV
+
+				  Show Version
+
+	Syntax: 	:SV
+
+	Semantics:	Show the  version  number  of Sedt on the message
+			line.
+
+	9.4.2.114		      :SYQ
+
+			      Spawn with no output
+
+	Syntax: 	:SYQ<Delimiter><Command><Delimiter>
+
+	Semantics:	The :SYQ is the same as the :SYS command with the
+			exception that it  does  not clear the screen and
+			refresh it after the spawn.  This command is used
+			to  execute  programs that accept  no  input  and
+			provide no output.
+
+	9.4.2.115		      :SYR
+
+			  Spawn with redirected output
+
+	Syntax: 	:SYR<Delimiter><New stdout><Delimiter><New stderr>
+			 <Delimiter><Command><Delimiter>
+
+	Semantics:	The :SYR command  is similar to the :SYQ command,
+			but  redirects standard output and  error  output
+			for the child process to the given file names.
+
+	9.4.2.116		      :SYS
+
+			   Spawn to operating system
+
+	Syntax: 	:SYS<Delimiter><Command><Delimiter>
+
+	Semantics:	Execute  <Command> and a command to the operating
+			system.   Before  the  command	is  executed  the
+			screen is cleared  and	the  modes  reset  to the
+			default modes.	If  <Command>  is  empty call the
+			command processor.  On return prompt for input of
+			a  single  keystroke if <Command> was  non-empty.
+			Then refresh the display.
+
+			On MS-DOS systems  COMSPEC  is used to locate the
+			command  interpreter which is  spawned	when  the
+			argument to :SYS is empty.
+
+			SEDT uses free	memory	to  contain  buffers  and
+			other working areas.   Whether	enough	memory is
+			available  to actually perform the  :SYS  command
+			depends  on  the largest memory requirement  that
+			SEDT  has  had	during the session.   It  is  not
+			possible  to  return  memory  once  it	has  been
+			claimed and used by SEDT.
+
+	9.4.2.117		      :TAB
+
+			     Move to next tab stop
+
+	Syntax: 	{<Count>}:TAB
+
+	Semantics:	If the current indentation level is to	the right
+			of  the  cursor  insert  tab and space characters
+			until  the  cursor  is	placed at the indentation
+			level.	Otherwise insert tab and space characters
+			until the cursor  is at the next tab stop.  If no
+			tab stops are to  the  right  of  the  cursor  do
+			nothing.  Only space characters  will be inserted
+			if the current tab expansion mode  is  to  expand
+			tabs.  The tab expansion is changed  with the :TT
+			command  and  displayed on the mode line  of  the
+			display.
+
+			In overstrike  mode  :TAB  will  space	over  any
+			characters already on the line.
+
+	9.4.2.118		      :TAD
+
+			  Adjust text by one tab stop
+
+	Syntax: 	{+|-|<|>}{<Count>}:TAD<@ command>
+
+	Semantics:	Move  all   lines  fully  contained  between  the
+			current cursor position  and the position defined
+			by the @ command  <Count>  tab	stops left if the
+			current  direction is backward or  right  if  the
+			current direction is forward.  Left adjustment is
+			not performed further than to the first non space
+			or tab character.
+
+	9.4.2.119		       :TB
+
+			       Toggle Block Mode
+
+	Syntax: 	:TB
+
+	Semantics:	Toggle between block and line cut and paste.
+
+			In line mode  (shown  by  line on the mode line),
+			the select region is  all  characters between the
+			cursor and the select point.  Cut operations will
+			remove	  the  entire  select  region.	    Paste
+			operations will insert the entire paste region at
+			the cursor position.
+
+			In  block  mode  a cut operation will remove  all
+			characters  that  are	 within    the	rectangle
+			delimited by the cursor  and the select point.	A
+			paste  operation  will insert the  paste  buffer,
+			line  by  line	in  the buffer	starting  at  the
+			cursor	position  and at the cursor column,  thus
+			inserting  a  rectangle  of text into the buffer.
+			The  select  region  will only have the column at
+			the select point shown in reverse video.
+
+	9.4.2.120		       :TC
+
+			Toggle Control Character Display
+
+	Syntax: 	:TC
+
+	Semantics:	Toggles between display  of control characters as
+			single	reverse  video characters with control	C
+			shown as a reverse video C, or	as strings in the
+			format <name> when name is the ASCII mnemonic for
+			the character.
+
+	9.4.2.121		       :TD
+
+				Toggle Direction
+
+	Syntax: 	:TD
+
+	Semantics:	Toggle the direction flag shown on the mode line.
+			Most  cursor  movement	  commands  work  in  the
+			direction shown by the direction flag.
+
+	9.4.2.122		       :TF
+
+			   Toggle Cursor Key Behavior
+
+	Syntax: 	:TF
+
+	Semantics:	Toggle	between    two	  alternate   cursor  key
+			behaviors.  When  "Rest" is displayed on the mode
+			line the left and  right  cursor  keys	will move
+			through the file and the  up and down cursor keys
+			will never move further to the	right  trhan  the
+			end  of a line.  When "Free"  is  displayed,  the
+			left and right cursor keys will move freely  left
+			and  right, and the up and down keys will  always
+			move directly.	 Lines will be padded with spaces
+			if the cursor is moved beyond the end of a line.
+
+	9.4.2.123		       :TI
+
+				 Test for input
+
+	Syntax: 	:TI
+
+	Semantics:	Set SEDT's internal error flag	if  the  internal
+			type-ahead buffer  contains any characters.  This
+			command is used  to  terminate	a command loop by
+			typing a character.
+
+	9.4.2.124		       :TM
+
+			     Toggle buffer markers
+
+	Syntax: 	:TM
+
+	Semantics:	Toggle between showing the beginning and  end  of
+			buffers  with  bold,  reverse  video BOF and  EOF
+			markers.  Default is not to show the markers.
+
+	9.4.2.125		       :TP
+
+			       Toggle Cursor Line
+
+	Syntax: 	:TP
+
+	Semantics:	Toggles between full screen  display  where  the
+			cursor line will float within  the display window
+			to minimize screen updates, and mid-line  editing
+			where the cursor is always on the  center line of
+			the window.
+
+	9.4.2.126		       :TR
+
+			      Toggle ruler display
+
+	Syntax: 	:TP
+
+	Semantics:	Toggles display  of  the current ruler at the top
+			of the window.
+
+	9.4.2.127		       :TS
+
+			 Toggle automatic screen shifts
+
+	Syntax: 	:TS
+
+	Semantics:	Toggle	shifting the screen image horizontally to
+			keep  the  current  cursor  position  within  the
+			screen	margins.  When screen shifting is toggled
+			off the leftmost column on the screen will always
+			correspond to the  leftmost  column  in the file.
+			The current state of  the  toggle is shown on the
+			mode line of the display.
+
+	9.4.2.128		       :TT
+
+			      Toggle tab expansion
+
+	Syntax: 	:TT
+
+	Semantics:	Toggle	between  inserting  tab characters in the
+			buffer and  expanding them into space characters.
+			The current state  of  the toggle is displayed on
+			the mode line of the display.
+
+	9.4.2.129		       :TU
+
+			     Toggle case sensitivity
+
+	Syntax: 	:TU
+
+	Semantics:	Toggle	between  case	 sensitive    and    case
+			insensitive searches.  The  current  state of the
+			toggle	is  displayed on the  mode  line  of  the
+			display.
+
+	9.4.2.130			:TV
+
+		       Toggle regular expression searches
+
+	Syntax: 	:TV
+
+	Semantics:	Toggle	between literal  and  regular  expression
+			searches.
+
+
+	9.4.2.131		       :TX
+
+		      Toggle function definition insertion
+
+	Syntax: 	:TX
+
+	Semantics:	Toggle	between inserting characters and function
+			definitions in	reponses to prompts.  The current
+			state of the toggle is displayed on the mode line
+			of the display.
+
+	9.4.2.132		       :UC
+
+			       Undelete character
+
+	Syntax: 	{<Count>}:UC
+
+	Semantics:	Insert the contents  of  the  character  undelete
+			buffer at the current cursor position.
+
+	9.4.2.133		       :UL
+
+				 Undelete line
+
+	Syntax: 	{<Count>}:UL
+
+	Semantics:	Insert	the contents of the line delete buffer at
+			the current cursor position.
+
+	9.4.2.134		       :UM
+
+			       Undo last command
+
+	Syntax: 	:UM
+
+	Semantics:	Attempt to negate the effect of the last command.
+			Commands for which :UM has been implemented are:
+
+				All @ commands.
+				:SUB
+				:D
+
+			Attempting to undo any other command  will  cause
+			an error do be displayed.
+
+	9.4.2.135		      :UOFF
+
+			     Turn off screen updates
+
+	Syntax: 	:UOFF
+
+	Semantics:	Prevents screen  updating  until a :UON, :WC, :WI
+			or :RL command is executed.  This command is used
+			to  prevent excessive screen  updating	processes
+			with complex command sequences;
+
+	9.4.2.136		      :UON
+
+			      Turn on screen updates
+
+	Syntax: 	:UON
+
+	Semantics:	Restores screen updating and repaint  the  screen
+			to  reflect any changes made while  updates  were
+			turned off.
+
+	9.4.2.137		      :UPAG
+
+				 Undelete page
+
+	Syntax: 	{<Count>}:UPAG
+
+	Semantics:	Insert the contents of the page delete buffer  at
+			the current cursor position.
+
+	9.4.2.138		      :UPAR
+
+			       Undelete paragraph
+
+	Syntax: 	{<Count>}:UPAR
+
+	Semantics:	Insert	the  contents  of  the	paragraph  delete
+			buffer at the current cursor position.
+
+	9.4.2.139		      :UPD
+
+			      Update screen header
+
+	Syntax: 	:UPD
+
+	Semantics:	Update	the  first  line of the display.  This is
+			normally done  only  when SEDT is ready for input
+			and there are no  characters  in  the  type-ahead
+			buffer.
+
+	9.4.2.140		      :USEN
+
+			       Undelete sentence
+
+	Syntax: 	{<Count>}:USEN
+
+	Semantics:	Insert the contents of the sentence delete buffer
+			at the current cursor position.
+
+	9.4.2.141		      :USR
+
+				     Paste
+
+	Syntax: 	{<Count>}:USR
+
+	Semantics:	Insert the contents of the  paste  buffer  at the
+			current cursor position.
+
+	9.4.2.142		       :UU
+
+				Undelete unknown
+
+	Syntax: 	{<Count>}:UU
+
+	Semantics:	Insert the  contents of the unknown delete buffer
+			at the current cursor position.
+
+	9.4.2.143		       :UW
+
+				 Undelete word
+
+	Syntax: 	{<Count>}:UW
+
+	Semantics:	Insert the contents  of the word delete buffer at
+			the current cursor position.
+                        
+        9.4.2.143                      :WA
+        
+                                 Cascade windows
+        
+        Syntax:         :WA
+        
+        Semantics:      Cascade all  windows.  Currently only implemented
+                        in the Turbo Vision version.
+
+	9.4.2.144		       :WC
+
+				   Zoom window
+
+	Syntax: 	<Count>:WC
+
+	Semantics:	Count=2
+				Ensure that  the  window  is  zoomed  and
+				covers the entire screen.
+
+			Count=3
+				Ensure that the window is unzoomed.
+
+			Otherwise
+				If the current	window	covers the entire
+				screen	reduce	it,  otherwise	zoom  it.
+				This command only has an effect when Sedt
+				simulates  windows    in  a  non-windowed
+				environment.
+
+	9.4.2.145		       :WD
+
+				  Toggle width
+
+	Syntax: 	:WD
+
+	Semantics:	Toggle between 80 and 132 column display formats.
+			This command has no effect on systems that cannot
+			support 132 character displays.
+
+	9.4.2.145		      :WFB
+
+				Fix window bottom
+
+	Syntax: 	<Count>:WFB
+
+	Semantics:	Set the bottom window border on line <Count>
+
+	9.4.2.145		      :WFL
+
+				 Fix window left
+
+	Syntax: 	<Count>:WFL
+
+	Semantics:	Set the left window border on column <Count>
+
+	9.4.2.145		      :WFR
+
+				Fix window right
+
+	Syntax: 	<Count>:WFR
+
+	Semantics:	Set the right window border on column <Count>
+
+	9.4.2.145		      :WFT
+
+				 Fix window top
+
+	Syntax: 	<Count>:WFT
+
+	Semantics:	Set the top window border on row <Count>
+
+	9.4.2.146		       :WG
+
+				   Window grow
+
+	Syntax: 	:WG
+
+	Semantics:	Use the arrow keys  to	increase  the size of the
+			current window.  Typing return	exits and returns
+			to regular  editing  mode.  This command only has
+			an  effect  when  Sedt	simulates  windows  in	a
+			non-winowed environment.
+
+	9.4.2.147		       :WI
+
+				 Select buffer
+
+	Syntax: 	<Count>:WI
+
+	Semantics:	Select the buffer given in <Count> as the current
+			buffer.  Valid buffers are 0 through 999.
+
+			Each  buffer  has  a	unique	edit  environment
+			including:
+
+				Input file
+				Output file
+				Current position
+				Ruler
+				Marks
+				Select point
+
+	9.4.2.148		       :WM
+
+				   Window move
+
+	Syntax: 	:WM
+
+	Semantics:	Use the arrow  keys  to  move the current window.
+			Typing	return	exits  and   returns  to  regular
+			editing mode.
+
+	9.4.2.149		       :WP
+
+				 Position Window
+
+	Syntax: 	<Position>:WP
+
+	Sedmantics:	On terminals and PCs this command will position a
+			editing buffer window on the screen.
+
+			Position
+
+			0		Full screen
+			1		Top half
+			2		Bottom half
+			3		Left half
+			4		Right half
+			5		Top left quarter
+			6		Top right quarter
+			7		Bottom left quarter
+			8		Bottom right quarter
+			9		Top left sixth
+			10		Top right sixth
+			11		Middle left sixth
+			12		Middle right sixth
+			13		Bottom left sixth
+			14		Bottom right sixth
+
+	9.4.2.150		       :WS
+
+				   Window grow
+
+	Syntax: 	:WS
+
+	Semantics:	Use the arrow keys to  decrease  the  size of the
+			current window.  Typing return exits  and returns
+			to regular editing mode.    This command only has
+			an  effect  when  Sedt	simulates  windows  in	a
+			non-winowed environment.
+
+	9.4.2.151		       :WT
+
+				   Window tile
+
+	Syntax: 	:WT
+
+	Semantics:	Tile all existing windows so they  don't overlap.
+			Up  to 16 windows will be tiled,  the  rest  left
+			unchanged.  This command only has an effect  when
+			Sedt  simulates  windows    in	  a   non-winowed
+			environment.
+
+	9.4.2.152		       :X
+
+				      Exit
+
+	Syntax: 	:X
+
+	Semantics:	Save  the  current buffer in  it's  output  file.
+			Then  exit  unless other buffers contain  unsaved
+			changes.    If	unsaved changes exist prompt  the
+			user for confirmation before exiting.
+
+	9.4.2.153		       :YN
+
+			     Prompt for Confirmation
+
+	Syntax: 	:YN<Delimiter><String><Delimiter>
+
+	Semantics:	Display  the  string  on the bottom line  of  the
+			display with the string <Y/N>:	appended and wait
+			for the user to enter either a Y or an N from the
+			keyboard.    If  the response is Y the error flag
+			will be  set,  otherwise it will be cleared.  :YN
+			is  used  in  conjunction   with  ^E  conditional
+			execution.		       For	  example
+			^E(:YN/Question?/)(:OM/Yes/|:OM/No/)  will output
+			a Yes  if Y is typed in response.  If <control> U
+			is typed the entire command will be aborted.
+
+	9.4.2.154		       :Z
+
+				   Zap buffer
+
+	Syntax: 	<Count>:Z
+
+	Semantics:	Clear  the  current  buffer.   If unsaved changes
+			have been  made  prompt the user for confirmation
+			before clearing.
+
+			If <Count> is zero,  the buffer will be marked as
+			read-only.  Even if the  buffer  is modified, the
+			contents will not be saved and	you  will  not be
+			warned if the buffer is cleared.
+	
+	Copyright (c) Anker Berg-Sonne, 1985-1991
+	Sedt Version 4.2 (290)
+
+
+				   Appendix A
+
+			      Keyboard translation
+
+	Key		LK201/LK250
+
+	<Escape>
+	<Backspace>
+	<Return>	<Return>
+	<Linefeed>
+	<Delete>	<<X>
+	<Control>	<Ctl>
+	<Tab>		<Tab>
+	<Space> 	<Spacebar>
+	<F1>		<F1>
+	<F2>		<F2>
+	<F3>		<F3>
+	<F4>		<F4>
+	<F5>		<F5>
+	<F6>		<F6>
+	<F7>		<F7>
+	<F8>		<F8>
+	<F9>		<F9>
+	<F10>		<F10>
+	<F11>		<F11>
+	<F12>		<F12>
+	<F13>		<F13>
+	<F14>		<F14>
+	<Help>		<Help>
+	<Do>		<Do>
+	<F17>		<F17>
+	<F18>		<F18>
+	<F19>		<F19>
+	<F20>		<F20>
+	<Find>		<Find>
+	<Insert Here>	<Insert Here>
+	<Remove>	<Remove>
+	<Select>	<Select>
+	<Prev Screen>	<Prev Screen>
+	<Next Screen>	<Next Screen>
+	<Up arrow>	<Up Arrow>
+	<Left arrow>	<Left Arrow>
+	<Down arrow>	<Down Arrow>
+	<Right arrow>	<Right Arrow>
+	<Keypad 0>	<Keypad 0>
+	<Keypad 1>	<Keypad 1>
+	<Keypad 2>	<Keypad 2>
+	<Keypad 3>	<Keypad 3>
+	<Keypad 4>	<Keypad 4>
+	<Keypad 5>	<Keypad 5>
+	<Keypad 6>	<Keypad 6>
+	<Keypad 7>	<Keypad 7>
+	<Keypad 8>	<Keypad 8>
+	<Keypad 9>	<Keypad 9>
+	<Keypad ,>	<Keypad ,>
+	<Keypad ->	<Keypad ->
+	<Keypad .>	<Keypad .>
+	<Gold>		<Keypad PF1>
+	<PF2>		<Keypad PF2>
+	<PF3>		<Keypad PF3>
+	<PF4>		<Keypad PF4>
+	<Keypad Enter>	<Keypad Enter>
+	<Home>
+	<End>
+
+	Key		IBM PC		IBM PC/AT	Enhanced IBM
+
+	<Escape>
+	<Backspace>
+	<Return>	<Enter> 	<Enter> 	<Enter>
+	<Linefeed>
+	<Delete>	<<->		<<->		<Backspace>
+	<Control>	<Ctrl>		<Ctrl>		<Ctrl>
+	<Tab>		<->|>		<->|>		<Tab>
+	<Space> 	<Spacebar>	<Spacebar>	<Spacebar>
+	<F1>		<F1>		<F1>		<F1>
+	<F2>		<F2>		<F2>		<F2>
+	<F3>		<F3>		<F3>		<F3>
+	<F4>		<F4>		<F4>		<F4>
+	<F5>		<F5>		<F5>		<F5>
+	<F6>		<F6>		<F6>		<F6>
+	<F7>		<F7>		<F7>		<F7>
+	<F8>		<F8>		<F8>		<F8>
+	<F9>		<F9>		<F9>		<F9>
+	<F10>		<F10>		<F10>		<F10>
+	<F11>		<Shift> <F1>	<Shift> <F1>	<F11>
+	<F12>		<Shift> <F2>	<Shift> <F2>	<F12>
+	<F13>		<Shift> <F3>	<Shift> <F3>	<Shift> <F3>
+	<F14>		<Shift> <F4>	<Shift> <F4>	<Shift> <F4>
+	<Help>		<Shift> <F5>	<Shift> <F5>	<Shift> <F5>
+	<Do>		<Shift> <F6>	<Shift> <F6>	<Shift> <F6>
+	<F17>		<Shift> <F7>	<Shift> <F7>	<Shift> <F7>
+	<F18>		<Shift> <F8>	<Shift> <F8>	<Shift> <F8>
+	<F19>		<Shift> <F9>	<Shift> <F9>	<Shift> <F9>
+	<F20>		<Shift> <F10>	<Shift> <F10>	<Shift> <F10>
+	<Find>		<Shift> <Home>	<Shift> <Home>	<Home>
+	<Insert Here>	<Shift> <Ins>	<Shift> <Ins>	<Insert>
+	<Remove>	<Shift> <Del>	<Shift> <Del>	<Delete>
+	<Select>	<Shift> <End>	<Shift> <End>	<End>
+	<Prev Screen>	<Shift> <Pg Up> <Shift> <Pg Up> <Page Up>
+	<Next Screen>	<Shift> <Pg Dn> <Shift> <Pg Dn> <Page Down>
+	<Up arrow>	<Shift> <Up Arrow>
+					<Shift> <Up Arrow>
+							<Up Arrow>
+	<Left arrow>	<Shift> <Left Arrow>
+					<Shift> <Left Arrow>
+							<Left Arrow>
+	<Down arrow>	<Shift> <Down Arrow>
+					<Shift> <Down Arrow>
+							<Down Arrow>
+	<Right arrow>	<Shift> <Right Arrow>
+					<Shift> <Right Arrow>
+							<Right Arrow>
+	<Keypad 0>	<Keypad 0>	<Keypad 0>	<Keypad 0>
+	<Keypad 1>	<Keypad 1>	<Keypad 1>	<Keypad 1>
+	<Keypad 2>	<Keypad 2>	<Keypad 2>	<Keypad 2>
+	<Keypad 3>	<Keypad 3>	<Keypad 3>	<Keypad 3>
+	<Keypad 4>	<Keypad 4>	<Keypad 4>	<Keypad 4>
+	<Keypad 5>	<Keypad 5>	<Keypad 5>	<Keypad 5>
+	<Keypad 6>	<Keypad 6>	<Keypad 6>	<Keypad 6>
+	<Keypad 7>	<Keypad 7>	<Keypad 7>	<Keypad 7>
+	<Keypad 8>	<Keypad 8>	<Keypad 8>	<Keypad 8>
+	<Keypad 9>	<Keypad 9>	<Keypad 9>	<Keypad 9>
+	<Keypad ,>	<Shift> <Keypad ->
+					<Keypad ->	<Keypad +>
+	<Keypad ->	<Keypad ->	<Prt Sc>	<Shift> <Keypad +>
+	<Keypad .>	<Keypad .>	<Keypad .>	<Keypad .>
+	<Gold>		<Esc>,<Num Lock><Esc>		<Esc>,<Num Lock>
+	<PF2>		<Shift> <Num Lock>
+					<Num Lock>	<Keypad />
+	<PF3>		<Scroll Lock>
+					<Scroll Lock>	<Keypad *>
+	<PF4>		<Shift> <Scroll Lock>
+					<Sys Req>	<Keypad ->
+	<Keypad Enter>	<Keypad +>	<Keypad +>	<Keypad Enter>
+	<Home>
+	<End>
+
+	Key		IBM Convert.	ATARI ST
+
+	<Escape>
+	<Backspace>			<Backspace>
+	<Return>	<Enter> 	<Return>
+	<Linefeed>
+	<Delete>	<Bksp>		<Delete>
+	<Control>	<Ctrl>		<Control>
+	<Tab>		<->|>		<Tab>
+	<Space> 	<Spacebar>	<Spacebar>
+	<F1>		<F1>		<F1>
+	<F2>		<F2>		<F2>
+	<F3>		<F3>		<F3>
+	<F4>		<F4>		<F4>
+	<F5>		<F5>		<F5>
+	<F6>		<F6>		<F6>
+	<F7>		<F7>		<F7>
+	<F8>		<F8>		<F8>
+	<F9>		<F9>		<F9>
+	<F10>		<F10>		<F10>
+	<F11>		<Shift> <F1>	<Shift> <F1>
+	<F12>		<Shift> <F2>	<Shift> <F2>
+	<F13>		<Shift> <F3>	<Shift> <F3>
+	<F14>		<Shift> <F4>	<Shift> <F4>
+	<Help>		<Shift> <F5>	<Shift> <F5>
+	<Do>		<Shift> <F6>	<Shift> <F6>
+	<F17>		<Shift> <F7>	<Shift> <F7>
+	<F18>		<Shift> <F8>	<Shift> <F8>
+	<F19>		<Shift> <F9>	<Shift> <F9>
+	<F20>		<Shift> <F10>	<Shift> <F10>
+	<Find>		<Fn> <Home>	<Shift> <Clr Home>
+	<Insert Here>	<Ins>		<Insert>
+	<Remove>	<Del>		<Clr Home>
+	<Select>	<Fn> <End>	<Shift> <Insert>
+	<Prev Screen>	<Fn> <PgUp>	<Shift> <Up Arrow>
+	<Next Screen>	<Fn> <PgDn>	<Shift> <Down Arrow>
+	<Up arrow>	<Up Arrow>	<Up Arrow>
+	<Left arrow>	<Left Arrow>	<Left Arrow>
+	<Down arrow>	<Down Arrow>	<Down Arrow>
+	<Right arrow>	<Right Arrow>	<Right Arrow>
+	<Keypad 0>	<Fn> <Keypad 0> <Keypad 0>
+	<Keypad 1>	<Fn> <Keypad 1> <Keypad 1>
+	<Keypad 2>	<Fn> <Keypad 2> <Keypad 2>
+	<Keypad 3>	<Fn> <Keypad 3> <Keypad 3>
+	<Keypad 4>	<Fn> <Keypad 4> <Keypad 4>
+	<Keypad 5>	<Fn> <Keypad 5> <Keypad 5>
+	<Keypad 6>	<Fn> <Keypad 6> <Keypad 6>
+	<Keypad 7>	<Fn> <Keypad 7> <Keypad 7>
+	<Keypad 8>	<Fn> <Keypad 8> <Keypad 8>
+	<Keypad 9>	<Fn> <Keypad 9> <Keypad 9>
+	<Keypad ,>	<Fn> <Keypad *> <Keypad +>
+	<Keypad ->	<Fn> <Keypad /> <Keypad ->
+	<Keypad .>	<Fn> <Keypad .> <Keypad .>
+	<Gold>		<Num Lock>	<Esc>,<Keypad (>
+	<PF2>		<Scroll Lock>	<Keypad )>
+	<PF3>		<Fn> <Keypad -> <Keypad />
+	<PF4>		<Fn> <Keypad +> <Keypad *>
+	<Keypad Enter>			<Keypad Enter>
+	<Home>
+	<End>
+	
+	Copyright (c) Anker Berg-Sonne, 1985-1991
+	Sedt Version 4.2 (290)
+
+
+				    Appendix B
+
+				   Installation
+
+		Each installation  kit contains a file named INSTALL.HOW.
+	This text file contains installation instructions for the kit.
+
+	
+	Sedt Version 4.2 (290)
+
+
+				   Appendix C
+
+				  Error Messages
+
+		Error messages	fall  into  four  classes:    Fatal error
+	messages that cause  Sedt to abort execution, and three levels of
+	non-fatal errors.
+
+		Fatal errors  cause  Sedt  to abort the edit session.  If
+	you have enabled  autosaves  you  may be able to recover the edit
+	session close to the point where it aborted.
+
+	Fatal errors:
+
+	Attempt to get before beginning
+		Internal Sedt  error.	 This is caused by a bug in Sedt.
+
+	Could not open key definition file
+		Sedt could  not  find  the  key  definition  file  due to
+		improper installation or improper operation of Sedt .
+
+	Error creating buffer file
+		Sedt was unable to create a temporary file on disk due to
+		a lack	of  disk  space available.  Correct the situation
+		and restart the edit session for a recovery.
+
+	Error reading data from buffer
+		Internal Sedt error.  This is  caused  by  a bug in Sedt.
+
+	Error writing data from buffer
+		Sedt was unable  to write to a temporary file on disk due
+		to a lack of disk space available.  Correct the situation
+		and restart the edit session for a recovery.
+
+	More files than buffers
+		You attempted to call Sedt  with a command that requested
+		editing more than 1000 different files.
+
+	Too many file arguments
+		For each buffer you can only  request  an  input  and  an
+		output file.  You supplied more than  two  file arguments
+		to the buffer.
+
+		Other errors  are  non-fatal  and can optionally ring the
+	bell to get your attention.  This is done with the :EL command.

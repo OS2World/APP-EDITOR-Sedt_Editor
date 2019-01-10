@@ -1,0 +1,796 @@
+;===============================================================================
+; GOLD, WPS Functions for Gold WPS Keyboards (LK style keyboards)
+;
+;   Created By: Dick Danek (GIAMEM::DANEK)
+;   Last Update: (Enter into function number 354)
+;
+; This file is organized as follows:
+;
+;   - Cursor Movement Functions And Commands
+;   - Window And Buffer Functions And Commands
+;   - Mark Setting And Movement Commands And Functions
+;   - String Searching Commands And Functions
+;   - Internal Counter Commands And Functions
+;   - Key Definitions Commands And Functions
+;   - Ruler Commands And Functions
+;   - Sedt Execute File And SX Menu Commands And Functions
+;   - Edit Region Commands And Functions
+;   - Insertion Commands And Functions
+;   - Delete Commands And Functions
+;   - Cut, Append, And Paste Commands And Functions
+;   - Toggle Commands And Functions
+;   - File Commands And Functions
+;   - Help File Commands And Functions
+;   - Outline Commands And Functions
+;   - Format Commands And Functions
+;   - Miscellaneous Commands And Functions
+;
+; Function Numbers start at 11.  Function numbers 0-10 are reserved for use by
+; the functions themselves.
+;
+;===============================================================================
+; COMMENT_CHARACTER ;
+; LINE_CONTINUATION_CHARACTER *
+;
+;===============================================================================
+; RESERVED FUNCTIONS AND COMMANDS                       (0)
+;===============================================================================
+; 0 is the GOLD function which doesn't need to be defined.
+;
+;===============================================================================
+; RESERVED FUNCTIONS AND COMMANDS                       (1 - 10)
+;===============================================================================
+; 1 is a nul function, or dead key
+1 .
+;
+;===============================================================================
+; CURSOR MOVEMENT FUNCTIONS AND COMMANDS                (11 - 50)
+;===============================================================================
+; WPS <Prev> & <^F>
+11  (^E(-@SCR)(@BB)).
+Scroll up.
+;--------------------
+; WPS <Next> & <^V>
+12  (^E(+@SCR)(@EB)).
+Scroll down.
+;--------------------
+; WPS <Up>
+13  -@V.
+Go up vertically one line.
+;--------------------
+; WPS <Down>
+14  +@V.
+Go down vertically one line.
+;--------------------
+; WPS <Left>
+15  -@C.
+Go back one char.
+;--------------------
+; WPS <Right>
+16  +@C.
+Go forward one char.
+;--------------------
+; WPS <Advance>
+17  (:A@C).
+Advance one char and set direction forward.
+;--------------------
+; WPS <Backup>
+18  (:B@C).
+Backup one char and set direction reverse.
+;--------------------
+; WPS <Gold Left>
+19  (0-@L).
+Goto beginning of current line.
+;--------------------
+; WPS <Gold Right>
+20  (0+@EL).
+Goto end of current line.
+;--------------------
+; WPS <Line>
+22  @L.
+Move cursor position one line.
+;--------------------
+; WPS <Word>
+23  @W.
+Move cursor position one word.
+;--------------------
+; WPS <Para>
+24  @PAR.
+Move cursor position one paragraph.
+;--------------------
+; WPS <Sent>
+25  @SEN.
+Move cursor position one sentence.
+;--------------------
+; WPS <Page>
+26  @PAG.
+Advance one page.
+;--------------------
+; WPS <Gold B> <Gold Next>
+27  @EB.
+Goto end of buffer.
+;--------------------
+; WPS <Gold T> <Gold Prev>
+28  @BB.
+Goto beginning of buffer.
+;--------------------
+; WPS <^F> <Prev>
+29  (^E(-@SCR)(@BB)).
+Scroll up or go to top of buffer.
+;--------------------
+; WPS <^V> <Next>
+30  (^E(+@SCR)(@EB)).
+Scroll down or goto bottom of buffer.
+;--------------------
+; WPS <Gold Up>
+31  :CT.
+Position current line to top of window.
+;--------------------
+; WPS <Gold Down>
+32  :CB.
+Position current line to bottom of window.
+;--------------------
+; WPS <Gold V>
+33  :CM.
+Position cursor and line to middle of window.
+;--------------------
+; WPS <Gold Advance>
+34  0(+@L:TI).
+Scroll until a key is struck.
+;
+;===============================================================================
+; WINDOW AND BUFFER FUNCTIONS AND COMMANDS              (51 - 70)
+;===============================================================================
+; WPS <Gold ^D> <Gold Main Screen>
+51  :WC.
+Toggle between one and two window mode.
+;--------------------
+; WPS <^D> <Main Screen>
+52  :OW.
+Switch to previous buffer.
+;--------------------
+; WPS <^Q>
+53  (1:M0:OW2@M).
+Set mark 1, switch window/buffer, find mark 2.
+;--------------------
+; WPS <Gold ^Q>
+54  (2:M:OW1@M).
+Set mark 2, switch window/buffer, find mark 1.
+;--------------------
+; WPS <Gold `>
+55  ?"Buffer number: ":WI.
+Select a buffer.
+;--------------------
+; WPS <F17>
+56  $0:WI.
+Select buffer 0.
+;--------------------
+; WPS <F18>
+57  $1:WI.
+Select buffer 1.
+;--------------------
+; WPS <F19>
+58  $2:WI.
+Select buffer 2.
+;--------------------
+; WPS <F20>
+59  $3:WI.
+Select buffer 3.
+;--------------------
+; WPS <Gold =>
+60  :UOFF:SETD?"Abbrv> Enter abbreviation buffer: ":WI@BB@F<<?"Abbrv> Enter abbreviation: ">>+@L:SEL@F<<-@C:GE@SR:OW:USR.
+Get abbreviation from a buffer.
+;--------------------
+; WPS <Gold L>
+61  ^E(?"Libr> Load SEDTLIBR.TXT into which buffer (0,1,2,3,...): ":WI)(1:WI):Z^C(|^E(:FGSEDTLIBR.TXT)(:FG%ASEDTLIBR.TXT)).
+Load SEDTLIBR.TXT into a buffer.
+;--------------------
+; WPS <Gold Find>
+62  ^S(:SL@SR@N|:KF051\:UOFF:SEL:USR:SL@XSR:D@SR??"Find> Search from top in which buffer (0,1,2,3...)?? ":WI:KF051""@BB@N.\:EK051).
+Search for a selected string in any buffer.
+;
+;===============================================================================
+; MARK SETTING AND MOVEMENT COMMANDS AND FUNCTIONS      (71 - 80)
+;===============================================================================
+; WPS <Gold Insert Here>
+71  :M.
+Mark a point for return with gold return.
+;--------------------
+; WPS <Gold Return>
+72  @M.
+Find marked point.
+;
+;===============================================================================
+; STRING SEARCHING COMMANDS AND FUNCTIONS               (81 - 100)
+;===============================================================================
+; WPS <Find>
+81  @F?"Find> String: ".
+Search for string.
+;--------------------
+; WPS <Gold ,> <Gold Srch>
+82  ^TU(:SETU@F?"Find> String (case sensitive): ").
+Search for string using case sensitive searches.
+;--------------------
+; WPS <Gold .> <Gold Cont Srch>
+83  ^TU(:SETU@N).
+Continue search.
+;--------------------
+; WPS <Gold /> <Gold Cont Srch & Sel>
+84  ^TU(:SETU:NS).
+Continue search and replace.
+;--------------------
+; WPS <Gold "> <Gold Shift Replc>
+85  :REP.
+Replace search string with pst-bfr.
+;--------------------
+; WPS <Gold :> <Gold Shift Global Replc>
+86  :REP0(@N:REP:TI).
+Globally replace search string w/pst-bfr.
+;--------------------
+; WPS <Gold '> <Gold Replc>
+87  :RMSUB:SUB?"Replc> Substitute string: "?"Replc> With: ".
+Subst next occurence of string with another.
+;--------------------
+; WPS <Gold ;> <Gold Global Replace>
+88  :RMSUB:SUB?"GReplc> Substitute string: "?"GReplc> With: "0(:NS:TI).
+Global search and substitute.
+;--------------------
+; WPS <Gold }>
+89  @BM.
+Search for matching '"[]{} pair.
+;
+;===============================================================================
+; INTERNAL COUNTER COMMANDS AND FUNCTIONS               (101 - 110)
+;===============================================================================
+; WPS <Gold |>
+101  ?"Cntr> Enter new counter value: ":CNS.
+Set internal counter to a value.
+;--------------------
+; WPS <Gold ^\>
+102  :CNI.
+Increment internal counter.
+;--------------------
+; WPS <^\>
+103  :CNP.
+Paste internal counter value into buffer.
+;--------------------
+; WPS <Gold +>
+104  :UOFF:EK380 :KF051\:KF052`:OM"CntrAdd> Select-area integer sum: %%%%#A.".`^IB(-@C)0:SETR:SETB:GE@SR0:SETB:SEL:ERS@SR:USR@BB0:CNS#A^E(0(^E(:CNA#A)()+@L))()@BB:D@EB:ERC:EK052.\^S(:EK051|:CNA#A):EK381.
+Add number at cursor to internal counter value.
+;--------------------
+; WPS <Gold ~>
+105  :UOFF:RMSEA?"CntrRplc> Enter new counter value: ":CNS@F?"CntrRplc> Enter string to replace: ":D@SR0(:CNP:CNI:TI@F:D@SR).
+Search for string and subst w/internal counter.
+;
+;===============================================================================
+; KEY DEFINITIONS COMMANDS AND FUNCTIONS                (111 - 120)
+;===============================================================================
+; WPS <Gold F14>
+111  :LNL!"KLrn> Press a key for learned keystrokes (and then terminate with that key!): ".
+Load keystrokes into a key.
+;--------------------
+; WPS <^K>
+112  (0:SETR0:SETB:PUSHCH:ERS0@C:SK!"ShoK> Press key to be displayed: "@BB^E(:YN"ShoK> Restore edit buffer")(:D@EB:POPCH|):ERC:OM"").
+(Optionally) insert a key def into buffer.
+;--------------------
+; WPS <Gold ^K>
+113  ^S(:KF051\:LK!!"DefK> Key: "@XSR.\|:KF051\:KF!!"DefK> Key: "??"DefK> Def: ".\):EK051.
+Save key definition in buffer.
+;
+;===============================================================================
+; RULER COMMANDS AND FUNCTIONS                          (121 - 140)
+;===============================================================================
+; WPS <Gold F17>
+121  $0:GR.
+Select 0 or Gold Number Ruler.
+;--------------------
+; WPS <Gold F18>
+122  $1:GR.
+Select 1 or Gold Number Ruler.
+;--------------------
+; WPS <Gold F19>
+123  $2:GR.
+Select 2 or Gold Number Ruler.
+;--------------------
+; WPS <Gold F20>
+124  $3:GR.
+Select 3 or Gold Number Ruler.
+;--------------------
+125  $5:GR.
+Select ruler 5.
+;--------------------
+126  $6:GR.
+Select ruler 6.
+;--------------------
+127  $7:GR.
+Select ruler 7.
+;--------------------
+128  $8:GR.
+Select ruler 8.
+;--------------------
+129  $9:GR.
+Select ruler 9.
+;--------------------
+130  (0:GR).
+Set ruler to ruler 0.
+;--------------------
+; WPS <Gold R>
+131  :RL.
+Enter ruler definition mode.
+;--------------------
+; WPS <Gold ^R>
+132  :UOFF:I"SEDTRULER=":RUS:NL.
+Load ruler into buffer..
+;--------------------
+; WPS <^R>
+133  :UOFF9:M^E(-@F"SEDTRULER=")(0:GR|+10@C:RUL@EL)9@M-8:M-9:M.
+Look for last imbedded ruler, get it, return.
+;
+;===============================================================================
+; EDIT REGION COMMANDS AND FUNCTIONS                    (141 - 150)
+;===============================================================================
+; WPS <^E>
+141  ^IF(:KF051"0:SETF"|:KF051":SETF")0:SETF^S(:ERS@SR|:UOFF^E(8:M:SEL9@M)(-8:M:RS:OE"M9> Edit region not set."|:OM"M9> Setting edit region from mark 9":ERS@SR8@M-8:M-9:M)):EK051.
+Set edit region.
+;--------------------
+; WPS <Gold ^E>
+142  :ERC.
+Clear edit region.
+;
+;===============================================================================
+; INSERTION COMMANDS AND FUNCTIONS                      (151 - 170)
+;===============================================================================
+; WPS <F11> <Esc>
+151  (27:CH).
+Insert an escape char.
+;--------------------
+; WPS <Gold Underline>
+152  (27:CH:I"[4m").
+Insert escapes sequence for underline.
+;--------------------
+; WPS <Gold Bold>
+153  (27:CH:I"[1m").
+Insert escapes sequence for bolding.
+;--------------------
+; WPS <Gold Esc>
+154  (27:CH:I"[0m").
+Insert escapes sequence for normal.
+;--------------------
+; WPS <Tab> <^I>
+155  :TAB.
+Insert a tab char.
+;--------------------
+; WPS <^M> <Return>
+156  :NL.
+Insert a new line char.
+;--------------------
+; WPS <^L> <Gold N>
+157  (12:CH).
+Insert a form feed char.
+;--------------------
+; WPS <Gold A>
+158  ?"ASCII> Key value: ":CH.
+Enter a char via it's decimal value.
+;--------------------
+; WPS <Gold P>
+159  :KF051\:KF180~:I"%%P".~:KF212~:I"%%P".~.\:SEL:I?"Page> Page-marking string: ":GE@XSR^E(:YN"Page> Are you sure")(@SR:EK051|:D@SR).
+Insert a page marker string.
+;--------------------
+; WPS <Gold \>
+160  :PD32:CH:PT.
+Insert a date/time string.
+;
+;===============================================================================
+; DELETE COMMANDS AND FUNCTIONS                         (171 - 190)
+;===============================================================================
+; WPS <Del Char>
+171  (:D+@C).
+Delete next char.
+;--------------------
+; WPS < <X] >
+172  :D-@C.
+Delete previous char.
+;--------------------
+; WPS <Del Word>
+173  (:D+@W).
+Delete next word.
+;--------------------
+; WPS <LF> <Rub Word>
+174  (:D-@W).
+Delete to beginning of word.
+;--------------------
+; WPS <Gold LF> <Rub Sent>
+175  (:D-@SEN).
+Delete to beginning of sentence.
+;--------------------
+; WPS <Gold Line>
+176  :D+0@EL.
+Delete from cursor to end of line.
+;--------------------
+; WPS <Gold ^Z>
+177  :Z.
+Zap buffer.
+;--------------------
+; WPS <^Z>
+178  ^E(:YN"DEOB> Delete to end of buffer.  Are you sure")(:D@EB):OM"".
+Zap to end of buffer.
+;--------------------
+; WPS <Gold Rub Line>
+180  (:D-@L:D-@C).
+Delete to beg-of-line and append to prev line.
+;--------------------
+; WPS <Gold Del Word>
+181  :UW.
+Undelete word.
+;--------------------
+; WPS <Gold Del Char>
+182  :UC.
+Undelete char.
+;
+;===============================================================================
+; CUT, APPEND, AND PASTE COMMANDS AND FUNCTIONS         (191 - 210)
+;===============================================================================
+; WPS <Select> <Sel>
+191  :SEL-9:M.
+Set select point at current position.
+;--------------------
+; WPS
+192  :RS.
+Cancel select point.
+;--------------------
+; WPS <Gold Sel> & <Gold Select>
+193  ^S(:RS-8:M-9:M|9:M:OM"M9> Setting mark 9").
+Cancel sel-area or mark 9.
+;--------------------
+; WPS <Gold Remove>
+194  :GE@SR.
+Load pst-bfr from sel-area w/out deleting.
+;--------------------
+; WPS <Remove>
+195  ^S(:D@SR|:D+@C).
+Cut sel-area or delete char.
+;--------------------
+; WPS <Cut>
+196  ^S(:D@SR|:UOFF^E(:SEL9@M)(:RS:OE"Cut not made."|:OM"M9> Cutting from mark 9":D@SR-9:M)).
+Cut (either sel-area or M9).
+;--------------------
+; WPS <^A>
+197  ^S(:GAP@SR|:UOFF^E(8:M:SEL9@M)(:RS:OE"Apnd> Append not made."|:OM"Apnd> Appending from mark 9":GAP@SR8@M-8:M-9:M)).
+Append sel-area (or M9) to pst-bfr.
+;--------------------
+; WPS <Gold ^A>
+198  ^S(:EAP@SR|:UOFF^E(8:M:SEL9@M)(:RS:OE"DApnd> Delete/Append not made."|:OM"DApnd> Deleting/Appending from mark 9":EAP@SR8@M-8:M-9:M)).
+Cut sel-area (or M9) & append to pst-bfr.
+;--------------------
+; WPS <Gold Cut>
+199  ^S(:GE@SR|:UOFF^E(:SEL9@M)(:RS:OE"Get> Get not made."|:OM"Get> Getting from mark 9":GE@SR-9:M)).
+Load pst-bfr from sel-area w/out deleting.
+;--------------------
+; WPS <Gold Paste>
+200  :KF052\:PL??"Pst> Filename: ".\:KF051\:PS??"Pst> Filename: ".\^E(:YN"Pst> Save paste buffer to file")(:EK051)^E(:YN"Pst> Load paste buffer from file")(:EK052):OM"".
+Load pst-bfr from file, or save pst-bfr.
+;--------------------
+; WPS <Insert Here> <Paste>
+201  :USR.
+Insert pst-bfr into edit buffer.
+;--------------------
+; WPS <Remove> (used with line characters)
+202  ^S(:D@SR|:UOFF^E(:SEL9@M)(:RS:D+@C|:OM"Cut> Cutting from mark 9":D@SR-9:M)).
+Cut sel-area or delete char.
+;
+;===============================================================================
+; TOGGLE COMMANDS AND FUNCTIONS                         (211 - 220)
+;===============================================================================
+; WPS <Gold ^D> <Gold Main Screen>
+211  :WC.
+Toggle split screen mode.
+;--------------------
+; WPS <Gold Word>
+212  :TB.
+Toggle line/block mode.
+;--------------------
+; WPS <Gold Sent>
+213  :OS.
+Toggle insert/replace mode.
+;--------------------
+; WPS <Gold Tab> <Gold ^I>
+214  :TT.
+Toggle tab replace mode.
+;--------------------
+; WPS <Gold ^W>
+215  :WD.
+Toggle between 132 and 80 character screen.
+;--------------------
+; WPS <Gold J>
+216  ^E(:YN"Tgl> Toggle Insert/Replace")(:OS)^E(:YN"Tgl> Toggle Block/Line")(:TB)^E(:YN"Tgl> Toggle Rest/Free")(:TF).
+Toggle ins/repl, block/line, & free/rest modes.
+;--------------------
+; WPS <Gold Cmnd>
+217  :KF052\^E(:YN"M9> Option On")(193:KN074199:KN073202:KN023|192:KN074194:KN073195:KN023).\:KF051\^E(:T??"Tgl> C(hars) F(ree/rest) M(rkrs) R(lrs) S(hft) P(os_cur) U(case): ")(:EK051).\^E(:YN"Toggles")(:EK051|:EK052).
+Toggle SEDT parameters.
+;--------------------
+; WPS <Gold Backup>
+218  :TF.
+Toggle restricted/free cursor movement.
+;
+;===============================================================================
+; FILE COMMANDS AND FUNCTIONS                           (221 - 240)
+;===============================================================================
+; WPS <Gold Q> <Gold K> <Cancel>
+221  :Q.
+Quit without saving buffer.
+;--------------------
+; WPS <Gold Exit>
+222  :X.
+Save buffer and exit.
+;--------------------
+; WPS <Gold File>
+223  :KF051\:FS??"File> Save to filename: ".\^E(:FS)(:EK051)^E(:YN"File> Save context (creates a .CTX file)")(:CS)^E(:YN"File> Exit")(:Q).
+Save buffer (and context optionally) and exit.
+;--------------------
+; WPS <Exit>
+224  :FS?"Save> Filename: ".
+Save contents of buffer.
+;--------------------
+; WPS <Interrupt>
+225  :FW?"Write> Filename: ".
+Write to a file, don't change current edit file.
+;--------------------
+; WPS <Gold ^P>
+226  :PR?"Print> Print buffer to (file or printer): ".
+Print contents of buffer.
+;--------------------
+; WPS <Gold E>
+227  :FE?"Edit> Filename: ".
+Edit new file in current buffer.
+;--------------------
+; WPS <Gold Get Docmnt>
+228  :FG?"Get> Filename: ".
+Include a file at current position.
+;--------------------
+; WPS <Gold Write Docmnt>
+229  :KF051\^E(:YN"Write> Select-area only")(:EK052|:EK053).\:KF052\:GE@XSR:PS??"Write> Filename: ".\:KF053\:FW??"Write> Filename: ".\^S(:EK051|:EK053).
+Save buffer to a file.
+;
+;===============================================================================
+; HELP FILE COMMANDS AND FUNCTIONS                      (241 - 250)
+;===============================================================================
+; WPS <Help>
+241  :OM"Help> Loading standard help, wait...":H"":SV.
+Load standard help file.
+;--------------------
+; WPS <Gold Help>
+242  :H\?"Help> Enter help filename: "\:SV.
+Load optional help file.
+;
+;===============================================================================
+; OUTLINE COMMANDS AND FUNCTIONS                        (251 - 260)
+;===============================================================================
+; WPS <^O>
+251  :EK3801:SETB1:SETF0:SETR^E(0+@EL)()1:CH:EK381.
+Insert ^A at the end of line (for outlines).
+;--------------------
+; WPS <Gold O>
+252  :OM"Oline>":UOFF:SETD0:SETB:KF051\??"Oline> Enter buffer for file load (0,1,2,3,...) ":WI.\:KF052\^C(:UON)^E(:FE%%P)().\:KF053\^E(-@F)(@BB:POPCH:ERC:OE"Oline> Can't find ^A."|@C:SEL0+@EL:GE@SR0-@L).\:KF054\^E(0+@EL)()^E(:ERS0-@L)():PUSHCH.\^S(:GE@SR|:EK054:EK053:KF051\:NWG.\):POPCH:ERC:EK051:EK052.
+Load an outline file.
+;--------------------
+; WPS <Gold ^O>
+253  :UOFF0:SETB:KF051\:SEL0+@EL:D@SR?"OLget> Number of extra blank-lines: ":NL:EK052.\:KF052\^E(:FG%%P)().\^E(0-@EL)():RMSUB^E(:SUB)(:OE"OLget> Can't find ^A or end of buffer."|:EK051).
+Include outline file.
+;
+;===============================================================================
+; FORMAT COMMANDS AND FUNCTIONS                         (261 - 290)
+;===============================================================================
+; WPS <Gold Page>
+261  (60@L).
+Move page-lines (optnly insrt FF & blnk-lines).
+;--------------------
+; WPS <Gold ^^>
+262  :KF095\(?"DefPage> Enter number of lines to skip: "+@L).\.
+Program GOLD PAGE key to skip n-lines.
+;--------------------
+; WPS <^^>
+263  :KF095\(:UOFF:SEL:I"L1W1R1I1":RUL@XSR:D@SR?"DefPage> Enter number of lines to skip: "+@L:SEL:I?"DefPage> Enter page-break string: "?"DefPage> Enter number of blank lines after form feed: ":NL).\.
+Reprogram GOLD PAGE.
+;--------------------
+; WPS <Gold ^L>
+264  :KF051\:OM"Page> %%#A lines to previous <FF>".\:UOFF8:M@BB6:M@EB7:M8@M0:CNS9:M-@F:SEL9@M:ERS@SR^E(0(-@V:CNI))(:ERC)6@M:SEL7@M:ERS@SR-6:M-7:M9@M-9:M:EK051.
+Count number of lines to previous form feed.
+;--------------------
+; WPS <Gold Print Hyph>
+265  :I"- ":M^E(-2@L)(@BB):FT+@PAR@M+@C.
+Insert a hyphen and reformat paragraph.
+;--------------------
+; WPS <Gold Center>
+266  :UOFF:EK380:KF053\0:SETF:ERS@XSR@BB:SEL@EB^IB(-@C):ERC:SETB:GE@SR:SETF??"CpyDn> How many lines (enter number): "(^E(+@V:TI)(9:M0+@EL:NL9@M-9:M+@V:USR|:USR)).\^S(:EK053|:CL):EK381.
+Center-line or copy-down.
+;--------------------
+; WPS <Gold I>
+267  :LS.
+Set indentation level.
+;--------------------
+; WPS <Tab Pos>
+268  :LI.
+Increase indentation by one.
+;--------------------
+; WPS <Gold Tab Pos>
+269  ^S(:LS|:LD).
+Set indent level if sel active, else decrease.
+;--------------------
+; WPS <Gold Upper Case>
+270  :CD@SR.
+Change sel-area to lower case.
+;--------------------
+; WPS <Upper Case>
+271  ^S(:CU@SR|:CE).
+Change sel-area to upper case or toggle case.
+;--------------------
+; WPS <Bold>
+272  :CD@C@C.
+Change char to lower case.
+;--------------------
+; WPS <Underline>
+273  :CU@C@C.
+Change char to upper case.
+;--------------------
+; WPS <Gold Para>
+274  :KF051\9:M^E(0-@L)():FT+@PAR9@M\^S(:FT@SR|:EK051).
+Reformat the current sel-area or paragraph.
+;--------------------
+; WPS <Gold Bold>
+275  (27:CH:I"[1m").
+Insert escape sequence for bolding.
+;--------------------
+; WPS <Gold Enter>
+276  0:SETR(:D+@C+@C:UC).
+Swap characters.
+;--------------------
+; WPS <^T>
+277  :UOFF^S(+:TAD@XSR|^E(0-@L)()+:TAD@L).
+Move text/select-area right one tab stop.
+;--------------------
+; WPS <Gold ^T>
+278  :UOFF(0+@EL-@PAR0-@L+:TAD@PAR).
+Adjust paragraph one tab stop right.
+;--------------------
+; WPS <^B>
+279  :UOFF^S(-:TAD@XSR|^E(0-@L)()-:TAD@L).
+Move text/select-area left one tab stop.
+; WPS <Gold ^B>
+;--------------------
+280  :UOFF(0+@EL-@PAR0-@L-:TAD@PAR).
+Adjust paragraph one tab stop left.
+;--------------------
+; WPS <^N>
+281  :KF055\?"Header> "\@F+@C:SK055:OM"Header> Header stored in 055.  Use <GOLD-^N> to update all pages with 055.".
+Prompt for and enter a header after the next FF.
+;--------------------
+; WPS <Gold ^N>
+282  (:UOFF0(@F+@C:SK055):KF055\\:UON).
+Enter headers at the form feed boundaries.
+;--------------------
+; WPS <Gold Spacebar>
+283  :UOFF0:SETR0:SETB^S(:KF051\:D@SR@BB0(^E(+@L-@C)(:ERC:OE""|:USR+@L))\|:KF051\:NL:GE@SR.\):KF052\^S(:ERS@SR):SEL??"Space> Enter number of spaces to insert: "(32:CH):EK051.\^E(:YN"Space> Strip Spaces")(:STRP@BB:STRP@EB|:EK052).
+Enter spaces and a new line char via pst-bfr.
+;--------------------
+; WPS <Gold Footnote>
+284  :KF051\:I"(see Note %%P)"7:M@EB:INote %%P: ??"Note> Text: ":NL.\:UOFF7:SEL:I?"Note> Reference number/character: ":D@SR:EK0517@M-7:M.
+Enter a footnote at bottom of buffer.
+;--------------------
+; WPS <Gold ^F>
+285  ^C(:FS):SYSTXTF %F.
+Save buffer and run TXTF printing program.
+;
+;--------------------
+; WPS <^P>
+286  :UOFF9:M^E(-@PAG-@C)(@BB):SEL^E(+@F)(+@C+@PAG):ERS@SR9@M-9:M.
+Make current page a sel-area.
+;--------------------
+; WPS <^H> <BS>
+287  :UOFF:SETD:M0-@L^E(-@L)(:OE"HPsh> Can't push past top of buffer."):STRP@L0+@EL2(-@C):ERS@L^E(@F"-")(0@EL:I"-"):ERC@L:D@C2(-@C):UC@M.
+Hyphen push
+;--------------------
+; WPS <Gold BS>
+288  :UOFF:SETD:M0-@L^E(-@L)(:OE"HPsh> Can't pull from top of buffer."):STRP@L0+@EL2(-@C):ERS@L^E(@F"-")(0@EL:I"-"-@C):ERC:D-@C@L:UC@M.
+Hyphen pull.
+;
+;===============================================================================
+; SEDT EXECUTE FILE AND SX MENU COMMANDS AND FUNCTIONS  (291 - 310)
+;===============================================================================
+; WPS <Gold ^X>
+291  ^E(:FX%A?"SX> Execute .SX command file from SEDT directory: ".SX.)(:OE"SX> Can't find file or name entered incorrectly (enter XXX for XXX.SX).").
+Execute SEDT SX file private SEDT directory.
+;--------------------
+; WPS <^X> <Gold Menu>
+292  :FX%ASEDTSX.SX.
+Execute SX Menu command files.
+;--------------------
+; WPS <Gold Change Editor>
+293  :OM"ChgEd> Use <Control ]> to load line characters and <Gold Control ]> to reset.".
+Write message about line characters.
+;--------------------
+; WPS <^]> <Control Change Editor>
+294  :UOFF^S(:ERS@SR15:CH@BB14:CH:ERC)0:SETR0:SETB:PUSHCH:SEL:I"L1W1R1I1":RUL@XSR:D@SR:POPCH^E(:FX%AKLINE.SX)(0:GR:OE"ChgEd> KLINE.SX file not found or line characters already loaded"|0:GR:SETR:SETB).
+Run KLINE.SX (for line char editing).
+;--------------------
+; WPS <Gold ^]> <Gold Control Change Editor>
+295  :UOFF0:SETR0:SETB:PUSHCH:SEL:I"L1W1R1I1":RUL@XSR:D@SR:POPCH^E(:FX%AKLINEX.SX)(0:GR:OE"ChgEd> KLINEX.SX file not found or text characters already loaded"|0:GR).
+Run KLINEX.SX (for text char editing).
+;--------------------
+; WPS <^G>
+296  ^E(:FX%A?"SX> Execute SEDT command file in SEDT directory: ".)(:OE"SX> Can't find file or name entered incorrectly (enter complete file name).").
+Execute SEDT file in private SEDT directory.
+;--------------------
+; WPS <Gold ^G>
+297  ^E(:FX?"SX> Execute SEDT command file: ".)(:OE"SX> Can't find file or name entered incorrectly (enter complete path & file name).").
+Execute SEDT command files.
+;--------------------
+; WPS <Gold X>
+298  :KF051\:FX??"XSX> Sedt command filename: ".\:KF052\^E(:YN"XSYS> Execute system program")(:EK053|:EK054).\:KF053\:SYS??"XSYS> Operating system command: ".\:KF054\:OM"".\^E(:YN"X> Execute SEDT command file")(:EK051|:EK052).
+Execute system program or SEDT command file.
+;--------------------
+; WPS <Do>
+299  :KF051\:SYS??"XSYS> Operating system command: ".\:KF052\^E(:YN"XSX> Execute SEDT command file")(:EK053|:EK054).\:KF053\:FX??"XSX> Sedt command filename: ".\:KF054\:OM"".\^E(:YN"X> Execute system program")(:EK051|:EK052).
+Execute SEDT command file or a system program.
+;
+;===============================================================================
+; MISCELLANEOUS COMMANDS AND FUNCTIONS                  (351 -    )
+;===============================================================================
+; WPS <^W>
+351  :RF.
+Refresh display.
+;--------------------
+; WPS <Resume>
+352  :RF:SC.
+Refresh screen and show column position.
+;--------------------
+; WPS <Gold ?>
+353  :SC.
+Show current column position.
+;--------------------
+; WPS <Gold Z> <Gold Status>
+354  :KF051\:OM"Stat> WPS/GLD 27-Mar-1990 11:24:09".\:KF052\^E(:YN"Stat> SEDT Version")(:SV|:EK053).\:KF053\^E(:YN"Stat> Column")(:SC|:EK054).\:KF054\^E(:YN"Stat> Line")(:EK510).\^E(:YN"Stat> WPS/GLD Version")(:EK051|:EK052).
+Display various SEDT status conditions.
+;--------------------
+; WPS <Gold >>
+355  +
+Set temporary direction to forward.
+;--------------------
+; WPS <Gold <>
+356  -
+Set temporary direction to reverse.
+;--------------------
+; WPS <Gold D> <Gold Do>
+357  :UOFF:EK380:KF054\??"SEDT> Command: ".\:KF053\^IB(-@C)0:SETF??"DelBlk> How many lines deep (enter number): "(^E(+@V)()):SETB-@V:D@SR.\^S(:EK053|:EK054):EK381.
+Exec SEDT com/func (or DelBlk).
+;--------------------
+; WPS <Gold _>
+358  :UOFF
+Turn screen updating off (used w/other keys).
+;--------------------
+; WPS <Gold S>
+359  :UOFF0:SETB0:SETR^S(:D@SR:PS%ASEDTSPLL.TMP:SYS SPELL %ASEDTSPLL.TMP:FG%ASEDTSPLL.TMP|:FS:Z:SYSSPELL %F:FE%F).
+Spell check buffer.
+;--------------------
+; WPS <^S>
+360  @Fê.
+Search for next spelling marked string.
+;--------------------
+; WPS <^U> <Gold ^U> <Gold U
+361  :UM.
+Undo last known command.
+;--------------------
+; WPS <Gold Do>
+362  :UOFF:EK380?"SEDT> Command: ":EK381.
+Exec SEDT command.
+;
+;===============================================================================
+; RESERVED FUNCTIONS                                    (500 -    )
+;===============================================================================
+; Save screen status
+380  ^ID(:KF3821:SETD|:KF3820:SETD)^II(:KF3830:SETR|:KF3831:SETR)^IB(:KF3840:SETB|:KF3841:SETB)^IF(:KF3850:SETF|:KF3851:SETF)^IT(:KF3861:SETT|:KF3860:SETT)^IK(:KF3871:SETK|:KF3870:SETK)^IU(:KF3880:SETU|:KF3881:SETU)^IX(:KF3890:SETX|:KF3891:SETX).
+Save screen status
+;
+; Restore screen status
+381  :EK382:EK383:EK384:EK385:EK386:EK387:EK388:EK389.
+Restore screen status

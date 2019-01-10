@@ -1,0 +1,13 @@
+ 6-Oct-2008
+ 
+DOS = original documentation from seddos and sedsrc 
+      (but not the HELP file that sedt loads, that is in mapfiles.etc)
+      
+linux = original documentation from linux.tar
+      (but not the HELP file that sedt loads, that is in mapfiles.etc)
+
+same = Files the same in both distributions, and sedt.doc was similar enough 
+       to select the most up to date.  As it turns out, these files all came 
+       from the DOS directory (even though it is the linux source code that 
+       appeared to be more up to date.)
+       

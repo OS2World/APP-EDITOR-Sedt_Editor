@@ -1,0 +1,24 @@
+INITIALIZE
+
+RESET
+
+SPECIAL
+KEYS
+A127 49 
+A13 50 
+COMBINATIONS
+1 A27
+2 A\[
+3 A\5
+4 A\~ 25 '
+3 A\6
+4 A\~ 26 '
+3 A\A 27 '
+3 A\D 28 '
+3 A\B 29 '
+3 A\C 30 '
+3 A\7
+4 A\~ 51 '
+3 A\8
+4 A\~ 52 '
+@defallmi.new

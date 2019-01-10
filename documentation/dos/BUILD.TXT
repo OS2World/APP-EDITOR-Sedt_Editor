@@ -1,0 +1,380 @@
+                                                         9-Feb-1991
+        
+                      Building the Sedt Editor from Sources
+        
+                To build  the  Sedt editor you will need a C compiler for
+        your  target system  and  in  some  cases,  VMS  and  MS-DOS,  an
+        assembler.
+        
+                After building the executables  you  need  to  build  the
+        binary key definition files for your target system.
+        
+                Sedt consists of two programs.  The  editor itself, and a
+        key definition compiler.
+
+               All version of Sedt are built from the same sources  using
+        conditional  compilation.    To    select    a   specific  target
+        configuration you must define the  appropriate  symbols.   Most C
+        compilers accept -D<Symbol> in the command line.
+        
+                The currently used symbols are:
+        
+                DOS             Any MS-DOS system
+                DESQVIEW        Make Sedt DesqView aware
+                Windows         Microsoft Windows
+                PC100           Digital Rainbow 100
+                OS2             OS/2
+                VMS             VAX/VMS
+                UNIX            Any UNIX system
+                ULTRIX          VAX or RISC ULTRIX
+                SCO             SCO XENIX or SCO UNIX
+                XENIX           XENIX
+                SUN             Define _toupper and _ tolower
+                ATARI           ATARI TOS
+                GEM             ATARI GEM
+                TERMCAP         Use TERMCAP instead of CURSES/TERMINFO
+                Noasm           Use C versions  of routines that normally
+                                are coded in assembler for speed
+        
+                Not all combinations will  produce  valid code and only a
+        few  are  consistently tested.   The  ones  I  use  for  building
+        different versions of Sedt are:
+        
+        DOS, DESQVIEW           PC-DOS and MS-DOS
+        DOS, Windows            Microsoft Windows
+        DOS, PC100              Rainbow 100
+        OS2                     OS/2
+        ATARI                   ATARI TOS
+        ATARI, GEM              ATARI GEM
+        UNIX, ULTRIX, Noasm     VAX and RISC ULTRIX
+        UNIX, SCO, XENIX, Noasm SCO XENIX
+        UNIX, SCO, Noasm        SCO UNIX
+        VMS                     VAX/VMS
+                
+                The  basic source modules, included in  all  versions  of
+        Sedt are:
+        
+                SEDT.C          Initialization
+                EDIT.C          Main editor logic
+                COM.C           Main command interpreter routines
+                COMA.C          More command interpreter routines
+                COMB.C          Help routines
+                COMC.C          More command interpreter routines
+                COMD.C          More command interpreter routines
+                ENT.C           Text range command routines
+                KEY.C           Routines for key definition
+                VDU.C           Hardware independent screen routines
+                TERM.C          Hardware dependent screen routines
+                BUF.C           File buffering routines
+                FILE.C          System dependent file I/O
+                TEXT.C          Main text and screen position definitions
+                TEXT1.C         More text and screen positions
+                REGEXP.C        Public domain regular expression parser
+                REGSUB.C        Public domain regular expression parser
+                VARS.C          All global variables
+                
+                Modules that are only included in some versions are:
+        
+                MSCPC.ASM       MS-DOS assembler routines
+                KH.ASM          MS-DOS int 9 hand3er
+                PCTYPE.ASM      MS-DOS type and model recognition
+                SCAN.ASM        OS/2 assembler routines
+        
+                QIO.MAR         VAX/VMS assembler routines
+        
+                UNIX.C          UNIX specific routines
+        
+                MAPKEY,  the  key  definition  compiler  is  built   from
+        MAPKEY.C  and  in  some  cases an additional module.    The  same
+        symbols are used to define the target system as  when  you  build
+        Sedt.
+        
+                To build the binary key  definition  files  you  need the
+        ASCII key definition files, which are  contained  on  any  of the
+        binary distribution kits, and an executable copy  of  MAPKEY.  To
+        build the VT type binary files for EDT  style  editing  you would
+        need to execute the equivalent of the fillowing DOS commands:
+        
+        mapkey compile functions fundefi.edt fundef.edt
+        mapkey compile keys vt100mi.edt vt100m.edt
+        mapkey compile keys vt200mi.edt vt200m.edt
+        mapkey compile keys vt300mi.edt vt300m.edt
+        mapkey compile keys vt400mi.edt vt400m.edt
+        mapkey compile keys defmi.edt defm.edt
+        
+                To  build  the  NEW  style  key  mapping  files  run  the
+        equivalent of the following DOS commands:
+        
+        mapkey compile functions fundefi.new fundef.new
+        mapkey compile keys defmi.new defm.new
+        
+        SCO UNIX make file using termcap:
+        
+OBJECTS=sedt.o edit.o key.o buf.o vdu.o term.o com.o coma.o comb.o comc.o comd.o ent.o file.o text.o text1.o vars.o regexp.o regsub.o unix.o
+CFLAGS=-g -DUNIX -DSCO -DNoasm -DTERMCAP
+LIBES=-m sedt.map -ltermcap
+
+sedt:$(OBJECTS)
+	cc $(CFLAGS) $(OBJECTS) $(LIBES) -o sedt
+
+        SCO UNIX Mapkey make file using termcap:
+        
+OBJECTS=mapkey.o unix.o
+CFLAGS=-DUNIX -DSCO -DTERMCAP
+LIBES=-m mapkey.map -ltermcap
+
+mapkey:$(OBJECTS)
+	cc $(CFLAGS) $(OBJECTS) $(LIBES) -o mapkey
+
+        SCO UNIX make file using curses:
+        
+OBJECTS=sedt.o edit.o key.o buf.o vdu.o term.o com.o coma.o comb.o comc.o comd.o ent.o file.o text.o text1.o vars.o regexp.o regsub.o
+CFLAGS=-g -DUNIX -DSCO -DNoasm
+LIBES=-m sedt.map -lcurses
+
+sedt:$(OBJECTS)
+	cc $(CFLAGS) $(OBJECTS) $(LIBES) -o sedt
+        
+        SCO UNIX makefile using curses:
+        
+OBJECTS=mapkey.o
+CFLAGS=-DUNIX -DSCO
+LIBES=-m mapkey.map -lcurses
+
+mapkey:$(OBJECTS)
+	cc $(CFLAGS) $(OBJECTS) $(LIBES) -o mapkey
+
+        MS-DOS Sedt and Mapkey make file:
+        
+CFLAGS=-I. -I.. -Lr -Oxs -Zi -Zp -AM -DDOS -DDESQVIEW -c
+
+SEDT.EXE: SEDT.OBJ EDIT.OBJ COM.OBJ COMA.OBJ COMB.OBJ COMC.OBJ COMD.OBJ ENT.OBJ KEY.OBJ VDU.OBJ TERM.OBJ BUF.OBJ FILE.OBJ TEXT.OBJ TEXT1.OBJ VARS.OBJ REGEXP.OBJ REGSUB.OBJ MSCPC.OBJ KH.OBJ PCTYPE.OBJ
+        LINK /EXEPACK /FARCALLTRANSLATION /PACKCODE @SEDT.LNK
+
+DSEDT.EXE: SEDT.OBJ EDIT.OBJ COM.OBJ COMA.OBJ COMB.OBJ COMC.OBJ COMD.OBJ ENT.OBJ KEY.OBJ VDU.OBJ TERM.OBJ BUF.OBJ FILE.OBJ TEXT.OBJ TEXT1.OBJ VARS.OBJ REGEXP.OBJ REGSUB.OBJ MSCPC.OBJ KH.OBJ PCTYPE.OBJ
+        LINK /CO @DSEDT.LNK
+        CVPACK DSEDT.EXE
+
+MAPKEY.EXE: MAPKEY.OBJ KH.OBJ
+        LINK MAPKEY+KH,MAPKEY;
+
+DMAPKEY.EXE: MAPKEY.OBJ KH.OBJ
+        LINK /CO MAPKEY+KH,DMAPKEY;
+
+MAPKEY.OBJ: ..\MAPKEY.C ..\VDUDEF.H
+        cl $(CFLAGS) ..\MAPKEY.C
+        
+SEDT.OBJ: ..\SEDT.C ..\SEDTDEF.H ..\BUFDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -Ic:\c4\include $(CFLAGS) ..\SEDT.C
+        
+EDIT.OBJ: ..\EDIT.C ..\BUFDEF.H ..\SEDTDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -Ic:\c4\include $(CFLAGS) ..\EDIT.C
+        
+KEY.OBJ: ..\KEY.C ..\SEDTDEF.H ..\BUFDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -Ic:\c4\include $(CFLAGS) ..\KEY.C
+        
+BUF.OBJ: ..\BUF.C ..\BUFDEF.H
+        cl -Ic:\c4\include $(CFLAGS) ..\BUF.C
+        
+VDU.OBJ: ..\VDU.C ..\VDUDEF.H ..\SEDTDEF.H
+        cl -Ic:\c4\include $(CFLAGS) ..\VDU.C
+        
+TERM.OBJ: ..\TERM.C ..\VDUDEF.H
+        cl -Ic:\c4\include $(CFLAGS) ..\TERM.C
+        
+COM.OBJ: ..\COM.C ..\BUFDEF.H ..\SEDTDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -Ic:\c4\include $(CFLAGS) ..\COM.C
+        
+COMA.OBJ: ..\COMA.C ..\BUFDEF.H ..\SEDTDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -Ic:\c4\include $(CFLAGS) ..\COMA.C
+        
+COMB.OBJ: ..\COMB.C ..\BUFDEF.H ..\SEDTDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -Ic:\c4\include $(CFLAGS) ..\COMB.C
+        
+COMC.OBJ: ..\COMC.C ..\BUFDEF.H ..\SEDTDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -Ic:\c4\include $(CFLAGS) ..\COMC.C
+        
+COMD.OBJ: ..\COMD.C ..\BUFDEF.H ..\SEDTDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -Ic:\c4\include $(CFLAGS) ..\COMD.C
+        
+ENT.OBJ: ..\ENT.C ..\SEDTDEF.H ..\BUFDEF.H ..\VDUDEF.H
+        cl -Ic:\c4\include $(CFLAGS) ..\ENT.C
+        
+FILE.OBJ: ..\FILE.C ..\FILE.H
+        cl -Ic:\c4\include $(CFLAGS) ..\FILE.C
+        
+VARS.OBJ: ..\VARS.C
+        cl -Ic:\c4\include $(CFLAGS) ..\VARS.C
+        
+TEXT.OBJ: ..\TEXT.C ..\TEXT.H
+        cl -Ic:\c4\include $(CFLAGS) ..\TEXT.C
+        
+TEXT1.OBJ: ..\TEXT1.C ..\TEXT1.H
+        cl -Ic:\c4\include $(CFLAGS) ..\TEXT1.C
+        
+REGEXP.OBJ: ..\REGEXP.C
+        cl -Ic:\c4\include $(CFLAGS) ..\REGEXP.C
+        
+REGSUB.OBJ: ..\REGSUB.C
+        cl -Ic:\c4\include $(CFLAGS) ..\REGSUB.C
+        
+MSCPC.OBJ: ..\MSCPC.ASM
+        MASM /ZI ..\MSCPC,;
+        
+KH.OBJ: ..\KH.ASM
+        MASM /ZI ..\KH,;
+        
+PCTYPE.OBJ: ..\PCTYPE.ASM
+        MASM /ZI ..\PCTYPE,;
+        
+        SEDT.LNK:
+        
+\tc\lib\c0m+SEDT+EDIT+COM+COMA+COMB+COMC+COMD+ENT+KEY+VDU+TERM+BUF+FILE+TEXT+TEXT1+VARS+REGEXP+REGSUB+MSCPC+KH+PCTYPE+e:\dvc\api\api1m+e:\dvc\api\api2mt
+SEDT
+
+\tc\lib\cm.lib
+
+        MS-Windows make file:
+        
+Wsedt.exe: Wsedt.obj SEDT.obj EDIT.obj COM.obj COMA.obj COMB.obj COMC.obj COMD.obj ENT.obj KEY.obj VDU.obj TERM.obj BUF.obj FILE.obj TEXT.obj TEXT1.obj VARS.obj MSCWIN.obj PCTYPE.obj regexp.obj regsub.obj wsedt.res Wsedt.def
+    link @wsedt.lnk
+    c:\Windows\bin\rc Wsedt.res
+    c:\Win3\convert\mark memory wsedt.exe
+
+Wsedt.res: Wsedt.rc Wsedt.ico Wsedt.h Wsedt.dlg
+        c:\windows\bin\rc -r Wsedt.rc
+
+Wsedt.obj: ..\Wsedt.c Wsedt.h ..\SEDTDEF.H ..\VDUDEF.H ..\BUFDEF.H
+        cl -I. -I.. -c -u -AM -Gsw -Ox -Zde -Zi -Zp -DDOS -DWindows ..\Wsedt.c
+
+SEDT.OBJ: ..\SEDT.C ..\SEDTDEF.H ..\BUFDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -I. -I.. -c -u -AM -Gsw -Ox -Zde -Zi -Zp -DDOS -DWindows ..\SEDT.C
+        
+EDIT.OBJ: ..\EDIT.C ..\BUFDEF.H ..\SEDTDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -I. -I.. -c -u -AM -Gsw -Ox -Zde -Zi -Zp -DDOS -DWindows ..\EDIT.C
+        
+KEY.OBJ: ..\KEY.C ..\SEDTDEF.H ..\BUFDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -I. -I.. -c -u -AM -Gsw -Ox -Zde -Zi -Zp -DDOS -DWindows ..\KEY.C
+        
+BUF.OBJ: ..\BUF.C ..\BUFDEF.H
+        cl -I. -I.. -c -u -AM -Gsw -Ox -Zde -Zi -Zp -DDOS -DWindows ..\BUF.C
+        
+VDU.OBJ: ..\VDU.C ..\VDUDEF.H ..\SEDTDEF.H 
+        cl -I. -I.. -c -u -AM -Gsw -Ox -Zde -Zi -Zp -DDOS -DWindows ..\VDU.C
+        
+TERM.OBJ: ..\TERM.C ..\VDUDEF.H 
+        cl -I. -I.. -c -u -AM -Gsw -Ox -Zde -Zi -Zp -DDOS -DWindows ..\TERM.C
+        
+COM.OBJ: ..\COM.C ..\BUFDEF.H ..\SEDTDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -I. -I.. -c -u -AM -Gsw -Ox -Zde -Zi -Zp -DDOS -DWindows ..\COM.C
+        
+COMA.OBJ: ..\COMA.C ..\BUFDEF.H ..\SEDTDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -I. -I.. -c -u -AM -Gsw -Ox -Zde -Zi -Zp -DDOS -DWindows ..\COMA.C
+        
+COMB.OBJ: ..\COMB.C ..\BUFDEF.H ..\SEDTDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -I. -I.. -c -u -AM -Gsw -Ox -Zde -Zi -Zp -DDOS -DWindows ..\COMB.C
+        
+COMC.OBJ: ..\COMC.C ..\BUFDEF.H ..\SEDTDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -I. -I.. -c -u -AM -Gsw -Ox -Zde -Zi -Zp -DDOS -DWindows ..\COMC.C
+        
+COMD.OBJ: ..\COMD.C ..\BUFDEF.H ..\SEDTDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -I. -I.. -c -u -AM -Gsw -Ox -Zde -Zi -Zp -DDOS -DWindows ..\COMD.C
+        
+ENT.OBJ: ..\ENT.C ..\SEDTDEF.H ..\BUFDEF.H ..\VDUDEF.H
+        cl -I. -I.. -c -u -AM -Gsw -Ox -Zde -Zi -Zp -DDOS -DWindows ..\ENT.C
+        
+FILE.OBJ: ..\FILE.C ..\FILE.H
+        cl -I. -I.. -c -u -AM -Gsw -Ox -Zde -Zi -Zp -DDOS -DWindows ..\FILE.C
+        
+VARS.OBJ: ..\VARS.C
+        cl -I. -I.. -c -u -AM -Gsw -Ox -Zde -Zi -Zp -DDOS -DWindows ..\VARS.C
+        
+TEXT.OBJ: ..\TEXT.C ..\TEXT.H
+        cl -I. -I.. -c -u -AM -Gsw -Ox -Zde -Zi -Zp -DDOS -DWindows ..\TEXT.C
+        
+TEXT1.OBJ: ..\TEXT1.C ..\TEXT1.H
+        cl -I. -I.. -c -u -AM -Gsw -Ox -Zde -Zi -Zp -DDOS -DWindows ..\TEXT1.C
+        
+REGEXP.OBJ: ..\REGEXP.C
+        cl -I. -I.. -Ic:\c4\include -Lr -c -Oxs -Zi -Zp -AM -DDOS -DWindows ..\REGEXP.C
+        
+REGSUB.OBJ: ..\REGSUB.C
+        cl -I. -I.. -Ic:\c4\include -Lr -c -Oxs -Zi -Zp -AM -DDOS -DWindows ..\REGSUB.C
+        
+MSCWIN.OBJ:  ..\MSCWIN.ASM
+        masm ..\MSCWIN,;
+        
+PCTYPE.OBJ: ..\PCTYPE.ASM
+        MASM ..\PCTYPE,;
+        
+        WSEDT.LNK:
+        
+/M/NOD/LI/ALIGN:16 Wsedt+SEDT+EDIT+COM+COMA+COMB+COMC+COMD+ENT+KEY+VDU+TERM+BUF+FILE+TEXT+TEXT1+VARS+REGEXP+REGSUB+MSCWIN+PCTYPE
+Wsedt
+NUL
+f:\c5.1\lib\mlibw+f:\c5.1\lib\mlibcew/NOE
+Wsedt.def
+
+
+        OS/2 make file:
+        
+SEDT.EXE: SEDT.OBJ EDIT.OBJ COM.OBJ COMA.OBJ COMB.OBJ COMC.OBJ COMD.OBJ ENT.OBJ KEY.OBJ VDU.OBJ TERM.OBJ BUF.OBJ FILE.OBJ TEXT.OBJ TEXT1.OBJ VARS.O SCAN.OBJ REGEXP.OBJ REGSUB.OBJ
+        LINK /NOE SEDT+EDIT+COM+COMA+COMB+COMC+COMD+ENT+KEY+VDU+TERM+BUF+FILE+TEXT+TEXT1+VARS+REGSUB+REGEXP+SCAN,SEDT,SEDT,MLIBCEP+DOSCALLS;
+
+SEDT.OBJ: ..\SEDT.C ..\SEDTDEF.H ..\BUFDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -I. -I.. -c -Lp -Oxs -Zi -Zp -AM -DOS2 ..\SEDT.C
+        
+EDIT.OBJ: ..\EDIT.C ..\BUFDEF.H ..\SEDTDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -I. -I.. -c -Lp -Oxs -Zi -Zp -AM -DOS2 ..\EDIT.C
+        
+KEY.OBJ: ..\KEY.C ..\SEDTDEF.H ..\BUFDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -I. -I.. -c -Lp -Oxs -Zi -Zp -AM -DOS2 ..\KEY.C
+        
+BUF.OBJ: ..\BUF.C ..\BUFDEF.H
+        cl -I. -I.. -c -Lp -Oxs -Zi -Zp -AM -DOS2 ..\BUF.C
+        
+VDU.OBJ: ..\VDU.C ..\VDUDEF.H ..\SEDTDEF.H
+        cl -I. -I.. -c -Lp -Oxs -Zi -Zp -AM -DOS2 ..\VDU.C
+        
+TERM.OBJ: ..\TERM.C ..\VDUDEF.H ..\SEDTDEF.H
+        cl -I. -I.. -c -Lp -Oxs -Zi -Zp -AM -DOS2 ..\TERM.C
+        
+COM.OBJ: ..\COM.C ..\BUFDEF.H ..\SEDTDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -I. -I.. -c -Lp -Oxs -Zi -Zp -AM -DOS2 ..\COM.C
+        
+COMA.OBJ: ..\COMA.C ..\BUFDEF.H ..\SEDTDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -I. -I.. -c -Lp -Oxs -Zi -Zp -AM -DOS2 ..\COMA.C
+        
+COMB.OBJ: ..\COMB.C ..\BUFDEF.H ..\SEDTDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -I. -I.. -c -Lp -Oxs -Zi -Zp -AM -DOS2 ..\COMB.C
+        
+COMC.OBJ: ..\COMC.C ..\BUFDEF.H ..\SEDTDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -I. -I.. -c -Lp -Oxs -Zi -Zp -AM -DOS2 ..\COMC.C
+        
+COMD.OBJ: ..\COMD.C ..\BUFDEF.H ..\SEDTDEF.H ..\VDUDEF.H ..\FILE.H
+        cl -I. -I.. -c -Lp -Oxs -Zi -Zp -AM -DOS2 ..\COMD.C
+        
+ENT.OBJ: ..\ENT.C ..\SEDTDEF.H ..\BUFDEF.H ..\VDUDEF.H
+        cl -I. -I.. -c -Lp -Oxs -Zi -Zp -AM -DOS2 ..\ENT.C
+        
+FILE.OBJ: ..\FILE.C ..\FILE.H
+        cl -I. -I.. -c -Lp -Oxs -Zi -Zp -AM -DOS2 ..\FILE.C
+        
+VARS.OBJ: ..\VARS.C
+        cl -I. -I.. -c -Lp -Oxs -Zi -Zp -AM -DOS2 ..\VARS.C
+        
+TEXT.OBJ: ..\TEXT.C ..\TEXT.H
+        cl -I. -I.. -c -Lp -Oxs -Zi -Zp -AM -DOS2 ..\TEXT.C
+        
+TEXT1.OBJ: ..\TEXT1.C ..\TEXT1.H
+        cl -I. -I.. -c -Lp -Oxs -Zi -Zp -AM -DOS2 ..\TEXT1.C
+        
+REGEXP.OBJ: ..\REGEXP.C
+        cl -I. -I.. -Ic:\c4\include -Lp -c -Oxs -Zi -Zp -AM -DOS2 ..\REGEXP.C
+        
+REGSUB.OBJ: ..\REGSUB.C
+        cl -I. -I.. -Ic:\c4\include -Lp -c -Oxs -Zi -Zp -AM -DOS2 ..\REGSUB.C
+        
+SCAN.OBJ: ..\SCAN.ASM
+        MASM ..\SCAN,;
+        

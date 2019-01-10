@@ -1,0 +1,1294 @@
+.Copyright (c) Anker Berg-Sonne, 1985-1990
+	Sedt Version 4.1 (281)
+
+
+			     Sedt Reference Manual
+
+				     Index
+
+	0		Introduction
+
+	1		Primer
+	1.1		Getting Started
+	1.2		Display
+	1.3		EDT keypad mapping
+	1.3.1		Getting help
+	1.3.2		Moving the cursor
+	1.3.3		Inserting Text
+	1.3.4		Deleting Text
+	1.3.5		Saving your changes
+	1.3.6		Summary
+
+	2.1		Setting up the ruler
+	2.2		Options/Modes
+	2.3		Responding to Prompts
+	2.4		Repeating Commands
+	2.5		Cursor Movement
+	2.6 		Text Insertion
+	2.7 		Selecting Text Ranges
+	2.8 		Deleting Text
+	2.9 		Substitution
+	2.10		Windows and Buffers
+	2.11		Text Formatting
+	2.12		Programming Keys
+	2.13		Changing Options
+	2.14		Miscellaneous Commands
+	
+	Copyright (c) Anker Berg-Sonne, 1985-1990
+	Sedt Version 4.1 (281)
+
+
+			      Sedt Reference Manual
+
+	0			  Terminology
+
+		Sedt  is  supported  on  a wide range of systems  with	a
+	variety  of  keyboard  layouts.  When the manual instructs you to
+	type  a key it will use a generic  name  for  the  key,  such  as
+	<Return>.  Use the tables in Appendix A to  locate  where the key
+	is located on your keyboard.  The angle brackets are also used to
+	show where an actual parameter needs to be inserted.  E.g.   when
+	you see <line number> you should substitute a decimal number that
+	denotes a  line  in  your  file.  A construct surrounded by curly
+	brackets {} is	optional.    If  a construct is followed by three
+	periods ... it can be repeated as many times as you wish.
+
+		A keystroke sequence described as <Gold> <Key> is entered
+	by typing the <Gold> key first,  then  releasing  it  and  typing
+	<Key>.	  A sequence described as <Control>  <Key>  is	typed  by
+	holding down the <Control> key while <Key> is typed.
+
+		The <Gold> key	is  the  most  important key to remember.
+	It's location on the  different  keyboards that Sedt supports is:
+	Keypad PF1 on Digital keyboards,  Esc  or  Num Lock on old IBM PC
+	keyboards  or  the  new  IBM  PC  keyboard,    Esc   on  old  IBM
+	PC/AT keyboards and Keypad ( on ATARI ST keyboards.
+	
+	Copyright (c) Anker Berg-Sonne, 1985-1990
+	Sedt Version 4.1 (281)
+
+
+				    Tutorial
+
+	1.1			 Getting Started
+
+		To start  editing  a  file with Sedt you type the command
+	"Sedt <file name>"  at	the operating system command prompt.  The
+	same command is used to create a new file and to edit an existing
+	file.
+
+	For example:
+
+		SEDT FOO.BAR
+
+		will create a new file named FOO.BAR, or modify  the file
+	if it already exists.
+
+	1.2			     Display
+
+		The Sedt screen  display show a section, called a window,
+	of the file you  are  editing.	  What	you  see  is what will be
+	written to the file.   Editors	of  this  type are called WYSIWYG
+	(What You See Is What You  Get)  editors.    Above  and below the
+	window is  displayed  information  about the edit session and the
+	settings of options.
+
+		The first  line on the display , the FILE line, gives you
+	information about the file you currently are editing.
+
+			In the	first column you may see an asterisk (*).
+		This shows that  you  have modified the file since it was
+		loaded, or since last time it was saved by you.
+
+			Next Sedt shows the name of the file being edited
+		after the text "File:  ".    The name is exactly the same
+		as the one you entered when you called Sedt.
+
+			After the  text  "C="  you  will  see  the column
+		within the text  that the cursor is placed over.  On some
+		versions the column number  is	not shown for performance
+		reasons.
+
+			The text "L=" is followed  by  the  absolute line
+		number within the text being edited  that  the	cursor is
+		placed on.
+
+			The next field, after the text "B="  shows  which
+		of   several  possible	file  buffers  you  are  editing.
+		Buffers allow you to edit several files at the same time.
+		To  begin  with, Sedt will always display buffer number 0
+		containing the	file  you specified when you called Sedt.
+		More information about	buffers  is  given  later in this
+		manual.
+
+			On  IBM  PCs, PS/2s and compatibles a C  will  be
+		displayed  in  the  last  column if the Caps Lock  is  in
+		effect.
+
+		The second line  of  the  display is the RULER.  It shows
+	how the text you  are  editing will be formatted.  You can change
+	the ruler a number of  ways.  The ruler shown when you enter Sedt
+	is the DEFAULT RULER, which most  often  is the one supplied with
+	Sedt.  You, or your system manager  may  change the default ruler
+	or any other ruler stored on disk.
+
+		All lines from the third to the third from the bottom are
+	a WINDOW into the file	you  are editing.  In the window you will
+	see a portion of the text  you	are editing.  The location of the
+	blinking cursor shows the position that editing  operations  will
+	be performed at.
+
+		The second line  from  the  bottom  is	the MODE line and
+	shows you the current state of several options within  Sedt.  All
+	of these options are under your control.
+
+			First,	you  will  see	either	"Fwd"  or  "Rev".
+		Several  commands  use	the status of this mode and  will
+		move  toward  the beginning of the text when the mode  is
+		"Rev"  and  toward  the  end of the text when the mode is
+		"Fwd".
+
+			Secondly  you will see either "Ins" or "Rep".  In
+		"Ins" mode, which Sedt starts the  session  in,  all text
+		insertion will push the character at the  cursor  to  the
+		right to make room for the new character.  In  "Rep" mode
+		the  text you type will over-write the text previously on
+		the screen.
+
+			The "Lin" or "Blk" display  show how text cut and
+		paste  operations  will be performed.	More  information
+		about this mode is given in the  section dealing with cut
+		and paste.
+
+			"Tab:Exp"  or	 "Tab:Ins"   shows  whether  Sedt
+		attempts to save  file	space by inserting horizontal tab
+		characters.  Sedt assumes  that  the terminal and printer
+		have  tab  stops  set  at    8	 column  intervals.    In
+		"Tab:Exp"  mode, which is  the	state  Sedt  is  in  when
+		started,  it  does  not use  horizontal  tab  characters.
+		Several  replace  mode functions and cut  and  paste  may
+		return	undesired results when "Tab:Ins" is used.  It  is
+		recommended that you  keep  Sedt in "Tab:Exp" mode unless
+		you are an experienced user of Sedt.
+
+			"Case:Off" or "Case:On" shows	whether  searches
+		are case  sensitive or not.  When "Case:Off" text will be
+		satisfy searches no  matter  what  case  any  letter has.
+		With "Case:On" only exact matches in upper and lower case
+		will satisfy a search.
+
+			"Regexp:Off"	or  "Regexp:On"  shows	  whether
+		searches  are  literal	or regular  expression	searches.
+		When "Regexp=On" the search string will be interpreted as
+		a regular expression.
+
+			"Chr" or "Def" shows whether function definitions
+		are inserted in  responses  to	prompts.    When "Chr" is
+		displayed only characters created  by  keys are inserted.
+		When "Def" is displayed pressing a key with an associated
+		function  definition will cause the function  definitions
+		to be inserted.
+
+			"Free" or  "Rest" shows how the cursor keys work.
+		If "Free" is  displayed,  the cursor movement will always
+		be directly in left,  right,  up  or  down.  If a line is
+		shorter than the cursor position you are going to it will
+		be extended with spaces.  When	"Rest"	is  displayed the
+		left  and  right  arrows  will move forward  or  backward
+		through the file and when an end or begginning of line is
+		encountered  the  cursor  will change line.  Up and  down
+		arrow  keys  will nover advance beyond the last character
+		in a line.
+
+			"Shift=" is followed by either	a  number  or the
+		text "Off".  When "Shift="  is	followed  by a number the
+		screen window will be shifted horizontally to ensure that
+		the  cursor  remains within the window.   As  the  cursor
+		advances  beyond  the  right-most position on the screen,
+		the  window  will  be displaced right to move the  cursor
+		back within the screen.  When the text "Off" is displayed
+		the leftmost  position	of  the window will correspond to
+		the leftmost position of the text.
+
+		The next  field  is  blank  unless  keystrokes	are being
+		learned  or replayed.	 When  learning  the  field  will
+		display  "Lrn".   When	replaying	it  will  display
+		"Exe".
+
+		The  field  "Mod="  is	followed by the  numbers  of  the
+		editing buffers that contain unsaved changes.
+
+	1.3			EDT keypad layout
+
+		By default,  Sedt will program the keys so that Sedt will
+	be familiar to	users  of  the Digital PDP-11 and VAX EDT editor.
+	This manual describes the EDT keypad programming environment.
+
+	1.3.1			  Getting help
+
+		During an editing session you can  get	help  for Sedt by
+	typing <Gold> H or <PF2>.  <Gold>  is usually the top left key on
+	the numeric keypad.  <PF2> is usually the  second  key	from  the
+	left in the top row of the numeric keypad.
+
+		The help function will display a series of menus  on  the
+	screen. To exit from help type <Space>.
+
+	1.3.2			Moving the cursor
+
+		The simplest commands to move the  cursor  are	the arrow
+	keys.
+
+			The <Right arrow> key will advance  the cursor by
+		one character in the text.  As the cursor advances beyond
+		the last character on a line it moves to the start of the
+		next line.
+
+			The  <Left arrow> key moves  a	single	character
+		toward the  start  of the text.  As the cursor moves past
+		the start of  a  line  it goes to the end of the previous
+		line.
+
+			The <Up  arrow>  key  moves  straight up.  If the
+		cursor moves from a position that is further to the right
+		than the end of the previous line it will move to the end
+		of  it.   Sedt remembers the  column  that  a  series  of
+		vertical  arrow  commands  started  at	and will  try  to
+		position the cursor at the original column.
+
+			<Down  arrow>  moves  the  cursor  straight down.
+		Just  as  with	<Up arrow> the cursor will  not  position
+		itself further right than the end of a line  of  text and
+		will try to position itself at the same column as  it was
+		at when a series of vertical arrow commands were started.
+
+		The  arrow  keys  are  all  that you need to move to  any
+	location in the text.  On most systems you can hold the  key down
+	and  have  the	command repeated at a high rate.  Sedt can handle
+	very high  rates  of command input and cannot be harmed by having
+	commands repeated.
+
+	1.3.3			 Inserting Text
+
+		Inserting text is  easy  with  Sedt.	Simply	place the
+	cursor where you want  the first character and type the text.  If
+	there are characters over or to the right of the cursor they will
+	be pushed to the right as  you	type.  To end a line of input and
+	continue on the next line simply type a <Return>.   You can enter
+	an arbitrary ASCII character by typing <Gold>, then  the  decimal
+	value of the character on the normal typewriter keyboard and then
+	<Gold> and finally <Keypad 3>.
+
+	1.3.4			  Deleting Text
+
+		Text is easily deleted by moving the  cursor to the right
+	of the character you want to delete and  typing the <Delete> key.
+	If the cursor is  at  the  far left of a line it will be moved to
+	the end of the previous line.
+
+	1.3.5		       Saving your changes
+
+		When you have finished your  changes  you  can	save them
+	and leave Sedt by typing two keys after one another:   <Gold> and
+	the F key.
+
+		If you decide not to keep the changes you can type <Gold>
+	and Q.	If you have made any changes to  the  file  you  will  be
+	asked  for confirmation before	your  changes  are  thrown  away.
+	Answer the affirmative if you are sure you do not need them.
+
+		If, for  some  reason such as a power failure, you cannot
+	complete an editing  session,  there is still hope.  Sedt will at
+	regular intervals save the file you are editing.  These saves are
+	only done if you have made changes to the file.
+
+	1.3.6			     Summary
+
+		With the commands  described in the tutorial you can make
+	any change you need!	Therein  lies  the beauty of Sedt.  It is
+	extremely easy to use, fast  and  reliable.    The  rest  of  the
+	commands extend Sedt by allowing you  to  perform  complex  tasks
+	with  a  few simple keystrokes.  The  Reference Manual takes  you
+	through all these powerful features.
+
+	2.1		      Setting up the ruler
+
+		Sedt offers  several options for formatting the text that
+	you input.   The  current formatting options are displayed on the
+	ruler line on the second line of the display.
+
+		The initial contents of  the  ruler line are defined by a
+	file in the standard directory for Sedt.   When Sedt is called it
+	reads the contents of the file RULER0.TXT and  loads the contents
+	into the ruler.
+
+		You can change the ruler either by loading a  ruler  file
+	or by changing it interactively.   Most ruler changes are done by
+	entering RULER MODE by typing <Gold> R, which takes the cursor up
+	into the ruler line.  When you have  finished  changing the ruler
+	type <Return>, which will take you back to normal editing mode.
+
+		The following commands are valid in ruler mode:
+
+		<Right Arrow>	Moves the cursor one column to the right.
+
+		<Left Arrow>	Moves the cursor one column to the left.
+
+		<Gold> <Digit>	Saves  the  current    ruler   in  Sedt's
+				standard    directory  in  a  file  named
+				RULER<Digit>.TXT.
+
+		<Digit> 	Loads  a saved ruler from Sedt's standard
+				directory    in        a    file    named
+				RULER<Digit>.TXT.
+
+		<Control> H
+				Moves the  cursor  to column one.
+
+		<Tab>		Moves  the cursor to the  next	non-blank
+				position on the ruler.
+
+		<Return>	Exits ruler mode.
+
+		<Space> 	Clears any ruler controls at the  current
+				cursor position.
+
+		L		Sets  the  left  margin  at  the  current
+				cursor	position.
+
+				When  a  <Return>  is entered the  cursor
+				will be indented to the left margin.
+
+		W		Sets the word wrap  at the current cursor
+				position.
+
+				When input is typed to the right  of  the
+				right margin or the justification column,
+				the input will be wrapped and indented to
+				the  word wrap column or automatic margin
+				column.
+
+		R		Sets  the  right  margin at  the  current
+				cursor position.
+
+				If any input is typed to the right of the
+				right margin the text will be wrapped and
+				indented  to  the  word  wrap  column  or
+				automatic margin column.
+
+		J		Sets  the  justification  column  at  the
+				current cursor position.
+
+				If any input is typed to the right of the
+				justification  column,	the  text will be
+				justified by  having  the spacing between
+				words  on  the	 line  modified  until	a
+				straight    right    margin    at     the
+				justification  column  is achieved.   Any
+				text  that cannot fit on the current line
+				is wrapped  to the next line and indented
+				to the word  wrap column or the automatic
+				margin column.
+
+		I		Sets the indentation level at the current
+				cursor position.
+
+				If a <Tab> is  entered to the left of the
+				indentation  column,  the cursor will  be
+				advanced  to the indentation column.
+
+		T		Sets  a  tab  stop  at the current cursor
+				position.   Tab  stops can only be set up
+				to  column  232,  they	are  fixed  at	8
+				character intervals beyond that.
+
+				If a <Tab> is entered to  the  left  of a
+				tab  stop the cursor will be advanced  to
+				the tab stop.
+
+		A		Sets the  automatic margin at the current
+				cursor position.
+
+				When  text  is	wrapped  by typing to the
+				right	 of  the    right    margin    or
+				justification  column, or a  <Return>  is
+				typed and the automatic margin is active,
+				the cursor will be advanced to	the  same
+				column	as    the    leftmost	printable
+				character on the  line	the cursor was on
+				before	the  character was  typed.    The
+				automatic  margin will also be	moved  to
+				this  position.    This  feature is  most
+				useful for structured programming.
+
+		-		Clears tab stops  at  the  current cursor
+				position.
+
+		Some  of  the tab controls  are  mutually  exclusive  and
+	setting one of these will automatically cancel those options that
+	it excludes. The following options are mutually exclusive:
+
+		A and W
+
+		R and J
+
+		If several option are set at the  same	column	the ruler
+	will only display one of them.
+
+		To cancel an option  other  than  T,  place the cursor on
+	column 1 and type the option.  The only exception to this rule is
+	A.  This can only be canceled by typing R in any position.
+
+		Saved rulers allow you to  set	up  to 10 different ruler
+	settings according to your preference.	 You can change the ruler
+	that Sedt  loads  after start-up by saving the setting you desire
+	in ruler number 0.
+
+	Example rulers:
+
+		A	T	T	T	T ...
+
+			This ruler  is	most  convenient  for  structured
+		programming.  Every  time  a  return is entered Sedt will
+		indent to the left  margin  of	the line just terminated.
+
+		W	L	T	T	R ...
+
+			Every time a return is entered the cursor will be
+		indented to the position of the  L  on	the  ruler  line.
+		When text is typed to the right  of  R	the  line will be
+		wrapped to the left margin.
+
+		I	L	W	T	J ...
+
+			This ruler will cause text to be filled between W
+		and  J.    When  a return is entered the cursor  will  be
+		indented to the L.
+
+	2.2			  Options/Modes
+
+		The bottom line of the display shows the state of several
+	options that affect  how Sedt commands work.  Each of these has a
+	default state.
+
+	Forward/Reverse (default:Forward)
+
+			Most cursor commands move  in the direction shown
+		by the direction state.
+
+			To  change the direction state type <Keypad 4> or
+		<Keypad 5>.
+
+	Insert/Overstrike (default:Insert)
+
+			When  text is inserted in insert mode  it  pushes
+		any characters at or to the right of  the  cursor  to the
+		right  to  make  room  for the text being inserted.    In
+		replace mode text  originally  at  the cursor position is
+		overwritten.
+
+			To change the state between insert and overstrike
+		modes type <Gold> O.
+
+	Line/Block (Default:Line)
+
+			This  state  only  has	effect	when  cutting  or
+		pasting text.
+
+			In line mode  a  cut will remove all text between
+		the select point and  the  cursor  position,  and a paste
+		will  insert the contents of  the  paste  buffer  at  the
+		cursor position.
+
+			In block mode a cut will remove the  rectangle of
+		text defined by the select point and the cursor  position
+		and a paste will push all text from the cursor	column to
+		the  right  to	make  room  for the contents of the paste
+		buffer.
+
+			To change between line and block mode type <Gold>
+		L.
+
+	Tabs:Expanded/Tabs:Inserted (Default:Tabs:Expanded)
+
+			When tabs are expanded Sedt will always use ASCII
+		Space characters to indent text.  When tabs  are inserted
+		Sedt  will  use  ASCII	HT and Space characters.   It  is
+		recommended that the state be left as tabs expanded.
+
+			To change the tab mode type <Gold> I.
+
+	Screen Shift=<Number>/Screen Shift=Off (Default:Screen Shift=0)
+
+			If screen shift is  off  the  leftmost	character
+		position  on the screen will  always  correspond  to  the
+		first column of the text file.
+
+			If screen shift shows a number,  Sedt  will  keep
+		the  cursor  within  the visible screen by  shifting  the
+		screen	horizontally through the file.	The number  shown
+		is  the  number  of  columns  hidden to the left  of  the
+		screen. This process is totally automatic.
+
+			To change the screen shift mode type <Gold> A.
+
+	Learning/Executing
+
+			The Learning  mode  indicator  shows that Sedt is
+		storing all keyboard input for later reexecution.
+
+			<Gold> F17>  will  store  learned keystrokes into
+		^B.   Terminate  learning  by  typing  ^B.    The  stored
+		keystrokes are executed by typing ^B again.
+
+			<Gold>	<F18> will prompt  for	a  key	to  store
+		keystrokes in and then store  subsequent keystrokes until
+		the same key is typed.	 To execute the stored keystrokes
+		type the key you stored them in.
+
+			The Executing mode  indicator  shows that Sedt is
+		reexecuting a stored sequence of keystrokes.
+
+			Execute mode is entered by typing <Gold> <F18>
+
+	2.3		     Responding to Prompts
+
+		Some  commands,  such  as  the	search	command,  require
+	arguments.  Such commands will	write a prompt on the bottom line
+	of the screen and wait for you to  enter  a  response.	  You can
+	enter the following when responding to a prompt:
+
+		Any key on  the  typewriter keyboard will be entered into
+			the prompt string at the cursor position.
+
+		<Control> U
+			Will abort the command.
+
+		<Return>
+		<Keypad Enter>
+		<Do>
+			Completes the response to the prompt.
+
+		<Delete>
+		<Backspace>
+			Deletes the character behind the cursor.
+
+		<Gold> <Return>
+			Inserts a CR/LF pair in the prompt buffer.
+
+		<Left Arrow>
+			Moves the cursor one character left.
+
+		<Right Arrow>
+			Moves the cursor one character right.
+
+		<Up Arrow>
+			If typed before  any  other character will recall
+			the previous  response	to  a prompt.  Successive
+			<Up  Arrow>s  will   move  through  the  last  10
+			responses.
+
+		<Down Arrow>
+			If <Up Arrow> has  recalled  previous  responses,
+			<Down Arrow> will move forward	towards  the last
+			response.
+
+		Other control characters will be  inserted  at the cursor
+			position.
+
+		Function keys will insert the programming  of the keys at
+			the cursor.
+
+		A  special  prompt   is  used  to  confirm  actions  that
+	potentially may cause significant losses of data such as quitting
+	an edit session without saving all changes.  These prompts pose a
+	question, followed by <Y/N>:.  Responses  to these prompts may be
+	a y or Y to confirm, a	n or N affirm or <control> U to abort the
+	command that generated the question.
+
+	2.4		       Repeating Commands
+
+		Most commands can be repeated by  typing first <Gold> and
+	then the number of times you want  the	command  repeated  on the
+	normal typewriter keyboard before typing the command.
+
+		A few  commands do not accept such a repeat count, either
+	because it makes  no  sense,  or  because  the number is used for
+	other purposes.
+
+		As  you  type the number it will be shown on the  message
+	line of the display.
+
+		If  you  happen  to mistype the number you can delete  it
+	digit by digit with the <Delete> key.
+
+	2.5			Cursor Movement
+
+		Cursor movement commands  come	in  two  flavors.    Some
+	take the direction of  movement from the direction flag, which is
+	displayed in the first field  of  the  mode  line, whereas others
+	always move  in  a  fixed direction.  The direction determined by
+	the direction flag is called the DEFAULT DIRECTION.
+
+		The  direction	flag  is controlled  with  the	following
+	commands:
+
+		<Gold> +
+		<Gold> >
+		<Keypad 4>
+			Set the direction  flag  to  forward:  toward the
+			end  of the text  in  the  buffer.    <Keypad  4>
+			changes the direction permanently.   <Gold> + and
+			<Gold> > only changes it for the next command.
+
+		<Gold> -
+		<Gold> <
+		<Keypad 5>
+			Set the direction flag to reverse:    toward  the
+			beginning of the text in the buffer.   <Keypad 5>
+			changes  the direction permanently.  <Gold> - and
+			<Gold> < only changes it for the next command.
+
+		Most movement commands	can  be repeated by typing <Gold>
+	and then typing the number of times you want the command repeated
+	immediately  before you type the command.   The  number  must  be
+	typed on the normal typewriter keyboard.
+
+		Commands that move the cursor are:
+
+		<Gold> .
+			Moves the cursor to a previously set mark.  There
+			are 9 different marks that you	can set.  To move
+			to mark number 1 type <Gold> .	.  To move to any
+			of  the  other marks type <Gold> followed by  the
+			number	of  the  mark  (1  to  9)  on the  normal
+			typewriter keyboard  and  then <Gold> .  .  Marks
+			are useful for	jumping  back  and  forth between
+			different points in the buffer.
+
+		<Gold> B
+		<Gold> <Keypad 4>
+			Moves  the  cursor to the position just after the
+			last character of text in the buffer.
+
+
+		<Gold> M
+			Sets  a  mark  at  the current	position  of  the
+			cursor.  To set mark number 1  type <Gold> M.  To
+			set other marks (1 to 9) type <Gold>  followed by
+			the  number  of the mark on the normal typewriter
+			keyboard and then <Gold> M.
+
+		<Gold> T
+		<Gold> <Keypad 5>
+			Moves  the  cursor  to the first character in the
+			buffer.
+
+		<Gold> U
+			If you	type  <Gold> U as the first input after a
+			movement command the cursor will be moved back to
+			the  position  it  was	at before the move.  This
+			command is  very  useful to undo undesired moves.
+			Several commands that  delete  text  can  also be
+			undone with <Gold> U.  If the last command cannot
+			be undone you will receive an error message.
+
+		<Control> H
+			Will move the cursor to the  beginning of a line.
+			If the cursor already is at the  beginning  of	a
+			line  it  will be moved to the beginning  of  the
+			previous line.
+
+		<Find>
+		<PF3>
+			Will  search  in  the default direction  for  the
+			string given in the last <Gold> <Find>	or <Gold>
+			<Keypad  9>  command.	 The  <Find>  command  is
+			insensitive to the case of the string.
+
+		<Prev Screen>
+			Moves up by one fewer lines than there are in the
+			window.  The cursor is positioned at the start of
+			the line.
+
+		<Next Screen>
+			Moves  down  by one fewer lines than there are in
+			the window.   The  cursor  is  positioned  at the
+			start of the line.
+
+		<Up Arrow>
+			Moves one line up and tries to keep the cursor at
+			the same column as it was at before a sequence of
+			up and down arrow moves.
+
+		<Left Arrow>
+			Moves one character backward.
+
+		<Down Arrow>
+			Moves  one line down and tries to keep the cursor
+			at the same column as it was at before a sequence
+			of up and down arrow moves.
+
+		<Right Arrow>
+			Moves one character forward.
+
+		<Keypad 0>
+			Moves  in  the	default  direction  to	the  next
+			beginning of line.
+
+		<Keypad 1>
+			Moves  in  the	default  direction  to	the  next
+			beginning  of  a word.	Spaces before a word  are
+			skipped.    A	 word	 is    either	a  single
+			non-alphanumeric character or a  word composed of
+			alphanumeric characters.
+
+		<Keypad 2>
+			Moves in the default direction to the next end of
+			line.  If the cursor already is at the	end  of a
+			line it will move to the end of the next line.
+
+		<Keypad 3>
+			Moves one character in the default direction.
+
+		<Keypad 7>
+			Moves  in the default direction to the next start
+			of page.    The start of page is determined by an
+			ASCII FF character (Which is inserted with <Gold>
+			P).  If there are no more ASCII FF characters the
+			cursor will be moved to the end of the buffer.
+
+		<Keypad 8>
+			Moves in the default direction	to the next start
+			of a paragraph.  Paragraphs are  delimited  by	a
+			minimum of one empty line.   The cursor is placed
+			over  the  first  non-blank  character	in    the
+			paragraph.
+
+		<Gold> <F19>
+			Moves  to  bracketing character that matches  the
+			one under the cursor.  Matching characters are ',
+			", <, >, [, ], {, }, (,  and  ).    '  and  " are
+			searched  for in the current direction, all other
+			characters are searched for in the direction that
+			the  character	implies.    If	the cursor is not
+			placed over  one of the above characters an error
+			message will be displayed.
+
+		<Gold Find>
+		<Gold> <PF3>
+			Prompts for  a	string	on the bottom line of the
+			display    and	 then  searches  in  the  default
+			direction for  an  occurrence of the string.  The
+			search	is  independent    of  the  case  of  any
+			alphabetic characters in the string.  If an empty
+			response  is  given  to  the  prompt  the  string
+			entered in response to the last  <Gold> <Find> or
+			<Gold> <Keypad 9> will be used.
+
+		<Gold> <Left Arrow>
+			Moves continuously backward  through  the  buffer
+			until the beginning of the buffer is reached or a
+			command is typed.
+
+		<Gold> <Right Arrow>
+			Moves  continuously  forward  through the  buffer
+			until the end of buffer is  reached  or a command
+			is typed.
+
+	2.6 			 Text Insertion
+
+		All insertion  happens	at  the  the cursor position.  To
+	insert at a  different	position  from the one you see the cursor
+	flashing at you have  to  move	the  cursor there first.  See the
+	section on cursor movement for directions on how to move around.
+
+		The regular typewriter keys will cause	the  character on
+	the key to be inserted in the  file  you  are  editing.   If your
+	keyboard  has been programmed for a national character	set  Sedt
+	will use that programming.
+
+		A number of other keys will also cause text insertion:
+
+		<Tab>	The cursor will be advanced to the next tab  stop
+			on the	ruler  by  inserting  spaces  or ASCII HT
+			characters.  If  the mode is set to Tabs:Expanded
+			only   space  characters  will	  be	inserted.
+			Otherwise  a  mixture of HT and space  characters
+			will be used.
+
+			If  an	indentation  point has been set  and  the
+			cursor is to the left of it it	will  space  over
+			intermediate tab stops to the indentation point.
+
+		<Return>
+			A new line will be started at the cursor position
+			and the  cursor will be advanced according to the
+			following rules:
+
+			If an A  is  shown  on	the ruler line the cursor
+			will  be advanced to  the  column  of  the  first
+			printable character on the line just terminated.
+
+			If an L is shown  on  the  ruler  line the cursor
+			will be advanced to the column shown by the L.
+
+			The  cursor is advanced by  inserting  space  and
+			ASCII  HT  characters.	If the	mode  is  set  to
+			Tabs:Expanded	only  space  characters  will  be
+			inserted.
+
+		<Escape>
+		<F11>
+			Inserts an ASCII ESC character.
+
+		<Gold> <Control> I
+			Prompts for a key and will  insert the definition
+			of the key into the file at  the  current  cursor
+			position.  The key can be a function key, control
+			character, gold function key, gold control key or
+			gold character from the typewriter keyboard.
+
+		<Gold> G
+			Prompts for a file name and includes the contents
+			of the file at the cursor position.
+
+		<Gold> P
+			Inserts an ASCII FF character, which starts a new
+			page.
+
+		<Insert Here>
+		<Gold> <Keypad 6>
+			Inserts the  contents  of the paste buffer at the
+			current cursor position.
+
+		<Gold> <Keypad 0>
+			Inserts a  new	line  at  the cursor position and
+			does not advance  the  cursor.
+
+		<Gold> <Keypad 3>
+			Allows insertion of an arbitrary ASCII character.
+			Type <Gold> followed by the decimal value of  the
+			character  (typed  on	 the  regular  typewriter
+			keyboard) followed by <Gold>  <Keypad  3>.    You
+			cannot enter a newline character (ASCII LF) using
+			this method.
+
+		<Gold> <Keypad ,>
+			Inserts the last deleted character at  the cursor
+			position.
+
+		<Gold> <Keypad ->
+			Inserts  the  last  deleted  word  at the  cursor
+			position.
+
+		<Gold> <PF4>
+			Inserts  the  last  deleted  line  at  the cursor
+			position.
+
+	2.7 		     Selecting Text Ranges
+
+		Several  commands  operate with a selected region.    The
+	following  commands  are  used to select an arbitrary  region  of
+	text.  Whenever a region of text is selected it will be displayed
+	in reverse video on the screen.
+
+		<Select>
+		<Keypad .>
+			Anchors the  cursor  position  as  one	end  of a
+			selected region.   When  the  cursor  is moved in
+			front of the select  point the select region will
+			be all characters from the select point up to the
+			character behind the cursor.  When  the cursor is
+			moved behind the select point the region  will be
+			all    characters  from  the  cursor  up  to  the
+			character behind the select point.
+
+		<Gold> <Select>
+		<Gold> <Keypad .>
+			Cancels the select region.
+
+	2.8			 Deleting Text
+
+		<Linefeed>
+		<Control> J
+		<F13>
+			Deletes  from  the  character  behind  the cursor
+			position  back	to the previous start of a  word.
+			The deleted text can be retrieved with the <Gold>
+			<Keypad -> command.
+
+		<Control> U
+			Deletes  from  the character  behind  the  cursor
+			position back  to the beginning of the line.  The
+			deleted text can  be  retrieved  with  the <Gold>
+			<PF4> command.
+
+		<Delete>
+		<Backspace>
+			Deletes the character behind the cursor position.
+			The deleted character can  be  retrieved with the
+			<Gold> <Keypad ,> command.
+
+		<Gold> Z
+			Clears the contents of the  buffer.  The previous
+			contents cannot be retrieved.
+
+		<F4>
+			Appends the contents of the selected  text  range
+			to the paste buffer.  The selected  text range is
+			not deleted from the buffer.
+
+		<Remove>
+		<Keypad 6>
+			Removes  the  selected text range from the buffer
+			and inserts it in the paste buffer.
+
+		<Keypad ,>
+			Deletes the  character	at  the  cursor position.
+			The character can  be  retrieved  with the <Gold>
+			<Keypad ,> command.
+
+		<Keypad ->
+			Deletes from the cursor  position up the the next
+			start  of  a  word.   The  deleted  text  can  be
+			retrieved with the <Gold> <Keypad -> command.
+
+		<PF4>
+			Deletes from the cursor position through the line
+			end.  The deleted text	can be retrieved with the
+			<Gold> <PF4> command.
+
+		<Gold> <Remove>
+			Copies	from  the  selected  text  range into the
+			paste buffer without deleting from the buffer.
+
+		<Gold> <Keypad 2>
+			Deletes from the cursor position up to the end of
+			the line.  The deleted text can be retrieved with
+			the <Gold> <PF4> command.
+
+	2.9 			  Substitution
+
+		<Keypad 9>
+			Searches  in	the   current  direction  for  an
+			occurrence of the  last  search string given and,
+			if the string is found, replaces it with the last
+			replace string given.  The  Search  string is set
+			with  the  <Gold>  <PF3>  or  <Gold>  <Keypad  9>
+			commands.    The replace string is set	with  the
+			<Gold> <Keypad 9> command.
+
+		<Gold> <Keypad 9>
+			Prompts for a search and  a  replace  string  and
+			then  searches	in  the  current direction for an
+			occurrence  of	the search string and , if it  is
+			found, replaces  it  with the replace string.  If
+			an empty response  is given to any of the prompts
+			the previous value of the string will be used.
+
+	2.10		      Windows and Buffers
+
+		Sedt allows you to edit up to 4  different  files  at the
+	same time.  At any given moment you can choose between having one
+	or two of these displayed on the screen.  The  following commands
+	allow  you  to	switch between the four files and change the  way
+	they are displayed.
+
+		Each of the 4 files you  can  edit  are held in a buffer.
+	The current buffer, which all commands operate on, is the one you
+	see on the screen when a single window is  displayed,  or the one
+	shown in the top window when two are displayed.
+
+		<Gold> <Up Arrow>
+			Scrolls the  display  so  that	the line with the
+			cursor is on  the  second  line  of  the display.
+			This command has no effect if the operation would
+			place the first  line of the file below the first
+			line of the display.
+
+		<Gold> <Down Arrow>
+			Scrolls the  display  so  that	the line with the
+			cursor	is  on the second last	of  the  display.
+			This command has no effect if the operation would
+			place the first  line of the file below the first
+			line of the display.
+
+		<Gold> D
+			Toggles between displaying one or  two	files  on
+			the  screen.	When two files are displayed  the
+			screen	will  be  split horizontally with the two
+			files shown  one  above  the  other.
+
+		<Gold> E
+			Prompts  for  a  file  name to be loaded into the
+			current buffer.    The	original  contents of the
+			buffer are discarded.	 You  will,  however,  be
+			given a chance to  save  the original contents of
+			the buffer if it has been modified.
+
+		<Gold> F
+		<F10>
+			Saves the contents of  the  current  buffer.  All
+			other	than  ATARI  GEM  and  Microsoft  Windows
+			versions  will	terminate  the edit session if no
+			unmodified buffers  exist,  or	ask  whether  you
+			intend to terminate if there are unsaved changes.
+
+		<Gold> Q
+		<F8>
+			Terminates  execution  of Sedt without saving any
+			buffers.   You	will be asked to confirm that you
+			really intend to  quit	if  any buffers have been
+			modified.  On  ATARI  GEM  and	Microsoft Windows
+			versions only the current  window  will be closed
+			and Sedt will terminate when  the  last window is
+			closed.  Advanced Guide
+
+
+		<Gold> S
+			Prompts for a file name and then saves the buffer
+			into the file.	The file name associated with the
+			buffer will be changed to the new file.
+
+		<Gold> X
+			Switches to the previously selected buffer.    If
+			no other buffer has been selected it  will switch
+			to buffer 1.
+
+		<F6>
+			Saves the contents of the current buffer into the
+			file associated with it.  The save is not done if
+			no modifications have been made.
+
+		<F17>
+			Selects buffer number 0.
+
+		<F18>
+			Selects buffer number 1.
+
+		<F19>
+			Selects buffer number 2.
+
+		<F20>
+			Selects buffer number 3.
+
+	2.11			Text Formatting
+
+		<Control> A
+			Sets  the  indentation level to the column number
+			that the cursor  is  at.    Typing <Tab> when the
+			cursor is to the  left	of  the indentation level
+			will insert space characters to  bring the cursor
+			up to the indentation level.
+
+		<Control> D
+			Decreases the indentation level by one column.
+
+		<Control> E
+			Increases the indentation level by one column.
+
+		<Control> T
+			Adjusts all text within the select  range  by one
+			tab stop.  <Control> T will move the select range
+			right  if the direction flag is forward and  left
+			if  the  direction  flag  is  reverse.	 <Gold> -
+			<Control> T  will  always  move  a tab stop left.
+			<Gold> + <Control>  T will always move a tab stop
+			right.
+
+		<Gold> C
+			Centers the line containing  the  cursor  between
+			the left (L on the  ruler line) and right (R or J
+			on the ruler line) margins.
+
+		<Gold> J
+			Reformats from the previous beginning of  line to
+			the  end of the current paragraph.   Reformatting
+			requires that a right margin has been set  on the
+			ruler line.  An R will set a ragged  right margin
+			and a J will set a justified right margin.
+
+		<Gold> _
+			Inserts  a  hyphen and	a  space  at  the  cursor
+			position  and  reformats  from	  the	 previous
+			beginning  of  line to the  end  of  the  current
+			paragraph.  This command allows you  the  break a
+			word if the automatic reformatting looks bad.
+
+		<Gold> <Keypad 8>
+			Reformats from the cursor position to  the end of
+			the current paragraph.
+
+	2.12			Programming Keys
+
+		The effect of a keyboard command is  not  fixed  in Sedt.
+	You can change the functions of most keys  in  a variety of ways.
+	Permanently  by    editing    the  keyboard  definition  file  or
+	temporarily  during a  session	with  commands	that  change  the
+	keyboard programming.
+
+		<Control> K
+			Prompts for you to  type  the  key  you  want  to
+			program and for a command string that you want to
+			program the key with.  Valid  commands	that  you
+			can  program the key with are documented  in  the
+			reference section of this manual.
+
+		<Gold> <Control> I
+			Prompts for you to  type  a  keystroke	and  then
+			inserts  the  programming  of the  key	into  the
+			current buffer at the cursor position.
+
+		<Gold> <Control> L
+			Prompts for you to type the key that  you want to
+			program  and  then  loads  the	contents  of  the
+			current buffer into the key.  Valid commands that
+			you can program  the  key  with are documented in
+			the reference section of this manual.
+
+		<Gold> <F17>
+			Causes	learning  of  keystrokes  into	^B  until
+			learning is completed by typing <Control> Z.  The
+			keystrokes learned  can  be  "replayed" by typing
+			^B.
+
+		<Gold> <F18>
+			Prompts  for  a    keystroke	and  then  stores
+			subsequent keystokes into that	key  until  it is
+			typed again.  To "replay" the keystrokes type the
+			key at any time after learning was terminated.
+
+	2.13			Changing Options
+
+		Sedt supports  a  variety  of  toggles	and  options that
+	change the behavior of the editor.  Many can be set for a session
+	by providing command switches  when  you call Sedt or they can be
+	modified dynamically during the editing session.
+
+		<Gold> A
+			Toggles    automatic	screen	shifting.
+
+			When automatic screen shifting	is  on the screen
+			will  scroll  horizontally  to	ensure	that  the
+			cursor	is always visible within the  margins  on
+			your screen.  The mode indicator "Screen  Shift="
+			indicates  how	many characters to the right that
+			the  screen  is shifted.  When screen shifting is
+			off the  leftmost  character on the screen always
+			corresponds to the  leftmost  character  on  each
+			line in the file.
+
+		<Gold> I
+			Toggles  expansion  of	tabs.
+
+			Then tabs are expanded only space characters will
+			be used when indenting	text  in  moving to a tab
+			stop on the ruler.   When  tabs are inserted Sedt
+			will attempt to use ASCII HT characters for these
+			operations,  thus saving file space.  The  latter
+			condition  may lead to undesired effects when you
+			delete	and   insert  text  containing	ASCII  HT
+			characters.  The  state of the tab insertion mode
+			is shown by the "Tabs:" mode indicator.
+
+		<Gold> L
+			Toggles block cut and paste.
+
+			When  block  cut and paste is  in  effect  a  cut
+			operation (<Remove> or <Keypad 6>) will remove	a
+			rectangle of text bounded by the select point and
+			the   cursor  position.    In  line  mode  a  cut
+			operation will	remove	all  text  in  the select
+			region.
+
+			When block  cut  and  paste is in effect the word
+			"Block" will appear  on  the mode line and only a
+			reverse video column will show the select region.
+
+			When line cut and  paste is in effect "Line" will
+			be shown on the mode  line  and the entire select
+			region will be shown in reverse video.
+
+		<Gold> O
+			Toggles  overstrike/insert mode.
+
+			In insert  mode  typed	text,  inserted  text and
+			undeleted  text  will be inserted at  the  cursor
+			position and any existing text will be	pushed to
+			the right of  the  inserted  text.    The  delete
+			operation will remove the  text and collapse text
+			around	the region that was  deleted.	 "Insert"
+			will also be displayed on the mode line.
+
+			In  replace  mode  typed, inserted and	undeleted
+			text will overwrite existing text in the  buffer.
+			Delete	operations will cause the deleted text to
+			be  replaced by blank space.  "Replace" will also
+			be shown  on  the mode line.  This mode is useful
+			for editing tabular types of text.
+
+		<Gold> W
+			Toggles between 80  and  132  character displays.
+			This is only supported	on  systems  and displays
+			that can toggle between these modes.
+
+	2.14		     Miscellaneous Commands
+
+		<Control> P
+			Prompts  for  a file name and writes the contents
+			of  the  current  buffer  onto the file with page
+			breaks at every 60 lines.
+
+		<Control> W
+			Refreshes the entire display.
+
+		<Gold> <Return>
+		<Do>
+			Prompts for an operating system command and  then
+			executes  it in a subprocess.  If no  command  is
+			entered the  command  parser  will  be	executed.
+			This command is  not  supported  on all operating
+			systems.
+
+		<Gold> H
+		<Help>
+		<PF2>
+			Displays  a  series  of    help  screens  on  the
+			terminal.
+
+		<Gold> R
+			Enters ruler definition mode.  See the chapter on
+			modifying the ruler for an explanation.
+
+		<F7>
+		<F9>
+		<Keypad Enter>
+		<Gold> <Resume>
+			Dead  key.    This  is useful for  terminating	a
+			continuously  scrolling  operation    started  by
+			<Gold> <Right Arrow> or <Gold> <Left Arrow>.
+
+		<Gold> <F4>
+			Prompts for a file  and loads the contents of the
+			file into the paste buffer.
+
+		<Gold> <Do>
+		<Gold> <Keypad 7>
+			Prompts for a sequence of  internal Sedt commands
+			and  then  executes  them.    A   description  of
+			internal   Sedt  commands  is  contained  in  the
+			reference section of this manual.
+
+		<Gold> <Keypad 1>
+			Changes  the  case  of alphabetic characters in a
+			range  of text given by the following rule:   The
+			select	region if one is active, otherwise if the
+			last command  was  a  search operation the string
+			that was found,  otherwise  the  character at the
+			cursor position.
+
+		<Gold> <Keypad Enter>
+			Swaps the character at	the  cursor  position and
+			the following character and advances  the  cursor
+			by one character.

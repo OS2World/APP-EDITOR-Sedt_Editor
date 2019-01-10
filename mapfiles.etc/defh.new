@@ -1,0 +1,28 @@
+                               Control Characters
+        
+            -------------------------
+            |T      |Y      |U      |
+            | Line  | Word  | Screen|
+            | Up    | Back  | Up    |
+        -------------------------------------------------
+        |F      |G      |H      |J      |K      |L      |
+        | Char  | Char  | Line  | Line  | Find  | Find  |
+        | Left  | Right | Begg  | End   | String| Next  |
+        -------------------------------------------------
+            |V      |B      |N      |
+            | Line  | Word  | Screen|
+            | Down  | Forwd | Down  |
+            -------------------------
+        
+                                  Special Keys
+                
+                Left Arrow      Go backward one character
+                Right Arrow     Go forward one character
+                Up Arrow        Go up one line
+                Down Arrow      Go down one line
+                Pg Dn           Go down one screen
+                Pg Up           Go up one screen
+                Home            Go to previous beginning of line
+                End             Go to next end of line
+                F1              Help
+                F2-F12          Available for macro definition

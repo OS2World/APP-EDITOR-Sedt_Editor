@@ -1,0 +1,42 @@
+        -------------------------       ---------------------------------
+        | Find  |       |  Cut  |       |       |       | Find  | Delete|
+        | Next  | Paste |  GET  |       | GOLD  | HELP  | Next  |  Line |
+        | FIND  |       |SEL RNG|       |       |       | FIND  |UND. L.|
+        -------------------------       ---------------------------------
+        | Select| Up one| Dn one|       | Page  |  Par  | Subst.| Delete|
+        |       | Screen| Screen|       | SEDT  |  FILL | Next  |  Word |
+        | CANCEL|  TOP  | BOTTOM|       |COMMAND|  PAR  | SUBST.|UND. W.|
+        -------------------------       ---------------------------------
+                |  Up   |               |Forward|Reverse| Cut   | Delete|
+                | 1 Line|               |       |       |       |  Char |
+                |CRS TOP|               |BOTTOM |  TOP  | PASTE |UND. C.|
+        -------------------------       ---------------------------------
+        | Left  | Down  | Right |       | Word  | End   | Char  |       |
+        | 1 Char| 1 Line| 1 Char|       |CHANGE | Line  |       | Enter |
+        |SCR. UP|CRS BOT|SCR. DN|       | CASE  |DEL EL.| ASCII |       |
+        -------------------------       -------------------------       |
+                                        |     Line      | Select|       |
+             Sedt Version 4.0           |               |       | SWAP  |
+                                        |  OPEN  LINE   | CANCEL|       |
+                                        ---------------------------------
+
+
+
+    F1     F2     F3     F4     F5             F6     F7     F8     F9    F10
+ -------------------------------------      ------------------------------------
+ |      |      |      |      |       |      | Save | Save | Quit | Dead | Exit |
+ |      |      |      |      |       |      |      |Contxt|      |      |      |
+ |      |      |      |      |       |      |NXT US|NXT UN|W GROW|W SHRI|W MOVE|
+ -------------------------------------      ------------------------------------
+      F11    F12    F13    F14                    Help       Do
+    -----------------------------               ----------------------
+    |Insert|Beginn|Delete| Spawn|               |      | O/S Command |
+    |Escape| Line |Beginn| Text |               | HELP |             |
+    |W TILE|W ZOOM| Word |Proces|               |      | SEDT COMMAND|
+    -----------------------------               ----------------------
+                             F17    F18    F19    F20
+                          -----------------------------
+                          |Buffer|Buffer|Buffer|Buffer|
+                          |   0  |   1  |   2  |   3  |
+                          | LEARN|LEARNK|      |      |
+                          -----------------------------

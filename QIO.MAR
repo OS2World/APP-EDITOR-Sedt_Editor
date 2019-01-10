@@ -1,0 +1,278 @@
+		.TITLE Terminal IO routines for SEDT
+
+	$IODEF
+	$SSDEF
+	$TTDEF
+	$TT2DEF
+	$MSGDEF
+	
+	MBXBUFLEN = 1024
+	
+IN_DESC:
+	.ASCID /SYS$INPUT/
+IN_CHAN:
+	.WORD 0
+OUT_DESC:
+	.ASCID /SYS$OUTPUT/
+OUT_CHAN:
+	.WORD 0
+IN_BUF:
+	.BLKB 20
+IN_BUFLEN=.-IN_BUF
+IN_STATUS:
+	.WORD 0
+	.WORD 0
+IN_IOSB:
+	.BLKQ 1
+OLDMODES::
+	.LONG 0
+	.LONG 0
+        .LONG 0
+	OLDLINES=OLDMODES+2
+	OLDCOLS=OLDMODES+7
+NEWMODES::
+	.LONG 0
+	.LONG 0
+	.LONG 0
+
+ONEMASK::
+	.LONG ONEBUF
+ONEBUF:
+	.LONG ^D32
+	.LONG ONEBITS
+ONEBITS:
+	.LONG ^XFFFFFFFF
+	.LONG ^XFFFFFFFF
+	.LONG ^XFFFFFFFF
+	.LONG ^XFFFFFFFF
+	.LONG ^XFFFFFFFF
+	.LONG ^XFFFFFFFF
+	.LONG ^XFFFFFFFF
+	.LONG ^XFFFFFFFF
+MANYMASK::
+	.LONG MANYBUF
+MANYBUF:
+	.LONG ^D32
+	.LONG MANYBITS
+MANYBITS:
+;	.LONG ^XFFFFFFFF
+;	.LONG ^X00000000
+;	.LONG ^X00000000
+;	.LONG ^X80000000
+; define also ` ~ and [ ] \ { } | as input terminator as special handling
+; of these characters may be required (NRC-characters with alternate echo) 
+	.LONG ^XFFFFFFFF
+	.LONG ^X00000000
+	.LONG ^X38000000
+	.LONG ^XF8000001
+	.LONG ^XFFFFFFFF
+	.LONG ^X00000000
+	.LONG ^X00000000
+	.LONG ^X00000000
+COUNT_BUFFER::
+	.WORD 0
+	.WORD 0
+	.LONG 0
+
+MBX_NAME:
+	.ASCID /SEDT$TT_MBX/
+MBX_CHAN:
+	.WORD 0
+MBXBUF::.BLKB 20
+MBXMSGLEN::
+	.BLKW
+MBXMSG::
+	.BLKB MBXBUFLEN-22
+MBX_IOSB:
+	.BLKQ 1
+
+T$INIT::
+
+;Assign the terminal channel, read the terminal modes and clear half duplex
+;	and line wrap
+
+	.WORD 0
+	$CREMBX_S	CHAN=MBX_CHAN,LOGNAM=MBX_NAME,MAXMSG=#MBXBUFLEN,-
+			BUFQUO=#<MBXBUFLEN*2>
+	$ASSIGN_S	DEVNAM=IN_DESC,CHAN=IN_CHAN
+	$QIO_S		CHAN=MBX_CHAN,ASTADR=MESSAGEAST,-
+			FUNC=#IO$_READVBLK,-
+			IOSB=MBX_IOSB,P1=MBXBUF,P2=#MBXBUFLEN
+	$ASSIGN_S	DEVNAM=OUT_DESC,CHAN=OUT_CHAN,MBXNAM=MBX_NAME
+	$QIOW_S		CHAN=OUT_CHAN,FUNC=#IO$_SENSEMODE,P1=OLDMODES,P2=#12
+	MOVQ OLDMODES,NEWMODES
+	MOVL OLDMODES+8,NEWMODES+8
+	BICL		#<TT$M_HALFDUP!TT$M_WRAP>,4+NEWMODES
+	BISL #<TT$M_EIGHTBIT!TT$M_MBXDSABL!TT$M_NOBRDCST>,4+NEWMODES
+        BICL 		#<TT2$M_EDITING>,8+NEWMODES
+;	BISL		#<TT2$M_BRDCSTMBX!TT2$M_PASTHRU>,8+NEWMODES
+	BISL		#<TT2$M_BRDCSTMBX>,8+NEWMODES
+ 	$QIOW_S		CHAN=OUT_CHAN,FUNC=#IO$_SETMODE,P1=NEWMODES,P2=#12
+	RET
+
+MESSAGEAST::
+	.WORD	0
+	blbc		mbx_iosb,20$		;read error, abort
+	cmpw		mbxbuf,#msg$_trmbrdcst	;requeue if not broadcast
+	bneq		10$
+	movzwl		mbxmsglen,r0
+	clrb		L^mbxmsg(r0)		;terminate message with null
+;
+;	call processing routine here
+;		short int mbxmsglen contians length of message
+;		char mbxmsg contains text of message
+;
+	CALLS		#0,g^PRINT_MESS
+10$:	$QIO_S		CHAN=MBX_CHAN,ASTADR=MESSAGEAST,-
+			FUNC=#IO$_READVBLK,-
+			IOSB=MBX_IOSB,P1=MBXBUF,P2=#MBXBUFLEN
+20$:	RET
+	
+MBXMSGADR::
+	.WORD	0
+	movl		#MBXMSG,R0
+	RET
+
+T$APPLICATION::
+
+;Return 1 if the VMS application mode is on
+
+        .WORD 0
+        BITL #TT2$M_APP_KEYPAD,8+OLDMODES
+        BNEQ MODEON
+        MOVL #0,R0
+        RET
+MODEON: MOVL #1,R0
+        RET
+	
+T$GETSIZE::
+	.WORD 0
+	MOVW	OLDLINES,@8(AP)
+	MOVB	OLDCOLS,@4(AP)
+	RET
+        
+T$STARTONE::
+
+;Start an input QIO for a single character or escape sequence
+
+	.WORD 0
+	$CLREF_S	EFN=#3
+	$QIOW_S		CHAN=IN_CHAN,-
+			FUNC=#IO$_READVBLK!IO$M_TRMNOECHO!IO$M_NOFILTR!IO$M_ESCAPE,-
+			IOSB=IN_STATUS,P1=@4(AP),P2=8(AP),P4=ONEMASK
+	MOVZWL		IN_STATUS+2,R0
+	TSTB		IN_STATUS+6
+	BEQL		$4
+	ADDW		IN_STATUS+6,R0
+$4:	RET
+
+T$STARTMANY::
+
+;Start a QIO for multiple printable characters or a complete escape sequence
+
+	.WORD 0
+	$CLREF_S	EFN=#3
+	$QIOW_S		CHAN=IN_CHAN,-
+			FUNC=#IO$_READVBLK!IO$M_TRMNOECHO!IO$M_NOFILTR!IO$M_ESCAPE,-
+			IOSB=IN_STATUS,P1=@4(AP),P2=8(AP),P4=MANYMASK
+	MOVZWL		IN_STATUS+2,R0
+	TSTB		IN_STATUS+6
+	BEQL		$5
+	ADDW		IN_STATUS+6,R0
+$5:	RET
+
+T$TYPEAHEAD::
+
+;Return the number of characters in the typeahead buffer
+
+	.WORD 0
+	$QIO_S		CHAN=IN_CHAN,-
+			FUNC=#IO$_SENSEMODE!IO$M_TYPEAHDCNT,-
+			,P1=COUNT_BUFFER,P2=#8
+	MOVL #0,R0
+	MOVW COUNT_BUFFER,R0
+	RET
+
+
+T$CANCEL::
+
+;Cancel the QIO on the terminal channel
+
+	.WORD 0
+	$CANCEL_S	CHAN=IN_CHAN
+	$QIOW_S		CHAN=OUT_CHAN,FUNC=#IO$_SETMODE,P1=OLDMODES,P2=#12
+	$DASSGN_S	CHAN=OUT_CHAN
+	$DASSGN_S	CHAN=IN_CHAN
+	$CANCEL_S	CHAN=MBX_CHAN
+	$DASSGN_S	CHAN=MBX_CHAN
+	RET
+
+T$PUT::
+
+;Write output to the terminal
+
+	.WORD 0
+	$QIOW_S		CHAN=OUT_CHAN,FUNC=#IO$_WRITEVBLK!IO$M_NOFORMAT,-
+			P1=@4(AP),P2=8(AP)
+	RET
+
+C_MOVE::
+
+;Move a block of characters
+
+	.WORD ^M<R2,R3,R4,R5>
+	MOVC3		12(AP),@4(AP),@8(AP)
+	RET
+
+SPACE_FILL::
+
+;Fill a block of memory with a spaces
+
+	.WORD ^M<R2,R3,R4,R5>
+	MOVC5		#0,@4(AP),#32,8(AP),@4(AP)
+	MOVL		#0,R0
+	RET
+
+ZERO_FILL::
+
+;Fill a block of memory with a zeroes
+
+	.WORD ^M<R2,R3,R4,R5>
+	MOVC5		#0,@4(AP),#0,8(AP),@4(AP)
+	MOVL		#0,R0
+	RET
+
+C_SCAN::
+
+;Scan a block of memory for a character
+
+	.WORD 0
+	LOCC		12(AP),8(AP),@4(AP)
+	MNEGL		R0,R0
+	ADDL		8(AP),R0
+	RET
+
+C_BSCAN::
+
+;Do a backwards scan for a character
+
+	.WORD 0
+	MNEGL		8(AP),R0
+	ADDL3		4(AP),#1,R1
+$2:	CMPB		12(AP),-(R1)
+	BEQL		$3
+	SOBGTR		R0,$2
+$3:	ADDL		8(AP),R0
+	RET
+
+C$COMP::
+
+;Compare two strings
+
+	.WORD ^M<R2,R3>
+	CMPC		12(AP),@8(AP),@4(AP)
+	MNEGL R0,R0
+	ADDL		12(AP),R0
+	RET
+
+.END

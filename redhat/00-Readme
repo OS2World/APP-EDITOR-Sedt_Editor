@@ -1,0 +1,22 @@
+00-Readme  
+6-Oct-2008
+mdj
+
+The linuxFC4 zip file in this directory contains the files that converted 
+the original linux distro into the version I used on FC4.
+
+MOST OF THIS IS ALREADY INCLUDED IN THE SOURCE CODE in the directory above 
+this.
+
+The patch also modifies the linux build/make file to include the additional
+mouse options (GPM and xterm).  That part has not been applied in this source
+yet, so you would have to do that yourself.  Presumably you copy the linux
+build file to the main source dir and run the patch, but I haven't done that 
+yet to test it.  (If I had then I would not bother putting this file here.)
+
+ALSO the patch also modifies a keymap and fundef file to incorporate the 
+xterm mouse functions.  Again, you probably need to copy the appropriate
+mapfile.etc files to the source dir and run the patch to fix them, and
+again, this is something I have not yet done with this set of source
+code.
+

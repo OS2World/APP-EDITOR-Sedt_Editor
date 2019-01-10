@@ -1,0 +1,12 @@
+make -f sedt.mak
+make -f mapkey.mak
+mapkey compile keys defmi.new defm.new
+mapkey compile keys consolemi.new consolem.new
+mapkey compile keys xtermmi.new xtermm.new
+mapkey compile functions fundefi.new fundef.new
+mapkey compile keys defmi.edt defm.edt
+mapkey compile keys vt100mi.edt vt100m.edt
+mapkey compile keys vt200mi.edt vt200m.edt
+mapkey compile keys vt300mi.edt vt300m.edt
+mapkey compile keys consolemi.edt consolem.edt
+mapkey compile functions fundefi.edt fundef.edt

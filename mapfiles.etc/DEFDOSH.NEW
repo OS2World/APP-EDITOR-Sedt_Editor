@@ -1,0 +1,30 @@
+                               Control Characters
+        
+            ÚÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄ¿
+            ³T      ³Y      ³U      ³
+            ³ Line  ³ Word  ³ Screen³
+            ³ Up    ³ Back  ³ Up    ³
+        ÚÄÄÄÁÄÄÄÂÄÄÄÁÄÄÄÂÄÄÄÁÄÄÄÂÄÄÄÁÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄ¿
+        ³F      ³G      ³H      ³J      ³K      ³L      ³
+        ³ Char  ³ Char  ³ Line  ³ Line  ³ Find  ³ Find  ³
+        ³ Left  ³ Right ³ Begg  ³ End   ³ String³ Next  ³
+        ÀÄÄÄÂÄÄÄÁÄÄÄÂÄÄÄÁÄÄÄÂÄÄÄÁÄÄÄÂÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄ-Ù
+            ³V      ³B      ³N      ³
+            ³ Line  ³ Word  ³ Screen³
+            ³ Down  ³ Forwd ³ Down  ³
+            ÀÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÙ
+        
+                                  Special Keys
+                
+                Left Arrow      Go backward one character
+                Right Arrow     Go forward one character
+                Up Arrow        Go up one line
+                Down Arrow      Go down one line
+                Pg Dn           Go down one screen
+                Pg Up           Go up one screen
+                Home            Go to previous beginning of line
+                End             Go to next end of line
+                F1              Help
+                F9              Mark
+                F10             Copy marked region into paste buffer
+                F2-F8,F11-F12   Available for macro definition

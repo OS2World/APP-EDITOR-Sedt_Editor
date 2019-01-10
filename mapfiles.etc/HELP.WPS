@@ -1,0 +1,733 @@
+ ------------------------------------------------------------------------------
+ WPS/GLD HELP MENU  --  SEDT V4  --  27-Mar-1990 13:23:14
+ ------------------------------------------------------------------------------
+
+ MAIN MENU SELECTIONS:
+
+    [ 1 ]   KEYPAD DIAGRAM
+    [ 2 ]   KEYBOARD COMMANDS
+    [ 3 ]   INTERNAL SEDT COMMANDS
+    [ 4 ]   SEDT COMMAND LINE SWITCHES
+    [ 5 ]   LINE CHARACTER EDITING
+    [ 9 ]   DIFFERENCES FROM PREVIOUS VERSIONS
+    [ 0 ]   HELP FOR HELP - MAIN MENU
+
+    NOTE: YOU WON'T SEE LOWER CASE LETTERS CLEARLY IF YOU ARE IN VTXXX LINE
+          CHARACTER MODE.  ONLY ONE SCREEN, KEYPAD DIAGRAM #3, WILL SHOW UP
+          CORRECTLY IN LINE CHARACTER MODE.
+
+          YOU MUST SWICH BACK TO TEXT CHARACTER MODE TO READ THE
+          REMAINING HELP SCREENS.
+0
+ ------------------------------------------------------------------------------
+ HELP FOR:  WPS/GLD HELP MENU
+ ------------------------------------------------------------------------------
+
+    THIS VERSION OF SEDT GOLD KEYBOARD HELP DESCRIBES FUNCTIONS ON BOTH THE
+    LKXXX STYLE KEYBOARD AS WELL AS ON THE VT100 STYLE KEYBOARD.
+
+    YOU CAN KEEP TRACK OF HELP FILE AND KEY DEFINITION FILE DIFFERENCES BY
+    LOOKING AT THE SECTION, "DIFFERENCES FROM PREVIOUS VERSIONS", WHICH IS
+    AVAILABLE FROM THE MAIN HELP MENU.
+
+    AT ANY POINT IN HELP, PRESS...
+
+        O   A DIGIT KEY TO MAKE A MENU SELECTION.
+        O   THE BACKSPACE KEY (<CTL> H) TO GO UP ONE LEVEL.
+        O   <RETURN> TO CONTINUE AT THE CURRENT HELP LEVEL.
+        O   <RETURN> TO GO UP ONE HELP LEVEL AT THE END OF THE
+            CURRENT HELP LEVEL.
+        O   <SPACEBAR> TO RETURN TO EDITING.
+1
+%K
+
+2
+ ------------------------------------------------------------------------------
+ WPS/GLD HELP:  KEYBOARD COMMANDS
+ ------------------------------------------------------------------------------
+
+  KEYBOARD COMMANDS MENU:
+
+    [ 1 ]   Moving The Cursor
+    [ 2 ]   Insertion Commands And Functions
+    [ 3 ]   Deletion Commands And Functions
+    [ 4 ]   Cut, Append, and Paste
+    [ 5 ]   Window and Buffer Commands
+    [ 6 ]   Searching Commands
+    [ 7 ]   Format Commands
+    [ 8 ]   File Commands
+    [ 9 ]   Advanced Keyboard Commands
+    [ 0 ]   Help for HELP - KEYBOARD COMMANDS
+20
+ ------------------------------------------------------------------------------
+ HELP FOR:  KEYBOARD COMMANDS MENU
+ ------------------------------------------------------------------------------
+
+  KEYBOARD COMMANDS are functions which are tied to special control characters,
+  functions keys, or Gold-Key keys.  These functions are set up during SEDT's
+  initial startup via a "key definition" file.  Read the user's manual for more
+  information.
+
+    At any point in HELP, press...
+
+        o   A Digit Key to make a menu selection.
+        o   The Backspace Key (<Ctl> H) to go up one level.
+        o   <RETURN> to continue at the current help level.
+        o   <RETURN> to go up one help level at the end of the
+            current help level.
+        o   <SPACEBAR> to return to editing.
+
+  If you see a "|" character in the key column, this means that either the key
+  on the left or the key on the right of the "|" invokes that funtion.
+21
+ ------------------------------------------------------------------------------
+ KEYBOARD COMMANDS - Moving the cursor
+ ------------------------------------------------------------------------------
+
+  <%F11>  %C32%T11
+  <%F12>  %C32%T12
+
+  <%F13>  %C32%T13
+  <%F14>  %C32%T14
+  <%F15>  %C32%T15
+  <%F16>  %C32%T16
+
+  <%F17>  %C32%T17
+  <%F18>  %C32%T18
+
+  <%F19>  %C32%T19
+  <%F20>  %C32%T20
+
+  <%F22>  %C32%T22
+  <%F23>  %C32%T23
+  <%F24>  %C32%T24
+  <%F25>  %C32%T25
+  <%F26>  %C32%T26
+  <%F27>  %C32%T27
+  <%F28>  %C32%T28
+
+  <%F31>  %C32%T31
+  <%F32>  %C32%T32
+  <%F33>  %C32%T33  
+22
+ ------------------------------------------------------------------------------
+ KEYBOARD COMMANDS - Insertion Commands And Functions
+ ------------------------------------------------------------------------------
+
+  <%F151> %C32%T151
+  <%F155> %C32%T155
+  <%F156> %C32%T156
+  <%F157> %C32%T157
+  
+  <%F152> %C32%T152
+  <%F153> %C32%T153
+  <%F154> %C32%T154
+  
+  <%F158> %C32%T158
+  <%F159> %C32%T159
+  <%F160> %C32%T160
+23
+ ------------------------------------------------------------------------------
+ KEYBOARD COMMANDS - Deletion Commands And Functions
+ ------------------------------------------------------------------------------
+
+  <%F171> %C32%T171
+  <%F172> %C32%T172
+  <%F173> %C32%T173
+  <%F174> %C32%T174
+  <%F175> %C32%T175
+  <%F176> %C32%T176
+  <%F177> %C32%T177
+  <%F178> %C32%T178
+  <%F180> %C32%T180
+  
+  <%F181> %C32%T181
+  <%F182> %C32%T182
+24
+ ------------------------------------------------------------------------------
+ KEYBOARD COMMANDS - Cut, Append and Paste
+ ------------------------------------------------------------------------------
+
+  <%F191> %C26%T191
+  <%F192> %C26%T192
+
+  <%F201> %C26%T201
+  <%F200> %C26%T200
+
+  <%F195> %C26%T195
+  <%F194> %C26%T194
+  <%F196> %C26%T196
+  <%F199> %C26%T199
+  <%F197> %C26%T197
+25
+ ------------------------------------------------------------------------------
+ KEYBOARD COMMANDS - Window And Buffer Commands
+ ------------------------------------------------------------------------------
+
+  <%F51>  %C28%T51
+  <%F52>  %C28%T52
+  <%F53>  %C28%T53
+
+  <%F55>  %C28%T55
+  <%F56>  %C28%T56
+  <%F57>  %C28%T57
+  <%F58>  %C28%T58
+  <%F59>  %C28%T59
+
+  <%F60>  %C28%T60
+  <%F61>  %C28%T61
+  <%F62>  %C28%T62
+26
+ ------------------------------------------------------------------------------
+ KEYBOARD COMMANDS - Searching commands
+ ------------------------------------------------------------------------------
+
+  <%F81>  %C25%T81
+  <%F82>  %C25%T82
+  <%F89>  %C25%T89
+
+  <%F83>  %C25%T83
+  <%F84>  %C25%T84
+
+  <%F85>  %C25%T85
+  <%F86>  %C25%T86
+  <%F87>  %C25%T87
+  <%F88>  %C25%T88
+27  
+ ------------------------------------------------------------------------------
+ KEYBOARD COMMANDS - Format commands
+ ------------------------------------------------------------------------------
+
+  <%F261> %C28%T261
+  <%F262> %C28%T262
+  <%F263> %C28%T263
+
+  <%F264> %C28%T264
+  <%F265> %C28%T265
+  <%F266> %C28%T266
+
+  <%F267> %C28%T267
+  <%F268> %C28%T268
+  <%F269> %C28%T269
+
+  <%F270> %C28%T270
+  <%F271> %C28%T271
+  <%F272> %C28%T272
+  <%F273> %C28%T273
+
+  <%F274> %C28%T274
+  <%F153> %C28%T153
+  <%F276> %C28%T276
+
+  <%F277> %C28%T277
+  <%F278> %C28%T278
+  <%F279> %C28%T279
+
+  <%F281> %C28%T281
+  <%F282> %C28%T282
+  <%F283> %C28%T283
+  <%F284> %C28%T284
+
+  <%F286> %C28%T286
+
+  <%F287> %C28%T287
+  <%F288> %C28%T288
+28
+ ------------------------------------------------------------------------------
+ KEYBOARD COMMANDS - File Commands
+ ------------------------------------------------------------------------------
+  <%F225> %C21%T225
+  <%F221> %C21%T221
+  <%F224> %C21%T224
+  <%F222> %C21%T222
+  <%F223> %C21%T223
+  <%F229> %C21%T229
+  <%F227> %C21%T227
+  <%F228> %C21%T228
+  <%F226> %C21%T226
+  <%F285> %C21%T285
+
+ ------------------------------------------------------------------------------
+ KEYBOARD COMMANDS - Help File Commands
+ ------------------------------------------------------------------------------
+  <%F241> %C21%T241
+  <%F242> %C21%T242
+29
+ ------------------------------------------------------------------------------
+ WPS/GLD HELP:  Advanced Keyboard Commands
+ ------------------------------------------------------------------------------
+
+  ADVANCED KEYBOARD COMMANDS MENU:
+
+    [ 0 ]   Miscellaneous Commands
+    [ 1 ]   Mark Setting And Movement
+    [ 2 ]   Counter Commands
+    [ 3 ]   Key Definition And Macros
+    [ 4 ]   Ruler Set Up
+    [ 5 ]   Edit Region Commands
+    [ 6 ]   Toggle Commands
+    [ 7 ]   Execution Of Files And SX Commands
+    [ 8 ]   Outline Commands
+290
+ ------------------------------------------------------------------------------
+ KEYBOARD COMMANDS - Miscellaneous Commands
+ ------------------------------------------------------------------------------
+
+  <%F351> %C25%T351
+  <%F352> %C25%T352
+  <%F353> %C25%T353
+  <%F354> %C25%T354
+  <%F355> %C25%T355
+  <%F356> %C25%T356
+  <%F357> %C25%T357
+  <%F358> %C25%T358
+  <%F359> %C25%T359
+  <%F360> %C25%T360
+  <%F361> %C25%T361
+291
+ ------------------------------------------------------------------------------
+ KEYBOARD COMMANDS - Mark Setting And Movement
+ ------------------------------------------------------------------------------
+
+  <%F71>  %C32%T71
+  <%F72>  %C32%T72
+292
+ ------------------------------------------------------------------------------
+ KEYBOARD COMMANDS - Counter Commands
+ ------------------------------------------------------------------------------
+
+  <%F101> %C25%T101
+  <%F102> %C25%T102
+  <%F103> %C25%T103
+  <%F104> %C25%T104
+  <%F105> %C25%T105
+293
+ ------------------------------------------------------------------------------
+ KEYBOARD COMMANDS - Key Definition And Macros
+ ------------------------------------------------------------------------------
+
+  <%F111> %C25%T111
+  <%F112> %C25%T112
+  <%F113> %C25%T113
+294
+ ------------------------------------------------------------------------------
+ KEYBOARD COMMANDS - Ruler Commands
+ ------------------------------------------------------------------------------
+
+  <%F121> %C25%T121
+  <%F122> %C25%T122
+  <%F123> %C25%T123
+  <%F124> %C25%T124
+
+  <%F131> %C25%T131
+  <%F132> %C25%T132
+  <%F133> %C25%T133
+295  
+ ------------------------------------------------------------------------------
+ KEYBOARD COMMANDS - Edit Region Commands
+ ------------------------------------------------------------------------------
+
+  <%F141> %C32%T141
+  <%F142> %C32%T142
+296    
+ ------------------------------------------------------------------------------
+ KEYBOARD COMMANDS - Toggle Commands
+ ------------------------------------------------------------------------------
+
+  <%F51>  %C32%T51
+  <%F212> %C32%T212
+  <%F213> %C32%T213
+  <%F214> %C32%T214
+  <%F215> %C32%T215
+  <%F216> %C32%T216
+  <%F217> %C32%T217
+297  
+ ------------------------------------------------------------------------------
+ KEYBOARD COMMANDS - Execute File And SX Commands
+ ------------------------------------------------------------------------------
+
+  <%F291> %C25%T291
+  <%F292> %C25%T292
+  <%F293> %C25%T293
+  <%F294> %C25%T294
+  <%F295> %C25%T295
+  <%F296> %C25%T296
+  <%F297> %C25%T297
+  <%F298> %C25%T298
+  <%F299> %C25%T299
+298
+ ------------------------------------------------------------------------------
+ KEYBOARD COMMANDS - Outline Commands
+ ------------------------------------------------------------------------------
+
+  <%F251> %C25%T251
+  <%F252> %C25%T252
+  <%F253> %C25%T253
+3
+ ------------------------------------------------------------------------------
+ WPS/GLD HELP:  INTERNAL SEDT COMMANDS
+ ------------------------------------------------------------------------------
+
+    INTERNAL SEDT COMMANDS MENU:
+
+    [ 1 ]   Entities
+    [ 2 ]   Commands
+    [ 3 ]   Special Constructs
+    [ 4 ]   Key Values
+    [ 0 ]   Help for HELP - INTERNAL SEDT COMMANDS
+30
+ ------------------------------------------------------------------------------
+ HELP FOR:  INTERNAL SEDT COMMANDS MENU
+ ------------------------------------------------------------------------------
+
+  Use this section for reference if you're going to modify the functions of a
+  key (using Gold Control-L, Gold Control-K, or when editing the key definition
+  file).  Read the user's manual for more informa- tion.
+
+    At any point in HELP, press...
+
+        o   A Digit Key to make a menu selection.
+        o   The Backspace Key (<Ctl> H) to go up one level.
+        o   <RETURN> to continue at the current help level.
+        o   <RETURN> to go up one help level at the end of the
+            current help level.
+        o   <SPACEBAR> to return to editing.
+31
+ ------------------------------------------------------------------------------
+ INTERNAL SEDT COMMANDS - Entities
+ ------------------------------------------------------------------------------
+
+        {<Count>}@AC            Absolute Character
+        {<Count>}@AL            Absolute Line
+        @BB                     Beginning of Buffer
+        @BM                     Matching bracketing character:'"<>[]{}()
+        @EB                     End of Buffer
+        <Count>@EL              End of Line
+        {+|-|<|>}{<Count>}@C    Character
+        {+|-|<|>}{<Count>}@F<Delimiter><String><Delimiter>
+                                Find <String>
+        {+|-|<|>}{<Count>}@L    Line
+        {<Count>}@M             Mark
+        {+|-|<|>}{<Count>}@N    Next ocurrence of <String>
+        {+|-|<|>}{<Count>}@PAG  Page
+        {+|-|<|>}{<Count>}@PAR  Paragraph
+        {+|-|<|>}{<Count>}@SCR  Screen
+        {+|-|<|>}{<Count>}@SEN  Sentence
+        @SR                     Select Range
+        {+|-|<|>}{<Count>}@V    Vertical
+        {+|-|<|>}{<Count>}@W    Word
+        {+|-|<|>}@XNM           Next Mark
+        @XSR                    Select Range without clear
+32
+ ------------------------------------------------------------------------------
+ INTERNAL SEDT COMMAND - Commands
+ ------------------------------------------------------------------------------
+
+  :A     Advance                         :B     Backward
+  :CB    Cursor at Bottom                :CC    Change Case
+  :CD    Change to Lower case            :CE    Change Case Edt Style
+  :CH    Insert ASCII Character          :CK    Checkpoint buffer
+  :CL    Center Line                     :CM    Cursor at Middle
+  :CNA   Add number to counter           :CNG   Get counter from buffer
+  :CNI   Increment or decrement counter  :CNP   Insert value of counter
+  :CNS   Set counter value                      in buffer
+  :CS    Save buffer context             :CT    Cursor at Top
+  :CU    Change to Upper Case            :CW    Change to other window
+  :D     Delete                                 on screen
+  :EAP   Delete and Append               :EF    Execute function
+  :EK    Execute key                     :EL    Set error level
+  :ERC   Clear edit region               :ERS   Set edit region
+  :FE    Edit File                       :FG    Get File
+  :FNL   Larger Font                     :FNS   Smaller Font
+  :FS    Save File                       :FT    Fill
+  :FW    Write File                      :FX    Execute File
+  :GAP   Get and append                  :GE    Get
+  :GR    Get ruler                       :H     Help
+  :I     Insert                          :KA    Define character key
+  :KF    Define key function string      :KGA   Define gold character key
+  :KGK   Define gold function key key    :KK    Define function key key
+  :KN    Define key function number      :LD    Decrease indentation
+  :LI    Increase indentation            :LK    Load key definition
+  :LNE   Exec keystrokes stored in key   :LNL   Store keystrokes in key
+  :LNX   End learning                    :LS    Set indentation level
+  :M     Mark cursor position            :NL    New line
+  :NS    Substitute next                 :NWC   Switch to next unsaved buffer
+  :NWG   Switch to next buffer           :NWN   Switch to next unused buffer
+  :NWU   Switch to next used buffer      :OE    Output error message
+  :OL    Open line                       :OM    Output message
+  :OS    Toggle overstrike mode          :OW    Switch to previous buffer
+  :PD    Insert current date             :PL    Load paste buffer
+  :POPCH Restore saved buffer chng flag  :PR    Print current buffer
+  :PS    Save paste buffer               :PT    Insert current time
+  :PUSHCHSave bffr chng flg & clear      :Q     Quit
+  :REP   Replace                         :RF    Refresh display
+  :RK    Redefine key as character       :RL    Ruler
+  :RMCHA Clear character delete buffer   :RMHEL Clear help buffer
+  :RMLIN Clear line delete buffer        :RMPAG Clear page delete buffer
+  :RMPAR Clear paragraph delete buffer   :RMPAS Clear paste buffer
+  :RMSEA Clear search buffer             :RMSEN Clear sentence delete buffer
+  :RMSUB Clear substitute buffer         :RMUNK Clear unknown delete buffer
+  :RMWOR Clear word delete buffer        :RS    Reset select range
+  :RTAB  Replace tabs with spaces        :RUL   Load ruler from entity
+  :RUS   Save ruler in buffer            :SAVF  Save function defs in a file
+  :SAVK  Save key definitions in a file  :SC    Show current column
+  :SEL   Select                          :SETB  Set block/line mode toggle
+  :SETD  Set direction toggle            :SETF  Set cursor behavior toggle
+  :SETK  Set typewriter key cmnd exec    :SETR  Set replace/insert toggle
+  :SETT  Set tab insert/expand toggle    :SETU  Set case sensitivity toggle
+  :SETX  Set function expansion toggle   :SI    Send a shift in character
+  :SK    Save key definition             :SL    Load search buffer
+  :SO    Send a shift out character      :STAB  Replace multi spaces with tabs
+  :STRP  Strip trailing spaces           :SUB   Substitute
+  :SV    Show Version                    :SYQ   Spawn with no output
+  :SYR   Spawn with redirected output    :SYS   Spawn to operating system
+  :TAB   Move to next tab stop           :TAD   Adjust text by one tab stop
+  :TB    Toggle Block Mode               :TC    Toggle Control Character Display
+  :TD    Toggle Direction                :TF    Toggle cusor key behavior
+  :TI    Test for input                  :TK    Toggle typewriter key cmmnd exec
+  :TM    Toggle buffer markers           :TP    Toggle Cursor Line
+  :TR    Toggle ruler display            :TS    Toggle automatic screen shifts
+  :TT    Toggle tab expansion            :TU    Toggle case sensitivity
+  :TX    Toggle functions expansion      :UC    Undelete character
+  :UL    Undelete line                   :UM    Undo last command
+  :UOFF  Turn off screen updating        :UON   Turn on screen updating
+  :UPAG  Undelete page                   :UPAR  Undelete paragraph
+  :UPD   Update screen header            :USEN  Undelete sentence
+  :USR   Paste                           :UU    Undelete unknown
+  :UW    Undelete word                   :WC    Toggle windows
+  :WD    Toggle width                    :WI    Select buffer
+  :X     Exit                            :YN    Prompt for confirmation
+  :Z     Zap buffer                      
+33
+ ------------------------------------------------------------------------------
+ INTERNAL SEDT COMMANDS - Special Constructs
+ ------------------------------------------------------------------------------
+
+  Testing for modified buffers, handling errors, toggles, etc...
+
+        ^C(command|command)     Execute the first command if the buffer has
+                                been modified, otherwise execute the second
+                                command.
+        ^E(command1)(command2)  Execute command2 only if there has been an
+                                error in comand1.
+        ^E(command1)(command2|command3)
+                                Execute command2 only if there has been an
+                                error in command1, otherwise execute
+                                command3.
+        ^E(command)()           Suppresses error messages entirely.
+        ^Tx( ... )              Temporarily save and then restore a toggle.
+        ^Ix( ... )              Conditionally execute a command based on the
+                                status of a toggle.
+                                Where x can be:
+                                        D=Direction
+                                        I=Insert mode
+                                        B=Block mode
+                                        F=Cursor movement
+                                        T=Tab expansion
+                                        K=Typewriter key execute
+                                        U=Case.
+                                        X=Function def expansion state
+        ^S(command1|command2)   Execute the first command if a select region
+                                is active, otherwise execute command two.
+
+  In the key-definition file it is possible to specify that a particular com-
+  mand should display a prompt and wait for input, which it then incorporates
+  into the basic command.  A key definition containing an exclamation point
+  followed by a delimited string (any visible character may be used as a del-
+  imiter), when executed, prints out the specified string as a prompt and
+  waits for a keystroke, optionally preceded by <GOLD>.  The name of the key
+  thus detected is edited into the command.
+
+  Similarly, a key definition containing a question mark followed by a
+  delimited string prints out the specified string as a prompt and waits for
+  a string input, terminated by <RETURN>, <DO>, or <ENTER>.  The input
+  string is then incorporated into the instruction.
+
+  The construction %F in a key definition is replaced by the name of the
+  current default output file, including the filetype. %N is replaced by the
+  filename proper of the current default output file (excluding the filetype).
+  %T is replaced by the file type (including .).  %D is replaced by file
+  device and directory (including ] or \).  %P is replace by the contents of
+  the past buffer.   And %# is replaced by the value of the internal counter
+  (:CNP).
+
+  Question marks, exclamation points, or percentage signs that appear in key
+  definitions  for  any  other  purpose  must be doubled.
+
+  %E inserts SEDT environment definition on DOS/ULTRIX, SEDT$DIR: on VMS.
+  %W inserts the current column position.
+
+34
+ ------------------------------------------------------------------------------
+ INTERNAL SEDT COMMANDS - Key Values
+ ------------------------------------------------------------------------------
+
+        F000 -- <COMPOSE CHARACTER>     F001 -- <HOLD SCREEN>
+        F002 -- <PRINT SCREEN>          F003 -- <SET-UP>
+        F004 -- <F4>                    F005 -- <BREAK>
+        F006 -- <INTERRUPT>             F007 -- <RESUME>
+        F008 -- <CANCEL>                F009 -- <MAIN SCREEN>
+        F010 -- <EXIT>                  F011 -- <ESC>
+        F012 -- <BS>                    F013 -- <LF>
+        F014 -- <ADDTNL OPTIONS>        F015 -- <HELP>
+        F016 -- <DO>                    F017 -- <F17>
+        F018 -- <F18>                   F019 -- <F19>
+        F020 -- <F20>                   F021 -- <FIND>
+        F022 -- <INSERT HERE>           F023 -- <REMOVE>
+        F024 -- <SELECT>                F025 -- <PREV SCREEN>
+        F026 -- <NEXT SCREEN>           F027 -- <up arrow>
+        F028 -- <left arrow>            F029 -- <down arrow>
+        F030 -- <right arrow>           F031 -- keypad <0>
+        F032 -- keypad <1>              F033 -- keypad <2>
+        F034 -- keypad <3>              F035 -- keypad <4>
+        F036 -- keypad <5>              F037 -- keypad <6>
+        F038 -- keypad <7>              F039 -- keypad <8>
+        F040 -- keypad <9>              F041 -- keypad <,>
+        F042 -- keypad <->              F043 -- keypad <.>
+        F044 -- <PF1>                   F045 -- <PF2>
+        F046 -- <PF3>                   F047 -- <PF4>
+        F048 -- <ENTER>
+4
+ ------------------------------------------------------------------------------
+ WPS/GLD HELP:  SEDT COMMAND LINE SWITCHES
+ ------------------------------------------------------------------------------
+
+    Usage: SEDT -<switch> -<switch> <filenames...>
+
+        -a              toggle autosaves
+        -i<File Name>   select specific initialization file
+        -p<PID>         parent process ID
+        -l<Size>        limits main memory buffering
+        -j              toggles journaling
+        -e              terminate files with SUB character
+        -f              disable full screen editing
+        -b              supress creation of .BAK files
+        -r              terminate lines with CR character
+        -ro             read file in read-only mode (don't change Mod=)
+        -pc             assume IBM PC codes
+        -xt             assume IBM XT codes
+        -at             assume IBM AT codes
+        -rb             assume Digital Rainbow codes
+        -m<Number>      set video mode in DOS and OS2
+        -mo             assume monochrome monitor
+        -co             assume color monitor
+        -<line number>  start at line number
+        -k              assume new IB keyboard
+        -s<Size>        limits main memory buffering
+        -wiXXYYHHWW     force SEDT to use a sub-window of the screen
+        -o              load input file from last command when called without
+                        file argument
+
+    SEDT { <input_file> { <output_file } } { -<option> }
+5
+ ------------------------------------------------------------------------------
+ WPS/GLD HELP:  LINE CHARACTER EDITING
+ ------------------------------------------------------------------------------
+
+    SEDT provides a way to directly enter line characters.  This is possible via
+    the SEDT command files, KLINE.SEX, KLINE2.SEX and KLINEX.SEX.  KLINE changes
+    the keypad keys so that they insert the line characters shown in the keypad
+    layour (see the 1st set of help screens).  KLINEX changes these back.
+    KLINE2 is the IBM characters set equivalent of KLINE.  You have three ways
+    to run these:
+
+    1.  Execute the files directly.  <GOLD X> and enter KLINEX.SEX at the
+        prompt.
+    2.  Use the ^G SEx> prompt method.  Select K(ey) L(ine).
+    3.  Use <Gold ]>.
+
+    If you are using an IBM compatible system then you should rename KLINE2.SEX
+    to KLINE.SEX.
+
+    Since line character editing is best done in a 2 Dimensional Editing style
+    you can fill your screen with spaces using the <Gold Spacebar> function.  If
+    you have a select region active BEFORE you execute this function then it
+    will append spaced to the end of each line in the region.  If you don't have
+    a select region active then it will create a single line of spaces.  Once
+    you have these you can do you're edits within this field of spaces.  The
+    <GOLD ]> method automatically puts you in a 2D mode.
+
+    Converting between character sets is done via the C(vt_lc) menu selection.
+    This runs either KCVTDI.SEX or KCVTID.SEX to convert from DEC to IBM or vica
+    versa.  You're prompted for this when you select C(ct_lc)
+
+    IBM to DEC conversions are straightforward.  Each of the supported IBM
+    characters are converted to DEC line characters and the appropriate
+    character-set-shift characters are added (^N and ^O).  Also, the sequence
+    that loads the device-character-registers is added at the top of the buffer.
+
+    The DEC to IBM conversion is more difficult in that the (^N and ^O)
+    characters MUST BE PRESENT for the conversion to work.  If you don't already
+    have these in your file then add them.  Place the ^N at the beginning of
+    each line character sequence and ^O at the end.  Conversions ALWAYS happend
+    between these characters.  Enter a ^N by using the <GOLD 14 GOLD => key
+    sequence.  Use <GOLD 15 GOLD => for ^O.  Also, you can select a range
+    and press <Gold ]>.  If you do this then SEDT will automatically insert the
+    ^N and ^O at the beginning and end of the select region.
+9
+ ------------------------------------------------------------------------------
+ WPS/GLD HELP:    DIFFERENCES FROM PREVIOUS VERSIONS
+ ------------------------------------------------------------------------------
+
+  Important GLD and WPS/GLD Differences:
+  -----------------------------------------------------------------------------
+  Gold Keys               Old Gold Function       New WPS/GLD Function
+  ----------------------- ----------------------- -----------------------------
+  Spell Check             Save file               Spawn/shell to SPELL program
+  Status                  Zap buffer              Display SEDT status
+  Sub Script              Set indentation level   Append to paste buffer
+  File Docmt              File and exit           File and PROMPT FOR EXIT
+  Lang Aids               Toggle block/line mode  Toggle block/line and insert/
+                                                  replace modes
+  Abbrv                   Insert ASCII character  Find & enter abbreviation
+  Global Replace          DECmate style replace   Substitute style replace
+  Replc                   DECmate style replace   Substitute style replace
+  View                    Execute DOS command     Place cursor line mid-screen
+  Menu                    Place cursor mid-screen Call .SEX menu
+  Cont Srch & Sel         Repeat Replace          Repeat Substitute
+  Kill                    Show key                Kill edit session
+
+ 25-APR-1989 16:10:11
+
+  Changed <Gold F> to prompt for context saving.
+
+ 1-May-1989 16:07:14
+
+  Changed all non-key functions from F100's to F160's.
+
+ 1-Dec-1989 08:25:23
+
+  Changed :TF to :FT and added :TF to toggles.
+
+ 23-JAN-1990 09:51:34
+
+  Changed Gold O (outline) using the new :NWG command, now there's only a buffer
+  prompt when a select range is active.
+
+  Changed buffer select keys (F17-F20) so that you can use the form...
+
+    Gold <number> F17 (or F18-20)
+
+  ...previously only F18 worked this way.
+
+  Changed ^^ (Control ^) to request page-break string when defining the
+  Gold-Page key.
+
+  Changed Gold Center to either center text between rulers, or, if a select
+  range is active, to optionally copy text down a column.
+
+ 13-Mar-1990 08:57:08
+
+  Gold + select region, in line mode, must completely cover the range of numbers
+  to be added.  This makes it conform with how select works in all the other
+  functions.
+
+  Gold D will delete a block of text based on the number of lines specified at
+  the prompt.  This saves having to go into block mode and moving about the
+  screen.  If you know how many column lines deep you want to delete, use this
+  function.
+
+ 27-Mar-1990 13:22:30
+
+  Added functions (and keys) 380-389.  These save and restore toggles and are
+  used INSIDE of other functions.

@@ -1,0 +1,914 @@
+
+
+	Copyright (c) Anker Berg-Sonne, 1990
+
+				   Sedt Editor
+
+				   Version 5.0
+
+				 New key layout
+
+
+	0.0	Introduction to Sedt
+	0.1	The "New" keyboard command interface.
+	1.0	Getting started
+	1.1	Calling Sedt
+	1.1.1	The Sedt command line
+	1.1.2	Editing more than one file
+	1.1.3	Specifying a different output file
+	1.1.4	Screen layout
+	1.1.4.1 Banner line
+	1.1.4.2 Ruler line
+	1.1.4.3 Mode line
+	1.1.4.4 Message line
+	1.2	Editing commands
+	1.2.1	Getting help
+	1.2.2	Typing commands
+	1.2.3	Aborting command input
+	1.2.4	Command input
+	1.2.5	Repeating commands
+	1.2.6	The basic commands
+	2	Command summary
+	2.1	Moving to an absolute position
+	2.2	Undoing a move or delete
+	2.3	Changing character case
+	2.4	Deleting text
+	2.5	Block edit functions
+	2.6	File functions
+	2.7	Moving the cursor position
+	2.8	Getting help
+	2.9	Inserting miscellanea
+	2.10	Changing the ruler
+	2.10.1	Ruler definition commands
+	2.11	Macro commands
+	2.12	Using counters
+	2.13	Operating system calls
+	2.14	Ending the edit session
+	2.15	Setting an edit range
+	2.16	Modifying miscellanea
+	2.16.1	Modifying the direction
+	2.16.2	Modifying font sizes
+	2.16.3	Modifying text markers
+	2.16.4	Modifying editing behavior
+	2.16.5	Modifying screen width in VT series terminals
+	2.17	Regular expressions
+	2.18	Text functions
+	2.19	Undeleting text
+	2.20	Window functions
+	2.21	Executing Sedt programs
+	3	Hints
+	3.1	Macros
+	3.1.1	Keyboard macros
+	3.1.2	Command macros
+
+
+	0.0 Introduction to Sedt
+
+		Sedt is a text editor  that  offers a number of extremely
+	powerful features:
+
+		Portability  across  a number of environments:	  MS-DOS,
+		OS/2,  Microsoft Windows,  a  number  of  different  UNIX
+		systems, ATARI ST and  VAX/VMS	are  currently suppported
+		environments.
+
+		A  number of different keyboard command interfaces.   EDT
+		and the NEW (described in this document) are supported by
+		the  author.  WPS, EMACS and others have been created  by
+		users of the editor.
+
+		Virtually unlimited file  size.    By default, the editor
+		can edit a total  of  10MB  of	files.	 An option to the
+		command line allows for editing of even larger files.
+
+		You can  edit  up  to  100 files at the same time, switch
+		from file to file and move information between them.
+
+		Extensive and easy to use macro  facilities  allow you to
+		reduce	repetitive  tasks  to  a  single keystroke.
+
+		By customizing the keyboard command files you can add new
+		functions,  modify  the  behavior of Sedt, or emulate the
+		commands of other editors.
+
+		Simple text  formatting  allows Sedt to be used as a word
+		processor.
+
+		Auto  indentation and  regular	expression  searches  are
+		features often demanded from programming editors.
+
+	0.1 The "New" keyboard command interface.
+
+		The  "New"  keyboard  command  interface  gives  complete
+		access to all of the  features of Sedt through the normal
+		typewriter keys.  This feature makes it easy to support a
+		variety   of  different  terminals  and  keyboard  layout
+		without  any  customization.	  It  is  easy,  but  not
+		necessary,  to	customize  the	  New	keyboard  command
+		interface to terminals with function keys, arrow keys and
+		editing keypads for further ease of use.
+
+	1.0 Getting started
+
+	1.1 Calling Sedt
+
+	1.1.1 The Sedt command line
+
+		To edit  a  file  with	Sedt  enter  the file name as the
+		argument to the  command that starts Sedt.  The following
+		command:
+
+		Sedt foo.bar
+
+		will call Sedt and load the file foo.bar.
+
+	1.1.2 Editing more than one file
+
+		Sedt can edit up  to 100 files at the same time.  To load
+		several files when calling Sedt  enter	the file names as
+		arguments  to the command that starts  Sedt.	The  file
+		names  should  be  separated  by space characters.    The
+		command:
+
+		Sedt foo.bar bar.dat
+
+		will call Sedt and load the files foo.bar and bar.dat.
+
+	1.1.3 Specifying a different output file
+
+		You can also direct Sedt to read from  one file and write
+		to another.  The -o command argument tells Sedt  that the
+		next  filename	specifies an output file.  Always use the
+		-o specifyer  immediatly  after the input file name.  The
+		command:
+
+		Sedt foo.bar -o bar.dat foo.dat
+
+		will load foo.bar and foo.dat.	The edits done to foo.bar
+		will be written to bar.dat.
+
+	1.1.4 Screen layout
+
+		When Sedt has completed  its  intialization, you will see
+		a window into the first  file  on  the screen.	Above and
+		below	the  window  you  will	see    some    additional
+		information.
+
+	1.1.4.1 Banner line
+
+		The top line on the display is	called	the  banner line.
+		If you have made any unsaved changes to the file you will
+		see  an * in the first column of the banner line.    Next
+		you will see the text "File:" followed by the name of the
+		file you  are  editing.  After the text "C=" you will see
+		the column number  that  the  cursor  is  on.	 This  is
+		followed by the text  "L="  and  the line number.  At the
+		end of the line is "B=" and the number of the file buffer
+		you are editing.  File buffers are numbered from 0 to 99.
+
+	1.1.4.2 Ruler line
+
+		The second line on the display is  the	ruler line, which
+		shows how text will be formatted.  "T"s show columns that
+		typing the tab key will move up to.  If you see an "A" it
+		shows that indentation is  automatic:	when you type the
+		enter key the cursor will  automatically  be  advanced to
+		the first column of the line  you  just  left.	  This is
+		great for programming.	An "L" shows  that indentation is
+		fixed:	The cursor will always be advanced  to the column
+		showing the "L" when you type the enter key.	"R" shows
+		that  text  will be wrapped:  when text you type  reaches
+		the  column with the "R" a new line will automatically be
+		entered.   "J"	shows that text will be justified to that
+		column:  after wrapping space characters will be inserted
+		between words until the  last  character  in  the line is
+		exactly  in  the column with  the  "J".    When  text  is
+		justified  or  wrapped the left margin	will  be  in  the
+		column with "W" in it.	Later  in this manual you will be
+		told how to change the ruler line.
+
+	1.1.4.3 Mode line
+
+		The second last line on the screen is  the mode line.  It
+		shows  the  current  setting  of various editing options.
+		These will be described later.	At the end of the line is
+		the text "Mod=" followed  by  the  numbers  of	the  file
+		buffers containing unsaved modifications.
+
+	1.1.4.4 Message line
+
+		The bottom  line  on  the  display  is	the message line.
+		Advisory messages and  error  messages	will be displayed
+		here.  This is also  where  you  will  be  prompted  when
+		commands need input.  Multi keystroke  commands will also
+		display menus for the next keystroke on this line.
+
+	1.2 Editing commands
+
+	1.2.1 Getting help
+
+		Typing "`"  followed by "h" or typing "F1" will display a
+		number	of  help    screens  that  describe  all  editing
+		commands.  The help  screens  are  structured  as  menus.
+		Typing the enter key will  bring  you to the next page of
+		the screen you are viewing or,	if  you  are  on the last
+		page of a screen, to the previous menu.  Typing the space
+		bar will exit from help and return you	to  editing mode.
+		To  select  a  menu  type  the	character  shown  at  the
+		selection.    Before making a lot  of  edits  you  should
+		explore the help screens.  This will  give you a feel for
+		the power of Sedt and the many functions you can perform.
+		Do    not   worry  if  some  commands  are  difficult  to
+		understand, they will be explained later in this manual.
+
+	1.2.2 Typing commands
+
+		All  commands start with the reverse quote character "`".
+		As soon as you type this character you will see a menu on
+		the bootom line of the display.  This menu reminds you of
+		the  different	keys you  can  type  next.    Upper  case
+		characters in the text show  you  what	key you can type.
+		NOTE,  the command key is in most cases a lowercase  key!
+		When  you  type  the  next character on of two things may
+		happen:  If  the  command only requires two keystrokes it
+		will  be  performed.	If  it	requires  more	than  two
+		keystrokes you will see a new menu displaying the choices
+		for the third character.  This	continues  until you have
+		typed all the keystrokes needed for the command.
+
+	1.2.3 Aborting command input
+
+		If you decide not to complete a  command  you simply type
+		the  "Delete"  ot "Backspace" key.  The command  will  be
+		aborted.
+
+	1.2.4 Command input
+
+		Some commands require input and will display a prompt  at
+		the bottom of the screen.  They come in two flavors:  One
+		will  ask  you	to type a single key, the other for  some
+		other input.
+
+		If  you  are asked for a key, type a key, and the command
+		will be executed immediatly.
+
+		For other types of  input you can type several characters
+		and  then  execute  the command  by  typing  "Return"  or
+		"Enter".  The "Left" and  "Right"  arrow  keys will allow
+		you to move back and forth  in	the  text you have typed.
+		"Backspace"  or "Delete" will delete a single  character.
+		"Up"  and "Down" arrow will scroll through the	last  ten
+		responses  you	have  made.  "Control"+"U" will abort the
+		command.   "Control"+T	works  like  the  "Up" arrow key,
+		"Control"+V like "Down"  arrow,  "Control"+F  like "Left"
+		arrow and "Control"+G line "Right" arrow.
+
+	1.2.5 Repeating commands
+
+		You can repeat a command by typing  ~  followed    by	a
+		number.  The  number  you  type  will be displayed on the
+		bottom line of the  display.  the "Backspace" or "Delete"
+		key will allow you to  correct	the number while you type
+		it.  DO NOT TYPE "Return"  or  "Enter" unless you want to
+		input several new lines;  instead type	the  command keys
+		immediatly after typing the number.  You can  also  enter
+		multiple characters by entering a count before typing the
+		character.
+
+	1.2.6 The basic commands
+
+		The following commands	will  get  you	safely	through a
+		simple editing session:
+
+		`qa
+			Aborts any changes and	returns  to the operating
+			system prompt.
+
+		`qs
+			Saves the file you are editing and returns to the
+			operating system prompt.
+
+		`T
+			Moves the cursor to the top of the file.
+
+		`B
+			Moves the cursor to the bottom of the file.
+
+		Control+k
+			Prompts for a string and moves	the cursor to the
+			start of the next ocurrence of the string.
+
+		Control+l
+			Moves to the next ocurrence of the same string.
+
+		`em
+			Marks one end of a region of  text  you  want  to
+			delete.
+
+		`ec
+			Removes the marked text.
+
+		`eo
+			Saves a copy of the marked text.
+
+		`ep
+			Inserts  text  you previously removed with `ec or
+			copied with `eo.
+
+		"Backspace" or "Delete"
+			Removes  the  character   immediatly  before  the
+			cursor.
+
+		"Left" arrow or "Control"+F
+			Move backwards through the file.
+
+		"Right" arrow or "Control"+G
+			Move forwards through the file
+
+		"Up" arrow or "Control"+T
+			Move vertically up and down through the file.
+
+		"Down" arrow or "Control"+V
+
+		`h or F1
+			Displays a series of help screens.
+
+	2 Command summary
+
+		The  command  descriptions  in this  chapter  are  fairly
+		brief.	It is suggested you learn about these commands by
+		trying them out on some non critical text.
+
+	2.1 Moving to an absolute position
+
+		Often you  may want to move to a specific position in the
+		file you are  editing.	  Sedt	provides two commands for
+		this.
+
+		`ac prompts for an absolute  character	position and then
+		moves to the cursor to the point you requested.
+
+		`al prompts for an absolute line  number  and  then moves
+		the cursor to the start of the line you requested.
+
+	2.2 Undoing a move or delete
+
+		Sometimes you may inadvertently  delete some text or move
+		the cursor when you did  not  mean  to.    If you type `b
+		IMMEDIATLY after making the mistake it will be undone.
+
+	2.3 Changing character case
+
+		These  commands  will change the case  of  the	character
+		under the cursor.  If you need	to  change  the case of a
+		block of text see the block edit functions.
+
+		`cl changes the character under the cursor to lower case.
+
+		`cu changes the character under the cursor to upper case.
+
+	2.4 Deleting text
+
+		Sedt  has  a rich and comprehensive set of  commands  for
+		deleting text.	Most of these are described here.  Others
+		are described under block  edit  functions.   Most of the
+		delete commands work in the  direction specified with the
+		direction  toggle, only those with an  implied	direction
+		ignore it.
+
+		`da	Deletes  to  the start of the next ocurrence of a
+			text string specified earlier.
+		`db	Deletes to the bottom of the file
+		`dc	Deletes a single character
+		`de	Delete to the next end of the line
+		`df	Prompts for  a	text  string  and  deletes to the
+			start of the next ocurrence of the string.
+		`dg	Deletes to the	start or beginning of the current
+			paragraph
+		`dl	Deletes to the next start of line
+		`dm1	Deletes to mark one
+		`dm2	Deletes to mark two
+		`dm3	Deletes to mark three
+		`dm4	Deletes to mark four
+		`dm5	Deletes to mark five
+		`dm6	Deletes to mark six
+		`dm7	Deletes to mark seven
+		`dm8	Deletes to mark eight
+		`dm9	Deletes to mark nine
+		`dm0	Deletes to mark ten
+		`dmn	Deletes to the next in the current direction
+		`dn	Deletes to the next start of sentence
+		`do	Deletes to matching bracket: (),{},[],<>,'',""
+		`dp	Deletes to next start of page
+		`dq	Deletes to matching quote: ',"
+		`ds	Deletes a screen in the current direction
+		`dt	Deletes to top of file
+		`dw	Deletes to next start of word
+
+	2.5 Block edit functions
+
+		The block edit	functions  perform  a  number  of editing
+		functions on marked blocks of text.  The range is defined
+		by a mark and the cursor position.
+
+		By default, a marked  block of text includes the complete
+		contents of all lines from the start to end of the block.
+		By changing the block mode toggle the cut, copy and paste
+		functions will switch to working on a  rectangular  block
+		of text defined by the start and end positions.
+
+		`ec	Cut the marked range of text
+		`el	Change all text to lower case
+		`em	Mark one end point of the text range
+		`eo	Copy
+		`ep	Paste
+		`er	Reset mark
+		`es	Strip trailing spaces
+		`etr	Change all tabs to space characters
+		`ets	Change space characters to tabs where possible
+
+	2.6 File functions
+
+		`fc	Save  the  contents  of  the  file  in	a special
+			checkpoint file.  If you lose the editing session
+			you  will  be	asked  if  you	wantto	load  the
+			checkpoint file next time  you	try  to  edit the
+			file.
+		`fe	Load a new file into the editing buffer.
+		`fg	Copy the contents of a	file  into  your  editing
+			buffer at the cursor position
+		`fk	Save  the  current  key  definitions  into   your
+			current directory
+		`fn	Save the ruler, marks and cursor position  into a
+			special  context  file.  When the file is  edited
+			next time the context will be restored
+		`fs	Save the file if the contents have been modified
+		`fw	Write  the  contents of the file into a different
+			file.
+		`fx	Read the contents of the file and interpret it as
+			commands in Sedt's internal programming language
+		`fz	Clear the file buffer
+
+	2.7 Moving the cursor position
+
+		Sedt offers an extremely rich set of functions for moving
+		the cursor.    You will probably use a small set of these
+		functions.
+
+		Many of the move commands work	in  the direction defined
+		with the set  direction  toggle which is displayed on the
+		mode line.
+
+		Control+B		Go forward one word
+		Control+F, Left Arrow	Go backward one character
+		Control+G, Right Arrow	Go forward one character
+		Control+H, Home 	Go to previous beginning of line
+		Control+J, End		Go to next end of line
+		Control+K		Go to next string
+		Control+L		Go to next same string
+		Control+N, Pg Dn	Go down one screen
+		Control+T, Up Arrow	Go up one line
+		Control+U, Pg Up	Go up one screen
+		Control+V, Down Arrow	Go down one line
+		Control+Y		Go back one word
+		`A	Move to the  next  ocurrence  of  the  same  same
+			string as specified last
+		`B	Move to bottom of file
+		`C	Move one character
+		`D	Move straight down
+		`E	Move to the next end of line
+		`F	Move to the next start of a specified string
+		`G	Move to the next start of paragraph
+		`L	Move to the next start of line
+		`M	Move to matching bracket: (),{},[],<>
+		`N	Move to the next start of sentence
+		`P	Move to the next start of page
+		`Q	Move to matching quote: "",''
+		`S	Move one screen
+		`T	Move to the top of file
+		`W	Move to the next start of word
+		`1	Move to mark 1
+		`2	Move to mark 2
+		`3	Move to mark 3
+		`4	Move to mark 4
+		`5	Move to mark 5
+		`6	Move to mark 6
+		`7	Move to mark 7
+		`8	Move to mark 8
+		`9	Move to mark 9
+		`0	Move to mark 10
+		`ga	Move  to  the  next  start   of  same  string  as
+			specified last time
+		`gb	Move to the bottom of the file
+		`gc	Move one character
+		`gd	Move straight down
+		`ge	Move to next end of line
+		`gf	Move to the next start of string
+		`gg	Move to the next start of paragraph
+		`gl	Move to the next start of line
+		`gn	Move to the next start of sentence
+		`go	Move to matching bracket: (),{},[],<>,'',""
+		`gp	Move to next start of page
+		`gq	Move to quote: ',"
+		`gs	Move one screen
+		`gt	Move to top of file
+		`gu	Move straight up
+		`gv	Move up or down in the current direction
+		`gw	Move to the next start of word
+
+	2.8 Getting help
+
+		The help functions display a series  of  menus with brief
+		help for Sedt's commands.
+
+		`h,F1	Display help screens
+
+	2.9 Inserting miscellanea
+
+		`ia	Insert ascii character
+		`id	Insert todays date
+		`ip	Insert page marker
+		`it	Insert current time
+
+	2.10 Changing the ruler
+
+		Sedt  allows  you  to  save 10 different rulers on  disk.
+		Ruler  0  is always loaded as the default ruler when  you
+		call Sedt.
+
+		`ld	Enter ruler definition mode
+		`l0	Load ruler 0
+		`l1	Load ruler 1
+		`l2	Load ruler 2
+		`l3	Load ruler 3
+		`l4	Load ruler 4
+		`l5	Load ruler 5
+		`l6	Load ruler 6
+		`l7	Load ruler 7
+		`l8	Load ruler 8
+		`l9	Load ruler 9
+
+	2.10.1 Ruler definition commands
+
+		-		Remove tab stop at current column
+		Tab		Move right to next tab position
+		Backspace	Move to column 1
+		T		Set a tab position at the current column
+		L		Set left margin
+		R		Set right margin for fill
+		J		Set right margin for justify
+		W		Set left margin for fill and justify
+		A		Set auto left margin mode
+		I		Set Tab indentation level
+		Space		Remove all format controls at current column
+		<Digit> 	Load saved ruler number Digit
+		~ <Digit>	Save ruler in named ruler Digit
+		Enter,Return	Return to edit mode
+
+	2.11 Macro commands
+
+		The macro commands are probably the most powerful feature
+		that Sedt offers.    Using these commands you can perform
+		extremely  complex  editing  commands	 with	a  single
+		keystroke.
+
+		`md	Defines a macro.  You  will  be  prompted for the
+			key to program and the macro commands, which  are
+			in Sedt's internal programming language.
+
+		`ml	Stores a keystroke macro  in  a key.  You will be
+			prompted for the key to  program after which Sedt
+			will save all subsequent keystrokes in	the  key.
+			To  finish saving keystrokes type the key  again.
+			For the rest of the editing session, or until the
+			key  is  reprogrammed, typing the key will replay
+			the stored keystrokes.
+
+	2.12 Using counters
+
+		Sedt allows you to store and manipulate integer values in
+		an internal counter.
+
+		`na	Add  the value of  the	number	starting  at  the
+			cursor position to the counter
+		`ng	Load  the value of the	number	starting  at  the
+			cursor position into the counter
+		`ni	Increment the value of the counter with a value
+		`np	Insert the value of the counter into the buffer
+		`ns	Set the value of the counter
+
+	2.13 Operating system calls
+
+		`o	Prompts  for  and  executes  an operating  system
+			command
+
+	2.14 Ending the edit session
+
+		`qa	Quit and abandon changes
+		`qs	Quit and save changes
+
+	2.15 Setting an edit range
+
+		The edit range commands can be used to limit all commands
+		to a subset of the file.
+
+		`rc    Allow the entire file to be edited
+		`rs    Limit editing commands to the marked region
+
+	2.16 Modifying miscellanea
+
+	2.16.1 Modifying the direction
+
+		These  commands  affect  the  default  direction  of most
+		editing commands.
+
+		`sdf	Set direction forward
+		`sdr	Set direction reverse
+
+	2.16.2 Modifying font sizes
+
+		The font  commands  only  have	an  effect  in	graphical
+		windowing environments like Microsoft Windows and Gem.
+
+		`sfl	Increase the font size
+		`sfs	Descrease the font size
+
+	2.16.3 Modifying text markers
+
+		The text marker  commands  set	markers  at  the  current
+		cursor position.  The  markers	can be used in the delete
+		and move commands.
+
+		`sm1	Set mark one
+		`sm2	Set mark two
+		`sm3	Set mark three
+		`sm4	Set mark four
+		`sm5	Set mark five
+		`sm6	Set mark six
+		`sm7	Set mark seven
+		`sm8	Set mark eight
+		`sm9	Set mark nine
+		`sm0	Set mark ten
+
+	2.16.4 Modifying editing behavior
+
+		The toggles change the bahavior  of  Sedt.    All  of the
+		toggles  have two values which these  commands	alternate
+		between.
+
+		`stb	Toggles between block and line mode which affects
+			the  behavior  of  the	edit range cut, copy  and
+			paste commands
+		`stc	Toggles  between  case	  insensitive	and  case
+			sensitive searches
+		`std	Toggles the default direction
+		`stf	Toggles between restricting the  cursor  position
+			to  characters	in  the  file  and  allowing  the
+			cursor to be moved beyond the  ends  of lines and
+			extending them
+		`sto	Toggles    between   inserting	text  before  the
+			character under  the  cursor  and  replacing text
+			from the cursor position
+		`str	Toggles between displaying  and  hiding the ruler
+			display
+		`sts	Toggles between exact text  searches  and regular
+			expression searches
+		`stt	Toggles  between  inserting  tab  characters  and
+			replacing them with space characters as  they are
+			typed
+		`stw	Toggles  between  scrolling the text horizontally
+			to keep  the  cursor  position visible and always
+			displaying the start of each line
+
+	2.16.5 Modifying screen width on VT series terminals
+
+		'sw	Switches between 80 and 132 column modes
+
+	2.17 Regular expressions
+
+		The regular expression	algorithms  were written by Henry
+		Spencer.  Copyright (c) 1986 by University of Toronto.
+
+		A regular expression is  zero or more branches, separated
+		by `|'.  It matches  anything  that  matches  one  of the
+		branches.
+
+		A  branch  is  zero or more  pieces,  concatenated.    It
+		matches a match for the first, followed  by  a	match for
+		the second, etc.
+
+		A piece is an atom possibly followed by `*', `+', or `?'.
+		An atom followed by `*' matches a sequence of  0  or more
+		matches of the atom.  An atom followed by `+'  matches	a
+		sequence  of  1  or  more  matches of the atom.  An  atom
+		followed  by `?' matches a match of the atom, or the null
+		string.
+
+		An atom is a  regular expression in parentheses (matching
+		a match for the regular expression), a range (see below),
+		`.'  (matching any single character), `^'  (matching  the
+		null string at the beginning of the  input  string),  `$'
+		(matching  the	null  string  at  the  end of  the  input
+		string),  a  `\' followed by a single character (matching
+		that  character),  or  a  single  character with no other
+		significance (matching that character).
+
+		A range is a sequence of characters enclosed in `[]'.  It
+		normally matches any  single character from the sequence.
+		If the sequence begins	with  `^',  it matches any single
+		character not from the rest  of  the  sequence.    If two
+		characters in the sequence are separated  by `-', this is
+		shorthand for the full list of ASCII  characters  between
+		them  (e.g.    `[0-9]'	matches any decimal digit).    To
+		include a literal `]' in the sequence, make it	the first
+		character (following  a  possible  `^').    To	include a
+		literal `-', make it the first or last character.
+
+		If a regular  expression  could match two different parts
+		of the input string,  it  will match the one which begins
+		earliest.  If both begin  in  the  same  place	but match
+		different lengths, or match the same  length in different
+		ways, life gets messier, as follows.
+
+		In general, the possibilities in a list  of  branches are
+		considered  in left-to-right order, the possibilities for
+		`*', `+',  and	`?'  are considered longest-first, nested
+		constructs are considered  from  the  outermost  in,  and
+		concatenated  constructs  are considered  leftmost-first.
+		The match that will be	chosen	is  the one that uses the
+		earliest possibility in the first choice  that	has to be
+		made.  If there is more than one choice, the next will be
+		made in the same manner (earliest possibility) subject to
+		the decision on the first choice.  And so forth.
+
+		For example, `(ab|a)b*c' could match `abc' in one of  two
+		ways.  The first choice is between `ab' and `a';    since
+		`ab'  is  earlier,  and does lead to a successful overall
+		match, it  is  chosen.	  Since the `b' is already spoken
+		for, the `b*'  must  match its last possibility-the empty
+		string-since it must respect the earlier choice.
+
+		In the particular case	where  no  `|'s  are  present and
+		there is only one `*',	`+',  or  `?',	the net effect is
+		that  the  longest possible match will	be  chosen.    So
+		`ab*',	presented  with  `xabbbby',  will  match `abbbb'.
+		Note that if `ab*' is tried against `xabyabbbz',  it will
+		match  `ab'  just  after  `x', due to the begins-earliest
+		rule.	 (In  effect, the decision on where to start  the
+		match  is  the	first choice to be made, hence subsequent
+		choices must  respect  it  even  if  this  leads  them to
+		less-preferred alternatives.)
+
+		Regular expression replacement	causes	each  instance of
+		`&' in source is  replaced  by the substring indicated by
+		the found pattern.  Each  instance  of `\n', where n is a
+		digit, is replaced by the substring indicated by the n'th
+		subpattern.   To get a literal `&'  or	`\n'  into  dest,
+		prefix it with `\';  to get a  literal	`\' preceding `&'
+		or `\n', prefix it with another `\'.
+
+	2.18 Text functions
+
+		The text  functions provide miscellaneous text management
+		functions
+
+		`tc	Centers the line containing the cursor
+		`tj	Justifies text from  the  cursor  position to the
+			end of the current paragraph
+		`tn	Replaces the next ocurrence of the search string
+		`to	Inserts a return in front of the cursor position
+		`tr	Replaces one string with  another.   Both strings
+			are prompted for.  If  you  respond  with an
+			empty string the last prior response will be used
+
+	2.19 Undeleting text
+
+		The undelete  commands	insert previously deleted text at
+		the cursor position.
+
+		`uc	Undelete Character
+		`ug	Undelete paraGraph
+		`ul	Undelete Line
+		`up	Undelete Page
+		`ur	Undelete Region
+		`us	Undelete Sentence
+		`uw	Undelete Word
+
+	2.20 Window functions
+
+		Each file buffer is  displayed	in a window.  By default,
+		all windows a zoomed (cover  the  entire display) so that
+		you can only see one file  at a time.  You can unzoom and
+		tile  windows so that several files are  visible  at  the
+		same time.
+
+		`w0	Switch to window 0
+		`w1	Switch to window 1
+		`w2	Switch to window 2
+		`w3	Switch to window 3
+		`w4	Switch to window 4
+		`w5	Switch to window 5
+		`w6	Switch to window 6
+		`w7	Switch to window 7
+		`w8	Switch to window 8
+		`w9	Switch to window 9
+
+		`wp	Position and size the window
+		`wr	Repaint the current window
+		`wt	Tile all windows so that as many as possible  are
+			visible at the same time
+		`wz	Zoom and unzoom the current window
+		`wcb	Scroll the window so that the cursor is placed at
+			the bottom
+		`wcm	Scroll the window so that the cursor is placed in
+			the middle
+		`wct	Scroll the window so that the cursor is placed at
+			the top
+		`wlh	Split  the  screen  horizontally  and display the
+			last two windows accessed
+		`wlv	Split the screen  vertically and display the last
+			two windows accessed
+		`wmg	Increase the size  of  the  window with the arrow
+			keys. Return to editing by typing return
+		`wmm	Move  the window with  the arrow keys.	Return by
+			typing return
+		`wms	Reduce	the size of the  window  with  the  arrow
+			keys. Return by typing return
+		`wsc	Switch	to  the  next  higher  numbered    window
+			containing a file
+		`wsf	Switch to the next unused window
+		`wsn	Switch to the next, higher numbered window
+		`wsp	Switch to the last previously selected window
+		`wss	Switch to a specific window
+		`wsu	Switch cyclically to the next used window
+
+	2.21 Executing Sedt programs
+
+		'xd	Execute Sedt programming language commands
+		'xf	eXecute Sedt programming commands from a file
+
+	3 Hints
+
+		This section gives you some  hints  that  help	you  take
+		optimal advantage of Sedt's capabilities.
+
+	3.1 Macros
+
+		Macros are  key  to  taking  full  advantage  of Sedt and
+		making it easy	to  use.   Whenever a command is repeated
+		more than a couple of times it pays to tie it to a single
+		keystroke with a macro.
+
+		Sedt's macro facilities allow you to  customize  Sedt  by
+		adding	new  keyboard  commands,  and  simplify  tedious,
+		repetitive tasks by tying them to a single keystroke.
+
+		Sedt  supports	two  form  of  macro  programming.    The
+		simplest is to	create	a  keyboard  macro that repeats a
+		sequence of keystrokes.   The  other  allows  you  to use
+		Sedt's	internal  programming  language  to   define  the
+		function of a key.
+
+	3.1.1 Keyboard macros
+
+		You  access the keyboard macro facility  by  typing  `ml.
+		The first response to this command is  a  request for you
+		to type a key.	This key you  type  in	response  to this
+		prompt	will  be  tied to the macro.  Beware!	 You  can
+		reprogram any key, including the numeric and alphanumeric
+		keys.  It is advisable that you use  a	control  key or a
+		function key that you  normally  don't	use for any other
+		purpose.
+
+		As  soon  as  you have	responded  with  the  key  to  be
+		programmed Sedt returns to normal editing  mode, with the
+		difference  that all keystrokes are remembered until  you
+		retype	the  key  being  programmed.  This completes  the
+		programming  and  retyping  the programmed key will cause
+		the keystrokes you recorded to be replayed.
+
+		This  feature  is    extremely	  useful  for  performing
+		repetitive  tasks  and	for  reducing  complex	keystroke
+		sequences to simple ones.
+
+		Learning and replaying cannot be stacked.   While you are
+		learning you cannot learn some other key, nor can you use
+		another learned key macro.
+
+	3.1.2 Command macros
+
+		Command macros allow you to take full advantage of all of
+		Sedt's	features.    It  does  require that you lear  the
+		internal programming language  that  Sedt  supports,  but
+		your reward is greater	capabilities.	 The  programming
+		language is described in the file sedtman.ref.
+
+		To tie a command macro	to  a  key  type the command `md.
+		Sedt will immediatly prompt for a  keystroke  to  tie the
+		macro to.  Beware!  You can reprogram any  key, including
+		the  numeric and alphanumeric keys.  It is advisable that
+		you use a control key or a function key that you normally
+		don't use for any other purpose.
+
+		After you supply a keystroke you will be prompted for the
+		command string to attach to the key.

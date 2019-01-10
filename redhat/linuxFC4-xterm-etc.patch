@@ -1,0 +1,483 @@
+diff -au ./build ../build
+--- ./build	1995-04-16 14:41:33.000000000 -0700
++++ ../build	2006-01-27 19:41:39.000000000 -0800
+@@ -1,12 +1,12 @@
+ make -f sedt.mak
+ make -f mapkey.mak
+-mapkey compile keys defmi.new defm.new
+-mapkey compile keys consolemi.new consolem.new
+-mapkey compile keys xtermmi.new xtermm.new
+-mapkey compile functions fundefi.new fundef.new
+-mapkey compile keys defmi.edt defm.edt
+-mapkey compile keys vt100mi.edt vt100m.edt
+-mapkey compile keys vt200mi.edt vt200m.edt
+-mapkey compile keys vt300mi.edt vt300m.edt
+-mapkey compile keys consolemi.edt consolem.edt
+-mapkey compile functions fundefi.edt fundef.edt
++./mapkey compile keys defmi.new defm.new
++./mapkey compile keys consolemi.new consolem.new
++./mapkey compile keys xtermmi.new xtermm.new
++./mapkey compile functions fundefi.new fundef.new
++./mapkey compile keys defmi.edt defm.edt
++./mapkey compile keys vt100mi.edt vt100m.edt
++./mapkey compile keys vt200mi.edt vt200m.edt
++./mapkey compile keys vt300mi.edt vt300m.edt
++./mapkey compile keys consolemi.edt consolem.edt
++./mapkey compile functions fundefi.edt fundef.edt
+diff -au ./com.c ../com.c
+--- ./com.c	1996-01-23 18:19:10.000000000 -0800
++++ ../com.c	2006-01-27 19:41:39.000000000 -0800
+@@ -1,6 +1,14 @@
+ /*Copyright (c) Anker Berg-Sonne, 1985,1986,1987*/
+ #include "proto.h"
+ 
++#if defined(XTERM_MOUSE)     
++extern void xmouse_on();     
++extern void xmouse_off();    
++extern void xmouse_toggle(); 
++extern void xmouse_handler();
++#endif                       
++
++
+ #if defined(VMS) | defined(UNIX) | defined(MPE)
+ #if defined(ANSIC)
+ struct Com_Rec {char *Name;int Type;int Skipok;
+@@ -167,6 +175,10 @@
+    {"TU",C_Unknown,1,Case_Toggle},
+    {"TV",C_Unknown,1,Tog_Reg_Search},
+    {"TX",C_Unknown,1,Ins_Defs_Toggle},
++#if defined(XTERM_MOUSE)               
++   {"TZ0",C_Unknown,1,xmouse_toggle},  
++   {"TZ1",C_Unknown,1,xmouse_handler}, 
++#endif
+    {"UC",C_Unknown,1,Und_Char},
+    {"UL",C_Unknown,1,Und_Line},
+    {"UM",C_Undo,1,Undo},
+@@ -805,7 +817,11 @@
+  if (!Scroll)
+  {My_Pos=Beg_Pos;
+   while (Current->Pos!=My_Pos)
++#if defined(UTF8_HACK)
++  {if (((C=B_B_Get(Current))>=' '&&C<='~'))
++#else
+   {if (((C=B_B_Get(Current))>=' '&&C<='~')||(C>160&&C<255))
++#endif
+     My_Col--; else
+    if (C==9)
+    {Backto_This(Beg_Pos);
+diff -au ./comc.c ../comc.c
+--- ./comc.c	1996-01-23 18:19:10.000000000 -0800
++++ ../comc.c	2006-01-27 19:41:39.000000000 -0800
+@@ -965,8 +965,12 @@
+  }
+  if ((C>=' '&&C<='~')||(C>160&&C<255)||(do_bell&&C==7))
+ #else
++#if defined(UTF8_HACK)
++ if ((C>=' '&&C<='~'))
++#else
+  if ((C>=' '&&C<='~')||(C>160&&C<255))
+ #endif
++#endif
+   Opt_Char((char)C); else
+  if (C>=' '||(C==9&&Expand_Tabs)||!Control_Display)
+  {Char_Rep(C,S);
+@@ -1724,7 +1728,7 @@
+ void Fast Curs_Middle()
+ {register int I;
+  if (Float_Cursor)
+- {I=(Rel_First+Rel_Last+1)/2;
++ {I=(Rel_First+Rel_Last+1+Count)/2;
+   if (I)
+   {if (I>This_Line+Rel_First-1)
+     I=This_Line+Rel_First-1;
+diff -au ./comd.c ../comd.c
+--- ./comd.c	1996-01-23 18:19:11.000000000 -0800
++++ ../comd.c	2006-01-27 19:41:39.000000000 -0800
+@@ -1,5 +1,6 @@
+ /*Copyright (c) Anker Berg-Sonne, 1985,1986,1987*/
+ #include "proto.h"
++#include <errno.h>
+ 
+ #if defined(ATARI) & defined(GEM)
+ extern int TC_Height, TC_Width, T_Baseline, Buf_Points, wi_handle[];
+@@ -717,7 +718,7 @@
+  int Spawn_Error=0, I;
+ #if defined(UNIX)
+  char *cp, *getenv();
+- extern int errno;
++/* extern int errno;*/
+ #endif
+ #if defined(VMS)
+  static $DESCRIPTOR(Desc,Com_Arg);
+@@ -937,7 +938,7 @@
+  int Spawn_Error=0;
+ #if defined(UNIX)
+  char *cp, *getenv();
+- extern int errno;
++/* extern int errno;*/
+ #endif
+ #if defined(VMS)
+  static $DESCRIPTOR(Desc,Com_Arg);
+@@ -1005,7 +1006,7 @@
+   New_stderr, Sav_stderr;
+ #if defined(UNIX)
+  char *cp, *getenv();
+- extern int errno;
++/* extern int errno; */
+ #endif
+ #if defined(VMS)
+  static $DESCRIPTOR(Desc,Com_Arg);
+diff -au ./defallmi.edt ../defallmi.edt
+--- ./defallmi.edt	1994-08-28 11:51:26.000000000 -0700
++++ ../defallmi.edt	2006-01-27 19:41:39.000000000 -0800
+@@ -6,11 +6,21 @@
+ 5 K5 9
+ 6 K6 6
+ 7 K7 7
+-8 K8 8
+-9 K9 9
+-10 K10 10
+-11 K11 11
+-12 K12 12
++; was F8 to func 8
++;8 K8 8
++;
++; now F8 to xmouse function 147
++8 K8 147
++;
++;
++; keys 9-12 are F9-F12, originaly mapped to functions 9-12
++; now mdj 141-144, go to (more) buffers
++;
++9 K9 141
++10 K10 142
++11 K11 143
++12 K12 144
++;
+ 13 K13 13
+ 14 K14 14
+ 15 K15 15
+@@ -19,9 +29,13 @@
+ 18 K18 18
+ 19 K19 19
+ 20 K20 20
+-21 K21 21
+-22 K22 22
+-23 K23 23
++;key 21 used to map to function 21(find?) now mdj 145 (:CM)
++21 K21 145
++;
++;key 22 used to map to function 22(insert paste) now 124(undelete word)
++22 K22 124 
++;
++23 K23 42
+ 24 K24 24
+ 25 K25 25
+ 26 K26 26
+@@ -61,7 +75,7 @@
+ 60 G K18 102
+ 61 G K19 103
+ 62 G K21 104
+-63 G K23 105
++63 G K23 124
+ 64 G K24 106
+ 65 G K25 91
+ 66 G K26 75 Page Down
+@@ -158,3 +172,5 @@
+ 157 G K13 138
+ 158 G K14 139
+ 159 G K15 140
++; key 160 is xmouse, function 146 was added by mdj 
++160 K50 146
+diff -au ./defmi.edt ../defmi.edt
+--- ./defmi.edt	1994-08-28 11:51:26.000000000 -0700
++++ ../defmi.edt	2006-01-27 19:42:40.000000000 -0800
+@@ -127,6 +127,7 @@
+ ; Right Arrow
+ 3 A68 28
+ ; Left Arrow
++3 A77 50 "xmouse esc [ M (...) from mouse
+ ;SS3 7 bit codes
+ 2 A79
+ 3 A65 27
+Only in ..: from-ni
+diff -au ./fundefi.edt ../fundefi.edt
+--- ./fundefi.edt	1994-08-28 11:51:28.000000000 -0700
++++ ../fundefi.edt	2006-01-27 19:41:39.000000000 -0800
+@@ -224,3 +224,27 @@
+ Split screen vertically
+ 140 :UOFF0:WI-:WFR-:WFB1:WI-:WFL-:WFB2:WI-:WFT-:WFR3:WI-:WFT-:WFL0:WI:UON.
+ Split screen into quarters
++;
++; malcolm
++; select more buffers
++;
++141 4:WI.
++Select buffer 4
++142 5:WI.
++Select buffer 5
++143 6:WI.
++Select buffer 6
++144 7:WI.
++Select buffer 7
++;
++; center screen
++;
++145 :CM.
++Position cursor in middle screen
++;
++; xmouse handler
++;
++146 :TZ1.
++Accept rest of xmouse sequence
++147 :TZ0.
++Toggle xmouse
+diff -au ./key.c ../key.c
+--- ./key.c	1996-01-23 18:19:11.000000000 -0800
++++ ../key.c	2006-01-27 19:41:39.000000000 -0800
+@@ -1050,7 +1050,11 @@
+   return(Control_Display?1:strlen(Rep[C]));
+  } else
+ #if defined(VMS) | defined(UNIX)
++#if defined(UTF8_HACK)
++ if ((C>=' '&&C<='~')) 
++#else
+  if ((C>=' '&&C<='~')||(C>160&&C<255))
++#endif 
+  {if (S!=NULL)
+   {S[0]=C;
+    S[1]=0;
+Only in ..: linux-xterm-etc
+diff -au ./ruler0.txt ../ruler0.txt
+--- ./ruler0.txt	1996-01-23 19:03:06.000000000 -0800
++++ ../ruler0.txt	2006-01-27 19:41:39.000000000 -0800
+@@ -1 +1 @@
+-L1 A1 R1 I1 T1 T9 T17 T25 T33 T41 T49 T57 T65 T73 T81 T89 T97 T105 T113 T121 T129 T137 T145 T153 T161 T169 T177 T185 T193 T201 T209 T217 T225 T233 T241 T249 T257 T265 T273 T281 T289 T297 T305 T313 T321 T329 T337 T345 T353 T361 T369 T377 T385 T393 T401 T409 T417 T425 T433 T441 T449 T457 T465 T473 T481 T489 T497 T505 
++L1 A1 I1 T5 T9 T13 T17 T21 T25 T29 T33 T37 T41 T45 T49 T53 T57 T61 T65 T69 T73 T77 T81 T85 T89 T93 
+diff -au ./sedt.cnf ../sedt.cnf
+--- ./sedt.cnf	1996-01-23 19:07:04.000000000 -0800
++++ ../sedt.cnf	2006-01-27 19:41:40.000000000 -0800
+@@ -1,4 +1,7 @@
+ RULER=OFF
+ SHAREMESSAGE=OFF
+-MAPPING=NEW
+-MARGIN=6
+\ No newline at end of file
++MAPPING=EDT
++MARGIN=6
++COLUMN=DISPLAYED
++MOUSE=ENABLED
++BACKUPFILE=OFF
+diff -au ./sedt.mak ../sedt.mak
+--- ./sedt.mak	1996-01-23 19:02:14.000000000 -0800
++++ ../sedt.mak	2006-01-27 19:41:40.000000000 -0800
+@@ -1,7 +1,15 @@
+-OBJECTS=sedt.o edit.o key.o buf.o vdu.o term.o com.o coma.o comb.o comc.o comd.o ent.o file.o text.o text1.o vars.o regexp.o regsub.o unix.o
++OBJECTS=sedt.o edit.o key.o buf.o vdu.o term.o com.o coma.o comb.o \
++    comc.o comd.o ent.o file.o text.o text1.o vars.o regexp.o regsub.o \
++    unix.o xmouse.o gpm_mouse.o
++
+ #CFLAGS=-g -DUNIX -DULTRIX -DTERMCAP
+-CFLAGS=-O -DUNIX -DTERMCAP -DANSIC -LINUX
+-LIBES=-ltermcap
++
++CFLAGS=-O -DUNIX -DTERMCAP -DANSIC -DLINUX -DXTERM_MOUSE -DUTF8_HACK
++LIBES=-L/usr/7.4-usr/lib/ -ltermcap
++
++CFLAGS=-O -DUNIX -DTERMCAP -DANSIC -DLINUX -DXTERM_MOUSE -DUTF8_HACK -DGPM
++LIBES=-ltermcap -lgpm
++
+ 
+ sedt:$(OBJECTS)
+ 	cc $(CFLAGS) $(OBJECTS) $(LIBES) -o sedt
+diff -au ./unix.c ../unix.c
+--- ./unix.c	1996-01-23 18:19:12.000000000 -0800
++++ ../unix.c	2006-01-27 19:41:40.000000000 -0800
+@@ -2,6 +2,7 @@
+   Terminal I/O routines for SEDT (a la UNIX)
+ */
+ #include <stdio.h>
++#include <stdlib.h>
+ #if defined(ULTRIX)
+ #include <sys/ioctl.h>
+ #include <sgtty.h>
+@@ -28,6 +29,11 @@
+ #endif
+ #endif
+ 
++#if defined(GPM)
++#include "gpm_mouse.h"
++static int gpm=0;
++#endif
++
+ UInit()
+ {
+     /*char    *ttyname();*/
+@@ -38,6 +44,8 @@
+   no echo, no canonical input processing, and process each character
+   when typed rather than await a new-line.
+ */
++/*printf("DEBUG: ttyname(fileno(stdin)) = %s\n", ttyname(fileno(stdin)) );
++*/
+     if((tty = open(ttyname(fileno(stdin)), 2)) <= 0)
+     {
+     	perror("Can't attach the terminal");
+@@ -61,6 +69,10 @@
+     ioctl(tty, TCSETA, &special);
+ #endif
+ 
++#if defined(GPM)
++    gpm = gpm_init(stdin);
++#endif
++
+ }
+ 
+ UEnd()
+@@ -75,6 +87,12 @@
+     ioctl(tty, TCSETA, &restore);
+ #endif
+     close(tty);
++    
++#if defined(GPM)
++    if (gpm) gpm = gpm_fini();
++#endif
++    
++
+ }
+ 
+ USysenv()
+@@ -93,10 +111,13 @@
+ 
+ USedtenv()
+ {
++/*    char    *ttyname();*/
+ 
+ /*
+   Set terminal attributes back to Sedt specifications.
+ */
++/*printf("DEBUG: ttyname(fileno(stdin)) = %s\n", ttyname(fileno(stdin)) );
++*/
+     if((tty = open(ttyname(fileno(stdin)), 2)) <= 0)
+     {
+     	perror("Can't attach the terminal");
+@@ -114,6 +135,19 @@
+ unsigned
+     char    key;
+ 
++#if defined(GPM)
++    int ch;
++    if (gpm)
++    {
++        if ( (ch = gpm_getc()) == EOF)
++        {
++            perror("Can't read from gpm/terminal");
++            exit(0);
++        }
++        return ch;
++    }
++#endif
++
+     if((read(tty, &key, 1)) < 1)
+     {
+     	perror("Can't read from terminal");
+diff -au ./vars.c ../vars.c
+--- ./vars.c	1996-01-23 18:26:31.000000000 -0800
++++ ../vars.c	2006-01-27 19:41:40.000000000 -0800
+@@ -1,4 +1,5 @@
+ /*Copyright (c) Anker Berg-Sonne 1991*/
++
+ #if defined(WIN95)
+ #define DOS
+ #define Windows
+@@ -14,6 +15,7 @@
+ #include <sys/stat.h>
+ #include <unistd.h>
+ #include <sys/termios.h>
++#include <sys/ioctl.h>
+ #if defined(DECOSF)
+ #include <sys/ioctl.h>
+ #endif
+@@ -288,9 +290,9 @@
+ 	/*Original width of terminal*/
+ int Same_Character=0;
+ int Saved_Character=0;
+-uid_t My_UID;
++__uid_t My_UID;
+  /*UID of current process*/
+-gid_t My_GID;
++__gid_t My_GID;
+  /*GID of current process*/
+ #endif
+ 
+diff -au ./vars.h ../vars.h
+--- ./vars.h	1996-01-23 18:19:12.000000000 -0800
++++ ../vars.h	2006-01-27 19:41:40.000000000 -0800
+@@ -137,8 +137,8 @@
+ extern int Same_Character;
+ extern int Saved_Character;
+ #include <unistd.h>
+-extern uid_t My_UID;
+-extern gid_t My_GID;
++extern __uid_t My_UID;
++extern __gid_t My_GID;
+ #endif
+ 
+ #if defined(UNIX) | defined(DOS)
+diff -au ./vdudef.h ../vdudef.h
+--- ./vdudef.h	1996-01-23 18:19:12.000000000 -0800
++++ ../vdudef.h	2006-01-27 19:41:40.000000000 -0800
+@@ -27,11 +27,11 @@
+ #define Maxcol 80
+ #endif
+ #if defined(VMS)
+-#define Maxlines 66
++#define Maxlines 80
+ #define Maxcol 512
+ #endif
+ #if defined(UNIX)
+-#define Maxlines 66
++#define Maxlines 100
+ #define Maxcol 512
+ #endif
+ #define Maxfunc 512
+diff -au ./vt100mi.edt ../vt100mi.edt
+--- ./vt100mi.edt	1994-08-28 11:51:36.000000000 -0700
++++ ../vt100mi.edt	2006-01-27 19:41:40.000000000 -0800
+@@ -102,6 +102,7 @@
+ 3 A66 29 "Down Arrow
+ 3 A67 30 "Right Arrow
+ 3 A68 28 "Left Arrow
++3 A77 50 "xmouse esc [ M (...) from mouse
+ ;SS3 7 bit codes
+ 2 A79
+ 3 A65 27 "Up Arrow
+@@ -174,6 +175,7 @@
+ 2 A66 29 "Down Arrow
+ 2 A67 30 "Right Arrow
+ 2 A68 28 "Left Arrow
++2 A77 50 "xmouse
+ ;SS3 8 bit codes
+ 1 A143
+ 2 A65 27 "Up Arrow
+diff -au ./vt200mi.edt ../vt200mi.edt
+--- ./vt200mi.edt	1994-08-28 11:51:36.000000000 -0700
++++ ../vt200mi.edt	2006-01-27 19:41:40.000000000 -0800
+@@ -102,6 +102,7 @@
+ 3 A66 29 "Down Arrow
+ 3 A67 30 "Right Arrow
+ 3 A68 28 "Left Arrow
++3 A77 50 "xmouse esc [ M (...) from mouse
+ ;SS3 7 bit codes
+ 2 A79
+ 3 A65 27 "Up Arrow
+diff -au ./vt300mi.edt ../vt300mi.edt
+--- ./vt300mi.edt	1994-08-28 11:51:36.000000000 -0700
++++ ../vt300mi.edt	2006-01-27 19:41:40.000000000 -0800
+@@ -102,6 +102,7 @@
+ 3 A66 29 "Down Arrow
+ 3 A67 30 "Right Arrow
+ 3 A68 28 "Left Arrow
++3 A77 50 "xmouse esc [ M (...) from mouse
+ ;SS3 7 bit codes
+ 2 A79
+ 3 A65 27 "Up Arrow

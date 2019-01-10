@@ -1,0 +1,118 @@
+        Sedt version 4.0
+        
+        EMACS key bindings
+
+        ^X^B  Display buffer list                        
+        ^X^C  Exit                                       
+        ^X^D  Detab line                                 
+        ^X^E  Entab line                                 
+        ^X^F  Find file                                  
+        ^X^I  Insert file                                
+        ^X^L  Lowercase region                           
+        ^X^M  Delete mode                                
+        ^X^N  Move window down                           
+        ^X^O  Delete blank lines                         
+        ^X^P  Move window up                             
+        ^X^R  Get file from disk                         
+        ^X^S  Save current file                          
+        ^X^T  Trim line                                  
+        ^X^U  Uppercase region                           
+        ^X^V  View file                                  
+        ^X^W  Write file to disk                         
+        ^X^X  Swap cursor and mark                       
+        ^X^Z  Shrink window                              
+        ^X-<  Narrow to region                           
+        ^X->  Widen from region                          
+        ^X-=  Show cursor postion                        
+        ^X-^  Enlarge display window                     
+        ^X-0  Delete current window                      
+        ^X-1  Delete other windows                       
+        ^X-2  Split current window                       
+        ^X-?  Describe key                               
+        ^X-!  Run command in shell                       
+        ^X-@  Pipe shell command to buffer               
+        ^X-#  Filter buffer through shell filter         
+        ^X-$  Execute external program                   
+        ^X-(  Begin macro                                
+        ^X-)  End macro                                  
+        ^X-A  Set variable value                         
+        ^X-B  Switch window to a buffer                  
+        ^X-C  Start a new command processor              
+        ^X-D  Suspend editing session                    
+        ^X-E  Execute macro                              
+        ^X-F  Set fill column (ruler mode)               
+        ^X-K  Delete buffer                              
+        ^X-M  Add a mode                                 
+        ^X-N  Rename current filename                    
+        ^X-O  Move to next window                        
+        ^X-P  Move to previous window                    
+        ^X-R  Incremental reverse search                 
+        ^X-S  Incremental forward search                 
+        ^X-W  Resize window                              
+        ^X-X  Use next buffer                            
+        ^X-Z  Enlarge display window                     
+        ^A    Move to start of line                      
+        ^B    Move backwards by characters               
+        ^C    Insert space                               
+        ^D    Forward delete                             
+        ^E    Goto end of line                           
+        ^F    Move forwards by characters                
+        ^G    Abort out of things                        
+        ^H    Backwards delete                           
+        ^I    Insert tab                                 
+        ^J    Insert newline and indent                  
+        ^K    Kill forward                               
+        ^L    Refresh screen                             
+        ^M    Insert newline                             
+        ^N    Move forward by lines                      
+        ^O    Open line                                  
+        ^P    Move backwards by lines                    
+        ^Q    Insert literal                             
+        ^R    Search backwards                           
+        ^S    Search forward                             
+        ^T    Transpose characters                       
+        ^U    Repeat command four times                  
+        ^V    Move forward by pages                      
+        ^W    Kill region                                
+        ^Y    Yank back from kill buffer                 
+        ^Z    Move backward by pages                     
+        ^[^C  Count words in region                      
+        ^[^E  Execute named procedure                    
+        ^[^F  Goto matching fence                        
+        ^[^H  Delete backward word                       
+        ^[^K  Unbind key from function                   
+        ^[^L  Reposition window                          
+        ^[^M  Delete global mode                          
+        ^[^N  Rename current buffer                      
+        ^[^R  Search and replace with query              
+        ^[^S  Change screen rows                         
+        ^[^T  Change screen columns                      
+        ^[^V  Scroll down next window                    
+        ^[^W  Delete paragraph                           
+        ^[^Z  Scroll up next window                      
+        ^[-A  Apropos (list some commands)               
+        ^[-B  Backup by words                            
+        ^[-C  Initial capitalize word                    
+        ^[-D  Delete forward word                        
+        ^[-E  Reset encryption key                       
+        ^[-F  Advance by words                           
+        ^[-G  Goto a specific line                       
+        ^[-K  Bind key to function                       
+        ^[-L  Lowercase word                             
+        ^[-M  Add global mode                            
+        ^[-N  Goto end of paragraph                      
+        ^[-P  Goto beginning of paragraph                
+        ^[-Q  Justify current paragraph                  
+        ^[-R  Search and replace                         
+        ^[-U  Uppercase word                             
+        ^[-V  Move backward by pages                     
+        ^[-W  Copy region to kill buffer                 
+        ^[-X  Execute named command                      
+        ^[-Z  Save all buffers and exit                  
+        ^[-~  Unmark current buffer                      
+        ^[-!  Reposition window                          
+        ^[-<  Move to start of buffer                    
+        ^[->  Move to end of buffer                      
+        ^[-.  Set mark                                   
+        ^[-   Set mark                                   
+        

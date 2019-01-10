@@ -1,0 +1,95 @@
+
+        Your installation  kit  will  contain a tar file.    In  the
+        following replace sys.tar by the name  of the appropriate tar
+        file for your system.
+
+        Unpack sys.tar using the command
+
+                tar xvf sys.tar .
+
+        You can now run  sedt if the directory containing all these files
+        is your current working directory.    
+        
+        Please note that sedt is configured for non-EDT key mapping. Read
+        the file sedtman.new for instructions on how to run the editor.
+        To reconfigure Sedt for EDT-style mapping, change MAPPING=NEW to
+        MAPPING=EDT in the file sedt.cnf.
+        
+        To make sedt runnable from any directory do the following:
+
+        Include the directory containing the file  sedt  in your path, or
+        copy it to some directory already listed in the path.
+
+        At this stage you can run sedt  from  any  directory.   Some more
+        customization  will make sedt initialize faster and also organize
+        the files better.
+
+        The  first  step  is  to  define the environment variable SEDT to
+        point to  the  directory  containing the files extracted from the
+        tar file. They way this is done depends on the shell that each
+        user is running.
+
+        Each user running the Bourne shell (sh) should include the following
+        in .profile in their home directory (assuming you put the files
+        in /usr/bin/sedt, otherwise use the appropriate directory)
+
+                #SEDT=/usr/bin/sedt
+                #export SEDT
+
+        For users running the System V shell (sh5) or the Korn shell (ksh),
+        either the system administrator should include the following
+        in /etc/profile, or each user should include the following in
+        .profile in their home directory (assuming you put the files
+        in /usr/bin/sedt, otherwise use the appropriate directory)
+ 
+                #SEDT=/usr/bin/sedt
+                #export SEDT
+
+        Each user running the C shell (csh) should include the following in 
+        .cshrc in their home directory
+
+                setenv SEDT /usr/bin/sedt
+
+
+        To allow anybody to  save  ruler  files  and other files Sedt may
+        save for you, you should  define  the  environment  variable SEDTP
+        to  point to a directory in  the  user's  directory  tree.    For
+        example, if using the Bourne shell, System V shell or Korn shell,
+        include the following along with the other SEDT initialisation lines
+        (in /etc/profile and/or .profile, whichever is applicable)
+
+                #SEDTP=$HOME
+                #export SEDTP
+
+        For the C shell include the following in .cshrc
+
+                setenv SEDTP $HOME
+
+
+                                     NOTE:
+ 
+        For the Bourne shell or C shell, it is not uncommon for system 
+        administrators to have a system-wide profile or cshrc (emulating the
+        use of /etc/profile by the System V and Korn shells). Each user's
+        .profile or .cshrc executes this system-wide file using the "source" 
+        command, for example
+ 
+        	source /etc/cshrc 
+ 
+        (This line would be placed in the skeleton .profile or .cshrc 
+        in /usr/skel, which new accounts are given by default). 
+ 
+        If this is the case on your system, then simply add the above
+        SEDT environment variable definitions to these system-wide shell
+        setup files.
+ 
+ 				    NOTE:
+ 
+       	Four command shells are offered with ULTRIX Version V4.0 - the Bourne 
+  	shell (sh), the C shell (csh), the System V shell (sh5) and the Korn 
+  	shell (ksh). Only the Bourne shell and C shell are shipped with 
+        versions of ULTRIX prior to V4.0.
+ 
+    	The Korn shell is an upwardly compatible superset of the Bourne shell 
+  	and the System V shell. If using either of these shells, switching to 
+ 	the Korn shell is recommended.
