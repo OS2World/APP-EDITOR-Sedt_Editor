@@ -3,7 +3,7 @@ SEDT (VMS EDIT-like) text editor. Sedt is a text editor for the IBM PC and compa
 
 LICENSE
 ===============
-* Not Defined
+* GNU GPL V3
 
 COMPILE TOOLS
 ===============
